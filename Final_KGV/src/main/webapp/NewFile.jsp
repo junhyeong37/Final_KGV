@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	후후후 김준형 6시 12분
+	7시 30분
 </body>
 </html>
