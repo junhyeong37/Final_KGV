@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	7시 30분
-	7시 45분
-	7시 55분
-	8시 05분
+
 </body>
 </html>
