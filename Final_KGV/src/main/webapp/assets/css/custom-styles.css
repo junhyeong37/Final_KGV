@@ -522,7 +522,8 @@ ul.dropdown-menu.dropdown-messages li a div {
   padding: 2px 0;
 }
 #page-wrapper{
-	background: #e0e8f5;
+	/* background: #e0e8f5; */
+	background: #e0ffd7;
 }
 .dashboard-cards .card-stacked{
 	color:#fff;
