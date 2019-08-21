@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head>
+	
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Target Material Design Bootstrap Admin Template</title> 
@@ -19,8 +20,16 @@
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+		$( document ).ready( function() {
+		    $('.waves-dark' ).click( function() {
+		      $('.waves-dark').removeClass('active-menu');
+		      $(this).toggleClass( 'active-menu' );
+		    } );
+		  } );
+	</script>
 </head>
-
 <body>
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
@@ -31,7 +40,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand waves-effect waves-dark" href="head_test2.jsp"><i class="large material-icons">track_changes</i> <strong>KGV</strong></a>
+                <a class="navbar-brand waves-effect waves-dark" href="head_test3.jsp"><i class="large material-icons">track_changes</i> <strong>target</strong></a>
 				
 		<div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
             </div>
@@ -215,23 +224,23 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu waves-effect waves-dark" href="head_test.jsp"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a class="active-menu waves-effect waves-dark" href="navbar_test1.jsp"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="head_test2.jsp" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> UI Elements</a>
-                    </li>
+                        <a href="navbar_test1.jsp" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> UI Elements</a>
+                    </li> 
 					<li>
-                        <a href="head_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Charts</a>
+                        <a href="navbar_test2.jsp" class="active-menu waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Charts</a>
                     </li>
                     <li>
-                        <a href="head_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
+                        <a href="navbar_test2.jsp" class="active-menu waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
                     </li>
                     
                     <li>
-                        <a href="head_test2.jsp" class="waves-effect waves-dark"><i class="fa fa-table"></i> Responsive Tables</a>
+                        <a href="navbar_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-table"></i> Responsive Tables</a>
                     </li>
                     <li>
-                        <a href="head_test2.jsp" class="waves-effect waves-dark"><i class="fa fa-edit"></i> Forms </a>
+                        <a href="navbar_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-edit"></i> Forms </a>
                     </li>
 
 
@@ -263,7 +272,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="head_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> Empty Page</a>
+                        <a href="navbar_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> Empty Page</a>
                     </li>
                 </ul>
 
@@ -273,6 +282,15 @@
         <!-- /. NAV SIDE  -->
       
 		<div id="page-wrapper">
+		<div class="page-inner">
+			<div class="row">
+		  	<div class="col-xs-12">
+		  		<div class="card">
+		  			<iframe src="https://www.youtube.com/embed/WaxgJggEm3Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		  		</div>
+		  	</div>
+		  </div>
+		</div>
 		  
         </div>
         <!-- /. PAGE WRAPPER  -->
@@ -302,7 +320,7 @@
     <!-- Custom Js -->
     <script src="assets/js/custom-scripts.js"></script> 
  
-
+	
 </body>
 
 </html>
