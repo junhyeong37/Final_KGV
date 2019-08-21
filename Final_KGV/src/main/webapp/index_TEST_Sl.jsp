@@ -519,7 +519,7 @@
 
 
 					</div>
-					<input type="button" value="추가"/>
+					
 				</div>
 				<!-- /. ROW  -->
 				<div class="fixed-action-btn horizontal click-to-toggle">
