@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -297,7 +297,7 @@
 	               <div class="card">
 	<div class="card-content">
 	   <div class="alert alert-success">
-									<strong>Well done!</strong> You successfully read this important alert message.
+									<strong> done!</strong> You successfully read this important alert message.
 								</div>
 								<div class="alert alert-info">
 									<strong>Heads up!</strong> This alert needs your attention, but it's not super important.

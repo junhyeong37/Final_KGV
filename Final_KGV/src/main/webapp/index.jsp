@@ -298,21 +298,52 @@
                             <img src="https://i1.sndcdn.com/artworks-000064920701-xrez5z-t500x500.jpg">
                         </div>
                     </div>
-                    
+            
                    <!--   <div class="positionBtn">
                         <button id="prev"><span>PREV</span></button>
                         <button id="next"><span>NEXT</span></button>
                     </div> -->
 					
+				
+				<br><br><br><br><br>
+					<!-- <center><h1>이달의 예정작  </h1></center><br><br> -->
+					
 					
 				<div class="wrapper">
 					<center><h1>이달의 예정작  </h1></center><br>
 					<div class="video">
-					<iframe src="https://www.youtube.com/embed/WaxgJggEm3Q" width="640" height="360" frameborder="0"> </iframe> 
+					<iframe src="https://www.youtube.com/embed/WaxgJggEm3Q" frameborder="0"> </iframe> 
 					<!--  <img src="assets/img/bird.jpg" width="45%" height="50%">   -->
 					</div>
-
+				</div>			
+				
+				
+				<div class="poster">
+					<br><br><br><br><br><br><br><br><br><br>
+					<img src="assets/img/movie1.jpg" width="550px" height="700px" >
 				</div>
+			
+				
+				
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+				
+				
+				<div class="review-wrapper">
+					<center><h1>평점 및 리뷰</h1></center>
+					<div class="review">
+						<input type="text" name="review1" width="100px" height="100px">
+						<input type="text" name="review2" width="100px" height="100px">
+						<input type="text" name="review3" width="100px" height="100px">	
+					</div>				
+				</div>
+				
+				
+				<div class="review-poster">
+				     <br><br>
+					 <img src="assets/img/bird.jpg" width="300px" height="400px" >
+				</div>	
+				
+				
 		</div>
 
 				
