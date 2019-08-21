@@ -308,7 +308,7 @@
 				<div class="wrapper">
 					<center><h1>이달의 예정작  </h1></center><br>
 					<div class="video">
-					<iframe src="https://www.youtube.com/embed/WaxgJggEm3Q" width="640" height="360" frameborder="0"></iframe> 
+					<iframe src="https://www.youtube.com/embed/WaxgJggEm3Q" width="640" height="360" frameborder="0"> </iframe> 
 					<!--  <img src="assets/img/bird.jpg" width="45%" height="50%">   -->
 					</div>
 
