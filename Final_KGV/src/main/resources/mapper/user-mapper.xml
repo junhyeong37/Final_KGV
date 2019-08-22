@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="mapper.user-mapper">
+<select id="userAllData" resultType="user">
+  SELECT User_no,User_id,User_pw,User_name,User_address,User_tel,User_email,User_birth,User_level,User_sex FROM User
+  </select>
+  
+  <!-- 검색하기 -->
+  <select id="userSearchId" resultType="user" parameterType="String">
+  SELECT User_id,User_name FROM User WHERE User_email=#{User_email}
+  </select>
+  
+  <select id="userSearchPw" resultType="user" parameterType="String">
+  SELECT User_pw FROM User WHERE User_id=#{User_id}  
+  </select>
+  
+  <update id="userUpdateData" parameterType="user">
+  UPDATE User
+  SET User_name = #{User_name}, User_pw = #{User_pw}, User_address=#{User_address},
+  User_tel=#{User_tel},User_email=#{User_email}
+  WHERE User_id = #{User_id}
+  </update>
+  
+  <!-- <insert id="userInsertData" parameterType="user" useGeneratedKeys="true" keyProperty="User_no">
+  INSERT INTO User (User_no,User_id,User_pw,User_name,User_address,User_tel,User_email,User_birth,User_level,User_sex) 
+  VALUES (#{employee_id},#{first_name},#{last_name},#{email},#{phone_number},#{hire_date},#{salary},#{job_id})
+  </insert> -->
+  
+  <insert id="userInsertData" parameterType="user" useGeneratedKeys="true" keyProperty="User_no">
+  INSERT INTO User (User_no,User_id,User_pw,User_name,User_address,User_tel,User_email,User_birth,User_sex) 
+  VALUES (#{User_id},#{User_pw},#{User_name},#{User_address},#{User_tel},#{User_email},#{User_birth},#{User_sex})
+  </insert>
+  
+  <delete id="userDeleteData" parameterType="user">
+  delete from User where User_id=#{User_id}</delete>
+  
+    </mapper>
