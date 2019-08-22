@@ -1,4 +1,4 @@
-package com.myfinal.kgv;
+/*package com.myfinal.kgv.user.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -17,37 +17,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.myfinal.kgv.user.daovo.UserDAO;
+import com.myfinal.kgv.user.daovo.UserVO;
 
-/**
+*//**
  * Handles requests for the application home page.
- */
+ *//*
 @Controller
-public class HomeController {
+public class UserController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	@Autowired
+	UserDAO dao;
 	
-	/**
+	*//**
 	 * Simply selects the home view to render by returning its name.
-	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	 *//*
+	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
+	public void test(HttpServletRequest request, HttpServletResponse resp) {
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		List<UserVO> list = dao.usermain();
 		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("servertime", formattedDate);
-		
-		mav.setViewName("home");
-		return "home";
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i).getUser_id());
+		}
+
 	}
-	
-	
-	
+
 //	@Autowired
 //	Dao dao;
 //	
@@ -61,5 +56,6 @@ public class HomeController {
 //			System.out.println(list.get(i).getEname());
 //		}
 //	}
-	
+
 }
+*/
