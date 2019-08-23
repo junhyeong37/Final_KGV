@@ -458,32 +458,53 @@
 										
 										<tbody>
 										<tr>
-										<th rowspan="2" colspan="6"><h1>Cinema</h1>
+										<th rowspan="2" colspan="6"><h3>Cinema</h3>
 										</th>
 										<th rowspan="2">sung</th>
-										<th rowspan="2"><div><input type="button" value="0"></div></th>
-										<th rowspan="2"><div><input type="button" value="1"></div></th>
-										<th rowspan="2"><div><input type="button" value="2"></div></th>
-										<th rowspan="2"><div><input type="button" value="3"></div></th>
-										<th rowspan="2"><div><input type="button" value="4"></div></th>
+										<th rowspan="2"><div style="text-align: center;"><input type="button" value="0"></div></th>
+										<th rowspan="2"><div style="text-align: center;"><input type="button" value="1"></div></th>
+										<th rowspan="2"><div style="text-align: center;"><input type="button" value="2"></div></th>
+										<th rowspan="2"><div style="text-align: center;"><input type="button" value="3"></div></th>
+										<th rowspan="2"><div style="text-align: center;"><input type="button" value="4"></div></th>
 										</tr>
+										 
+										 <tr>
+										 </tr>
+								
+									
+										 
 										<tr>
-										<th colspan="6"><h1>Cinema No</h1></th>
-										<th rowspan="2">sung</th>
-										<th rowspan="2"><div><input type="button" value="0"></div></th>
-										<th rowspan="2"><div><input type="button" value="1"></div></th>
-										<th rowspan="2"><div><input type="button" value="2"></div></th>
-										<th rowspan="2"><div><input type="button" value="3"></div></th>
-										<th rowspan="2"><div><input type="button" value="4"></div></th>
+										<th rowspan="2" colspan="6" ><h3>Cinema No</h3></th>
+										<th rowspan="2">hak</th>
+										<th rowspan="2"><div style="text-align: center;"><input type="button" value="0"></div></th>
+										<th rowspan="2"><div style="text-align: center;"><input type="button" value="1"></div></th>
+										<th rowspan="2"><div style="text-align: center;"><input type="button" value="2"></div></th>
+										<th rowspan="2"><div style="text-align: center;"><input type="button" value="3"></div></th>
+										<th rowspan="2"><div style="text-align: center;"><input type="button" value="4"></div></th>
+										</tr>
+										
+										<tr></tr>
+										
+										<tr>
+										<th>No</th>
+										<th><div style="text-align: center;"><input type="button" value="12:00"></div></th>
+										<th><div style="text-align: center;"><input type="button" value="14:00"></div></th>
+										<th><div style="text-align: center;"><input type="button" value="15:30"></div></th>
+										<th><div style="text-align: center;"><input type="button" value="16:50"></div></th>
+										<th><div style="text-align: center;"><input type="button" value="19:00"></div></th>
+										<th colspan="6" rowspan="2"><div style="text-align: center;"><input type="submit" value="submit"></div></th>
 										</tr>
 										
 										<tr>
 										<th>No</th>
-										<th><div><input type="button" value="12:00"></div></th>
-										<th><div><input type="button" value="14:00"></div></th>
-										<th><div><input type="button" value="15:30"></div></th>
-										<th><div><input type="button" value="16:50"></div></th>
-										<th><div><input type="button" value="19:00"></div></th>
+										<th><div style="text-align: center;"><input type="button" value="12:00"></div></th>
+										<th><div style="text-align: center;"><input type="button" value="14:00"></div></th>
+										<th><div style="text-align: center;"><input type="button" value="15:30"></div></th>
+										<th><div style="text-align: center;"><input type="button" value="16:50"></div></th>
+										<th><div style="text-align: center;"><input type="button" value="19:00"></div></th>
+										<th colspan="6" >
+										
+										</th>
 										</tr>
 										
 										<!--  <tr class="odd gradeA">
