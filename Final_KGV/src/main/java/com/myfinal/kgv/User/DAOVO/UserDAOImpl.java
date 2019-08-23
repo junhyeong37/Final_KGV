@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 public class UserDAOImpl implements UserDAO{
 	
 	@Autowired
-	private static final String namespace="mapper.user-mapper";
+	private static final String namespace="mapper.User-mapper";
 	
 	@Autowired 
 	private SqlSession sqlSession;

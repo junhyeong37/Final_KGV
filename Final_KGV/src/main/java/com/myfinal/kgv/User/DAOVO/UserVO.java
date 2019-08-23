@@ -33,6 +33,23 @@ public class UserVO {
 		this.user_sex = user_sex;
 		this.user_email = user_email;
 	}
+	
+	
+	public UserVO(String user_id, String user_pw, String user_name, String user_address, String user_tel,
+			Date user_birth, String user_level, String user_sex, String user_email) {
+
+		this.user_id = user_id;
+		this.user_pw = user_pw;
+		this.user_name = user_name;
+		this.user_address = user_address;
+		this.user_tel = user_tel;
+		this.user_birth = user_birth;
+		this.user_level = user_level;
+		this.user_sex = user_sex;
+		this.user_email = user_email;
+	}
+	
+	
 
 	public int getUser_no() {
 		return user_no;

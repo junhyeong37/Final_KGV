@@ -9,5 +9,5 @@ public interface UserDAO {
 	
 	public void UserInsertData(UserVO vo);
 	
-	public UserVO Loginaction(UserVO uv);
+	public UserVO Loginaction(UserVO vo);
 }

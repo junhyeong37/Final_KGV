@@ -23,8 +23,8 @@
          </mappers> -->
          
          
-         <typeAliases>		
-  <typeAlias type="com.myfinal.kgv.User.DAOVO.UserVO" alias="User"/>                                                 
+		<typeAliases>		
+  			<typeAlias type="com.myfinal.kgv.User.DAOVO.UserVO" alias="User"/>                                                 
          </typeAliases>
 
    </configuration>

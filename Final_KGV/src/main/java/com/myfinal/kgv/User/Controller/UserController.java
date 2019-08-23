@@ -30,44 +30,71 @@ public class UserController {
 	public ModelAndView Main(HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("cjw_index");
-		System.out.println("dd");
 		return mv;
 	}
 	
+	
+	
+	
+	
+	
 	@RequestMapping(value = "Login.do", method = RequestMethod.GET) 
-	public ModelAndView login(HttpServletRequest req) {
+	public ModelAndView login(HttpServletRequest req, UserVO vo) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("login");
-		System.out.println("테스트");
 		
+		String user_id= vo.getUser_id();
+				
+		mv.setViewName("login11");
+		mv.addObject("user_id",user_id);
+		System.out.println("테스트");
 		
 		return mv;
 	}
+	
+	
+	
+	
+	
+/*	@RequestMapping(value="Loginaction.do", method=RequestMethod.POST) 
+	@ResponseBody
+	public ModelAndView Loginaction(HttpServletRequest req , UserVO vo) {
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("login11");
+		
+		int data = us.Loginaction(vo);		
+		System.out.println(data);
+		mv.addObject("data", data);
+		
+		return mv;
+	}*/
 	
 	
 	
 	@RequestMapping(value="Loginaction.do", method=RequestMethod.POST) 
 	@ResponseBody
-	public ModelAndView Loginaction(HttpServletRequest req , UserVO uv) {
+	public ModelAndView Loginaction(HttpServletRequest req , UserVO vo) {
 		ModelAndView mv = new ModelAndView();
-		int data = 0;
 		
-		mv.setViewName("Login");
+		mv.setViewName("login11");
 		
-		data = us.Loginaction(uv);
-		
+		int data = us.Loginaction(vo);		
 		System.out.println(data);
-		
 		mv.addObject("data", data);
 		
 		return mv;
 	}
 	
 	
+	
+
+	
 	@RequestMapping(value="UserAllData.do", method=RequestMethod.GET) 
 	public ModelAndView UserAllData(HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("UserAllData");
+		
+		/*mv.setViewName("UserAllData");*/
+		mv.setViewName("login11");
 		
 		List<UserVO> userlist = us.UserAllData();
 		
@@ -76,17 +103,21 @@ public class UserController {
 		return mv;
 	}
 	
-	@RequestMapping(value="UserInsertData.do", method=RequestMethod.GET) 
+	
+	@RequestMapping(value="UserInsertData.do", method=RequestMethod.POST) 
 	public ModelAndView UserInsertData(UserVO vo,HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("UserAllData");
-
+		mv.setViewName("JoinPro");
+		
+		/*String user_name= vo.getUser_id();*/
+		
 		us.UserInsertData(vo);
 		
 		List<UserVO> userlist = us.UserAllData();
 		
+		/*mv.addObject("user_name",user_name);*/
 		mv.addObject("userlist", userlist);
-		
+
 		return mv;
 	}
 	
