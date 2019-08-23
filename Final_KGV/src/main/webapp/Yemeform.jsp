@@ -288,8 +288,9 @@
                                             
                                             <input type="search" placeholder="Search" style="padding-top: 0px; padding-bottom: 0px;border-bottom-width: 0px;margin-bottom: 0px;" class="form-control input-sm" aria-controls="dataTables-example"></label>
                                             </div></td>
-                                            <td  rowspan="6" a>
-                                            <!-- <div align="center" class="jquery-calendar"></div> -->
+                                            <td  rowspan="8">
+                                           <%-- <div align="center" class="jquery-calendar">
+                                           <input type="text" value="${d }"></div> --%>
                                            <!--  <div class="picker-container">
                                             <table class="cal">
                                             <caption>
@@ -390,8 +391,9 @@
                                             </table>
                                             </div>
                                             <div> -->
-                                            <input class="date-picker" type="text"></div>
-                                            
+                                            <div class="date-picker" align="center">
+                                            <input class="date-picker" type="text" style="text-align: center;background-color: orange;" value="">
+                                           <input type="text" style="text-align: center;" value="${data }"></div>
                                             <!-- <input class="date-picker" type="text" value="2015-12-25"/> --></td>
                         
                                         </tr>
@@ -424,9 +426,65 @@
 											<td>Trident</td>
 											<td>Internet Explorer 5.0</td>
 											
+										</tr>
+										<tr>
+											<td  style="width: 37.979166px;"><img alt="" src="images/12.png"></td>
+											<td>Trident</td>
+											<td>Internet Explorer 5.0</td>
+											
+										</tr>
+										<tr>
+											<td  style="width: 37.979166px;"><img alt="" src="images/12.png"></td>
+											<td>Trident</td>
+											<td>Internet Explorer 5.0</td>
+											
 											
 										</tr>
 										
+										</tbody>
+										
+										</table>
+										<table class="table table-striped table-bordered table-hover">
+										<thead>
+										<tr>
+											<th colspan="6" width="50%"><h1 style="background-color: gray;"
+													align="center">time</h1></th>
+											<th colspan="6" width="50%"><h1 style="background-color: gray;" align="center">select</h1>
+											</th>
+										</tr>
+									</thead>
+										
+										
+										
+										<tbody>
+										<tr>
+										<th rowspan="2" colspan="6"><h1>Cinema</h1>
+										</th>
+										<th rowspan="2">sung</th>
+										<th rowspan="2"><div><input type="button" value="0"></div></th>
+										<th rowspan="2"><div><input type="button" value="1"></div></th>
+										<th rowspan="2"><div><input type="button" value="2"></div></th>
+										<th rowspan="2"><div><input type="button" value="3"></div></th>
+										<th rowspan="2"><div><input type="button" value="4"></div></th>
+										</tr>
+										<tr>
+										<th colspan="6"><h1>Cinema No</h1></th>
+										<th rowspan="2">sung</th>
+										<th rowspan="2"><div><input type="button" value="0"></div></th>
+										<th rowspan="2"><div><input type="button" value="1"></div></th>
+										<th rowspan="2"><div><input type="button" value="2"></div></th>
+										<th rowspan="2"><div><input type="button" value="3"></div></th>
+										<th rowspan="2"><div><input type="button" value="4"></div></th>
+										</tr>
+										
+										<tr>
+										<th>No</th>
+										<th><div><input type="button" value="12:00"></div></th>
+										<th><div><input type="button" value="14:00"></div></th>
+										<th><div><input type="button" value="15:30"></div></th>
+										<th><div><input type="button" value="16:50"></div></th>
+										<th><div><input type="button" value="19:00"></div></th>
+										</tr>
 										
 										<!--  <tr class="odd gradeA">
                                             <td>Trident</td>
@@ -813,7 +871,7 @@
                                             <td>-</td>
                                             <td class="center">-</td>
                                             <td class="center">U</td> -->
-										</tr>
+										
 									</tbody>
 								</table>
 							</div>

@@ -1,4 +1,4 @@
-
+﻿
 (function ($) {
 	/* "YYYY-MM[-DD]" => Date */
 	function strToDate(str) {
@@ -110,11 +110,13 @@
 			_this.find('.active').removeClass('active');
 			$this.addClass('active');
 			_this.data('date', $this.find('a').data('date'));
+
 			/* if the 'off' tag become selected, switch to that month */
+
 			if ($this.hasClass('off')) {
 				_this.update(strToDate(_this.data('date')));
 			}
-			if (opts.picker) {  /* in picker mode, when date selected, panel hide */
+			if (opts.picker) {  
 				_this.hide();
 			}
 		});
@@ -144,9 +146,9 @@
 
 	$.fn.datePicker = function () {
 		var _this = this;
-		var picker = $('<div></div>')
+		var picker = $('<div style="margin-left:210px;"></div>')
 			.addClass('picker-container')
-			.hide()
+			
 			.calendar({'date': strToDate(_this.val()), 'picker': true});
 
 		_this.after(picker);
@@ -154,19 +156,19 @@
 		/* event binding */
 		// click outside area, make calendar disappear
 		$('body').click(function () {
-			picker.hide();
+			 picker.show(); 
 		});
 
 		// click input should make calendar appear
 		_this.click(function () {
 			picker.show();
-			return false; // stop sending event to docment
+			
 		});
 
 		// click on calender, update input
 		picker.click(function () {
-			_this.val(picker.getCurrentDate());
-			return false;
+			 _this.val(picker.getCurrentDate()); 
+			/* input에 date 삽입부분 */
 		});
 
 		return this;
