@@ -50,7 +50,7 @@ public class UserController {
 	
 }
 */
-
+/*
 package com.kgv.view.user;
 
 import java.sql.SQLException;
@@ -63,8 +63,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.kgv.biz.user.dao.UserDAO;
 import com.kgv.biz.user.vo.UserVO;
-
-@Controller
+*/
+/*@Controller
 public class UserController {
 	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
 	public String ildanKajaLogin() {
@@ -97,3 +97,4 @@ public class UserController {
 		return "index.html";
 	}
 }
+*/

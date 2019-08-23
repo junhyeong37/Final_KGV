@@ -17,12 +17,12 @@ import org.springframework.stereotype.Service;
 import com.kgv.biz.user.vo.UserService;
 import com.kgv.biz.user.vo.UserVO;
 
-@Service
+/*@Service
 public class UserDAO implements UserService {
 	
 	@Autowired
 	SqlSession sqlSession;
-	/*
+	
 	private static SqlSessionFactory sqlSessionFactory1;
 	static {
 		String myxml = "Mybatis-config.xml";
@@ -33,7 +33,7 @@ public class UserDAO implements UserService {
 			e.printStackTrace();
 		}
 		sqlSessionFactory1 = new SqlSessionFactoryBuilder().build(istream);
-	}*/
+	}
 	
 	
 	public static List<UserVO> userAllData(){
@@ -69,7 +69,8 @@ public class UserDAO implements UserService {
 		return sqlsession1.delete("userDeleteData",userVO);
 	}
 	
-	/*public void UserInsertData(UserVO vo);
+	public void UserInsertData(UserVO vo);
 	
-	public UserVO Loginaction(UserVO uv);*/
+	public UserVO Loginaction(UserVO uv);
 }
+*/

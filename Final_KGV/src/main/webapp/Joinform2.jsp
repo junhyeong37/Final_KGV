@@ -1,10 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+<script type="text/javascript">
+
+	function checkValue() {
+		if (!document.form.User_id.value) {
+			alert("아이디를 입력하세요.");
+			return false;
+		}
+
+		if (!document.form.User_pw.value) {
+			alert("비밀번호를 입력하세요.");
+			return false;
+		}
+
+		// 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
+		if (document.form.User_pw.value != document.form.User_pwcheck.value) {
+			alert("비밀번호를 동일하게 입력하세요.");
+			return false;
+		}
+	}
+
+	// 취소 버튼 클릭시 로그인 화면으로 이동
+	function goLoginForm() {
+		location.href = "LoginForm.jsp";
+	}
+	
+	function goPopup(){
+		// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
+	    var pop = window.open("jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+	    
+		// 모바일 웹인 경우, 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrMobileLinkUrl.do)를 호출하게 됩니다.
+	    //var pop = window.open("/popup/jusoPopup.jsp","pop","scrollbars=yes, resizable=yes"); 
+	}
+	/** API 서비스 제공항목 확대 (2017.02) **/
+	function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn
+							, detBdNmList, bdNm, bdKdcd, siNm, sggNm, emdNm, liNm, rn, udrtYn, buldMnnm, buldSlno, mtYn, lnbrMnnm, lnbrSlno, emdNo){
+		// 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
+		document.form.roadAddrPart1.value = roadAddrPart1;
+		document.form.roadAddrPart2.value = roadAddrPart2;
+		document.form.addrDetail.value = addrDetail;
+		document.form.zipNo.value = zipNo;
+	}
+</script>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Target Material Design Bootstrap Admin Template</title>
+    <title>JoinForm</title>
 	
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection" />
@@ -271,124 +316,195 @@
                         <a href="empty.jsp" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> Empty Page</a>
                     </li>
                 </ul>
-
             </div>
 
         </nav>
         <!-- /. NAV SIDE  -->
         
         
+        
+        
+        
+
+        
+        
         <div id="page-wrapper" >
-		  <div class="header"> 
-                        <h1 class="page-header">
-                             Form Inputs Page
-                        </h1>
-						<ol class="breadcrumb">
-					  <li><a href="#">Home</a></li>
-					  <li><a href="#">Forms</a></li>
-					  <li class="active">Data</li>
-					</ol> 
-									
-		</div>
+		  		
 		
             <div id="page-inner"> 
 			 <div class="row">
 			 <div class="col-lg-12">
 			 <div class="card">
-                        <div class="card-action">
-                            Basic Form Elements
-                        </div>
-                        <div class="card-content">
-    <form class="col s12">
+    <div class="card-content">
+    	<form method="post" action="../pro/JoinPro.jsp" name="form"
+			onsubmit="return checkValue()" class="col s12">
       <div class="row">
         <div class="input-field col s6">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
+          <input id="User_id" type="text" class="validate">
+          <label for="User_id">I D</label>
         </div>
-        <div class="input-field col s6">
+        <!-- <div class="input-field col s6">
           <input id="last_name" type="text" class="validate">
           <label for="last_name">Last Name</label>
+        </div> -->
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="User_pw" type="password" class="validate">
+          <label for="User_pw">비밀번호</label>
         </div>
       </div>
+      
       <div class="row">
-        <div class="input-field col s12">
-          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-          <label for="disabled">Disabled</label>
+        <div class="input-field col s6">
+          <input id="User_pwcheck" type="password" class="validate">
+          <label for="User_pwcheck">비밀번호 확인</label>
         </div>
       </div>
+      
       <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
+        <div class="input-field col s6">
+          <input id="User_name" type="text" class="validate">
+          <label for="User_name">이 름</label>
         </div>
       </div>
+      
       <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12">
-          This is an inline input field:
-          <div class="input-field inline">
-            <input id="email" type="email" class="validate">
-            <label for="email" data-error="wrong" data-success="right">Email</label>
+      <div class="input-field col s3" style="width: 115px;">
+      <p>
+        <!-- <div class="input-field col s6"> -->
+          <input name="User_sex" id="User_sex" type="radio" class="validate">
+          <label for="User_sex">남</label>
+          </p>
+          </div>
+          <div class="input-field col s3" style="width: 115px;">
+          <p>
+          <input name="User_sex"id="User_sex1" type="radio" class="validate">
+          <label for="User_sex1">여</label>
+          </p>
           </div>
         </div>
+     
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="예)19900101" id="User_birth" type="text" class="validate" maxlength="8">
+          <label for="User_birth">생년월일</label>
+        </div>
       </div>
+      
+      <div class="row">
+        <div class="input-field col s2">
+          <input name="User_email1" id="str_email01" type="text" class="validate">
+          <label for="User_email1">이메일</label>
+        </div>
+        <div class="input-field col s0">
+        <h4>@</h4>
+        </div>
+        <div class="input-field col s2" >
+        <input type="text" name="str_email02" id="str_email02"  
+        disabled value="naver.com"> 
+        </div>
+        <div class="input-field col s2">
+        <select  name="selectEmail"	id="selectEmail" class="form-control">
+							<option value="1">직접입력</option>
+							<option value="naver.com" selected>naver.com</option>
+							<option value="hanmail.net">hanmail.net</option>
+							<option value="nate.com">nate.com</option>
+							<option value="gmail.com">gmail.com</option>
+							<option value="daum.net">daum.net</option>
+					</select>
+        </div>
+      </div>
+      
+				<script type="text/javascript"
+					src="http://code.jquery.com/jquery-latest.min.js"></script>
+				<script type="text/javascript">
+					
+					$('#selectEmail').change(function() {
+						$("#selectEmail option:selected").each(function() {
+							if ($(this).val() == '1') {
+								//직접입력일 경우
+								$("#str_email02").val('');
+								//값 초기화 
+								$("#str_email02").attr("disabled", false);
+								//활성화 
+							} else {
+								//직접입력이 아닐경우
+								$("#str_email02").val($(this).text());
+								//선택값 입력
+								$("#str_email02").attr("disabled", true);
+								//비활성화
+							}
+						});
+					});
+				</script>
+
+<div class="row">
+        <div class="input-field col s6">
+          <input placeholder="예)19900101" id="User_birth" type="text" class="validate" maxlength="8">
+          <label for="User_birth">생년월일</label>
+        </div>
+      </div>
+
+			
+<div class="row">
+        <div class="input-field col s6">
+          <input placeholder="-를 제외하고 입력" id="User_phone" type="text" class="validate" maxlength="8">
+          <label for="User_phone">핸드폰번호</label>
+        </div>
+      </div>
+			
+			
+			
+			<div class="row">
+			
+					<div class="input-field col s0" style="margin-top: 20px; margin-bottom: 0px;">우편번호</div>
+					<div class="input-field col s3">
+					    <input type="hidden" id="confmKey" name="confmKey" value=""  >
+						<input type="text" id="zipNo" name="zipNo" readonly>
+						</div>
+						<div class="input-field col s2" style="margin-top: 0px;margin-left: 0px;margin-right: 0px; float: left;">
+						<input type="button"  value="주소검색" onclick="goPopup();">
+					</div>
+					</div>
+			
+				
+				
+				<div class="row">
+					<div class="input-field col s0" style="margin-top: 20px; margin-bottom: 0px;">도로명주소</div>
+					<div class="input-field col s6">
+					<input type="text" id="roadAddrPart1" name="User_address1">
+					</div>
+				</div>
+				
+				<div class="row">
+				
+					<div class="input-field col s0" style="margin-top: 20px; margin-bottom: 0px;">상세주소</div>
+						<div class="input-field col s4">
+							<input type="text" id="addrDetail"  value="" readonly name="User_address2">
+							</div>
+							<div class="input-field col s2">
+							<input type="text" id="roadAddrPart2" value="" readonly>
+						</div>
+				</div>
+ 
+      
+  <input type="submit" value="가입"/> <input type="button"
+				value="취소" onclick="goLoginForm()">
+      
+      <br><br>
+      
+      
+      
+   
     </form>
 	<div class="clearBoth"></div>
   </div>
     </div>
  </div>	
 	 </div>		
-             
-							  
- 
-   <!-- Switch -->
-  <!-- <div class="switch">
-    <label>
-      Off
-      <input type="checkbox">
-      <span class="lever"></span>
-      On
-    </label>
-  </div>
-
-  Disabled Switch
-  <div class="switch">
-    <label>
-      Off
-      <input disabled type="checkbox">
-      <span class="lever"></span>
-      On
-    </label>
-  </div>
-							<div class="clearBoth"></div>
-							</div>
-							</div>
-							</div>
-							 <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-action">
-                            Basic Form Elements
-                        </div>
-                        <div class="card-content"> -->
-						
-								
-
-        
-                                </div>
-                               
-                            </div>
-                            <!-- /.row (nested) -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div> 
-                <!-- /.col-lg-12 --> 
-			<footer><p>Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-</p></footer>
+            
 			</div>
              <!-- /. PAGE INNER  -->
             </div>
