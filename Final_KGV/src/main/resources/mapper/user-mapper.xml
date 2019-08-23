@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org // DTD mapper 3.0 // en" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mapper.user-mapper">
+	<select id="UserAllData" resultType="user">
+		SELECT * FROM USERS
+	</select>
+	
+	<select id="UserInsertData"> <!-- resultType="user" user객체로 쿼리 실행 결과값을 받고자 할 때 -->
+	insert into users
+	values(user_no.NEXTVAL, #{u_id},#{u_pw},#{u_name},#{u_email},sysdate)
+	</select>
+	
+	<select id="Loginaction"  resultType="user">
+		SELECT u_id, u_pw
+		FROM USERS
+		WHERE #{u_id}, #{u_pw}
+	</select>
+	
+	<select id="LoginView" resultType="string">
+		SELECT user_id,user_pw FROM USERS WHERE USER_ID = #{user_id, jdbcType=VARCHAR} and USER_PW = #{user_id,  jdbcType=VARCHAR}
+		
+		<!-- SELECT user_id,user_pw FROM USERS WHERE USER_ID = 'test' and USER_PW = 'test' -->
+	</select>
+</mapper>
