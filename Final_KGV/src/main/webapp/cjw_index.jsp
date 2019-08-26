@@ -215,7 +215,7 @@
 				<ul class="nav" id="main-menu">
 
 					<li><a class="active-menu waves-effect waves-dark"
-						href="index.jsp"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+						href="Joinform2.jsp"><i class="fa fa-dashboard"></i> Dashboard</a></li>
 					<li><a href="ui-elements.jsp" class="waves-effect waves-dark"><i
 							class="fa fa-desktop"></i> UI Elements</a></li>
 					<li><a href="chart.jsp" class="waves-effect waves-dark"><i
@@ -230,7 +230,7 @@
 
 
 					<li><a href="#" class="waves-effect waves-dark"><i
-							class="fa fa-sitemap"></i> Multi-Level Dropdown<span
+							class="fa fa-sitemap"></i> Multi-Level Dropdown<span>
 							class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
 							<li><a href="#">Second Level Link</a></li>

@@ -55,21 +55,6 @@ public class UserController {
 	
 	
 	
-/*	@RequestMapping(value="Loginaction.do", method=RequestMethod.POST) 
-	@ResponseBody
-	public ModelAndView Loginaction(HttpServletRequest req , UserVO vo) {
-		ModelAndView mv = new ModelAndView();
-		
-		mv.setViewName("login11");
-		
-		int data = us.Loginaction(vo);		
-		System.out.println(data);
-		mv.addObject("data", data);
-		
-		return mv;
-	}*/
-	
-	
 	
 	@RequestMapping(value="Loginaction.do", method=RequestMethod.POST) 
 	@ResponseBody
@@ -109,13 +94,10 @@ public class UserController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("JoinPro");
 		
-		/*String user_name= vo.getUser_id();*/
-		
 		us.UserInsertData(vo);
 		
 		List<UserVO> userlist = us.UserAllData();
 		
-		/*mv.addObject("user_name",user_name);*/
 		mv.addObject("userlist", userlist);
 
 		return mv;
