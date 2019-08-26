@@ -363,7 +363,7 @@
 							<div class="card">
 <div class="card-content">
 <div class="table-responsive">
-						<table class="table table-striped table-bordered table-hover" id="dataTables-example" >
+						<table class="table table-striped table-bordered table-hover">
 						 <table class="table table-striped table-bordered table-hover"> 
 					   
 									<thead>
@@ -382,119 +382,214 @@
 										 <tr class="even gradeA"><td>Internet Explorer 5.0</td></tr>
 										 <tr class="odd gradeA"><td>Internet Explorer 5.0</td></tr>
 										 <tr class="even gradeA"><td>Internet Explorer 5.0</td></tr>
-										<tr class="gradeA"><td>Internet Explorer 5.0</td></tr> -->
+										<tr class="gradeA"><td>Internet Explorer 5.0</td></tr>
 										
 										
 										
+										</tbody>
+										</table>
+										</div>
+										</div>
+										</div>
+										</div> -->
 										
-										
-										
-										
-
+							
+							
+							
+							
+							
+							
+							
+                
                 <div class="col-md-4">
-                   
+                 
                     <div class="card">
-                        <div class="card-action">
-                         
-                        </div>
-                        <div class="card-content">
+                        
+                        <div class="card-content" style="text-align: center;">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                 
+                                
                                     <thead>
                                         <tr>
                                        <th>MovieStore</th>
                                        <th></th>
-                                   
+                                       <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr class="odd gradeX">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 4.0</td>
-                                       
+                                            <td>강동구</td>
+                                            <td>가나다 CGV</td>
+                                       <th><input type="button" value="선택"></th>
                                         </tr>
                                         <tr class="even gradeC">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 5.0</td>
-                                       
+                                            <td>동대문구</td>
+                                            <td>바우 롯데시네마</td>
+                                        <th><input type="button" value="선택"></th>
                                         </tr>
                                         <tr class="odd gradeA">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 5.5</td>
-                                         
+                                            <td>성동구</td>
+                                            <td>성동 메가박스</td>
+                                          <th><input type="button" value="선택"></th>
                                         </tr>
                                         <tr class="even gradeA">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 6</td>
-                                      
+                                            <td>강남구</td>
+                                            <td>강남 CGV</td>
+                                       <th><input type="button" value="선택"></th>
                                         </tr>
                                         <tr class="odd gradeA">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 7</td>
-                                         
+                                            <td>강남구</td>
+                                            <td>압구정 CGV</td>
+                                          <th><input type="button" value="선택"></th>
                                         </tr>
                                         <tr class="even gradeA">
-                                            <td>Trident</td>
-                                            <td>AOL browser (AOL desktop)</td>
-                                   
+                                            <td>서대문구</td>
+                                            <td>독립문 롯데시네마</td>
+                                    <th><input type="button" value="선택"></th>
                                         </tr>
-                                        <tr class="gradeA">
-                                            <td>하이</td>
-                                            <td>안녕</td>
-                                
+                                       <tr class="even gradeA">
+                                            <td>서대문구</td>
+                                            <td>이대 CGV</td>
+                                    <th><input type="button" value="선택"></th>
                                         </tr>
                                        
+                                       <tr class="odd gradeX">
+                                            <td>강동구</td>
+                                            <td>가나다 CGV</td>
+                                       <th><input type="button" value="선택"></th>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td>동대문구</td>
+                                            <td>바우 롯데시네마</td>
+                                        <th><input type="button" value="선택"></th>
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td>성동구</td>
+                                            <td>성동 메가박스</td>
+                                          <th><input type="button" value="선택"></th>
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td>강남구</td>
+                                            <td>강남 CGV</td>
+                                       <th><input type="button" value="선택"></th>
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td>강남구</td>
+                                            <td>압구정 CGV</td>
+                                          <th><input type="button" value="선택"></th>
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td>서대문구</td>
+                                            <td>독립문 롯데시네마</td>
+                                    <th><input type="button" value="선택"></th>
+                                        </tr>
+                                       <tr class="even gradeA">
+                                            <td>서대문구</td>
+                                            <td>이대 CGV</td>
+                                    <th><input type="button" value="선택"></th>
+                                        </tr>
+                                        
+                                        <!-- ----------------------------------------------------------- -->
+                                        
+                                        <tr class="odd gradeX">
+                                            <td>강동구</td>
+                                            <td>가나다 CGV</td>
+                                       <th><input type="button" value="선택"></th>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td>동대문구</td>
+                                            <td>바우 롯데시네마</td>
+                                        <th><input type="button" value="선택"></th>
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td>성동구</td>
+                                            <td>성동 메가박스</td>
+                                          <th><input type="button" value="선택"></th>
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td>강남구</td>
+                                            <td>강남 CGV</td>
+                                       <th><input type="button" value="선택"></th>
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td>강남구</td>
+                                            <td>압구정 CGV</td>
+                                          <th><input type="button" value="선택"></th>
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td>서대문구</td>
+                                            <td>독립문 롯데시네마</td>
+                                    <th><input type="button" value="선택"></th>
+                                        </tr>
+                                       <tr class="even gradeA">
+                                            <td>서대문구</td>
+                                            <td>이대 CGV</td>
+                                    <th><input type="button" value="선택"></th>
+                                        </tr>
+                                        
+                                        <!-- ----------------------------------------------------------- -->
+                                        
+                                        <tr class="odd gradeX">
+                                            <td>강동구</td>
+                                            <td>가나다 CGV</td>
+                                       <th><input type="button" value="선택"></th>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td>동대문구</td>
+                                            <td>바우 롯데시네마</td>
+                                        <th><input type="button" value="선택"></th>
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td>성동구</td>
+                                            <td>성동 메가박스</td>
+                                          <th><input type="button" value="선택"></th>
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td>강남구</td>
+                                            <td>강남 CGV</td>
+                                       <th><input type="button" value="선택"></th>
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td>강남구</td>
+                                            <td>압구정 CGV</td>
+                                          <th><input type="button" value="선택"></th>
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td>서대문구</td>
+                                            <td>독립문 롯데시네마</td>
+                                    <th><input type="button" value="선택"></th>
+                                        </tr>
+                                       <tr class="even gradeA">
+                                            <td>서대문구</td>
+                                            <td>이대 CGV</td>
+                                    <th><input type="button" value="선택"></th>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
                             </div>
                         </div>
                     </div>
-              
-            
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										<!-- </tbody>
-										</table>
-										</div>
-										</div> -->
-										
-							<div class="card-content"><!-- </div>
-								</div>
-							</div>
-						</div> -->
+                   
+               
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
 <div class="col-md-6">
 							<div class="card">
 <div class="card-content">
@@ -520,15 +615,11 @@
 										</div>
 										</div>
 										</div>
-										</div></div></div></div>
+										</div>
 										
-							<div class="card-content"><!-- </div>
-								</div>
-							</div>
-				</div>
-			</div> -->
-		
-	
+						
+						
+						
 					<div class="card col-md-12">
 						<!-- Advanced Tables -->
 						
@@ -659,14 +750,11 @@
 		<!-- /. ROW  -->
 
 
-
-
- <div id="page-inner"> 
-               
+            <!--    
             <div class="row">
                 <div class="col-md-12">
                 <div class="col-md-4">
-                    <!-- Advanced Tables -->
+                    Advanced Tables
                     <div class="card">
                         <div class="card-action">
                              Advanced Tables
@@ -725,9 +813,9 @@
                             </div>
                         </div>
                     </div>
-                    <!--End Advanced Tables -->
+                    End Advanced Tables
                 </div>
-            </div>
+            </div> -->
                                     
 
 
