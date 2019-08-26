@@ -9,6 +9,6 @@
 <body>
 
  ${user_name} 가입을 환영합니다
-  ${userlist}
+ 
 </body>
 </html>

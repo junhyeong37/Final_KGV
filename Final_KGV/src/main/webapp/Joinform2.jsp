@@ -338,7 +338,7 @@
 			 <div class="card">
     <div class="card-content">
     	<form method="post" action="UserInsertData.do" name="form"
-			onsubmit="return checkValue()" class="col s12" method="POST">
+			onsubmit="return checkValue()" class="col s12">
       <div class="row">
         <div class="input-field col s6">
           <input id="user_id" name="user_id" type="text" class="validate">
@@ -349,6 +349,7 @@
           <label for="last_name">Last Name</label>
         </div> -->
       </div>
+      
       
       <div class="row">
         <div class="input-field col s6">
@@ -376,13 +377,13 @@
       <p>
         <!-- <div class="input-field col s6"> -->
           <input name="user_sex" id="user_sex" type="radio" class="validate">
-          <label for="user_sex">남</label>
+          <label name="user_sex" for="user_sex">남</label>
           </p>
           </div>
           <div class="input-field col s3" style="width: 115px;">
           <p>
           <input name="user_sex"id="user_sex1" type="radio" class="validate">
-          <label for="user_sex1">여</label>
+          <label name="user_sex" for="user_sex1">여</label>
           </p>
           </div>
         </div>
@@ -397,7 +398,7 @@
         <h4>@</h4>
         </div>
         <div class="input-field col s2" >
-        <input type="text" name="user_email" id="str_email02"  
+        <input type="text" name="str_email02" id="str_email02"  
         disabled value="naver.com"> 
         </div>
         <div class="input-field col s2">

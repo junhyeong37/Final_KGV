@@ -2,12 +2,20 @@ package com.myfinal.kgv.User.Controller;
 
 
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -24,6 +32,12 @@ public class UserController {
 	@Autowired
 	UserService us;
 	
+	
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+	    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	    binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+	}
 	
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET) 
@@ -90,14 +104,13 @@ public class UserController {
 	
 	
 	@RequestMapping(value="UserInsertData.do", method=RequestMethod.POST) 
-	public ModelAndView UserInsertData(UserVO vo,HttpServletRequest req) {
+	public ModelAndView UserInsertData(UserVO vo,HttpServletRequest req, Locale locale) throws ParseException {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("JoinPro");
+			
 		
 		us.UserInsertData(vo);
-		
 		List<UserVO> userlist = us.UserAllData();
-		
 		mv.addObject("userlist", userlist);
 
 		return mv;

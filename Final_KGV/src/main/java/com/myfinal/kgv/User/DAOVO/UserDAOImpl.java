@@ -31,7 +31,7 @@ public class UserDAOImpl implements UserDAO{
 	@Override
 	public UserVO Loginaction(UserVO uv) {
 		// TODO Auto-generated method stub
-		return sqlSession.selectOne(namespace + " .Loginaction", uv);
+		return sqlSession.selectOne(namespace + ".Loginaction", uv);
 	}
 	
 }
