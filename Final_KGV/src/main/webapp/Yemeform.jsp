@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -393,7 +395,7 @@
                                             <div> -->
                                             <div class="date-picker" align="center">
                                             <input class="date-picker" type="text" style="text-align: center;background-color: orange;" value="">
-                                           <input type="text" style="text-align: center;" value="${data }"></div>
+                                           <input type="text"  value="${picker }"></div>
                                             <!-- <input class="date-picker" type="text" value="2015-12-25"/> --></td>
                         
                                         </tr>
@@ -444,6 +446,7 @@
 										</tbody>
 										
 										</table>
+										
 										<table class="table table-striped table-bordered table-hover">
 										<thead>
 										<tr>

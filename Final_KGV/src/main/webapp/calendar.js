@@ -146,7 +146,7 @@
 
 	$.fn.datePicker = function () {
 		var _this = this;
-		var picker = $('<div style="margin-left:210px;"></div>')
+		var picker = $('<div></div>')
 			.addClass('picker-container')
 			
 			.calendar({'date': strToDate(_this.val()), 'picker': true});

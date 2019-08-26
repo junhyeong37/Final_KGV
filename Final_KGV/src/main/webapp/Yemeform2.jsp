@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -23,37 +25,11 @@
 	rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
 
-<!-- ë¬ë ¥ë¶ë¶ -->
-<style type="text/css">
-.wrap { width: 500px; margin: 0 auto; } .btn-holder { text-align: center; margin: 10px 0 10px 0; } #calendar table { border-collapse: collapse; text-align: center; } #calendar table thead td { height: 30px; font-weight: bold; } #calendar table td { border: solid 1px #000; } #calendar table td.date-cell { height: 50px; } #calendar table td.sun { color: red; } #calendar table td.sat { color: blue; } #calendar table td.not-this-month { background: #ddd; color: #999; }
-</style>
-
-<script type="text/javascript">
-var calendar = new controller(); calendar.init(); 
-function controller(target) { var that = this; var m_oMonth = new Date(); m_oMonth.setDate(1); this.init = function()
-{ that.renderCalendar(); that.initEvent(); } /* 달력 UI 생성 */ 
-this.renderCalendar = function() { var arrTable = []; arrTable.push('<table><colgroup>');
-for(var i=0; i<7; i++) { arrTable.push('<col width="100">'); } arrTable.push('</colgroup><thead><tr>'); 
-var arrWeek = "일월화수목금토".split(""); for(var i=0, len=arrWeek.length; i<len; i++) 
-{ var sClass = ''; sClass += i % 7 == 0 ? 'sun' : ''; sClass += i % 7 == 6 ? 'sat' : ''; 
-arrTable.push('<td class="'+sClass+'">' + arrWeek[i] + '</td>'); } arrTable.push('</tr></thead>'); arrTable.push('<tbody>'); 
-var oStartDt = new Date(m_oMonth.getTime()); oStartDt.setDate(oStartDt.getDate() - oStartDt.getDay()); 
-for(var i=0; i<100; i++) { if(i % 7 == 0) { arrTable.push('<tr>'); } var sClass = 'date-cell ' sClass += m_oMonth.getMonth() 
-	!= oStartDt.getMonth() ? 'not-this-month ' : ''; sClass += i % 7 == 0 ? 'sun' : ''; sClass += i % 7 == 6 ? 'sat' : ''; 
-	arrTable.push('<td class="'+sClass+'">' + oStartDt.getDate() + '</td>'); oStartDt.setDate(oStartDt.getDate() + 1); if(i % 7 == 6) { 
-		arrTable.push('</tr>'); if(m_oMonth.getMonth() != oStartDt.getMonth()) { break; } } } 
-		arrTable.push('</tbody></table>'); $('#calendar').html(arrTable.join("")); that.changeMonth(); }
-this.initEvent = function() { $('#btnPrev').click(that.onPrevCalendar); $('#btnNext').click(that.onNextCalendar); } 
-this.onPrevCalendar = function() { m_oMonth.setMonth(m_oMonth.getMonth() - 1); that.renderCalendar(); } /* 다음 달력 */ 
-this.onNextCalendar = function() { m_oMonth.setMonth(m_oMonth.getMonth() + 1); that.renderCalendar(); } /* 달력 이동되면 상단에 현재 년 월 다시 표시 */
-this.changeMonth = function() { $('#currentDate').text(that.getYearMonth(m_oMonth).substr(0,9)); } /* 날짜 객체를 년 월 문자 형식으로 변환 */ 
-this.getYearMonth = function(oDate) { return oDate.getFullYear() + '년 ' + (oDate.getMonth() + 1) + '월'; } }
-
-
-</script>
+<!-- 달력부분 -->
 <link rel="stylesheet" href="style.css" />
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript" src="calendar.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="calendar.js"></script>
 </head>
 <body>
 	<div id="wrapper">
@@ -290,475 +266,491 @@ this.getYearMonth = function(oDate) { return oDate.getFullYear() + '년 ' + (oDa
 			<div id="page-inner">
 
 				<div class="row">
-					<div class="col-md-12">
+					<div class="card col-md-12">
 						<!-- Advanced Tables -->
-						<div class="card">
-						
-							<div class="card-content">
-								<!--   <div class="table-responsive"> -->
-								<table class="table table-striped table-bordered table-hover">
-									<thead>
-										<tr>
-											<th colspan="2"><h1 style="background-color: gray;"
-													align="center">Movie</h1></th>
-											<th><h1 style="background-color: gray;" align="center">MovieStore</h1></th>
-											<th><h1 style="background-color: gray;" align="center">schedule</h1></th>
+						<div class="col-md-2">
+							<div class="card">
 
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td style="width: 37.979166px;"></td>
-                                            <td>title</td>
-                                            <td style="padding-top: 2px;"><div id="dataTables-example_filter" class="dataTables_filter">
+								<div class="card-content">
+									<!--   <div class="table-responsive"> -->
+									<table class="table table-striped table-bordered table-hover">
+										<thead>
+											<tr>
+												<th colspan="2"><h3 style="background-color: gray;"
+														align="center">Movie</h3></th>
+												<!-- <th><h1 style="background-color: gray;" align="center">MovieStore</h1></th>
+											<th><h1 style="background-color: gray;" align="center">schedule</h1></th> -->
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<!-- <td style="width: 37.979166px;"></td> -->
+												<td></td>
+												<td>title</td>
+
+											<!--   <td style="padding-top: 2px;"><div id="dataTables-example_filter" class="dataTables_filter">
                                             <label style="margin-bottom: 0px;">
                                             
                                             <input type="search" placeholder="Search" style="padding-top: 0px; padding-bottom: 0px;border-bottom-width: 0px;margin-bottom: 0px;" class="form-control input-sm" aria-controls="dataTables-example"></label>
                                             </div></td>
-                                            <td  rowspan="6" a>
-                                            
-                                            <div class='wrap'> <div class='btn-holder'> <button id='btnPrev'><</button> <span id='currentDate'></span> <button id='btnNext'>></button> </div> <div id="calendar"></div> </div>
-
-                                            
+                                            <td  rowspan="8"> -->
+												<%-- 
+                                            <div class="date-picker" align="center">
+                                            <input class="date-picker" type="text" style="text-align: center;background-color: orange;" value="">
+                                           <input type="text" style="text-align: center;" value="${data }"></div>
                                             <!-- <input class="date-picker" type="text" value="2015-12-25"/> --></td>
-                        
-                                        </tr>
+                         --%>
+												</tr>
 										<tr>
-											<td  style="width: 37.979166px;"><img alt="" src="images/12.png"></td>
+											<td><img alt="" src="images/12.png"></td>
 											<td>Trident</td>
-											<td>Internet Explorer 5.0</td>
+											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
-											<td  style="width: 37.979166px;"><img alt="" src="images/12.png"></td>
+											<td><img alt="" src="images/12.png"></td>
 											<td>Trident</td>
-											<td>Internet Explorer 5.0</td>
+											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
-											<td  style="width: 37.979166px;"><img alt="" src="images/12.png"></td>
+											<td><img alt="" src="images/12.png"></td>
 											<td>Trident</td>
-											<td>Internet Explorer 5.0</td>
+											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
-											<td  style="width: 37.979166px;"><img alt="" src="images/12.png"></td>
+											<td><img alt="" src="images/12.png"></td>
 											<td>Trident</td>
-											<td>Internet Explorer 5.0</td>
+											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
-											<td  style="width: 37.979166px;"><img alt="" src="images/12.png"></td>
+											<td><img alt="" src="images/12.png"></td>
 											<td>Trident</td>
-											<td>Internet Explorer 5.0</td>
+											<!-- <td>Internet Explorer 5.0</td> -->
+											
+										</tr>
+										<tr>
+											<td><img alt="" src="images/12.png"></td>
+											<td>Trident</td>
+											<!-- <td>Internet Explorer 5.0</td> -->
+											
+										</tr>
+										<tr>
+											<td><img alt="" src="images/12.png"></td>
+											<td>Trident</td>
+											<!-- <td>Internet Explorer 5.0</td> -->
 											
 											
 										</tr>
 										
+										</tbody>
 										
-										<!--  <tr class="odd gradeA">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 5.5</td>
-                                            <td>Win 95+</td>
-                                            <td class="center">5.5</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="even gradeA">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 6</td>
-                                            <td>Win 98+</td>
-                                            <td class="center">6</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="odd gradeA">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 7</td>
-                                            <td>Win XP SP2+</td>
-                                            <td class="center">7</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="even gradeA">
-                                            <td>Trident</td>
-                                            <td>AOL browser (AOL desktop)</td>
-                                            <td>Win XP</td>
-                                            <td class="center">6</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Firefox 1.0</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                            <td class="center">1.7</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Firefox 1.5</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                            <td class="center">1.8</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Firefox 2.0</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                            <td class="center">1.8</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Firefox 3.0</td>
-                                            <td>Win 2k+ / OSX.3+</td>
-                                            <td class="center">1.9</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Camino 1.0</td>
-                                            <td>OSX.2+</td>
-                                            <td class="center">1.8</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Camino 1.5</td>
-                                            <td>OSX.3+</td>
-                                            <td class="center">1.8</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Netscape 7.2</td>
-                                            <td>Win 95+ / Mac OS 8.6-9.2</td>
-                                            <td class="center">1.7</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Netscape Browser 8</td>
-                                            <td>Win 98SE+</td>
-                                            <td class="center">1.7</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Netscape Navigator 9</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                            <td class="center">1.8</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Mozilla 1.0</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td class="center">1</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Mozilla 1.1</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td class="center">1.1</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Mozilla 1.2</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td class="center">1.2</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Mozilla 1.3</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td class="center">1.3</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Mozilla 1.4</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td class="center">1.4</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Mozilla 1.5</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td class="center">1.5</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Mozilla 1.6</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td class="center">1.6</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Mozilla 1.7</td>
-                                            <td>Win 98+ / OSX.1+</td>
-                                            <td class="center">1.7</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Mozilla 1.8</td>
-                                            <td>Win 98+ / OSX.1+</td>
-                                            <td class="center">1.8</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Seamonkey 1.1</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                            <td class="center">1.8</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Epiphany 2.20</td>
-                                            <td>Gnome</td>
-                                            <td class="center">1.8</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Webkit</td>
-                                            <td>Safari 1.2</td>
-                                            <td>OSX.3</td>
-                                            <td class="center">125.5</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Webkit</td>
-                                            <td>Safari 1.3</td>
-                                            <td>OSX.3</td>
-                                            <td class="center">312.8</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Webkit</td>
-                                            <td>Safari 2.0</td>
-                                            <td>OSX.4+</td>
-                                            <td class="center">419.3</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Webkit</td>
-                                            <td>Safari 3.0</td>
-                                            <td>OSX.4+</td>
-                                            <td class="center">522.1</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Webkit</td>
-                                            <td>OmniWeb 5.5</td>
-                                            <td>OSX.4+</td>
-                                            <td class="center">420</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Webkit</td>
-                                            <td>iPod Touch / iPhone</td>
-                                            <td>iPod</td>
-                                            <td class="center">420.1</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Webkit</td>
-                                            <td>S60</td>
-                                            <td>S60</td>
-                                            <td class="center">413</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Opera 7.0</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td class="center">-</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Opera 7.5</td>
-                                            <td>Win 95+ / OSX.2+</td>
-                                            <td class="center">-</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Opera 8.0</td>
-                                            <td>Win 95+ / OSX.2+</td>
-                                            <td class="center">-</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Opera 8.5</td>
-                                            <td>Win 95+ / OSX.2+</td>
-                                            <td class="center">-</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Opera 9.0</td>
-                                            <td>Win 95+ / OSX.3+</td>
-                                            <td class="center">-</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Opera 9.2</td>
-                                            <td>Win 88+ / OSX.3+</td>
-                                            <td class="center">-</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Opera 9.5</td>
-                                            <td>Win 88+ / OSX.3+</td>
-                                            <td class="center">-</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Opera for Wii</td>
-                                            <td>Wii</td>
-                                            <td class="center">-</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Nokia N800</td>
-                                            <td>N800</td>
-                                            <td class="center">-</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Nintendo DS browser</td>
-                                            <td>Nintendo DS</td>
-                                            <td class="center">8.5</td>
-                                            <td class="center">C/A<sup>1</sup>
-                                            </td>
-                                        </tr>
-                                        <tr class="gradeC">
-                                            <td>KHTML</td>
-                                            <td>Konqureror 3.1</td>
-                                            <td>KDE 3.1</td>
-                                            <td class="center">3.1</td>
-                                            <td class="center">C</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>KHTML</td>
-                                            <td>Konqureror 3.3</td>
-                                            <td>KDE 3.3</td>
-                                            <td class="center">3.3</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>KHTML</td>
-                                            <td>Konqureror 3.5</td>
-                                            <td>KDE 3.5</td>
-                                            <td class="center">3.5</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeX">
-                                            <td>Tasman</td>
-                                            <td>Internet Explorer 4.5</td>
-                                            <td>Mac OS 8-9</td>
-                                            <td class="center">-</td>
-                                            <td class="center">X</td>
-                                        </tr>
-                                        <tr class="gradeC">
-                                            <td>Tasman</td>
-                                            <td>Internet Explorer 5.1</td>
-                                            <td>Mac OS 7.6-9</td>
-                                            <td class="center">1</td>
-                                            <td class="center">C</td>
-                                        </tr>
-                                        <tr class="gradeC">
-                                            <td>Tasman</td>
-                                            <td>Internet Explorer 5.2</td>
-                                            <td>Mac OS 8-X</td>
-                                            <td class="center">1</td>
-                                            <td class="center">C</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Misc</td>
-                                            <td>NetFront 3.1</td>
-                                            <td>Embedded devices</td>
-                                            <td class="center">-</td>
-                                            <td class="center">C</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Misc</td>
-                                            <td>NetFront 3.4</td>
-                                            <td>Embedded devices</td>
-                                            <td class="center">-</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        <tr class="gradeX">
-                                            <td>Misc</td>
-                                            <td>Dillo 0.8</td>
-                                            <td>Embedded devices</td>
-                                            <td class="center">-</td>
-                                            <td class="center">X</td>
-                                        </tr>
-                                        <tr class="gradeX">
-                                            <td>Misc</td>
-                                            <td>Links</td>
-                                            <td>Text only</td>
-                                            <td class="center">-</td>
-                                            <td class="center">X</td>
-                                        </tr>
-                                        <tr class="gradeX">
-                                            <td>Misc</td>
-                                            <td>Lynx</td>
-                                            <td>Text only</td>
-                                            <td class="center">-</td>
-                                            <td class="center">X</td>
-                                        </tr>
-                                        <tr class="gradeC">
-                                            <td>Misc</td>
-                                            <td>IE Mobile</td>
-                                            <td>Windows Mobile 6</td>
-                                            <td class="center">-</td>
-                                            <td class="center">C</td>
-                                        </tr>
-                                        <tr class="gradeC">
-                                            <td>Misc</td>
-                                            <td>PSP browser</td>
-                                            <td>PSP</td>
-                                            <td class="center">-</td>
-                                            <td class="center">C</td>
-                                        </tr>
-                                        <tr class="gradeU">
-                                            <td>Other browsers</td>
-                                            <td>All others</td>
-                                            <td>-</td>
-                                            <td class="center">-</td>
-                                            <td class="center">U</td> -->
-										</tr>
-									</tbody>
-								</table>
+										</table>
+										
+										
+										
+										
+								
+								
 							</div>
 
 						</div>
 					</div>
 					<!--End Advanced Tables -->
+<!-- <div class="col-md-4">
+							<div class="card">
+<div class="card-content">
+<div class="table-responsive">
+						<table class="table table-striped table-bordered table-hover" id="dataTables-example" >
+						 <table class="table table-striped table-bordered table-hover"> 
+					   
+									<thead>
+										<tr>
+											
+											 <th>MovieStore</th>
+										
+										</tr>
+									</thead>
+									<tbody>
+									
+                                            <tr>
+										<tr class="odd gradeX"><td>확인</td></tr>
+										<tr class="even gradeC"><td>Internet Explorer 5.0</td></tr>
+										<tr class="odd gradeA"><td>Internet Explorer 5.0</td></tr>
+										 <tr class="even gradeA"><td>Internet Explorer 5.0</td></tr>
+										 <tr class="odd gradeA"><td>Internet Explorer 5.0</td></tr>
+										 <tr class="even gradeA"><td>Internet Explorer 5.0</td></tr>
+										<tr class="gradeA"><td>Internet Explorer 5.0</td></tr> -->
+										
+										
+										
+										
+										
+										
+										
 
+                <div class="col-md-4">
+                   
+                    <div class="card">
+                        <div class="card-action">
+                         
+                        </div>
+                        <div class="card-content">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                
+                                    <thead>
+                                        <tr>
+                                       <th>MovieStore</th>
+                                       <th></th>
+                                   
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="odd gradeX">
+                                            <td>Trident</td>
+                                            <td>Internet Explorer 4.0</td>
+                                       
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td>Trident</td>
+                                            <td>Internet Explorer 5.0</td>
+                                       
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td>Trident</td>
+                                            <td>Internet Explorer 5.5</td>
+                                         
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td>Trident</td>
+                                            <td>Internet Explorer 6</td>
+                                      
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td>Trident</td>
+                                            <td>Internet Explorer 7</td>
+                                         
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td>Trident</td>
+                                            <td>AOL browser (AOL desktop)</td>
+                                   
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>하이</td>
+                                            <td>안녕</td>
+                                
+                                        </tr>
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+              
+            
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										<!-- </tbody>
+										</table>
+										</div>
+										</div> -->
+										
+							<div class="card-content"><!-- </div>
+								</div>
+							</div>
+						</div> -->
+<div class="col-md-6">
+							<div class="card">
+<div class="card-content">
+						<table class="table table-striped table-bordered table-hover">
+									<thead>
+										<tr>
+											
+											 <th><h3 style="background-color: gray;" align="center">schedule</h3></th>
+											
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+										  <td >
+												
+                                            <div class="date-picker" align="center">
+                                            <input class="date-picker" type="text" style="text-align: center;background-color: orange;" value="">
+                                           <input type="text" style="text-align: center;" value="${day }"></div>
+                                            <!-- <input class="date-picker" type="text" value="2015-12-25"/> --></td>
+										</tr>
+										</tbody>
+										</table>
+										</div>
+										</div>
+										</div>
+										</div></div></div></div>
+										
+							<div class="card-content"><!-- </div>
+								</div>
+							</div>
 				</div>
-			</div>
-		</div>
+			</div> -->
+		
+	
+					<div class="card col-md-12">
+						<!-- Advanced Tables -->
+						
+					
+												
+												<div class="col-md-6">
+							<div class="card">
+
+								<div class="card-content">
+								<table class="table table-striped table-bordered table-hover">
+								<!-- <table class="table table-striped table-bordered table-hover" id="dataTables-example"> -->
+								<thead>
+											<tr>
+												<th colspan="6"><h3 style="background-color: gray;"
+														align="center">Time</h3></th>
+												<!-- <th><h1 style="background-color: gray;" align="center">MovieStore</h1></th>
+											<th><h1 style="background-color: gray;" align="center">schedule</h1></th> -->
+											</tr>
+										</thead>
+										<tbody>
+										<tr>
+										<td colspan="6">Cinema</td>
+										</tr>
+										<tr>
+										<td colspan="6">Cinema No</td>
+										</tr>
+										
+										
+										<!-- <th>
+										<tr>No</tr></th> -->
+										
+										<tr>
+										<th>No</th>
+										<th><div style="text-align: center;">
+														<input type="button" value="12:00">
+													</div></th>
+										<th><div style="text-align: center;">
+														<input type="button" value="14:00">
+													</div></th>
+										<th><div style="text-align: center;">
+														<input type="button" value="15:30">
+													</div></th>
+										<th><div style="text-align: center;">
+														<input type="button" value="16:50">
+													</div></th>
+										<th><div style="text-align: center;">
+														<input type="button" value="19:00">
+													</div></th>
+													
+										</tr>
+										</tbody>
+								</table>
+								</div>
+								</div>
+								</div>
+								
+									<div class="col-md-6">
+							<div class="card">
+
+								<div class="card-content">
+								<table class="table table-striped table-bordered table-hover">
+										<thead>
+											<tr>
+												<th colspan="6"><h3 style="background-color: gray;"
+														align="center">Select</h3></th>
+												<!-- <th><h1 style="background-color: gray;" align="center">MovieStore</h1></th>
+											<th><h1 style="background-color: gray;" align="center">schedule</h1></th> -->
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th>성인</th>
+										<th ><div style="text-align: center;">
+														<input type="button" value="0">
+													</div></th>
+										<th><div style="text-align: center;">
+														<input type="button" value="1">
+													</div></th>
+										<th><div style="text-align: center;">
+														<input type="button" value="2">
+													</div></th>
+										<th><div style="text-align: center;">
+														<input type="button" value="3">
+													</div></th>
+										<th><div style="text-align: center;">
+														<input type="button" value="4">
+													</div></th>
+												</tr>
+												<tr>
+												<th>학생</th>
+										<th ><div style="text-align: center;">
+														<input type="button" value="0">
+													</div></th>
+										<th><div style="text-align: center;">
+														<input type="button" value="1">
+													</div></th>
+										<th><div style="text-align: center;">
+														<input type="button" value="2">
+													</div></th>
+										<th><div style="text-align: center;">
+														<input type="button" value="3">
+													</div></th>
+										<th><div style="text-align: center;">
+														<input type="button" value="4">
+													</div></th>
+												</tr>
+												<tr>
+												<th colspan="6" ><div
+														style="text-align: center;">
+														<input type="submit" value="submit">
+													</div></th>
+											
+												</tr>
+												</tbody>
+												</table>
+												</div>
+												</div>
+												</div>
+												
+												
+												
+												</div>
+												</div></div>
+											
+											
+											
+												
 		<!-- /. ROW  -->
+
+
+
+
+ <div id="page-inner"> 
+               
+            <div class="row">
+                <div class="col-md-12">
+                <div class="col-md-4">
+                    <!-- Advanced Tables -->
+                    <div class="card">
+                        <div class="card-action">
+                             Advanced Tables
+                        </div>
+                        <div class="card-content">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                
+                                    <thead>
+                                        <tr>
+                                       <th>MovieStore</th>
+                                       <th></th>
+                                   
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="odd gradeX">
+                                            <td>Trident</td>
+                                            <td>Internet Explorer 4.0</td>
+                                       
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td>Trident</td>
+                                            <td>Internet Explorer 5.0</td>
+                                       
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td>Trident</td>
+                                            <td>Internet Explorer 5.5</td>
+                                         
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td>Trident</td>
+                                            <td>Internet Explorer 6</td>
+                                      
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td>Trident</td>
+                                            <td>Internet Explorer 7</td>
+                                         
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td>Trident</td>
+                                            <td>AOL browser (AOL desktop)</td>
+                                   
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>하이</td>
+                                            <td>안녕</td>
+                                
+                                        </tr>
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		<footer>
 			<p>
 				Shared by <i class="fa fa-love"></i><a
-					href="https://bootstrapthemes.co">BootstrapThemes</a>
+							href="https://bootstrapthemes.co">BootstrapThemes</a>
 			</p>
 		</footer>
 	</div>
@@ -798,6 +790,7 @@ this.getYearMonth = function(oDate) { return oDate.getFullYear() + '년 ' + (oDa
 	</script>
 	<!-- Custom Js -->
 	<script src="assets/js/custom-scripts.js"></script>
+
 
 
 </body>
