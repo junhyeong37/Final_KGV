@@ -337,7 +337,7 @@
 			 <div class="col-lg-12">
 			 <div class="card">
     <div class="card-content">
-    	<form method="post" action="UserInsertData.do" name="form"
+    	<form method="get" action="UserInsertData.do" name="form"
 			onsubmit="return checkValue()" class="col s12">
       <div class="row">
         <div class="input-field col s6">

@@ -7,8 +7,9 @@
 	</select>
 	
 	<select id="UserInsertData"> <!-- resultType="user" user객체로 쿼리 실행 결과값을 받고자 할 때 -->
-	insert into users (user_no, #{user_id}, #{user_pw}, #{user_name}, #{user_address}, #{user_tel}, #{user_birth}, #{user_sex}, #{user_email}) values (2, #{user_id}, #{user_pw}, #{user_name}, #{user_address}, #{user_tel}, #{user_birth}, #{user_sex}, #{user_email})
-
+	<!-- insert into users (user_no, #{user_id}, #{user_pw}, #{user_name}, #{user_address}, #{user_tel}, #{user_birth}, #{user_sex}, #{user_email}) values (2, #{user_id}, #{user_pw}, #{user_name}, #{user_address}, #{user_tel}, #{user_birth}, #{user_sex}, #{user_email}) -->
+	insert into users (user_no, user_id, user_pw, user_name, user_address, user_level, user_tel, user_birth, user_sex, user_email) values (USERS_SQ.NEXTVAL, #{user_id}, #{user_pw}, #{user_name}, #{user_address}, 1, #{user_tel}, #{user_birth}, #{user_sex}, #{user_email})
+	
 	</select>
 	
 	<select id="Loginaction"  resultType="user">

@@ -103,7 +103,7 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping(value="UserInsertData.do", method=RequestMethod.POST) 
+	@RequestMapping(value="UserInsertData.do", method=RequestMethod.GET) 
 	public ModelAndView UserInsertData(UserVO vo,HttpServletRequest req, Locale locale) throws ParseException {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("JoinPro");
