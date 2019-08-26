@@ -244,7 +244,7 @@
 								</ul></li>
 						</ul></li>
 					<li><a href="empty.jsp" class="waves-effect waves-dark"><i
-							class="fa fa-fw fa-file"></i> Empty Page</a></li>
+							class="fa fa-fw fa-file"></i> Empty  Page</a></li>
 				</ul>
 
 			</div>
