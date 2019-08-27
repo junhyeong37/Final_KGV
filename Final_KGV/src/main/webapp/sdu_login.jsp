@@ -20,19 +20,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
 </head>
-<style tyle="text/css">
 
-
-#footer {
-
-    position:absolute;
-
-    bottom:0;
-
-    width:100%;
-}
-
-</style>
 <body>
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
@@ -53,7 +41,7 @@
 				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown3"><i class="fa fa-tasks fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
 				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown2"><i class="fa fa-bell fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li> -->
 				<!--   <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b>John Doe</b> <i class="material-icons right">arrow_drop_down</i></a></li> -->
-				  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b><!-- 로그인 닉네임 부분 --></b>  <i class="material-icons right">arrow_drop_down</i></a></li>
+				  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
         </nav>
 		<!-- Dropdown Structure -->
@@ -62,6 +50,8 @@
 </li>
 <li><a href="sdu_membership.jsp"><i class="fa fa-gear fa-fw"></i> 회원가입</a>
 </li> 
+<!-- <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 설정</a>
+</li> -->
 </ul>
 <!-- <ul id="dropdown2" class="dropdown-content w250">
   <li>
@@ -316,11 +306,11 @@
       
 		<div id="page-wrapper">
 		  
-		  <div>
+		  <div id="page-inner">
 				<div class="row">
 					<div class="col-md-3 col-sm-12 col-xs-12"></div>
 					
-					<div class="col-md-6 col-sm-12 col-xs-12" style="margin-top: 50px;">  <!-- <div class="col-xs-12"> -->
+					<div class="col-md-6 col-sm-12 col-xs-12">  <!-- <div class="col-xs-12"> -->
 						<div class="card">
 							<div class="card-action">로그인</div>
 							<div class="card-content">
@@ -342,10 +332,9 @@
 									</div>
 									<div class="row">
 										<div class="waves-effect waves-light btn">
-										<!--  <a class="waves-effect waves-light btn">button</a>  -->
-											
+											<div class="input-field col s12">
 												<input type="submit" value="로그인">
-											
+											</div>
 										</div>
 									</div>
 
@@ -357,19 +346,12 @@
 				</div>
 				
 
-				<%-- <footer>
+				<footer>
 					<div class="center">
 					<br><br><br><br><br><br><br><br><br><br><br><br><br>
 						<%@include file="sdu_footer.jsp"%>
 					</div>
-					
-					
-				</footer> --%>
-				<div id="footer"><footer><div class="center">
-					<br><br><br><br><br><br><br><br><br><br><br><br><br>
-						<%@include file="sdu_footer.jsp"%>
-					</div>
-				</footer></div>
+				</footer>
 			</div>
 			<!-- /. PAGE INNER  -->
 		  

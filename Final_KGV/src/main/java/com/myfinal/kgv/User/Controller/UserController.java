@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.myfinal.kgv.User.DAOVO.UserVO;
@@ -124,7 +125,8 @@ public class UserController {
 	@RequestMapping(value="UserLogin.do", method=RequestMethod.GET) 
 	public ModelAndView UserLogin(UserVO vo,HttpServletRequest req, Locale locale, HttpSession session) throws ParseException {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("test");
+//		mv.setViewName("test");
+		mv.setViewName("index_TEST_Sl2");
 			
 		us.UserLogin(vo);
 		
@@ -139,4 +141,24 @@ public class UserController {
 		mv.addObject("ulist", ulist);
 		return mv;
 	}
+	
+	
+	/////////////////////////// 세션값 로그인 테스트
+	@RequestMapping(value="Logo.do", method=RequestMethod.GET) 
+	public ModelAndView Logo(UserVO vo,HttpServletRequest req, Locale locale, HttpSession session) throws ParseException {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("index_TEST_Sl2");
+			
+		
+		return mv;
+	}
+	
+	@RequestMapping(value="Logout.do", method=RequestMethod.GET) 
+	public ModelAndView Logout(UserVO vo,HttpServletRequest req, Locale locale, HttpSession session) throws ParseException {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("index_TEST_Sl2");
+		session.invalidate();	
+		return mv;
+	}
+	
 }

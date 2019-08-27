@@ -16,6 +16,10 @@
 	</h1>
 	</form>
 	
+	<form action="Logo.do">
+		<input type="submit" value="Å×½ºÆ®" />
+	</form>
+	
 
 </body>
 </html>
