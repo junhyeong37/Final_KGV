@@ -8,6 +8,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Track Material Design Bootstrap Admin Template</title>
 
+<style>
+.scrolltbody{
+display: block;
+height: 450px;
+border-collapse: collapse;
+overflow: scroll;
+}
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
 <link rel="stylesheet" href="assets/materialize/css/materialize.min.css"
@@ -260,7 +280,7 @@
 
 		</nav>
 		<!-- /. NAV SIDE  -->
-		<div id="page-wrapper">
+		<div id="page-wrapper" style="background-image: url('back.jpg');">
 
 
 			<div id="page-inner">
@@ -268,82 +288,112 @@
 				<div class="row">
 					<div class="card col-md-12">
 						<!-- Advanced Tables -->
-						<div class="col-md-2">
+						<div class="col-md-3">
 							<div class="card">
 
-								<div class="card-content">
+								<div class="card-content" style="height: 540px;">
 									<!--   <div class="table-responsive"> -->
 									<table class="table table-striped table-bordered table-hover">
 										<thead>
 											<tr>
 												<th colspan="2"><h3 style="background-color: gray;"
-														align="center">Movie</h3></th>
+														align="center">상영영화</h3></th>
 												<!-- <th><h1 style="background-color: gray;" align="center">MovieStore</h1></th>
 											<th><h1 style="background-color: gray;" align="center">schedule</h1></th> -->
 											</tr>
 										</thead>
-										<tbody>
+										<tbody class="scrolltbody" style="height: 454px;" >
 											<tr>
 												<!-- <td style="width: 37.979166px;"></td> -->
-												<td></td>
-												<td>title</td>
+												<td width="15%">등급</td>
+												<td width="85%">영화제목</td>
 
-											<!--   <td style="padding-top: 2px;"><div id="dataTables-example_filter" class="dataTables_filter">
-                                            <label style="margin-bottom: 0px;">
-                                            
-                                            <input type="search" placeholder="Search" style="padding-top: 0px; padding-bottom: 0px;border-bottom-width: 0px;margin-bottom: 0px;" class="form-control input-sm" aria-controls="dataTables-example"></label>
-                                            </div></td>
-                                            <td  rowspan="8"> -->
-												<%-- 
-                                            <div class="date-picker" align="center">
-                                            <input class="date-picker" type="text" style="text-align: center;background-color: orange;" value="">
-                                           <input type="text" style="text-align: center;" value="${data }"></div>
-                                            <!-- <input class="date-picker" type="text" value="2015-12-25"/> --></td>
-                         --%>
 												</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>Trident</td>
+											<td>엑시트</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>Trident</td>
+											<td>엑시트(가치봄)</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>Trident</td>
+											<td>엑시트(엄마랑아가랑)</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>Trident</td>
+											<td>분노의 질주: 홉스&쇼</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>Trident</td>
+											<td>변신</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>Trident</td>
+											<td>봉오동 전투</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>Trident</td>
+											<td>광대들: 풍문조작단</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
+										</tr>
+										<tr>
+											<td><img alt="" src="images/12.png"></td>
+											<td>광대들: 풍문조작단 (엄마랑아가랑)</td>
+											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
+										<tr>
+											<td><img alt="" src="images/12.png"></td>
+											<td>커런트 워</td>
+											<!-- <td>Internet Explorer 5.0</td> -->
+											
+										</tr>
+										<tr>
+											<td><img alt="" src="images/12.png"></td>
+											<td>안녕, 티라노</td>
+											<!-- <td>Internet Explorer 5.0</td> -->
+											
+										</tr>
+										<tr>
+											<td><img alt="" src="images/12.png"></td>
+											<td>짱구는 못말려</td>
+											<!-- <td>Internet Explorer 5.0</td> -->
+											
+										</tr>
+										<tr>
+											<td><img alt="" src="images/12.png"></td>
+											<td>마이펫의 이중생활2</td>
+											<!-- <td>Internet Explorer 5.0</td> -->
+											
+										</tr>
+										<tr>
+											<td><img alt="" src="images/12.png"></td>
+											<td>마이펫의 이중생활2 (우리말녹음)</td>
+											<!-- <td>Internet Explorer 5.0</td> -->
+											
+										</tr>
+										<tr>
+											<td><img alt="" src="images/12.png"></td>
+											<td>애프터</td>
+											<!-- <td>Internet Explorer 5.0</td> -->
+											
+										</tr>
+										
 										
 										</tbody>
 										
@@ -401,17 +451,20 @@
 							
 							
                 
-                <div class="col-md-4">
+                <div class="col-md-5">
                  
                     <div class="card">
                         
                         <div class="card-content" style="text-align: center;">
-                            <div class="table-responsive">
+                            <div class="table-responsive" style="height: 500px;">
+                            
+                            <h3 style="background-color: gray;"	align="center">극장</h3>
+                            	
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 
                                     <thead>
                                         <tr>
-                                       <th>MovieStore</th>
+                                       <th>상영극장</th>
                                        <th></th>
                                        <th></th>
                                         </tr>
@@ -590,10 +643,10 @@
 							
 							
 							
-<div class="col-md-6">
+<div class="col-md-4">
 							<div class="card">
 <div class="card-content">
-						<table class="table table-striped table-bordered table-hover">
+						<table class="table table-striped table-bordered table-hover" style="margin-bottom: 0px;height: 500px;">
 									<thead>
 										<tr>
 											
@@ -607,7 +660,7 @@
 												
                                             <div class="date-picker" align="center">
                                             <input class="date-picker" type="text" style="text-align: center;background-color: orange;" value="">
-                                           <input type="text" style="text-align: center;" value="${day }"></div>
+                                           <input type="text" style="text-align: center;" value="${date }"></div>
                                             <!-- <input class="date-picker" type="text" value="2015-12-25"/> --></td>
 										</tr>
 										</tbody>
