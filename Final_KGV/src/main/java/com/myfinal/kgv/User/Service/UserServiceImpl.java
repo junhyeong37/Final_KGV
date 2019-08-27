@@ -38,9 +38,10 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public void UserLogin(UserVO vo) {
+	public List<UserVO> UserLogin(UserVO vo) {
 		// TODO Auto-generated method stub
-		dao.UserLogin(vo);
+		;
+		return dao.UserLogin(vo);
 	}
 
 }

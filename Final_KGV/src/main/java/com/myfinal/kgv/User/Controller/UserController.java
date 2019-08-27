@@ -11,7 +11,9 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -32,6 +34,7 @@ public class UserController {
 	
 	@Autowired
 	UserService us;
+	
 	
 	
 	@InitBinder
@@ -119,19 +122,21 @@ public class UserController {
 	
 	
 	@RequestMapping(value="UserLogin.do", method=RequestMethod.GET) 
-	public ModelAndView UserLogin(UserVO vo,HttpServletRequest req, Locale locale) throws ParseException {
+	public ModelAndView UserLogin(UserVO vo,HttpServletRequest req, Locale locale, HttpSession session) throws ParseException {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("test");
 			
 		us.UserLogin(vo);
-		List<UserVO> userlist = us.UserAllData();
-		System.out.println(userlist);
 		
+		List<UserVO> ulist = us.UserLogin(vo);
 		
-		for (UserVO userVO : userlist) {
-			System.out.println(userVO.getUser_id());
+		System.out.println("리스트 : " + ulist);
+		
+		for (UserVO userVO : ulist) {
+			System.out.println(userVO.getUser_address());
 		}
-		mv.addObject("userlist", userlist);
+		session.setAttribute("ulist", ulist);
+		mv.addObject("ulist", ulist);
 		return mv;
 	}
 }

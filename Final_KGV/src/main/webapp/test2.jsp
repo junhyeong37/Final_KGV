@@ -15,6 +15,6 @@
 		테스트 2 :${val.user_address } <br />
 		테스트 3 : ${val} 
 	</c:forEach>
-	<a href="test2.jsp">aaa</a>
+	<a href=""></a>
 </body>
 </html>

@@ -11,5 +11,5 @@ public interface UserDAO {
 	
 	public UserVO Loginaction(UserVO vo);
 
-	public void UserLogin(UserVO vo);
+	public List<UserVO> UserLogin(UserVO vo);
 }

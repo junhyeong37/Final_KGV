@@ -35,9 +35,10 @@ public class UserDAOImpl implements UserDAO{
 	}
 
 	@Override
-	public void UserLogin(UserVO vo) {
+	public List<UserVO> UserLogin(UserVO vo) {
 		// TODO Auto-generated method stub
-		sqlSession.selectOne(namespace+".UserLogin", vo);
+		
+		return sqlSession.selectList(namespace+".UserLogin", vo);
 	}
 
 	
