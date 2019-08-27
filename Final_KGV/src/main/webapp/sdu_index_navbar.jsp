@@ -62,7 +62,7 @@
 			<!-- <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 설정</a>
 </li> -->
 		</ul>
-		<!-- <ul id="dropdown2" class="dropdown-content w250"> 
+		<!-- <ul id="dropdown2" class="dropdown-content w250">   
   <li>
                                 <div>
                                     <i class="fa fa-comment fa-fw"></i> New Comment
