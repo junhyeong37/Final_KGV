@@ -69,7 +69,7 @@
                                     <span class="pull-right text-muted small">4 min</span>
                                 </div>
                             </a>
-                        </li>
+                        </li>  
                         <li class="divider"></li>
                         <li>
                                 <div>
