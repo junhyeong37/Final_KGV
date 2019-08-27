@@ -78,7 +78,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="divider"></li>
+                        <li class="divider"></li> 
                         <li>
                                 <div>
                                     <i class="fa fa-envelope fa-fw"></i> Message Sent
