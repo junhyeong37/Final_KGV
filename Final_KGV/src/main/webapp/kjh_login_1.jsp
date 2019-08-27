@@ -326,7 +326,7 @@
 						<div class="card">
 							<div class="card-action">로그인</div>
 							<div class="card-content">
-								<form class="col s12" action="LoginView.do" method="get">
+								<form class="col s12" action="sdu_login_after.jsp" method="get">
 									<div class="row">
 										<div class="input-field col s12">
 											<input id="USER_ID" type="text" class="validate"> <label
@@ -339,14 +339,14 @@
 										<div class="input-field col s12">
 											<input id="USER_PW" type="password" class="validate">
 
-											<label for="user_pw">비밀번호</label>
+											<label for="비밀번호">비밀번호</label>
 										</div>
 									</div>
 									<div class="row">
 										<div class="waves-effect waves-light btn">
 										<!--  <a class="waves-effect waves-light btn">button</a>  -->
+											
 												<input type="submit" value="로그인">
-												
 											
 										</div>
 									</div>

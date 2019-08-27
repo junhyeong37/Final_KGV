@@ -1,11 +1,56 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
+<script type="text/javascript">
+
+	function checkValue() {
+		if (!document.form.user_id.value) {
+			alert("아이디를 입력하세요.");
+			return false;
+		}
+
+		if (!document.form.user_pw.value) {
+			alert("비밀번호를 입력하세요.");
+			return false;
+		}
+
+		// 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
+		if (document.form.user_pw.value != document.form.user_pwcheck.value) {
+			alert("비밀번호를 동일하게 입력하세요.");
+			return false;
+		}
+	}
+
+	// 취소 버튼 클릭시 로그인 화면으로 이동
+	function goLoginForm() {
+		location.href = "cjw_index.jsp";
+	}
+	
+	function goPopup(){
+		// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
+	    var pop = window.open("jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+	    
+		// 모바일 웹인 경우, 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrMobileLinkUrl.do)를 호출하게 됩니다.
+	    //var pop = window.open("/popup/jusoPopup.jsp","pop","scrollbars=yes, resizable=yes"); 
+	}
+	/** API 서비스 제공항목 확대 (2017.02) **/
+	function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn
+							, detBdNmList, bdNm, bdKdcd, siNm, sggNm, emdNm, liNm, rn, udrtYn, buldMnnm, buldSlno, mtYn, lnbrMnnm, lnbrSlno, emdNo){
+		// 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
+		document.form.roadAddrPart1.value = roadAddrPart1;
+		document.form.roadAddrPart2.value = roadAddrPart2;
+		document.form.addrDetail.value = addrDetail;
+		document.form.zipNo.value = zipNo;
+	}
+</script>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KGV</title> 
+    <title>JoinForm</title>
+	
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection" />
     <!-- Bootstrap Styles-->
@@ -20,41 +65,40 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
 </head>
-
 <body>
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle waves-effect waves-dark" data-toggle="collapse" data-target=".sidebar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand waves-effect waves-dark" href="sdu_index_navbar.jsp"><i class="large material-icons">track_changes</i> <strong>KGV</strong></a>
+                <a class="navbar-brand waves-effect waves-dark" href="index.jsp"><i class="large material-icons">track_changes</i> <strong>target</strong></a>
 				
 		<div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
             </div>
 
             <ul class="nav navbar-top-links navbar-right"> 
-				<!-- <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown4"><i class="fa fa-envelope fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>				
+				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown4"><i class="fa fa-envelope fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>				
 				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown3"><i class="fa fa-tasks fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
-				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown2"><i class="fa fa-bell fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li> -->
-				<!--   <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b>John Doe</b> <i class="material-icons right">arrow_drop_down</i></a></li> -->
-				  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
+				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown2"><i class="fa fa-bell fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
+				  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b>John Doe</b> <i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
         </nav>
 		<!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-<li><a href="sdu_login.jsp"><i class="fa fa-user fa-fw"></i> 로그인</a>
+<li><a href="#"><i class="fa fa-user fa-fw"></i> My Profile</a>
 </li>
-<li><a href="sdu_membership.jsp"><i class="fa fa-gear fa-fw"></i> 회원가입</a>
+<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
 </li> 
-<!-- <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 설정</a>
-</li> -->
+<li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+</li>
 </ul>
-<!-- <ul id="dropdown2" class="dropdown-content w250">
+<ul id="dropdown2" class="dropdown-content w250">
   <li>
+                            <a href="#">
                                 <div>
                                     <i class="fa fa-comment fa-fw"></i> New Comment
                                     <span class="pull-right text-muted small">4 min</span>
@@ -63,6 +107,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
+                            <a href="#">
                                 <div>
                                     <i class="fa fa-twitter fa-fw"></i> 3 New Followers
                                     <span class="pull-right text-muted small">12 min</span>
@@ -71,6 +116,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
+                            <a href="#">
                                 <div>
                                     <i class="fa fa-envelope fa-fw"></i> Message Sent
                                     <span class="pull-right text-muted small">4 min</span>
@@ -79,6 +125,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
+                            <a href="#">
                                 <div>
                                     <i class="fa fa-tasks fa-fw"></i> New Task
                                     <span class="pull-right text-muted small">4 min</span>
@@ -87,6 +134,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
+                            <a href="#">
                                 <div>
                                     <i class="fa fa-upload fa-fw"></i> Server Rebooted
                                     <span class="pull-right text-muted small">4 min</span>
@@ -209,61 +257,31 @@
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
-</ul> -->  
+</ul>  
 	   <!--/. NAV TOP  -->
+        <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="waves-effect waves-dark" href="sdu_index_navbar.jsp"><i class="fa fa-dashboard"></i> 메인</a>
+                        <a href="index.jsp" class="waves-effect waves-dark"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
-                     
-                    
+                    <li>
+                        <a href="ui-elements.jsp" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> UI Elements</a>
+                    </li>
 					<li>
-                        <a href="sdu_reserv.jsp" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 예매</a>
+                        <a href="chart.jsp" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Charts</a>
+                    </li>
+                    <li>
+                        <a href="tab-panel.jsp" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
                     </li>
                     
                     <li>
-                        <a href="#" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> 영화<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="sdu_box_office.jsp">박스오피스 랭킹</a>
-                            </li>
-                            <li>
-                                <a href="sdu_movie_search.jsp">영화검색</a>
-                            </li>
-                            <!-- <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-
-                                </ul>
-
-                            </li> -->
-                        </ul>
+                        <a href="table.jsp" class="waves-effect waves-dark"><i class="fa fa-table"></i> Responsive Tables</a>
                     </li>
                     <li>
-                        <a href="sdu_content.jsp" class="active-menu waves-effect waves-dark"><i class="fa fa-desktop"></i> 고객센터</a>
-                    </li>
-                    
-                    <!-- <li>
-                        <a href="head_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
-                    </li>
-                    
-                    <li>
-                        <a href="head_test2.jsp" class="waves-effect waves-dark"><i class="fa fa-table"></i> Responsive Tables</a>
-                    </li>
-                    <li>
-                        <a href="head_test2.jsp" class="waves-effect waves-dark"><i class="fa fa-edit"></i> Forms </a>
+                        <a href="form.jsp" class="active-menu waves-effect waves-dark"><i class="fa fa-edit"></i> Forms </a>
                     </li>
 
 
@@ -277,7 +295,7 @@
                                 <a href="#">Second Level Link</a>
                             </li>
                             <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
+                                <a href="#" class="waves-effect waves-dark">Second Level Link<span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
                                     <li>
                                         <a href="#">Third Level Link</a>
@@ -295,39 +313,200 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="head_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> Empty Page</a>
-                    </li> -->
+                        <a href="empty.jsp" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> Empty Page</a>
+                    </li>
                 </ul>
-
+                
             </div>
 
         </nav>
         <!-- /. NAV SIDE  -->
-      
-		<div id="page-wrapper">
-		  
-		 여긱 고객센터 화면임!!여긱 고객센터 화면임!!여긱 고객센터 화면임!!여긱 고객센터 화면임!!여긱 고객센터 화면임!!여긱 고객센터 화면임!!여긱 고객센터 화면임!!여긱 고객센터 화면임!!여긱 고객센터 화면임!!여긱 고객센터 화면임!!여긱 고객센터 화면임!!
-		  
-		  
-		  <div id="page-inner">
+        
+        
+        
+        
+        
 
-				
-
-				<footer>
-					<div class="center">
-					<br><br><br><br><br><br><br><br><br><br><br><br><br>
-						<%@include file="sdu_footer.jsp"%>
-					</div>
-				</footer>
-			</div>
-			<!-- /. PAGE INNER  -->
-		  
+        
+        
+        <div id="page-wrapper" >
+		  		
+		
+            <div id="page-inner"> 
+			 <div class="row">
+			 <div class="col-lg-12">
+			 <div class="card">
+    <div class="card-content">
+    	<form method="get" action="UserInsertData.do" name="form"
+			onsubmit="return checkValue()" class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="user_id" name="user_id" type="text" class="validate">
+          <label for="user_id">I D</label>
         </div>
-        <!-- /. PAGE WRAPPER  -->
-        
-        
+        <!-- <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div> -->
+      </div>
+      
+      
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="user_pw" name="user_pw" type="password" class="validate">
+          <label for="user_pw">비밀번호</label>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="user_pwcheck" name="user_pwcheck" type="password" class="validate">
+          <label for="user_pwcheck">비밀번호 확인</label>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="user_name" name="user_name" type="text" class="validate">
+          <label for="user_name">이 름</label>
+        </div>
+      </div>
+      
+      <div class="row">
+      <div class="input-field col s3" style="width: 115px;">
+      <p>
+        <!-- <div class="input-field col s6"> -->
+          <input name="user_sex" id="user_sex" type="radio" class="validate">
+          <label name="user_sex" for="user_sex">남</label>
+          </p>
+          </div>
+          <div class="input-field col s3" style="width: 115px;">
+          <p>
+          <input name="user_sex"id="user_sex1" type="radio" class="validate">
+          <label name="user_sex" for="user_sex1">여</label>
+          </p>
+          </div>
+        </div>
+     
+      
+      <div class="row">
+        <div class="input-field col s2">
+          <input name="user_email" id="str_email01" type="text" class="validate">
+          <label for="user_email">이메일</label>
+        </div>
+        <div class="input-field col s0">
+        <h4>@</h4>
+        </div>
+        <div class="input-field col s2" >
+        <input type="text" name="str_email02" id="str_email02"  
+        disabled value="naver.com"> 
+        </div>
+        <div class="input-field col s2">
+        <select  name="selectEmail"	id="selectEmail" class="form-control">
+							<option value="1">직접입력</option>
+							<option value="naver.com" selected>naver.com</option>
+							<option value="hanmail.net">hanmail.net</option>
+							<option value="nate.com">nate.com</option>
+							<option value="gmail.com">gmail.com</option>
+							<option value="daum.net">daum.net</option>
+					</select>
+        </div>
+      </div>
+      
+				<script type="text/javascript"
+					src="http://code.jquery.com/jquery-latest.min.js"></script>
+				<script type="text/javascript">
+					
+					$('#selectEmail').change(function() {
+						$("#selectEmail option:selected").each(function() {
+							if ($(this).val() == '1') {
+								//직접입력일 경우
+								$("#str_email02").val('');
+								//값 초기화 
+								$("#str_email02").attr("disabled", false);
+								//활성화 
+							} else {
+								//직접입력이 아닐경우
+								$("#str_email02").val($(this).text());
+								//선택값 입력
+								$("#str_email02").attr("disabled", true);
+								//비활성화
+							}
+						});
+					});
+				</script>
+
+<div class="row">
+        <div class="input-field col s6">
+          <input placeholder="예)19900101" name="user_birth" id="user_birth" type="text" class="validate" maxlength="8">
+          <label for="user_birth">생년월일</label>
+        </div>
+      </div>
+
+			
+<div class="row">
+        <div class="input-field col s6">
+          <input placeholder="-를 제외하고 입력" id="user_tel" name="user_tel" type="text" class="validate" maxlength="8">
+          <label for="user_tel">핸드폰번호</label>
+        </div>
+      </div>
+			
+			
+			
+			<div class="row">
+			
+					<div class="input-field col s0" style="margin-top: 20px; margin-bottom: 0px;">우편번호</div>
+					<div class="input-field col s3">
+					    <input type="hidden" id="confmKey" name="confmKey" value=""  >
+						<input type="text" id="zipNo" name="zipNo" readonly>
+						</div>
+						<div class="input-field col s2" style="margin-top: 0px;margin-left: 0px;margin-right: 0px; float: left;">
+						<input type="button"  value="주소검색" onclick="goPopup();">
+					</div>
+					</div>
+			
+				
+				
+				<div class="row">
+					<div class="input-field col s0" style="margin-top: 20px; margin-bottom: 0px;">도로명주소</div>
+					<div class="input-field col s6">
+					<input type="text" id="roadAddrPart1" name="user_address">
+					</div>
+				</div>
+				
+				<div class="row">
+				
+					<div class="input-field col s0" style="margin-top: 20px; margin-bottom: 0px;">상세주소</div>
+						<div class="input-field col s4">
+							<input type="text" id="addrDetail"  value="" readonly name="user_address2">
+							</div>
+							<div class="input-field col s2">
+							<input type="text" id="roadAddrPart2" value="" readonly>
+						</div>
+				</div>
+ 
+      
+  <input type="submit" value="가입"/> <input type="button"
+				value="취소" onclick="goLoginForm()">
+      
+      <br><br>
+      
+      
+      
+   
+    </form>
+	<div class="clearBoth"></div>
+  </div>
     </div>
-    <!-- /. WRAPPER  -->
+ </div>	
+	 </div>		
+            
+			</div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
     <script src="assets/js/jquery-1.10.2.js"></script>

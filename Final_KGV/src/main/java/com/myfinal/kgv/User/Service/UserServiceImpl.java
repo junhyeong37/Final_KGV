@@ -1,6 +1,5 @@
 package com.myfinal.kgv.User.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +26,10 @@ public class UserServiceImpl implements UserService{
 		dao.UserInsertData(vo);
 	}
 	@Override
-	public int Loginaction(UserVO vo) {
+	public int Loginaction(UserVO uv) {
 		
 		try {
-			dao.Loginaction(vo);
+			dao.Loginaction(uv);
 			return 1;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -39,18 +38,9 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public int LoginView(UserVO vo) {
+	public void UserLogin(UserVO vo) {
 		// TODO Auto-generated method stub
-		
-		try {
-			dao.LoginView(vo);
-			System.out.println(dao.LoginView(vo) + " 하나둘하나둘");
-			return 1;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return 0;
-		}
+		dao.UserLogin(vo);
 	}
-	
-	
+
 }

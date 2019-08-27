@@ -2,13 +2,21 @@ package com.myfinal.kgv.User.Controller;
 
 
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,7 +27,6 @@ import com.myfinal.kgv.User.Service.UserService;
 
 
 
-
 @Controller
 public class UserController {
 	
@@ -27,82 +34,67 @@ public class UserController {
 	UserService us;
 	
 	
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+	    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	    binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+	}
+	
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET) 
 	public ModelAndView Main(HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("cjw_index");
-		System.out.println("dd");
 		return mv;
 	}
+	
+	
+	
+	
+	
 	
 	@RequestMapping(value = "Login.do", method = RequestMethod.GET) 
-	public ModelAndView login(HttpServletRequest req) {
+	public ModelAndView login(HttpServletRequest req, UserVO vo) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("login");
-		System.out.println("테스트");
 		
+		String user_id= vo.getUser_id();
+				
+		mv.setViewName("login11");
+		mv.addObject("user_id",user_id);
+		System.out.println("테스트");
 		
 		return mv;
 	}
 	
-	////// 디비 연결되나 USER 리스트 확인용
-	@RequestMapping(value = "test.do", method = RequestMethod.GET) 
-	public ModelAndView logintest(HttpServletRequest req) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("login");
-		System.out.println("테스트");
-		List<UserVO> list = us.UserAllData();
-		
-		for(int i=0; i<list.size(); i++){
-			System.out.println(list.get(i).getUser_id());
-		}
-		
-		return mv;
-	}
 	
-	////// 유저 로그인 확인 
-	@RequestMapping(value="LoginView.do", method=RequestMethod.GET) 
-	@ResponseBody
-	public ModelAndView LoginView(HttpServletRequest req , UserVO vo) {
-		ModelAndView mv = new ModelAndView();
-		vo = new UserVO();
-		int data =0;
-		
-		mv.setViewName("login");
-		
-		data = us.LoginView(vo);
-		
-		System.out.println(data +" : 컨트롤러");
-		
-		mv.addObject("data", data);
-		
-		return mv;
-	}
+	
+	
 	
 	
 	@RequestMapping(value="Loginaction.do", method=RequestMethod.POST) 
 	@ResponseBody
-	public ModelAndView Loginaction(HttpServletRequest req , UserVO uv) {
+	public ModelAndView Loginaction(HttpServletRequest req , UserVO vo) {
 		ModelAndView mv = new ModelAndView();
-		int data = 0;
 		
-		mv.setViewName("Login");
+		mv.setViewName("login11");
 		
-		data = us.Loginaction(uv);
-		
+		int data = us.Loginaction(vo);		
 		System.out.println(data);
-		
 		mv.addObject("data", data);
 		
 		return mv;
 	}
 	
 	
+	
+
+	
 	@RequestMapping(value="UserAllData.do", method=RequestMethod.GET) 
 	public ModelAndView UserAllData(HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("UserAllData");
+		
+		/*mv.setViewName("UserAllData");*/
+		mv.setViewName("login11");
 		
 		List<UserVO> userlist = us.UserAllData();
 		
@@ -110,19 +102,36 @@ public class UserController {
 		
 		return mv;
 	}
+	
 	
 	@RequestMapping(value="UserInsertData.do", method=RequestMethod.GET) 
-	public ModelAndView UserInsertData(UserVO vo,HttpServletRequest req) {
+	public ModelAndView UserInsertData(UserVO vo,HttpServletRequest req, Locale locale) throws ParseException {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("UserAllData");
-
+		mv.setViewName("JoinPro");
+			
+		
 		us.UserInsertData(vo);
-		
 		List<UserVO> userlist = us.UserAllData();
-		
 		mv.addObject("userlist", userlist);
-		
+
 		return mv;
 	}
 	
+	
+	@RequestMapping(value="UserLogin.do", method=RequestMethod.GET) 
+	public ModelAndView UserLogin(UserVO vo,HttpServletRequest req, Locale locale) throws ParseException {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("test");
+			
+		us.UserLogin(vo);
+		List<UserVO> userlist = us.UserAllData();
+		System.out.println(userlist);
+		
+		
+		for (UserVO userVO : userlist) {
+			System.out.println(userVO.getUser_id());
+		}
+		mv.addObject("userlist", userlist);
+		return mv;
+	}
 }

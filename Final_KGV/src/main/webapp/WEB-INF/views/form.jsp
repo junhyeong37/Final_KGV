@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"> 
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KGV</title> 
+    <title>Target Material Design Bootstrap Admin Template</title>
+	
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection" />
     <!-- Bootstrap Styles-->
@@ -20,41 +20,40 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
 </head>
-
 <body>
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle waves-effect waves-dark" data-toggle="collapse" data-target=".sidebar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand waves-effect waves-dark" href="sdu_index_navbar.jsp"><i class="large material-icons">track_changes</i> <strong>KGV</strong></a>
+                <a class="navbar-brand waves-effect waves-dark" href="index.jsp"><i class="large material-icons">track_changes</i> <strong>target</strong></a>
 				
 		<div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
             </div>
 
             <ul class="nav navbar-top-links navbar-right"> 
-				<!-- <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown4"><i class="fa fa-envelope fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>				
+				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown4"><i class="fa fa-envelope fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>				
 				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown3"><i class="fa fa-tasks fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
-				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown2"><i class="fa fa-bell fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li> -->
-				<!--   <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b>John Doe</b> <i class="material-icons right">arrow_drop_down</i></a></li> -->
-				  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
+				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown2"><i class="fa fa-bell fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
+				  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b>John Doe</b> <i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
         </nav>
 		<!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-<li><a href="sdu_login.jsp"><i class="fa fa-user fa-fw"></i> 로그인</a>
+<li><a href="#"><i class="fa fa-user fa-fw"></i> My Profile</a>
 </li>
-<li><a href="sdu_membership.jsp"><i class="fa fa-gear fa-fw"></i> 회원가입</a>
+<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
 </li> 
-<!-- <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 설정</a>
-</li> -->
+<li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+</li>
 </ul>
-<!-- <ul id="dropdown2" class="dropdown-content w250">
+<ul id="dropdown2" class="dropdown-content w250">
   <li>
+                            <a href="#">
                                 <div>
                                     <i class="fa fa-comment fa-fw"></i> New Comment
                                     <span class="pull-right text-muted small">4 min</span>
@@ -63,6 +62,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
+                            <a href="#">
                                 <div>
                                     <i class="fa fa-twitter fa-fw"></i> 3 New Followers
                                     <span class="pull-right text-muted small">12 min</span>
@@ -71,6 +71,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
+                            <a href="#">
                                 <div>
                                     <i class="fa fa-envelope fa-fw"></i> Message Sent
                                     <span class="pull-right text-muted small">4 min</span>
@@ -79,6 +80,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
+                            <a href="#">
                                 <div>
                                     <i class="fa fa-tasks fa-fw"></i> New Task
                                     <span class="pull-right text-muted small">4 min</span>
@@ -87,6 +89,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
+                            <a href="#">
                                 <div>
                                     <i class="fa fa-upload fa-fw"></i> Server Rebooted
                                     <span class="pull-right text-muted small">4 min</span>
@@ -209,61 +212,31 @@
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
-</ul> -->  
+</ul>  
 	   <!--/. NAV TOP  -->
+        <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu waves-effect waves-dark" href="sdu_index_navbar.jsp"><i class="fa fa-dashboard"></i> 메인</a>
+                        <a href="index.jsp" class="waves-effect waves-dark"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
-                     
-                    
+                    <li>
+                        <a href="ui-elements.jsp" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> UI Elements</a>
+                    </li>
 					<li>
-                        <a href="sdu_reserv.jsp" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 예매</a>
+                        <a href="chart.jsp" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Charts</a>
+                    </li>
+                    <li>
+                        <a href="tab-panel.jsp" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
                     </li>
                     
                     <li>
-                        <a href="#" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> 영화<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="sdu_box_office.jsp">박스오피스 랭킹</a>
-                            </li>
-                            <li>
-                                <a href="sdu_movie_search.jsp">영화검색</a>
-                            </li>
-                            <!-- <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-
-                                </ul>
-
-                            </li> -->
-                        </ul>
+                        <a href="table.jsp" class="waves-effect waves-dark"><i class="fa fa-table"></i> Responsive Tables</a>
                     </li>
                     <li>
-                        <a href="sdu_content.jsp" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> 고객센터</a>
-                    </li>
-                    
-                    <!-- <li>
-                        <a href="head_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
-                    </li>
-                    
-                    <li>
-                        <a href="head_test2.jsp" class="waves-effect waves-dark"><i class="fa fa-table"></i> Responsive Tables</a>
-                    </li>
-                    <li>
-                        <a href="head_test2.jsp" class="waves-effect waves-dark"><i class="fa fa-edit"></i> Forms </a>
+                        <a href="form.jsp" class="active-menu waves-effect waves-dark"><i class="fa fa-edit"></i> Forms </a>
                     </li>
 
 
@@ -277,7 +250,7 @@
                                 <a href="#">Second Level Link</a>
                             </li>
                             <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
+                                <a href="#" class="waves-effect waves-dark">Second Level Link<span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
                                     <li>
                                         <a href="#">Third Level Link</a>
@@ -295,39 +268,211 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="head_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> Empty Page</a>
-                    </li> -->
+                        <a href="empty.jsp" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> Empty Page</a>
+                    </li>
                 </ul>
 
             </div>
 
         </nav>
         <!-- /. NAV SIDE  -->
-      
-		<div id="page-wrapper">
-		  
-		  자 여기는 회원가입 페이지가 들어갈거야자 여기는 회원가입 페이지가 들어갈거야자 여기는 회원가입 페이지가 들어갈거야자 여기는 회원가입 페이지가 들어갈거야자 여기는 회원가입 페이지가 들어갈거야자 여기는 회원가입 페이지가 들어갈거야자 여기는 회원가입 페이지가 들어갈거야자 여기는 회원가입 페이지가 들어갈거야자 여기는 회원가입 페이지가 들어갈거야자 여기는 회원가입 페이지가 들어갈거야자 여기는 회원가입 페이지가 들어갈거야자 여기는 회원가입 페이지가 들어갈거야자 여기는 회원가입 페이지가 들어갈거야
-		  
-		  
-		  <div id="page-inner">
-
-				
-
-				<footer>
-					<div class="center">
-					<br><br><br><br><br><br><br><br><br><br><br><br><br>
-						<%@include file="sdu_footer.jsp"%>
-					</div>
-				</footer>
-			</div>
-			<!-- /. PAGE INNER  -->
-		  
+        <div id="page-wrapper" >
+		  <div class="header"> 
+                        <h1 class="page-header">
+                             Form Inputs Page
+                        </h1>
+						<ol class="breadcrumb">
+					  <li><a href="#">Home</a></li>
+					  <li><a href="#">Forms</a></li>
+					  <li class="active">Data</li>
+					</ol> 
+									
+		</div>
+		
+            <div id="page-inner"> 
+			 <div class="row">
+			 <div class="col-lg-12">
+			 <div class="card">
+                        <div class="card-action">
+                            Basic Form Elements
+                        </div>
+                        <div class="card-content">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
         </div>
-        <!-- /. PAGE WRAPPER  -->
-        
-        
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+          <label for="disabled">Disabled</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          This is an inline input field:
+          <div class="input-field inline">
+            <input id="email" type="email" class="validate">
+            <label for="email" data-error="wrong" data-success="right">Email</label>
+          </div>
+        </div>
+      </div>
+    </form>
+	<div class="clearBoth"></div>
+  </div>
     </div>
-    <!-- /. WRAPPER  -->
+ </div>	
+	 </div>		
+              <div class="row">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-action">
+                            Basic Form Elements
+                        </div>
+                        <div class="card-content">
+                         	<form class="col s12">
+								  <div class="row">
+									<div class="input-field col s6">
+									  <i class="material-icons prefix">account_circle</i>
+									  <input id="icon_prefix" type="text" class="validate">
+									  <label for="icon_prefix">First Name</label>
+									</div>
+									<div class="input-field col s6">
+									  <i class="material-icons prefix">phone</i>
+									  <input id="icon_telephone" type="tel" class="validate">
+									  <label for="icon_telephone">Telephone</label>
+									</div>
+								  </div>
+								</form>
+								
+								<form class="col s12">
+								  <div class="row">
+									<div class="input-field col s12">
+									  <input id="email" type="email" class="validate">
+									  <label for="email" data-error="wrong" data-success="right">Email</label>
+									</div>
+								  </div>
+								</form>
+								
+								  <form class="col s12">
+							  <div class="row">
+								<div class="input-field col s12">
+								  <textarea id="textarea1" class="materialize-textarea"></textarea>
+								  <label for="textarea1">Textarea</label>
+								</div>
+							  </div>
+							</form>
+							  </form>
+ 
+   <!-- Switch -->
+  <div class="switch">
+    <label>
+      Off
+      <input type="checkbox">
+      <span class="lever"></span>
+      On
+    </label>
+  </div>
+
+  <!-- Disabled Switch -->
+  <div class="switch">
+    <label>
+      Off
+      <input disabled type="checkbox">
+      <span class="lever"></span>
+      On
+    </label>
+  </div>
+							<div class="clearBoth"></div>
+							</div>
+							</div>
+							</div>
+							 <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-action">
+                            Basic Form Elements
+                        </div>
+                        <div class="card-content">
+						
+								  <form action="#">
+    <p>
+      <input name="group1" type="radio" id="test1" />
+      <label for="test1">Red</label>
+    </p>
+    <p>
+      <input name="group1" type="radio" id="test2" />
+      <label for="test2">Yellow</label>
+    </p>
+    <p>
+      <input class="with-gap" name="group1" type="radio" id="test3"  />
+      <label for="test3">Green</label>
+    </p>
+      <p>
+        <input name="group1" type="radio" id="test4" disabled="disabled" />
+        <label for="test4">Brown</label>
+    </p>
+  </form>
+         <form action="#">
+    <p>
+      <input type="checkbox" id="test5" />
+      <label for="test5">Red</label>
+    </p>
+    <p>
+      <input type="checkbox" id="test6" checked="checked" />
+      <label for="test6">Yellow</label>
+    </p>
+    <p>
+      <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+      <label for="filled-in-box">Filled in</label>
+    </p>
+    <p>
+      <input type="checkbox" id="indeterminate-checkbox" />
+      <label for="indeterminate-checkbox">Indeterminate Style</label>
+    </p>
+    <p>
+      <input type="checkbox" id="test7" checked="checked" disabled="disabled" />
+      <label for="test7">Green</label>
+    </p>
+      <p>
+        <input type="checkbox" id="test8" disabled="disabled" />
+        <label for="test8">Brown</label>
+    </p>
+
+        
+                                </div>
+                               
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div> 
+                <!-- /.col-lg-12 --> 
+			<footer><p>Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
+</p></footer>
+			</div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
     <script src="assets/js/jquery-1.10.2.js"></script>

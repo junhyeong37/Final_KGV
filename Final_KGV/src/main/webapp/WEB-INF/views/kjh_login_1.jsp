@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KGV 예매 홈</title> 
+    <title>KGV</title> 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection" />
     <!-- Bootstrap Styles-->
@@ -20,7 +20,19 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
 </head>
+<style tyle="text/css">
 
+
+#footer {
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+}
+
+</style>
 <body>
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
@@ -216,14 +228,12 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="waves-effect waves-dark" href="sdu_index_navbar.jsp"><i class="fa fa-dashboard"></i> 메인</a>
+                        <a class="active-menu waves-effect waves-dark" href="sdu_index_navbar.jsp"><i class="fa fa-dashboard"></i> 메인</a>
                     </li>
-                    <!-- <li>
-                        <a href="sdu_movie.jsp" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> 영화</a>
-                    </li> -->
+                     
                     
 					<li>
-                        <a href="sdu_reserv.jsp" class="active-menu waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 예매</a>
+                        <a href="sdu_reserv.jsp" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 예매</a>
                     </li>
                     
                     <li>
@@ -308,19 +318,60 @@
       
 		<div id="page-wrapper">
 		  
-		  여기는 예매화면여기는 예매화면여기는 예매화면여기는 예매화면여기는 예매화면여기는 예매화면여기는 예매화면여기는 예매화면여기는 예매화면여기는 예매화면여기는 예매화면여기는 예매화면여기는 예매화면
-		  
-		  
-		  <div id="page-inner">
+		  <div>
+				<div class="row">
+					<div class="col-md-3 col-sm-12 col-xs-12"></div>
+					
+					<div class="col-md-6 col-sm-12 col-xs-12" style="margin-top: 50px;">  <!-- <div class="col-xs-12"> -->
+						<div class="card">
+							<div class="card-action">로그인</div>
+							<div class="card-content">
+								<form class="col s12" action="sdu_login_after.jsp" method="get">
+									<div class="row">
+										<div class="input-field col s12">
+											<input id="USER_ID" type="text" class="validate"> <label
+												for="아이디">아이디</label>
+										</div>
 
+									</div>
+
+									<div class="row">
+										<div class="input-field col s12">
+											<input id="USER_PW" type="password" class="validate">
+
+											<label for="비밀번호">비밀번호</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="waves-effect waves-light btn">
+										<!--  <a class="waves-effect waves-light btn">button</a>  -->
+											
+												<input type="submit" value="로그인">
+											
+										</div>
+									</div>
+
+								</form>
+								<div class="clearBoth"></div>
+							</div>
+						</div>
+					</div>
+				</div>
 				
 
-				<footer>
+				<%-- <footer>
 					<div class="center">
 					<br><br><br><br><br><br><br><br><br><br><br><br><br>
 						<%@include file="sdu_footer.jsp"%>
 					</div>
-				</footer>
+					
+					
+				</footer> --%>
+				<div id="footer"><footer><div class="center">
+					<br><br><br><br><br><br><br><br><br><br><br><br><br>
+						<%@include file="sdu_footer.jsp"%>
+					</div>
+				</footer></div>
 			</div>
 			<!-- /. PAGE INNER  -->
 		  

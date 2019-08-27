@@ -1,6 +1,6 @@
 package com.myfinal.kgv.User.DAOVO;
 
-import java.util.Date;
+
 
 public class UserVO {
 
@@ -10,7 +10,7 @@ public class UserVO {
 	private String user_name;
 	private String user_address;
 	private String user_tel;
-	private Date user_birth;
+	private String user_birth;
 	private String user_level;
 	private String user_sex;
 	private String user_email;
@@ -18,19 +18,10 @@ public class UserVO {
 	public UserVO() {
 		super();
 	}
-	
-	
-
-	public UserVO(String user_id, String user_pw) {
-		super();
-		this.user_id = user_id;
-		this.user_pw = user_pw;
-	}
-
 
 
 	public UserVO(int user_no, String user_id, String user_pw, String user_name, String user_address, String user_tel,
-			Date user_birth, String user_level, String user_sex, String user_email) {
+			String user_birth, String user_level, String user_sex, String user_email) {
 		super();
 		this.user_no = user_no;
 		this.user_id = user_id;
@@ -43,6 +34,23 @@ public class UserVO {
 		this.user_sex = user_sex;
 		this.user_email = user_email;
 	}
+	
+	
+	public UserVO(String user_id, String user_pw, String user_name, String user_address, String user_tel,
+			String user_birth, String user_level, String user_sex, String user_email) {
+
+		this.user_id = user_id;
+		this.user_pw = user_pw;
+		this.user_name = user_name;
+		this.user_address = user_address;
+		this.user_tel = user_tel;
+		this.user_birth = user_birth;
+		this.user_level = user_level;
+		this.user_sex = user_sex;
+		this.user_email = user_email;
+	}
+	
+	
 
 	public int getUser_no() {
 		return user_no;
@@ -92,11 +100,11 @@ public class UserVO {
 		this.user_tel = user_tel;
 	}
 
-	public Date getUser_birth() {
+	public String getUser_birth() {
 		return user_birth;
 	}
 
-	public void setUser_birth(Date user_birth) {
+	public void setUser_birth(String user_birth) {
 		this.user_birth = user_birth;
 	}
 

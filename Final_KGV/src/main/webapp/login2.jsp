@@ -2,10 +2,57 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
+<script type="text/javascript">
+	function checkValue() {
+		if (!document.form.user_id.value) {
+			alert("아이디를 입력하세요.");
+			return false;
+		}
+
+		if (!document.form.user_pw.value) {
+			alert("비밀번호를 입력하세요.");
+			return false;
+		}
+
+		// 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
+		if (document.form.user_pw.value != document.form.user_pwcheck.value) {
+			alert("비밀번호를 동일하게 입력하세요.");
+			return false;
+		}
+	}
+
+	// 취소 버튼 클릭시 로그인 화면으로 이동
+	function goLoginForm() {
+		location.href = "cjw_index.jsp";
+	}
+
+	function goPopup() {
+		// 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
+		var pop = window.open("jusoPopup.jsp", "pop",
+				"width=570,height=420, scrollbars=yes, resizable=yes");
+
+		// 모바일 웹인 경우, 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrMobileLinkUrl.do)를 호출하게 됩니다.
+		//var pop = window.open("/popup/jusoPopup.jsp","pop","scrollbars=yes, resizable=yes"); 
+	}
+	/** API 서비스 제공항목 확대 (2017.02) **/
+	function jusoCallBack(roadFullAddr, roadAddrPart1, addrDetail,
+			roadAddrPart2, engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn,
+			detBdNmList, bdNm, bdKdcd, siNm, sggNm, emdNm, liNm, rn, udrtYn,
+			buldMnnm, buldSlno, mtYn, lnbrMnnm, lnbrSlno, emdNo) {
+		// 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
+		document.form.roadAddrPart1.value = roadAddrPart1;
+		document.form.roadAddrPart2.value = roadAddrPart2;
+		document.form.addrDetail.value = addrDetail;
+		document.form.zipNo.value = zipNo;
+	}
+</script>
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Target Material Design Bootstrap Admin Template</title>
+<title>JoinForm</title>
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
 <link rel="stylesheet" href="assets/materialize/css/materialize.min.css"
@@ -23,13 +70,12 @@
 	rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
 </head>
-
 <body>
 	<div id="wrapper">
 		<nav class="navbar navbar-default top-navbar" role="navigation">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle waves-effect waves-dark"
-					data-toggle="collapse" data-target=".sidebar-collapse">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".sidebar-collapse">
 					<span class="sr-only">Toggle navigation</span> <span
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
@@ -60,47 +106,47 @@
 		</nav>
 		<!-- Dropdown Structure -->
 		<ul id="dropdown1" class="dropdown-content">
-			<li><a href="sdu_login.jsp"><i class="fa fa-user fa-fw"></i>
-					로그인</a></li>
+			<li><a href="#"><i class="fa fa-user fa-fw"></i> My Profile</a>
+			</li>
 			<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
 			<li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
 			</li>
 		</ul>
 		<ul id="dropdown2" class="dropdown-content w250">
-			<li>
-				<div>
-					<i class="fa fa-comment fa-fw"></i> New Comment <span
-						class="pull-right text-muted small">4 min</span>
-				</div> </a>
-			</li>
+			<li><a href="#">
+					<div>
+						<i class="fa fa-comment fa-fw"></i> New Comment <span
+							class="pull-right text-muted small">4 min</span>
+					</div>
+			</a></li>
 			<li class="divider"></li>
-			<li>
-				<div>
-					<i class="fa fa-twitter fa-fw"></i> 3 New Followers <span
-						class="pull-right text-muted small">12 min</span>
-				</div> </a>
-			</li>
+			<li><a href="#">
+					<div>
+						<i class="fa fa-twitter fa-fw"></i> 3 New Followers <span
+							class="pull-right text-muted small">12 min</span>
+					</div>
+			</a></li>
 			<li class="divider"></li>
-			<li>
-				<div>
-					<i class="fa fa-envelope fa-fw"></i> Message Sent <span
-						class="pull-right text-muted small">4 min</span>
-				</div> </a>
-			</li>
+			<li><a href="#">
+					<div>
+						<i class="fa fa-envelope fa-fw"></i> Message Sent <span
+							class="pull-right text-muted small">4 min</span>
+					</div>
+			</a></li>
 			<li class="divider"></li>
-			<li>
-				<div>
-					<i class="fa fa-tasks fa-fw"></i> New Task <span
-						class="pull-right text-muted small">4 min</span>
-				</div> </a>
-			</li>
+			<li><a href="#">
+					<div>
+						<i class="fa fa-tasks fa-fw"></i> New Task <span
+							class="pull-right text-muted small">4 min</span>
+					</div>
+			</a></li>
 			<li class="divider"></li>
-			<li>
-				<div>
-					<i class="fa fa-upload fa-fw"></i> Server Rebooted <span
-						class="pull-right text-muted small">4 min</span>
-				</div> </a>
-			</li>
+			<li><a href="#">
+					<div>
+						<i class="fa fa-upload fa-fw"></i> Server Rebooted <span
+							class="pull-right text-muted small">4 min</span>
+					</div>
+			</a></li>
 			<li class="divider"></li>
 			<li><a class="text-center" href="#"> <strong>See
 						All Alerts</strong> <i class="fa fa-angle-right"></i>
@@ -210,25 +256,24 @@
 			</a></li>
 		</ul>
 		<!--/. NAV TOP  -->
+		<!--/. NAV TOP  -->
 		<nav class="navbar-default navbar-side" role="navigation">
 			<div class="sidebar-collapse">
 				<ul class="nav" id="main-menu">
 
-					<li><a class="active-menu waves-effect waves-dark"
-						href="head_test.jsp"><i class="fa fa-dashboard"></i> 영화게시판</a>
-					</li>
-					<li><a href="head_test2.jsp" class="waves-effect waves-dark"><i
+					<li><a href="index.jsp" class="waves-effect waves-dark"><i
+							class="fa fa-dashboard"></i> Dashboard</a></li>
+					<li><a href="ui-elements.jsp" class="waves-effect waves-dark"><i
 							class="fa fa-desktop"></i> UI Elements</a></li>
-					<li><a href="head_test3.jsp"
-						class="active-menu waves-effect waves-dark"><i
+					<li><a href="chart.jsp" class="waves-effect waves-dark"><i
 							class="fa fa-bar-chart-o"></i> Charts</a></li>
-					<li><a href="head_test3.jsp"
-						class="active-menu waves-effect waves-dark"><i
+					<li><a href="tab-panel.jsp" class="waves-effect waves-dark"><i
 							class="fa fa-qrcode"></i> Tabs & Panels</a></li>
 
-					<li><a href="head_test2.jsp" class="waves-effect waves-dark"><i
+					<li><a href="table.jsp" class="waves-effect waves-dark"><i
 							class="fa fa-table"></i> Responsive Tables</a></li>
-					<li><a href="head_test2.jsp" class="waves-effect waves-dark"><i
+					<li><a href="form.jsp"
+						class="active-menu waves-effect waves-dark"><i
 							class="fa fa-edit"></i> Forms </a></li>
 
 
@@ -238,7 +283,9 @@
 						<ul class="nav nav-second-level">
 							<li><a href="#">Second Level Link</a></li>
 							<li><a href="#">Second Level Link</a></li>
-							<li><a href="#">Second Level Link<span class="fa arrow"></span></a>
+							<li><a href="#" class="waves-effect waves-dark">Second
+									Level Link<span class="fa arrow"></span>
+							</a>
 								<ul class="nav nav-third-level">
 									<li><a href="#">Third Level Link</a></li>
 									<li><a href="#">Third Level Link</a></li>
@@ -246,7 +293,7 @@
 
 								</ul></li>
 						</ul></li>
-					<li><a href="head_test3.jsp" class="waves-effect waves-dark"><i
+					<li><a href="empty.jsp" class="waves-effect waves-dark"><i
 							class="fa fa-fw fa-file"></i> Empty Page</a></li>
 				</ul>
 
@@ -255,36 +302,51 @@
 		</nav>
 		<!-- /. NAV SIDE  -->
 
+
+
+
+
+
+
+
 		<div id="page-wrapper">
+
+
 			<div id="page-inner">
 				<div class="row">
-					<div class="col-lg-6">
+					<div class="col-lg-12">
 						<div class="card">
-							<div class="card-action">로그인 잘 되나 테스트</div>
 							<div class="card-content">
-								<form class="col s12" action="sdu_login_after.jsp" method="get">
+								<form method="get" action="UserLogin.do" name="form"
+									onsubmit="return checkValue()" class="col s12">
 									<div class="row">
-										<div class="input-field col s12">
-											<input id="USER_ID" type="text" class="validate"> <label
-												for="아이디">아이디</label>
+										<div class="input-field col s6">
+											<input id="user_id" name="user_id" type="text"
+												class="validate"> <label for="user_id">I D</label>
 										</div>
-
+										<!-- <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div> -->
 									</div>
 
+
 									<div class="row">
-										<div class="input-field col s12">
-											<input id="USER_PW" type="password" class="validate"> 
-											
-											<label for="비밀번호">비밀번호</label>
+										<div class="input-field col s6">
+											<input id="user_pw" name="user_pw" type="password"
+												class="validate"> <label for="user_pw">비밀번호</label>
 										</div>
 									</div>
-									<div class="row">
-										<div class="waves-effect waves-light btn">
-											<div class="input-field col s12">
-												<input type="submit" value="로그인">
-											</div>
-										</div>
-									</div>
+
+									
+
+
+									<input type="submit" value="로그인" /> <input type="button"
+										value="취소" onclick="goLoginForm()"> <br>
+									<br>
+
+
+
 
 								</form>
 								<div class="clearBoth"></div>
@@ -292,127 +354,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="card">
-							<div class="card-action">Basic Form Elements</div>
-							<div class="card-content">
-								<form class="col s12">
-									<div class="row">
-										<div class="input-field col s6">
-											<i class="material-icons prefix">account_circle</i> <input
-												id="icon_prefix" type="text" class="validate"> <label
-												for="icon_prefix">First Name</label>
-										</div>
-										<div class="input-field col s6">
-											<i class="material-icons prefix">phone</i> <input
-												id="icon_telephone" type="tel" class="validate"> <label
-												for="icon_telephone">Telephone</label>
-										</div>
-									</div>
-								</form>
 
-								<form class="col s12">
-									<div class="row">
-										<div class="input-field col s12">
-											<input id="email" type="email" class="validate"> <label
-												for="email" data-error="wrong" data-success="right">Email</label>
-										</div>
-									</div>
-								</form>
-
-								<form class="col s12">
-									<div class="row">
-										<div class="input-field col s12">
-											<textarea id="textarea1" class="materialize-textarea"></textarea>
-											<label for="textarea1">Textarea</label>
-										</div>
-									</div>
-								</form>
-								</form>
-
-								<!-- Switch -->
-								<div class="switch">
-									<label> Off <input type="checkbox"> <span
-										class="lever"></span> On
-									</label>
-								</div>
-
-								<!-- Disabled Switch -->
-								<div class="switch">
-									<label> Off <input disabled type="checkbox"> <span
-										class="lever"></span> On
-									</label>
-								</div>
-								<div class="clearBoth"></div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="card">
-							<div class="card-action">Basic Form Elements</div>
-							<div class="card-content">
-
-								<form action="#">
-									<p>
-										<input name="group1" type="radio" id="test1" /> <label
-											for="test1">Red</label>
-									</p>
-									<p>
-										<input name="group1" type="radio" id="test2" /> <label
-											for="test2">Yellow</label>
-									</p>
-									<p>
-										<input class="with-gap" name="group1" type="radio" id="test3" />
-										<label for="test3">Green</label>
-									</p>
-									<p>
-										<input name="group1" type="radio" id="test4"
-											disabled="disabled" /> <label for="test4">Brown</label>
-									</p>
-								</form>
-								<form action="#">
-									<p>
-										<input type="checkbox" id="test5" /> <label for="test5">Red</label>
-									</p>
-									<p>
-										<input type="checkbox" id="test6" checked="checked" /> <label
-											for="test6">Yellow</label>
-									</p>
-									<p>
-										<input type="checkbox" class="filled-in" id="filled-in-box"
-											checked="checked" /> <label for="filled-in-box">Filled
-											in</label>
-									</p>
-									<p>
-										<input type="checkbox" id="indeterminate-checkbox" /> <label
-											for="indeterminate-checkbox">Indeterminate Style</label>
-									</p>
-									<p>
-										<input type="checkbox" id="test7" checked="checked"
-											disabled="disabled" /> <label for="test7">Green</label>
-									</p>
-									<p>
-										<input type="checkbox" id="test8" disabled="disabled" /> <label
-											for="test8">Brown</label>
-									</p>
-							</div>
-
-						</div>
-						<!-- /.row (nested) -->
-					</div>
-					<!-- /.panel-body -->
-				</div>
-				<!-- /.col-lg-12 -->
-				<footer>
-					<p>
-						Shared by <i class="fa fa-love"></i><a
-							href="https://bootstrapthemes.co">BootstrapThemes</a>
-					</p>
-				</footer>
 			</div>
-
-
+			<!-- /. PAGE INNER  -->
 		</div>
 		<!-- /. PAGE WRAPPER  -->
 	</div>

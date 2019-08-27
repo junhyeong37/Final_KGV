@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<form name="form1" action="Login.do">
+	<form name="form1" action="UserAllData.do" method="GET">
 	<h1>
 		아이디 : <input type="text" name="user_id" id="user_id"> <br>
 		비밀번호 : <input type="text" name="user_pw" id="user_pw"> <br>
@@ -16,6 +16,6 @@
 	</h1>
 	</form>
 	
-
+	${user_id }
 </body>
 </html>

@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KGV</title> 
+    <title>Target Material Design Bootstrap Admin Template</title> 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection" />
     <!-- Bootstrap Styles-->
@@ -31,29 +31,28 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand waves-effect waves-dark" href="sdu_index_navbar.jsp"><i class="large material-icons">track_changes</i> <strong>KGV</strong></a>
+                <a class="navbar-brand waves-effect waves-dark" href="head_test2.jsp"><i class="large material-icons">track_changes</i> <strong>target</strong></a>
 				
 		<div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
             </div>
 
             <ul class="nav navbar-top-links navbar-right"> 
-				<!-- <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown4"><i class="fa fa-envelope fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>				
+				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown4"><i class="fa fa-envelope fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>				
 				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown3"><i class="fa fa-tasks fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
-				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown2"><i class="fa fa-bell fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li> -->
-				<!--   <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b>John Doe</b> <i class="material-icons right">arrow_drop_down</i></a></li> -->
-				  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
+				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown2"><i class="fa fa-bell fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
+				  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b>John Doe</b> <i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
         </nav>
 		<!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-<li><a href="sdu_login.jsp"><i class="fa fa-user fa-fw"></i> 로그인</a>
+<li><a href="#"><i class="fa fa-user fa-fw"></i> My Profile</a>
 </li>
-<li><a href="sdu_membership.jsp"><i class="fa fa-gear fa-fw"></i> 회원가입</a>
+<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
 </li> 
-<!-- <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 설정</a>
-</li> -->
+<li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+</li>
 </ul>
-<!-- <ul id="dropdown2" class="dropdown-content w250">
+<ul id="dropdown2" class="dropdown-content w250">
   <li>
                                 <div>
                                     <i class="fa fa-comment fa-fw"></i> New Comment
@@ -209,54 +208,23 @@
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
-</ul> -->  
+</ul>  
 	   <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu waves-effect waves-dark" href="sdu_index_navbar.jsp"><i class="fa fa-dashboard"></i> 메인</a>
+                        <a class="active-menu waves-effect waves-dark" href="head_test.jsp"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
-                     
-                    
+                    <li>
+                        <a href="head_test2.jsp" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> UI Elements</a>
+                    </li>
 					<li>
-                        <a href="sdu_reserv.jsp" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 예매</a>
-                    </li>
-                    
-                    <li>
-                        <a href="#" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> 영화<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="sdu_box_office.jsp">박스오피스 랭킹</a>
-                            </li>
-                            <li>
-                                <a href="sdu_movie_search.jsp">영화검색</a>
-                            </li>
-                            <!-- <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-
-                                </ul>
-
-                            </li> -->
-                        </ul>
+                        <a href="head_test3.jsp" class="active-menu waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Charts</a>
                     </li>
                     <li>
-                        <a href="sdu_content.jsp" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> 고객센터</a>
-                    </li>
-                    
-                    <!-- <li>
-                        <a href="head_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
+                        <a href="head_test3.jsp" class="active-menu waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
                     </li>
                     
                     <li>
@@ -296,7 +264,7 @@
                     </li>
                     <li>
                         <a href="head_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> Empty Page</a>
-                    </li> -->
+                    </li>
                 </ul>
 
             </div>
@@ -306,59 +274,8 @@
       
 		<div id="page-wrapper">
 		  
-		  <div id="page-inner">
-				<div class="row">
-					<div class="col-md-3 col-sm-12 col-xs-12"></div>
-					
-					<div class="col-md-6 col-sm-12 col-xs-12">  <!-- <div class="col-xs-12"> -->
-						<div class="card">
-							<div class="card-action">로그인</div>
-							<div class="card-content">
-								<form class="col s12" action="sdu_login_after.jsp" method="get">
-									<div class="row">
-										<div class="input-field col s12">
-											<input id="USER_ID" type="text" class="validate"> <label
-												for="아이디">아이디</label>
-										</div>
-
-									</div>
-
-									<div class="row">
-										<div class="input-field col s12">
-											<input id="USER_PW" type="password" class="validate">
-
-											<label for="비밀번호">비밀번호</label>
-										</div>
-									</div>
-									<div class="row">
-										<div class="waves-effect waves-light btn">
-											<div class="input-field col s12">
-												<input type="submit" value="로그인">
-											</div>
-										</div>
-									</div>
-
-								</form>
-								<div class="clearBoth"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-
-				<footer>
-					<div class="center">
-					<br><br><br><br><br><br><br><br><br><br><br><br><br>
-						<%@include file="sdu_footer.jsp"%>
-					</div>
-				</footer>
-			</div>
-			<!-- /. PAGE INNER  -->
-		  
         </div>
         <!-- /. PAGE WRAPPER  -->
-        
-        
     </div>
     <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
