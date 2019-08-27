@@ -64,7 +64,7 @@
 		</ul>
 		<!-- <ul id="dropdown2" class="dropdown-content w250">   
   <li>
-                                <div>
+                                <div>  
                                     <i class="fa fa-comment fa-fw"></i> New Comment
                                     <span class="pull-right text-muted small">4 min</span>
                                 </div>
