@@ -65,8 +65,14 @@
 				var a = tag.find('a');
 				a.text(d.getDate());
 				a.data('date', dateToStr(d));
-				if (date.getMonth() != d.getMonth()) { // the bounday month
-					tag.addClass('off');
+				if (date.getDate() != d.getDate()) { // the bounday month
+				
+				
+				/*if (date.getMonth() != d.getMonth()) {*/
+					
+				tag.addClass('off');
+					
+					 
 				} else if (_this.data('date') == a.data('date')) { // the select day
 					tag.addClass('active');
 					_this.data('date', dateToStr(d));
@@ -115,6 +121,7 @@
 
 			if ($this.hasClass('off')) {
 				_this.update(strToDate(_this.data('date')));
+				
 			}
 			if (opts.picker) {  
 				_this.hide();
@@ -167,7 +174,7 @@
 
 		// click on calender, update input
 		picker.click(function () {
-			 _this.val(picker.getCurrentDate()); 
+			 _this.val(picker.getCurrentDate());
 			/* input에 date 삽입부분 */
 		});
 

@@ -11,7 +11,7 @@
 <style>
 .scrolltbody{
 display: block;
-height: 450px;
+height: 450px; width:auto;
 border-collapse: collapse;
 overflow: scroll;
 }
@@ -19,7 +19,98 @@ overflow: scroll;
 
 </style>
 
+<script type="text/javascript">
+function mclick1(){
+	
+var movie1 = document.getElementById('movie1');
+movie1.innerText="마우스이벤트1";
 
+}
+
+function mclick2(){
+	
+	var movie2 = document.getElementById('movie2');
+	movie2.innerText="마우스이벤트2";
+
+	}
+	
+function mclick3(){
+	
+	var movie3 = document.getElementById('movie3');
+	movie3.innerText="마우스이벤트3";
+
+	}
+	
+function mclick4(){
+	
+	var movie4 = document.getElementById('movie4');
+	movie4.innerText="마우스이벤트4";
+
+	}
+	
+function mclick5(){
+	
+	var movie5 = document.getElementById('movie5');
+	movie5.innerText="마우스이벤트5";
+
+	}
+	
+function mclick6(){
+	
+	var movie6 = document.getElementById('movie6');
+	movie6.innerText="마우스이벤트6";
+
+	}
+function mclick7(){
+	
+	var movie7 = document.getElementById('movie7');
+	movie7.innerText="마우스이벤트7";
+
+	}
+function mclick8(){
+	
+	var movie8 = document.getElementById('movie8');
+	movie8.innerText="마우스이벤트8";
+
+	}
+function mclick9(){
+	
+	var movie9 = document.getElementById('movie9');
+	movie9.innerText="마우스이벤트9";
+
+	}
+function mclick10(){
+	
+	var movie10 = document.getElementById('movie10');
+	movie10.innerText="마우스이벤트10";
+
+	}
+function mclick11(){
+	
+	var movie11 = document.getElementById('movie11');
+	movie11.innerText="마우스이벤트11";
+
+	}
+function mclick12(){
+	
+	var movie12 = document.getElementById('movie12');
+	movie12.innerText="마우스이벤트12";
+
+	}
+function mclick13(){
+	
+	var movie13 = document.getElementById('movie13');
+	movie13.innerText="마우스이벤트13";
+
+	}
+function mclick14(){
+	
+	var movie14 = document.getElementById('movie14');
+	movie14.innerText="마우스이벤트14";
+
+	}
+
+</script>
 
 
 
@@ -296,7 +387,7 @@ overflow: scroll;
 									<table class="table table-striped table-bordered table-hover">
 										<thead>
 											<tr>
-												<th colspan="2"><h3 style="background-color: gray;"
+												<th colspan="2"><h3 style="background-color: gray; margin-top: 0px;margin-bottom: 0px;"
 														align="center">상영영화</h3></th>
 												<!-- <th><h1 style="background-color: gray;" align="center">MovieStore</h1></th>
 											<th><h1 style="background-color: gray;" align="center">schedule</h1></th> -->
@@ -311,85 +402,85 @@ overflow: scroll;
 												</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>엑시트</td>
+											<td id="movie1" onclick="mclick1()" style="cursor:pointer">엑시트</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>엑시트(가치봄)</td>
+											<td id="movie2" onclick="mclick2()" style="cursor:pointer">엑시트(가치봄)</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>엑시트(엄마랑아가랑)</td>
+											<td id="movie3" onclick="mclick3()" style="cursor:pointer">엑시트(엄마랑아가랑)</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>분노의 질주: 홉스&쇼</td>
+											<td id="movie4" onclick="mclick4()" style="cursor:pointer">분노의 질주: 홉스&쇼</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>변신</td>
+											<td id="movie5" onclick="mclick5()" style="cursor:pointer">변신</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>봉오동 전투</td>
+											<td id="movie6" onclick="mclick6()" style="cursor:pointer">봉오동 전투</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>광대들: 풍문조작단</td>
+											<td id="movie7" onclick="mclick7()" style="cursor:pointer">광대들: 풍문조작단</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>광대들: 풍문조작단 (엄마랑아가랑)</td>
+											<td id="movie8" onclick="mclick8()" style="cursor:pointer">광대들: 풍문조작단 (엄마랑아가랑)</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>커런트 워</td>
+											<td id="movie9" onclick="mclick9()" style="cursor:pointer">커런트 워</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>안녕, 티라노</td>
+											<td id="movie10" onclick="mclick10()" style="cursor:pointer">안녕, 티라노</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>짱구는 못말려</td>
+											<td id="movie11" onclick="mclick11()" style="cursor:pointer">짱구는 못말려</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>마이펫의 이중생활2</td>
+											<td id="movie12" onclick="mclick12()" style="cursor:pointer">마이펫의 이중생활2</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>마이펫의 이중생활2 (우리말녹음)</td>
+											<td id="movie13" onclick="mclick13()" style="cursor:pointer">마이펫의 이중생활2 (우리말녹음)</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
 										<tr>
 											<td><img alt="" src="images/12.png"></td>
-											<td>애프터</td>
+											<td id="movie14" onclick="mclick14()" style="cursor:pointer">애프터</td>
 											<!-- <td>Internet Explorer 5.0</td> -->
 											
 										</tr>
@@ -473,73 +564,73 @@ overflow: scroll;
                                         <tr class="odd gradeX">
                                             <td>강동구</td>
                                             <td>가나다 CGV</td>
-                                       <th><input type="button" value="선택"></th>
+                                       <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="even gradeC">
                                             <td>동대문구</td>
                                             <td>바우 롯데시네마</td>
-                                        <th><input type="button" value="선택"></th>
+                                        <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="odd gradeA">
                                             <td>성동구</td>
                                             <td>성동 메가박스</td>
-                                          <th><input type="button" value="선택"></th>
+                                           <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="even gradeA">
                                             <td>강남구</td>
                                             <td>강남 CGV</td>
-                                       <th><input type="button" value="선택"></th>
+                                      <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="odd gradeA">
                                             <td>강남구</td>
                                             <td>압구정 CGV</td>
-                                          <th><input type="button" value="선택"></th>
+                                         <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="even gradeA">
                                             <td>서대문구</td>
                                             <td>독립문 롯데시네마</td>
-                                    <th><input type="button" value="선택"></th>
+                                    <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                        <tr class="even gradeA">
                                             <td>서대문구</td>
                                             <td>이대 CGV</td>
-                                    <th><input type="button" value="선택"></th>
+                                    <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                        
                                        <tr class="odd gradeX">
                                             <td>강동구</td>
                                             <td>가나다 CGV</td>
-                                       <th><input type="button" value="선택"></th>
+                                       <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="even gradeC">
                                             <td>동대문구</td>
                                             <td>바우 롯데시네마</td>
-                                        <th><input type="button" value="선택"></th>
+                                       <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="odd gradeA">
                                             <td>성동구</td>
                                             <td>성동 메가박스</td>
-                                          <th><input type="button" value="선택"></th>
+                                          <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="even gradeA">
                                             <td>강남구</td>
                                             <td>강남 CGV</td>
-                                       <th><input type="button" value="선택"></th>
+                                        <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="odd gradeA">
                                             <td>강남구</td>
                                             <td>압구정 CGV</td>
-                                          <th><input type="button" value="선택"></th>
+                                        <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="even gradeA">
                                             <td>서대문구</td>
                                             <td>독립문 롯데시네마</td>
-                                    <th><input type="button" value="선택"></th>
+                                     <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                        <tr class="even gradeA">
                                             <td>서대문구</td>
                                             <td>이대 CGV</td>
-                                    <th><input type="button" value="선택"></th>
+                                     <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         
                                         <!-- ----------------------------------------------------------- -->
@@ -547,75 +638,147 @@ overflow: scroll;
                                         <tr class="odd gradeX">
                                             <td>강동구</td>
                                             <td>가나다 CGV</td>
-                                       <th><input type="button" value="선택"></th>
+                                       <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="even gradeC">
                                             <td>동대문구</td>
                                             <td>바우 롯데시네마</td>
-                                        <th><input type="button" value="선택"></th>
+                                        <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="odd gradeA">
                                             <td>성동구</td>
                                             <td>성동 메가박스</td>
-                                          <th><input type="button" value="선택"></th>
+                                           <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="even gradeA">
                                             <td>강남구</td>
                                             <td>강남 CGV</td>
-                                       <th><input type="button" value="선택"></th>
+                                      <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="odd gradeA">
                                             <td>강남구</td>
                                             <td>압구정 CGV</td>
-                                          <th><input type="button" value="선택"></th>
+                                         <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="even gradeA">
                                             <td>서대문구</td>
                                             <td>독립문 롯데시네마</td>
-                                    <th><input type="button" value="선택"></th>
+                                    <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                        <tr class="even gradeA">
                                             <td>서대문구</td>
                                             <td>이대 CGV</td>
-                                    <th><input type="button" value="선택"></th>
+                                    <th><div align="center"><input type="button" value="선택"></div></th>
+                                        </tr>
+                                       
+                                       <tr class="odd gradeX">
+                                            <td>강동구</td>
+                                            <td>가나다 CGV</td>
+                                       <th><div align="center"><input type="button" value="선택"></div></th>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td>동대문구</td>
+                                            <td>바우 롯데시네마</td>
+                                       <th><div align="center"><input type="button" value="선택"></div></th>
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td>성동구</td>
+                                            <td>성동 메가박스</td>
+                                          <th><div align="center"><input type="button" value="선택"></div></th>
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td>강남구</td>
+                                            <td>강남 CGV</td>
+                                        <th><div align="center"><input type="button" value="선택"></div></th>
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td>강남구</td>
+                                            <td>압구정 CGV</td>
+                                        <th><div align="center"><input type="button" value="선택"></div></th>
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td>서대문구</td>
+                                            <td>독립문 롯데시네마</td>
+                                     <th><div align="center"><input type="button" value="선택"></div></th>
+                                        </tr>
+                                       <tr class="even gradeA">
+                                            <td>서대문구</td>
+                                            <td>이대 CGV</td>
+                                     <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         
                                         <!-- ----------------------------------------------------------- -->
                                         
-                                        <tr class="odd gradeX">
+                                       <tr class="odd gradeX">
                                             <td>강동구</td>
                                             <td>가나다 CGV</td>
-                                       <th><input type="button" value="선택"></th>
+                                       <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="even gradeC">
                                             <td>동대문구</td>
                                             <td>바우 롯데시네마</td>
-                                        <th><input type="button" value="선택"></th>
+                                        <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="odd gradeA">
                                             <td>성동구</td>
                                             <td>성동 메가박스</td>
-                                          <th><input type="button" value="선택"></th>
+                                           <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="even gradeA">
                                             <td>강남구</td>
                                             <td>강남 CGV</td>
-                                       <th><input type="button" value="선택"></th>
+                                      <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="odd gradeA">
                                             <td>강남구</td>
                                             <td>압구정 CGV</td>
-                                          <th><input type="button" value="선택"></th>
+                                         <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                         <tr class="even gradeA">
                                             <td>서대문구</td>
                                             <td>독립문 롯데시네마</td>
-                                    <th><input type="button" value="선택"></th>
+                                    <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                        <tr class="even gradeA">
                                             <td>서대문구</td>
                                             <td>이대 CGV</td>
-                                    <th><input type="button" value="선택"></th>
+                                    <th><div align="center"><input type="button" value="선택"></div></th>
+                                        </tr>
+                                       
+                                       <tr class="odd gradeX">
+                                            <td>강동구</td>
+                                            <td>가나다 CGV</td>
+                                       <th><div align="center"><input type="button" value="선택"></div></th>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td>동대문구</td>
+                                            <td>바우 롯데시네마</td>
+                                       <th><div align="center"><input type="button" value="선택"></div></th>
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td>성동구</td>
+                                            <td>성동 메가박스</td>
+                                          <th><div align="center"><input type="button" value="선택"></div></th>
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td>강남구</td>
+                                            <td>강남 CGV</td>
+                                        <th><div align="center"><input type="button" value="선택"></div></th>
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td>강남구</td>
+                                            <td>압구정 CGV</td>
+                                        <th><div align="center"><input type="button" value="선택"></div></th>
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td>서대문구</td>
+                                            <td>독립문 롯데시네마</td>
+                                     <th><div align="center"><input type="button" value="선택"></div></th>
+                                        </tr>
+                                       <tr class="even gradeA">
+                                            <td>서대문구</td>
+                                            <td>이대 CGV</td>
+                                     <th><div align="center"><input type="button" value="선택"></div></th>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -650,7 +813,7 @@ overflow: scroll;
 									<thead>
 										<tr>
 											
-											 <th><h3 style="background-color: gray;" align="center">schedule</h3></th>
+											 <th><h3 style="background-color: gray; margin-top: 0px;margin-bottom: 0px;" align="center">날짜선택</h3></th>
 											
 										</tr>
 									</thead>
@@ -660,7 +823,7 @@ overflow: scroll;
 												
                                             <div class="date-picker" align="center">
                                             <input class="date-picker" type="text" style="text-align: center;background-color: orange;" value="">
-                                           <input type="text" style="text-align: center;" value="${date }"></div>
+                                           <%-- <input type="text" style="text-align: center;" value="${date }"> --%></div>
                                             <!-- <input class="date-picker" type="text" value="2015-12-25"/> --></td>
 										</tr>
 										</tbody>
@@ -678,26 +841,26 @@ overflow: scroll;
 						
 					
 												
-												<div class="col-md-6">
+												<div class="col-md-4">
 							<div class="card">
 
 								<div class="card-content">
-								<table class="table table-striped table-bordered table-hover">
+								<table class="table table-striped table-bordered table-hover" style="margin-bottom: 0px;">
 								<!-- <table class="table table-striped table-bordered table-hover" id="dataTables-example"> -->
 								<thead>
 											<tr>
-												<th colspan="6"><h3 style="background-color: gray;"
-														align="center">Time</h3></th>
+												<th colspan="6"><h3 style="background-color: gray; margin-top: 0px;margin-bottom: 0px;"
+														align="center">상영시간표</h3></th>
 												<!-- <th><h1 style="background-color: gray;" align="center">MovieStore</h1></th>
 											<th><h1 style="background-color: gray;" align="center">schedule</h1></th> -->
 											</tr>
 										</thead>
 										<tbody>
 										<tr>
-										<td colspan="6">Cinema</td>
+										<td colspan="6">영화관</td>
 										</tr>
 										<tr>
-										<td colspan="6">Cinema No</td>
+										<td colspan="6">상영관번호</td>
 										</tr>
 										
 										
@@ -705,7 +868,26 @@ overflow: scroll;
 										<tr>No</tr></th> -->
 										
 										<tr>
-										<th>No</th>
+										<th>1관</th>
+										<th><div style="text-align: center;">
+														<input type="button" value="12:00">
+													</div></th>
+										<th><div style="text-align: center;">
+														<input type="button" value="14:00">
+													</div></th>
+										<th><div style="text-align: center;">
+														<input type="button" value="15:30">
+													</div></th>
+										<th><div style="text-align: center;">
+														<input type="button" value="16:50">
+													</div></th>
+										<th><div style="text-align: center;">
+														<input type="button" value="19:00">
+													</div></th>
+													
+										</tr>
+										<tr>
+										<th>2관</th>
 										<th><div style="text-align: center;">
 														<input type="button" value="12:00">
 													</div></th>
@@ -729,15 +911,15 @@ overflow: scroll;
 								</div>
 								</div>
 								
-									<div class="col-md-6">
+									<div class="col-md-4">
 							<div class="card">
 
 								<div class="card-content">
-								<table class="table table-striped table-bordered table-hover">
+								<table class="table table-striped table-bordered table-hover" style="margin-bottom: 0px; height: 205px;">
 										<thead>
 											<tr>
-												<th colspan="6"><h3 style="background-color: gray;"
-														align="center">Select</h3></th>
+												<th colspan="6"><h3 style="background-color: gray; margin-top: 0px;margin-bottom: 0px;"
+														align="center">인원선택</h3></th>
 												<!-- <th><h1 style="background-color: gray;" align="center">MovieStore</h1></th>
 											<th><h1 style="background-color: gray;" align="center">schedule</h1></th> -->
 											</tr>
@@ -781,8 +963,8 @@ overflow: scroll;
 												</tr>
 												<tr>
 												<th colspan="6" ><div
-														style="text-align: center;">
-														<input type="submit" value="submit">
+														style="text-align: center; background-color: black;">
+														<input type="submit" value="예매하기">
 													</div></th>
 											
 												</tr>
