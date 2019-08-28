@@ -386,7 +386,7 @@ visibility: hidden;
 
 
 		<div id="page-wrapper">
-		<div id="page-inner"> 
+		<div id="page-inner" style="padding-left: 0px;padding-right: 0px;"> 
 
 
 
@@ -539,17 +539,12 @@ visibility: hidden;
 <table class="table table-striped table-bordered table-hover">
 <tbody>
 <tr>
-<td><img alt="" src="back.jpg" style="width: 100%;height: 100%;"></td>
+<td style="background-color: black; text-align: center;"><img alt="" src="back.jpg" style="width: 50%;height: 100%;"></td>
 </tr>
 
 </tbody></table></div>
 
-      
-     
  </div>
- 
- 
- 
  </div>
  
  <div class="container col-md-2" style="padding-left: 0px; padding-right: 0px;"> 
