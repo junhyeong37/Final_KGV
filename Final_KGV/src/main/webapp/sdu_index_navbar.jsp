@@ -317,21 +317,53 @@
 		<!-- /. NAV SIDE  -->
 
 		<div id="page-wrapper">
+			<br> <br> <br> <br> <br> <br> <br>
+			<br> <br> <br> <br> <br> <br> <br>
+			<div id="carousel">
+				<div class="slideImg hideLeft">
+					<img
+						src="https://i1.sndcdn.com/artworks-000165384395-rhrjdn-t500x500.jpg">
+				</div>
+				<div class="slideImg prevLeftSecond">
+					<img
+						src="https://i1.sndcdn.com/artworks-000185743981-tuesoj-t500x500.jpg">
+				</div>
+				<div class="slideImg prev">
+					<img
+						src="https://i1.sndcdn.com/artworks-000158708482-k160g1-t500x500.jpg">
+				</div>
+				<div class="slideImg selected">
+					<img
+						src="https://i1.sndcdn.com/artworks-000062423439-lf7ll2-t500x500.jpg">
+				</div>
+				<div class="slideImg next">
+					<img
+						src="https://i1.sndcdn.com/artworks-000028787381-1vad7y-t500x500.jpg">
+				</div>
+				<div class="slideImg nextRightSecond">
+					<img
+						src="https://i1.sndcdn.com/artworks-000108468163-dp0b6y-t500x500.jpg">
+				</div>
+				<div class="slideImg hideRight">
+					<img
+						src="https://i1.sndcdn.com/artworks-000064920701-xrez5z-t500x500.jpg">
+				</div>
+			</div>
 
-			자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br>
-			자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br>
-			자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br>
-			자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br>
-			자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br>
-			자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br>
-			자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br>
-			자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br>
-			자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br>
-			자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br> 자 여기는 이제 메인화면이야 <br>
+			<!--   <div class="positionBtn">
+                        <button id="prev"><span>PREV</span></button>
+                        <button id="next"><span>NEXT</span></button>
+                    </div> -->
+
+
+			<!-- <br> <br> <br> <br> <br>  -->
+
+
+			<div class="gong"></div>
 
 
 			<div id="page-inner">
-				<!-- <div class="row">
+				<div class="row">
 					<div class="col-md-8 col-sm-12 col-xs-12">
 						<div class="card">
 							<div class="card-action">
@@ -353,40 +385,103 @@
 					<div class="col-md-4 col-sm-12 col-xs-12">
 						<div class="card">
 							<div class="card-action">
-								<b>포스터</b>
-							</div>
-							<div class="card-image">
-								<image></image>
+								<b>포스터</b> <img src="assets/img/movie1.jpg" width="100%"
+									height="90%">
 							</div>
 						</div>
-
-
-
 					</div>
-				</div> -->
-
-
-				<footer>
-					<div class="center">
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<%@include file="sdu_footer.jsp"%>
-					</div>
-				</footer>
+				</div>
 			</div>
-			<!-- /. PAGE INNER  -->
 
+
+			<div class="gong"></div>
+
+
+			<div id="page-inner">
+				<div class="row">
+					<div class="col-md-8 col-sm-12 col-xs-12">
+						<div class="card">
+							<div class="card-action">
+								<b>리뷰 게시판</b>
+							</div>
+							<div class="card-image">
+								<div class="table-responsive">
+									<table class="table table-striped table-bordered table-hover"
+										id="dataTables-example">
+										<thead>
+											<tr>
+												<th>Rendering engine</th>
+												<th>Browser</th>
+
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="odd gradeX">
+												<td>Trident</td>
+												<td>Internet Explorer 4.0</td>
+
+											</tr>
+											<tr class="even gradeC">
+												<td>Trident</td>
+												<td>Internet Explorer 5.0</td>
+
+											</tr>
+											<tr class="odd gradeA">
+												<td>Trident</td>
+												<td>Internet Explorer 5.5</td>
+
+											</tr>
+											<tr class="even gradeA">
+												<td>Trident</td>
+												<td>Internet Explorer 6</td>
+
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+
+						</div>
+
+					</div>
+					<div class="col-md-4 col-sm-12 col-xs-12">
+						<div class="card">
+							<div class="card-action">
+								<b>게시판 상영작</b> <img src="assets/img/movie1.jpg" width="100%"
+									height="90%">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="gong"></div>
+
+
+				<div id="footer">
+					<footer>
+						<div class="center">
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<%@include file="sdu_footer.jsp"%>
+						</div>
+					</footer>
+				</div>
+
+
+			</div>
+			<!-- page-wrapper -end -->
 		</div>
 		<!-- /. PAGE WRAPPER  -->
 

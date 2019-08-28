@@ -1,11 +1,10 @@
 package com.myfinal.kgv.User.DAOVO;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.apache.ibatis.session.SqlSession;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -37,6 +36,22 @@ public class UserDAOImpl implements UserDAO{
 		return sqlSession.selectOne(namespace + ".Loginaction", uv);
 	}
 
+	@Override
+	public List<UserVO> UserLogin(UserVO vo) {
+		// TODO Auto-generated method stub
+		
+		return sqlSession.selectList(namespace+".UserLogin", vo);
+	}
+
+	@Override
+	public List<UserVO> findId(UserVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		Logger logger=Logger.getLogger(this.getClass());
+		logger.info("아이디찾기 dao 진입");
+		logger.info(vo.toString());
+		return sqlSession.selectList(namespace + ".findId" , vo);
+
+	}
 	
 	
 }

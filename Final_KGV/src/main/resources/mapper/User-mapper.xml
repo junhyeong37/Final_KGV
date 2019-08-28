@@ -2,20 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org // DTD mapper 3.0 // en" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="mapper.User-mapper">
 	<select id="UserAllData" resultType="user">
-		SELECT user_no, user_id, user_pw, user_name, user_address, user_tel, user_birth, user_level, user_sex, user_email
+		SELECT user_no,user_id,user_pw,user_name,user_address,user_tel,user_birth,user_level,user_sex,user_email
 		FROM USERS
 	</select>
 	
 	<select id="UserInsertData"> <!-- resultType="user" user객체로 쿼리 실행 결과값을 받고자 할 때 -->
+	<!-- insert into users (user_no, #{user_id}, #{user_pw}, #{user_name}, #{user_address}, #{user_tel}, #{user_birth}, #{user_sex}, #{user_email}) values (2, #{user_id}, #{user_pw}, #{user_name}, #{user_address}, #{user_tel}, #{user_birth}, #{user_sex}, #{user_email}) -->
 	insert into users (user_no, user_id, user_pw, user_name, user_address, user_level, user_tel, user_birth, user_sex, user_email) values (USERS_SQ.NEXTVAL, #{user_id}, #{user_pw}, #{user_name}, #{user_address}, 1, #{user_tel}, #{user_birth}, #{user_sex}, #{user_email})
 	
 	</select>
 	
- 	<select id="Loginaction"  resultType="user">
+	<select id="Loginaction"  resultType="user">
 		SELECT user_id, user_pw
 		FROM USERS
 		WHERE USER_ID = #{user_id} and USER_PW = #{user_pw}
 	</select>
 	
+	
+	<select id="UserLogin" resultType="com.myfinal.kgv.User.DAOVO.UserVO">
+		select * from users where user_id =#{user_id} and user_pw = #{user_pw}
+	</select>
+	
+	
+	<select id = "findId" resultType = "com.myfinal.kgv.User.DAOVO.UserVO">
+	select user_id from USERS where user_name = #{user_name} and user_tel = #{user_tel}
+	</select>
 	
 </mapper>

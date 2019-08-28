@@ -24,8 +24,11 @@
          
          
 		<typeAliases>		
-  			<typeAlias type="com.myfinal.kgv.User.DAOVO.UserVO" alias="User"/>                                                 
+  			<typeAlias type="com.myfinal.kgv.User.DAOVO.UserVO" alias="User"/>    
+  			<typeAlias type="com.myfinal.kgv.Movie.DAOVO.MovieVO" alias="Movie"/>                                               
          </typeAliases>
+         
+        
 
    </configuration>
 

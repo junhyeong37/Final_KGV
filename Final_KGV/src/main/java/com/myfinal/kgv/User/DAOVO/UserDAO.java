@@ -1,9 +1,7 @@
 package com.myfinal.kgv.User.DAOVO;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Repository;
 @Repository
@@ -13,6 +11,8 @@ public interface UserDAO {
 	public void UserInsertData(UserVO vo);
 	
 	public UserVO Loginaction(UserVO vo);
-	
 
+	public List<UserVO> UserLogin(UserVO vo);
+
+	public List<UserVO> findId(UserVO vo) throws Exception;
 }

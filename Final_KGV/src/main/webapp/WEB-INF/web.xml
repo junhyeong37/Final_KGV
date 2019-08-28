@@ -80,6 +80,7 @@
     <filter-name>encodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+ 
   <servlet>
     <description></description>
     <display-name>UserController</display-name>
@@ -89,5 +90,17 @@
   <servlet-mapping>
     <servlet-name>UserController</servlet-name>
     <url-pattern>/UserController</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>MovieController</display-name>
+    <servlet-name>MovieController</servlet-name>
+    <servlet-class>com.myfinal.kgv.Movie.Controller.MovieController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MovieController</servlet-name>
+    <url-pattern>/MovieController</url-pattern>
   </servlet-mapping>
 </web-app>
