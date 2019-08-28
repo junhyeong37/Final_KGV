@@ -123,17 +123,33 @@
 					로그아웃</a></li>
 			<li><a href="sdu_membership.jsp"><i class="fa fa-gear fa-fw"></i>
 					My Page</a></li>
-			
-			<li><a href="sdu_admin_movie_insert.jsp"><i
-						class="fa fa-gear fa-fw"></i> 관리자 영화입력</a></li>
-			<%-- <c:if
-				test="${fn:contains(val.user_id,'admin') and fn:contains(val.user_pw,'admin')}">
+			<!-- <li><a href="sdu_admin_movie_insert.jsp"><i
+						class="fa fa-gear fa-fw"></i> 관리자 영화입력1</a></li>		
+ -->
+
+			<c:set var="id" value="${user_id }" />
+
+			<c:if test="${id eq 'admin'}">
 				<li><a href="sdu_admin_movie_insert.jsp"><i
-						class="fa fa-gear fa-fw"></i> 관리자 영화입력</a></li>
-			</c:if> --%>
+						class="fa fa-gear fa-fw"></i> 관리자 영화입력1</a></li>
+			</c:if> 
+
+			<c:if
+				test="${fn:contains(user.user_id,'admin')}">
+				<li><a href="sdu_admin_movie_insert.jsp"><i
+						class="fa fa-gear fa-fw"></i> 관리자 영화입력33</a></li>
+			</c:if> 
+
 
 
 		</ul>
+
+		<!-- ================================================== -->
+
+
+
+
+
 		<%
 			}
 		%>
@@ -176,48 +192,50 @@
 					<li><a href="sdu_content.jsp" class="waves-effect waves-dark"><i
 							class="fa fa-desktop"></i> 고객센터</a></li>
 
-					<!-- <li>
-                        <a href="head_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
-                    </li>
-                    
-                    <li>
-                        <a href="head_test2.jsp" class="waves-effect waves-dark"><i class="fa fa-table"></i> Responsive Tables</a>
-                    </li>
-                    <li>
-                        <a href="head_test2.jsp" class="waves-effect waves-dark"><i class="fa fa-edit"></i> Forms </a>
-                    </li>
 
 
-                    <li>
-                        <a href="#" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
+					<%-- <c:set var="id" value="admin" />
 
-                                </ul>
+					<c:if test="${id eq 'admin'}">
+						<li><a href="sdu_admin_movie_insert.jsp"
+							class="waves-effect waves-dark"><i class="fa fa-folder"></i>
+								관리자 영화삽입1</a></li>
+					</c:if> --%>
 
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="head_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> Empty Page</a>
-                    </li> -->
+
+					<%-- <c:forEach items="${ulist }" var="val" varStatus="status">
+					
+					 	<c:if test="${val.user_id eq 'admin }">
+					 		<li><a href="sdu_admin_movie_insert.jsp"
+							class="waves-effect waves-dark"><i class="fa fa-folder"></i>
+								관리자 영화삽입123</a></li>
+					 	</c:if>
+					 	
+					</c:forEach> --%>
+
+
+
+
+
+					<%-- <li><c:forEach items="${ulist }" var="val" varStatus="status">
+						<a class="dropdown-button waves-effect waves-dark" href="#!"
+							data-activates="dropdown1"> <i class="fa fa-user fa-fw"></i>
+							<b> ${val.user_name }</b> <i class="material-icons right">arrow_drop_down</i></a>
+					</c:forEach></li> --%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 				</ul>
 
 			</div>
