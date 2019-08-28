@@ -318,36 +318,32 @@
 				<div class="col-md-6 col-sm-12 col-xs-12">
 					<!-- <div class="col-xs-12"> -->
 					<div class="card">
-						<div class="card-action">로그인</div>
+						<div class="card-action">비밀번호찾기</div>
 						<div class="card-content">
-							<form class="col s12" action="UserLogin.do" method="get">
+							<form class="col s12" action="UserLogin.do" method="get"> <!-- .do를 바꿔줘야함 -->
 								<div class="row">
 									<div class="input-field col s12">
-										<input id="user_id" name="user_id" type="text"
-											class="validate"> <label for="아이디">아이디</label>
+										<input id="user_name" name="user_name" type="text"
+											class="validate"> <label for="이름">이름</label> <!-- 원하는 인자 받아서 넣으시면 됨 -->
 									</div>
 
 								</div>
 
 								<div class="row">
 									<div class="input-field col s12">
-										<input id="user_pw" name="user_pw" type="password"
-											class="validate"> <label for="비밀번호">비밀번호</label>
+										<input id="user_tel" name="user_tel" type="text"
+											class="validate"> <label for="전화번호">전화번호</label> <!-- 원하는 인자 받아서 넣으시면 됨 -->
 									</div>
 								</div>
 								<div class="row center">
 									<div class="waves-effect waves-light btn">
 										<div class="input-field col s12 ">
-											<input type="submit" value="로그인">
+											<input type="submit" value="ID찾기">
 										</div>
 									</div>
 								</div>
 								
-								<div class="row center">
-									<U><a href="sdu_idsearch.jsp">아이디찾기</a></U>
-									&nbsp;&nbsp;&nbsp;
-									<U><a href="sdu_pwsearch.jsp">비밀번호찾기</a></U>
-								</div>
+								
 
 							</form>
 							<div class="clearBoth"></div>

@@ -126,7 +126,7 @@ public class UserController {
 	public ModelAndView UserLogin(UserVO vo,HttpServletRequest req, Locale locale, HttpSession session) throws ParseException {
 		ModelAndView mv = new ModelAndView();
 //		mv.setViewName("test");
-		mv.setViewName("index_TEST_Sl2");
+		mv.setViewName("sdu_index_navbar");
 			
 		us.UserLogin(vo);
 		
@@ -147,7 +147,7 @@ public class UserController {
 	@RequestMapping(value="Logo.do", method=RequestMethod.GET) 
 	public ModelAndView Logo(UserVO vo,HttpServletRequest req, Locale locale, HttpSession session) throws ParseException {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index_TEST_Sl2");
+		mv.setViewName("sdu_index_navbar");
 			
 		
 		return mv;
@@ -156,7 +156,7 @@ public class UserController {
 	@RequestMapping(value="Logout.do", method=RequestMethod.GET) 
 	public ModelAndView Logout(UserVO vo,HttpServletRequest req, Locale locale, HttpSession session) throws ParseException {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index_TEST_Sl2");
+		mv.setViewName("sdu_index_navbar");
 		session.invalidate();	
 		return mv;
 	}
