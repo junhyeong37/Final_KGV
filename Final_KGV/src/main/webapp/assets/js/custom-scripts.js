@@ -325,3 +325,10 @@ const slide = {
         document.getElementById("next").addEventListener("click", () => {slide.nextSlide()});
 
     }
+
+    
+    
+    
+    
+    
+ 

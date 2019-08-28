@@ -2,6 +2,9 @@ package com.myfinal.kgv.User.Service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +16,8 @@ public class UserServiceImpl implements UserService{
 	
 	@Autowired
 	private UserDAO dao;
+
+	
 	
 	@Override
 	public List<UserVO> UserAllData() {
@@ -27,7 +32,7 @@ public class UserServiceImpl implements UserService{
 	}
 	@Override
 	public int Loginaction(UserVO uv) {
-		
+
 		try {
 			dao.Loginaction(uv);
 			return 1;
@@ -36,5 +41,8 @@ public class UserServiceImpl implements UserService{
 			return 0;
 		}
 	}
-	
+
+
+
+
 }

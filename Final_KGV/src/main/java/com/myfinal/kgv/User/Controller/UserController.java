@@ -40,7 +40,7 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET) 
+	@RequestMapping(value = "/", method = RequestMethod.POST) 
 	public ModelAndView Main(HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("cjw_index");
@@ -52,7 +52,7 @@ public class UserController {
 	
 	
 	
-	@RequestMapping(value = "Login.do", method = RequestMethod.GET) 
+	@RequestMapping(value = "Login.do", method = RequestMethod.POST) 
 	public ModelAndView login(HttpServletRequest req, UserVO vo) {
 		ModelAndView mv = new ModelAndView();
 		
@@ -74,7 +74,7 @@ public class UserController {
 	@ResponseBody
 	public ModelAndView Loginaction(HttpServletRequest req , UserVO vo) {
 		ModelAndView mv = new ModelAndView();
-		
+
 		mv.setViewName("login11");
 		
 		int data = us.Loginaction(vo);		
@@ -83,12 +83,10 @@ public class UserController {
 		
 		return mv;
 	}
-	
-	
-	
+
 
 	
-	@RequestMapping(value="UserAllData.do", method=RequestMethod.GET) 
+	@RequestMapping(value="UserAllData.do", method=RequestMethod.POST) 
 	public ModelAndView UserAllData(HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView();
 		
@@ -103,7 +101,7 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping(value="UserInsertData.do", method=RequestMethod.GET) 
+	@RequestMapping(value="UserInsertData.do", method=RequestMethod.POST) 
 	public ModelAndView UserInsertData(UserVO vo,HttpServletRequest req, Locale locale) throws ParseException {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("JoinPro");
