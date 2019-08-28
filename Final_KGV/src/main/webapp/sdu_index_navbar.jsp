@@ -28,7 +28,6 @@
 	background-color: #333333;
 	border-color: #e7e7e7
 }
-
 </style>
 
 
@@ -318,8 +317,8 @@
 		<!-- /. NAV SIDE  -->
 
 		<div id="page-wrapper">
- 			<br> <br> <br> <br> <br> <br> <br>
-			<br> <br> <br> <br> <br> <br> <br> 
+			<br> <br> <br> <br> <br> <br> <br>
+			<br> <br> <br> <br> <br> <br> <br>
 			<div id="carousel">
 				<div class="slideImg hideLeft">
 					<img
@@ -358,11 +357,10 @@
 
 
 			<!-- <br> <br> <br> <br> <br>  -->
-			
-			
-			<div class="gong">
-			</div>
-			
+
+
+			<div class="gong"></div>
+
 
 			<div id="page-inner">
 				<div class="row">
@@ -395,10 +393,9 @@
 				</div>
 			</div>
 
-			
-			<div class="gong">
-			</div>
-			
+
+			<div class="gong"></div>
+
 
 			<div id="page-inner">
 				<div class="row">
@@ -457,18 +454,32 @@
 						</div>
 					</div>
 				</div>
-				
-			<div class="gong">
-			</div>
-				
-				
-								<div id="footer"><footer><div class="center">
-					<br><br><br><br><br><br><br><br><br><br><br><br><br>
-						<%@include file="sdu_footer.jsp"%>
-					</div>
-				</footer></div>
-				
-				
+
+				<div class="gong"></div>
+
+
+				<div id="footer">
+					<footer>
+						<div class="center">
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<%@include file="sdu_footer.jsp"%>
+						</div>
+					</footer>
+				</div>
+
+
 			</div>
 			<!-- page-wrapper -end -->
 		</div>
