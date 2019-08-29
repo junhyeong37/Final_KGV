@@ -340,7 +340,7 @@
 											<label for="비밀번호">비밀번호</label>
 										</div>
 									</div>
-									<div class="row">
+									<div class="row center">
 										<div class="waves-effect waves-light btn">
 										<!--  <a class="waves-effect waves-light btn">button</a>  -->
 											

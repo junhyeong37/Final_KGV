@@ -115,6 +115,7 @@
 	
 	
 	var _intVal = function ( s ) {
+		/* var integer = parseInt( s, 10 );*/
 		var integer = parseInt( s, 10 );
 		return !isNaN(integer) && isFinite(s) ? integer : null;
 	};
@@ -2464,6 +2465,8 @@
 		_fnClearTable( settings );
 		settings._iRecordsTotal   = parseInt(recordsTotal, 10);
 		settings._iRecordsDisplay = parseInt(rocordsFiltered, 10);
+		/*settings._iRecordsTotal   = parseInt(recordsTotal, 10);
+		settings._iRecordsDisplay = parseInt(rocordsFiltered, 10); */
 	
 		var data = _fnAjaxDataSrc( settings, json );
 		for ( var i=0, ien=data.length ; i<ien ; i++ ) {
@@ -3050,6 +3053,7 @@
 	function _fnLengthChange ( settings, val )
 	{
 		var len = parseInt( val, 10 );
+		/*var len = parseInt( val, 10 );*/
 		settings._iDisplayLength = len;
 	
 		_fnLengthOverflow( settings );
@@ -3234,7 +3238,7 @@
 		}
 		else
 		{
-			_fnLog( settings, 0, "Unknown paging action: "+action, 5 );
+			_fnLog( settings, 0, "Unknown paging action: "+action, 10 );
 		}
 	
 		var changed = settings._iDisplayStart !== start;
@@ -3885,6 +3889,7 @@
 					total += column.sWidthOrig === null ?
 						outerWidth :
 						parseInt( column.sWidth, 10 ) + outerWidth - $(headerCells[i]).width();
+					/*parseInt( column.sWidth, 10 ) + outerWidth - $(headerCells[i]).width();*/
 				}
 	
 				tmpTable.width( _fnStringToCss( total ) );
@@ -7786,6 +7791,7 @@
 						case 'visIdx':
 						case 'visible':
 							var idx = parseInt( match[1], 10 );
+							/*var idx = parseInt( match[1], 10 );*/
 							// Visible index given, convert to column index
 							if ( idx < 0 ) {
 								// Counting from the right
@@ -8362,6 +8368,8 @@
 		for ( var i=0, iLen=aThat.length ; i<iLen ; i++ ) {
 			iThis = parseInt( aThis[i], 10 ) || 0;
 			iThat = parseInt( aThat[i], 10 ) || 0;
+			/*iThis = parseInt( aThis[i], 10 ) || 0;
+			iThat = parseInt( aThat[i], 10 ) || 0;*/
 	
 			// Parts are the same, keep comparing
 			if (iThis === iThat) {
@@ -10331,8 +10339,8 @@
 		 *      } );
 		 *    } )
 		 */
-		"iDisplayLength": 10,
-	
+		"iDisplayLength": 5,
+		/*" 극장 페이지마다 나오는 수 iDisplayLength": 10,*/
 	
 		/**
 		 * Define the starting point for data display when using DataTables with

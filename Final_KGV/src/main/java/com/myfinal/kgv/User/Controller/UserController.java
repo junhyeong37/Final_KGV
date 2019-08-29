@@ -45,12 +45,12 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET) 
+	/*@RequestMapping(value = "/", method = RequestMethod.GET) 
 	public ModelAndView Main(HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("cjw_index");
 		return mv;
-	}
+	}*/
 	
 	
 	
@@ -65,7 +65,7 @@ public class UserController {
 				
 		mv.setViewName("login11");
 		mv.addObject("user_id",user_id);
-		System.out.println("테스트");
+		System.out.println("test_login");
 		
 		return mv;
 	}
@@ -126,13 +126,13 @@ public class UserController {
 	public ModelAndView UserLogin(UserVO vo,HttpServletRequest req, Locale locale, HttpSession session) throws ParseException {
 		ModelAndView mv = new ModelAndView();
 //		mv.setViewName("test");
-		mv.setViewName("index_TEST_Sl2");
+		mv.setViewName("sdu_index_navbar");
 			
 		us.UserLogin(vo);
 		
 		List<UserVO> ulist = us.UserLogin(vo);
 		
-		System.out.println("리스트 : " + ulist);
+		System.out.println("login_do : " + ulist);
 		
 		for (UserVO userVO : ulist) {
 			System.out.println(userVO.getUser_address());
@@ -143,11 +143,11 @@ public class UserController {
 	}
 	
 	
-	/////////////////////////// 세션값 로그인 테스트
+	/////////////////////////// �꽭�뀡媛� 濡쒓렇�씤 �뀒�뒪�듃
 	@RequestMapping(value="Logo.do", method=RequestMethod.GET) 
 	public ModelAndView Logo(UserVO vo,HttpServletRequest req, Locale locale, HttpSession session) throws ParseException {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index_TEST_Sl2");
+		mv.setViewName("sdu_index_navbar");
 			
 		
 		return mv;
@@ -156,7 +156,7 @@ public class UserController {
 	@RequestMapping(value="Logout.do", method=RequestMethod.GET) 
 	public ModelAndView Logout(UserVO vo,HttpServletRequest req, Locale locale, HttpSession session) throws ParseException {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index_TEST_Sl2");
+		mv.setViewName("sdu_index_navbar");
 		session.invalidate();	
 		return mv;
 	}

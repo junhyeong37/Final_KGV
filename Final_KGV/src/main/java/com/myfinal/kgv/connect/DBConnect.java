@@ -10,7 +10,7 @@ public class DBConnect {
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 		
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		String url="jdbc:oracle:thin:@DESKTOP-S5DUGA6:1521:xe";
+		String url="jdbc:oracle:thin:@localhost:1521:xe";
 		return DriverManager.getConnection(url,"kgv","kgv");
 		
 	}

@@ -16,6 +16,6 @@
 	</h1>
 	</form>
 	
-	${user_id }
+
 </body>
 </html>

@@ -26,19 +26,7 @@
 	rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
 </head>
-<style>
 
-
-#footer {
-
-    position:absolute;
-
-    bottom:0;
-
-    width:100%;
-}
-
-</style>
 <body>
 	<div id="wrapper">
 		<nav class="navbar navbar-default top-navbar" role="navigation">
@@ -323,11 +311,11 @@
 
 		<div id="page-wrapper">
 
-		 <div>
+
 			<div class="row">
 				<div class="col-md-3 col-sm-12 col-xs-12"></div>
 
-				<div class="col-md-6 col-sm-12 col-xs-12" style="margin-top: 50px;">
+				<div class="col-md-6 col-sm-12 col-xs-12">
 					<!-- <div class="col-xs-12"> -->
 					<div class="card">
 						<div class="card-action">로그인</div>
@@ -387,9 +375,11 @@
 			
 			 
 			<!-- ===================== -->
-			
+			<div id="footer"><footer><div class="center">
+					<br><br><br><br><br><br><br><br><br><br><br><br><br>
 						<%@include file="sdu_footer.jsp"%>
-					
+					</div>
+				</footer></div>
 			
 			
 			
