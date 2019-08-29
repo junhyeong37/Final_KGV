@@ -24,10 +24,24 @@
 <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
 </head>
 
+<style>
 
+
+#footer {
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+}
+
+</style>
 
 
 <body>
+<div id="footer"><footer><div class="center">
+					<br><br><br><br><br><br><br><br><br><br><br><br><br>
 <p>
 						공지사항 <i class="fa fa-love"></i><a href="sdu_index_navbar.jsp">KGV
 							'개인정보 처리방침' 변경에 대한 안내</a>
@@ -56,5 +70,7 @@
 						</div>
 						
 					</div>
+					</div>
+				</footer></div>
 </body>
 </html>
