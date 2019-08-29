@@ -53,7 +53,7 @@
 				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown3"><i class="fa fa-tasks fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
 				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown2"><i class="fa fa-bell fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li> -->
 				<!--   <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b>John Doe</b> <i class="material-icons right">arrow_drop_down</i></a></li> -->
-				  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
+				  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b><!-- 로그인 닉네임 부분 --></b>  <i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
         </nav>
 		<!-- Dropdown Structure -->
@@ -62,8 +62,6 @@
 </li>
 <li><a href="sdu_membership.jsp"><i class="fa fa-gear fa-fw"></i> 회원가입</a>
 </li> 
-<!-- <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 설정</a>
-</li> -->
 </ul>
 <!-- <ul id="dropdown2" class="dropdown-content w250">
   <li>
@@ -342,7 +340,7 @@
 											<label for="비밀번호">비밀번호</label>
 										</div>
 									</div>
-									<div class="row">
+									<div class="row center">
 										<div class="waves-effect waves-light btn">
 										<!--  <a class="waves-effect waves-light btn">button</a>  -->
 											

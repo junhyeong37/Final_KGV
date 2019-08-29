@@ -335,13 +335,20 @@
 											class="validate"> <label for="비밀번호">비밀번호</label>
 									</div>
 								</div>
+								
 								<div class="row center">
-									<div class="waves-effect waves-light btn">
-										<div class="input-field col s12 ">
-											<input type="submit" value="로그인">
+										<div class="waves-effect waves-light btn">
+										<!--  <a class="waves-effect waves-light btn">button</a>  -->
+											
+												<input type="submit" value="로그인">
+											
 										</div>
 									</div>
-								</div>
+								
+								
+								
+								
+								
 								
 								<div class="row center">
 									<U><a href="sdu_idsearch.jsp">아이디찾기</a></U>
@@ -355,13 +362,27 @@
 					</div>
 				</div>
 			</div>
-			<footer>
+			<%-- <footer>
 				<div class="center">
 					<br> <br> <br> <br> <br> <br> <br>
 					<br> <br> <br> <br> <br> <br>
 					<%@include file="sdu_footer.jsp"%>
 				</div>
-			</footer>
+			</footer> --%>
+			
+			
+			
+			
+			
+			<!-- ===================== -->
+			<div id="footer"><footer><div class="center">
+					<br><br><br><br><br><br><br><br><br><br><br><br><br>
+						<%@include file="sdu_footer.jsp"%>
+					</div>
+				</footer></div>
+			
+			
+			
 
 			<!-- /. PAGE INNER  -->
 

@@ -123,22 +123,21 @@
 					로그아웃</a></li>
 			<li><a href="sdu_membership.jsp"><i class="fa fa-gear fa-fw"></i>
 					My Page</a></li>
-			<!-- <li><a href="sdu_admin_movie_insert.jsp"><i
-						class="fa fa-gear fa-fw"></i> 관리자 영화입력1</a></li>		
- -->
+			
+			
+			<!-- 관리자로 로그인 했을때만 뜨는 메뉴 -->
+			<c:set var="id" value="admin" />
 
-			<c:set var="id" value="${user_id }" />
+			<c:forEach items="${ulist }" var="val">
 
-			<c:if test="${id eq 'admin'}">
-				<li><a href="sdu_admin_movie_insert.jsp"><i
-						class="fa fa-gear fa-fw"></i> 관리자 영화입력1</a></li>
-			</c:if> 
+				 <c:if test="${val.user_id eq 'admin'}">
+					<li><a href="sdu_admin_movie_insert.jsp"><i
+						class="fa fa-gear fa-fw"></i> 관리자 영화입력</a></li>
+				</c:if>
+				 
+			</c:forEach>
 
-			<c:if
-				test="${fn:contains(user.user_id,'admin')}">
-				<li><a href="sdu_admin_movie_insert.jsp"><i
-						class="fa fa-gear fa-fw"></i> 관리자 영화입력33</a></li>
-			</c:if> 
+			
 
 
 
@@ -246,6 +245,9 @@
 		<div id="page-wrapper">
 			<br> <br> <br> <br> <br> <br> <br>
 			<br> <br> <br> <br> <br> <br> <br>
+
+
+
 			<div id="carousel">
 				<div class="slideImg hideLeft">
 					<img

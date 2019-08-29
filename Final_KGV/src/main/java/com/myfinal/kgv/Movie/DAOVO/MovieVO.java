@@ -1,6 +1,6 @@
 package com.myfinal.kgv.Movie.DAOVO;
 
-import java.sql.Date;
+
 
 public class MovieVO {
 
@@ -10,7 +10,7 @@ public class MovieVO {
 	private String movie_photo;
 	private String movie_preview;
 	private int movie_likes;
-	private Date movie_openday;
+	private String movie_openday;
 	private String movie_genre;
 	private String movie_runtime;
 	private String movie_content;
@@ -18,7 +18,7 @@ public class MovieVO {
 	private String movie_director;
 	
 	public MovieVO(int movie_no, String movie_name, String movie_level, String movie_photo, String movie_preview,
-			int movie_likes, Date movie_openday, String movie_genre, String movie_runtime, String movie_content,
+			int movie_likes, String movie_openday, String movie_genre, String movie_runtime, String movie_content,
 			String movie_actor, String movie_director) {
 		super();
 		this.movie_no = movie_no;
@@ -87,11 +87,11 @@ public class MovieVO {
 		this.movie_likes = movie_likes;
 	}
 
-	public Date getMovie_openday() {
+	public String getMovie_openday() {
 		return movie_openday;
 	}
 
-	public void setMovie_openday(Date movie_openday) {
+	public void setMovie_openday(String movie_openday) {
 		this.movie_openday = movie_openday;
 	}
 

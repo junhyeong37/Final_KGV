@@ -326,7 +326,8 @@
 			<div class="header">
 				<h1 class="page-header">관리자 영화등록</h1>
 			</div>
-			<br><br>
+			<br>
+			<br>
 
 			<div class="row">
 				<div class="col-md-3"></div>
@@ -392,13 +393,13 @@
 									</div>
 								</div>
 
-								<!-- <div class="row">
-										<div class="input-field col s6">
-											<input placeholder="예)1990-01-01" name="movie_openday"
-												id="movie_openday" type="text" class="validate" maxlength="20">
-											<label for="movie_openday">개봉일</label>
-										</div>
-									</div> -->
+								<div class="row">
+									<div class="input-field col s12">
+										<input placeholder="        예)1990-01-01" name="movie_openday"
+											id="movie_openday" type="text" class="validate"
+											maxlength="20"> <label for="movie_openday">개봉일</label>
+									</div>
+								</div>
 
 
 
