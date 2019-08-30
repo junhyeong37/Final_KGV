@@ -2,7 +2,6 @@ package com.myfinal.kgv.User.Controller;
 
 
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -14,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -25,7 +23,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.myfinal.kgv.User.DAOVO.UserVO;
@@ -172,18 +169,15 @@ public class UserController {
 	
 	
 	/*아이디찾기*/
-	@RequestMapping(value = "findingId.do" , method = RequestMethod.POST, produces = "application/json; charset=utf-8")
-	public @ResponseBody String findingId(@ModelAttribute UserVO vo, Model model , HttpServletResponse response)throws Exception {
+	/*@ResponseBody*/
+	@RequestMapping(value = "findingId.do" , method = RequestMethod.POST, produces = "application/json; charset=utf-8") 
+	public @ResponseBody String findingId(@ModelAttribute UserVO vo, Model model , HttpServletResponse response) throws Exception {
 		
-/*		System.out.println(vo.toString());*/
+		ArrayList<String> IdList;
 
-		ArrayList <String> IdList = us.findId(vo);
-/*		System.out.println(IdList.toString());
-		System.out.println(IdList.get(0));*/
-		
+		IdList = us.findId(vo);
 		String findId = "{\"user_Id\":\""+IdList+"\"}";
 		System.out.println(findId);
-		
 		return findId;
 	}
 	
