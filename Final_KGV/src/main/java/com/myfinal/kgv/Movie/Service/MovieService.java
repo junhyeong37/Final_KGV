@@ -11,4 +11,5 @@ public interface MovieService {
 
 	public void MovieInsertData(MovieVO vo);
 	public List<MovieVO> MovieAllData();
+	
 }

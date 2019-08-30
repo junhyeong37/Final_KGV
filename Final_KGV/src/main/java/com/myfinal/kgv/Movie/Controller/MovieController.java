@@ -2,6 +2,8 @@ package com.myfinal.kgv.Movie.Controller;
 
 
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,10 +18,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.myfinal.kgv.FileUpload.Service.FileUploadService;
@@ -33,8 +38,6 @@ public class MovieController {
 	
 	@Autowired
 	MovieService ms;
-	 
-	@Autowired
 	FileUploadService fileUploadService;
 	
 	
@@ -109,11 +112,20 @@ public class MovieController {
 		return mv;
 	}
 	
-	@RequestMapping(value="MovieInsertData.do", method=RequestMethod.GET) 
-	public ModelAndView MovieInsertData(MovieVO vo,HttpServletRequest req, Locale locale) throws ParseException {
+	
+	@RequestMapping(value="MovieInsertData.do", method=RequestMethod.POST)
+	@ResponseBody
+	public ModelAndView MovieInsertData(Model model,MovieVO vo,HttpServletRequest req, Locale locale/*@RequestParam("movie_photo") MultipartFile file*/) throws ParseException {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("sdu_admin_movie_insert_check");
-			
+		MultipartHttpServletRequest mpreq = (MultipartHttpServletRequest) req;
+		MultipartFile file1 = mpreq.getFile("movie_photo");
+		
+		
+		System.out.println("mpreq : "+mpreq);
+		System.out.println("file mpreq : "+mpreq.getFile("movie_photo"));
+		
+		fileUploadService.restore(file);
 		
 		ms.MovieInsertData(vo);
 		List<MovieVO> movielist = ms.MovieAllData();

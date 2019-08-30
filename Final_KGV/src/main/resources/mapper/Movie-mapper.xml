@@ -20,8 +20,8 @@ values (movie_sq.nextval, #{movie_name}, #{movie_level}, #{movie_genre}, #{movie
 	  -->
 	 
 	 
-	  insert into movie (movie_no, movie_name, movie_level, movie_genre, movie_content, movie_director, movie_actor, movie_runtime, movie_openday, movie_preview)
-values (movie_sq.nextval, #{movie_name}, #{movie_level}, #{movie_genre}, #{movie_content}, #{movie_director}, #{movie_actor}, #{movie_runtime}, #{movie_openday}, #{movie_preview} )
+	  insert into movie (movie_no, movie_name, movie_level, movie_genre, movie_content, movie_director, movie_actor, movie_runtime, movie_openday, movie_preview,movie_photo)
+values (movie_sq.nextval, #{movie_name}, #{movie_level}, #{movie_genre}, #{movie_content}, #{movie_director}, #{movie_actor}, #{movie_runtime}, #{movie_openday}, #{movie_preview}, #{movie_photo} )
 	 
 	</select>
 

@@ -19,6 +19,26 @@ public class MovieVO {
 	private String movie_director;
 	private MultipartFile file;
 	
+	public MovieVO(int movie_no, String movie_name, String movie_level, String movie_photo, String movie_photoname,
+			String movie_preview, int movie_likes, String movie_openday, String movie_genre, String movie_runtime,
+			String movie_content, String movie_actor, String movie_director, MultipartFile file) {
+		super();
+		this.movie_no = movie_no;
+		this.movie_name = movie_name;
+		this.movie_level = movie_level;
+		this.movie_photo = movie_photo;
+		this.movie_photoname = movie_photoname;
+		this.movie_preview = movie_preview;
+		this.movie_likes = movie_likes;
+		this.movie_openday = movie_openday;
+		this.movie_genre = movie_genre;
+		this.movie_runtime = movie_runtime;
+		this.movie_content = movie_content;
+		this.movie_actor = movie_actor;
+		this.movie_director = movie_director;
+		this.file = file;
+	}
+
 	public MultipartFile getFile() {
 		return file;
 	}

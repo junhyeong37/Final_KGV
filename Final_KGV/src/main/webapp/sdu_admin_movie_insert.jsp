@@ -333,8 +333,10 @@
 				<div class="col-lg-6">
 					<div class="card">
 						<div class="card-content">
-							<form method="get" enctype="multipart/form-data" action="MovieInsertData.do" name="form"
-								onsubmit="return checkValue()" class="col s12">
+							<!-- <form method="post" enctype="multipart/form-data" action="MovieInsertData.do" name="form"
+								onsubmit="return checkValue()" class="col s12"> -->
+							<form method="post" enctype="multipart/form-data" action="MovieInsertData.do" name="form"
+								class="col s12">
 								<div class="row">
 									<div class="input-field col s12">
 										<input id="movie_name" name="movie_name" type="text"
@@ -404,6 +406,19 @@
 									<div class="input-field col s12">
 										<input id="movie_preview" name="movie_preview" type="text"
 											class="validate"> <label for="movie_preview">영화프리뷰</label>
+									</div>
+								</div>
+								
+								<!-- <div class="row">
+									<div class="input-field col s12">
+										<input id="movie_photo" name="movie_photo" type="text"
+											class="validate"> <label for="movie_photo">영화프리뷰</label>
+									</div>
+								</div> -->
+								
+								<div class="row">
+									<div class="input-field col s12">
+										<input name="movie_photo" type="file">
 									</div>
 								</div>
 
