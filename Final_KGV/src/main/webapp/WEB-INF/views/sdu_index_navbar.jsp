@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-	
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -26,66 +23,16 @@
 	rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
 
+<style>
+.navbar-default {
+	background-color: #333333;
+	border-color: #e7e7e7
+}
+</style>
 
 
 
-<!-- <script  src="http://code.jquery.com/jquery-latest.min.js"></script> -->
-
- <script src="https://code.jquery.com/jquery-1.11.3.js"></script> 
-
-
-<script>
-$(document).on('click','#findId',function(){
-	var user_name = $('#user_name').val();
- 	var user_tel = $('#user_tel').val();
- 	var postData = {'user_name' : user_name , 'user_tel' : user_tel};
-
- 	
-	$.ajax({
-        url:"findingId.do",
-        type:"POST",
-        data: postData, 
-        contentType: "application/x-www-form-urlencoded; charset=UTF-8",        
-        dataType : 'json', 
-		async:false,
-        accepts: {mycustom: "application/xml"},
-     
-        
-       success : function(data){
-      	         /* var IdLists = Data.user_id;
-     	        	var IdLength = IdLists.user_id;
-       	        	var Idfind = IdLists.substring(1, IdLength-1);
-        		  $("#postData").append("<h1>"+"회원님의 정보로 등록된 아이디는 : "+Idfind+" 입니다.</h1>");     */  
-        	
-        	var result =data.json;
-    	    alert('성공'+result);
-
-       }, 
-       
-        error: function(XMLHttpRequest, textStatus, errorThrown){ 
-     		
-         	if(user_name=="") {
-         		var postData = null;
-         		alert('이름을 입력하시오!!');
-         	}else if(user_tel==""){
-         		var postData = null;
-         		alert("전화번호를 입력하시오!!")
-         	}else if( user_name != postData && user_tel != postData){
-       		 alert('정보를 다시 입력해주시길 바랍니다.');
-     	  	 location.replace("sdu_idsearch.jsp")
-			 }
-      	 }    
-
-    });
-});
-
-</script>
 </head>
-
-
-
-
-
 
 <body>
 	<div id="wrapper">
@@ -370,59 +317,171 @@ $(document).on('click','#findId',function(){
 		<!-- /. NAV SIDE  -->
 
 		<div id="page-wrapper">
+			<br> <br> <br> <br> <br> <br> <br>
+			<br> <br> <br> <br> <br> <br> <br>
+			<div id="carousel">
+				<div class="slideImg hideLeft">
+					<img
+						src="https://i1.sndcdn.com/artworks-000165384395-rhrjdn-t500x500.jpg">
+				</div>
+				<div class="slideImg prevLeftSecond">
+					<img
+						src="https://i1.sndcdn.com/artworks-000185743981-tuesoj-t500x500.jpg">
+				</div>
+				<div class="slideImg prev">
+					<img
+						src="https://i1.sndcdn.com/artworks-000158708482-k160g1-t500x500.jpg">
+				</div>
+				<div class="slideImg selected">
+					<img
+						src="https://i1.sndcdn.com/artworks-000062423439-lf7ll2-t500x500.jpg">
+				</div>
+				<div class="slideImg next">
+					<img
+						src="https://i1.sndcdn.com/artworks-000028787381-1vad7y-t500x500.jpg">
+				</div>
+				<div class="slideImg nextRightSecond">
+					<img
+						src="https://i1.sndcdn.com/artworks-000108468163-dp0b6y-t500x500.jpg">
+				</div>
+				<div class="slideImg hideRight">
+					<img
+						src="https://i1.sndcdn.com/artworks-000064920701-xrez5z-t500x500.jpg">
+				</div>
+			</div>
+
+			<!--   <div class="positionBtn">
+                        <button id="prev"><span>PREV</span></button>
+                        <button id="next"><span>NEXT</span></button>
+                    </div> -->
 
 
-			<div class="row">
-				<div class="col-md-3 col-sm-12 col-xs-12"></div>
+			<!-- <br> <br> <br> <br> <br>  -->
 
-				<div class="col-md-6 col-sm-12 col-xs-12">
-					<!-- <div class="col-xs-12"> -->
-					<div class="card">
-						<div class="card-action">아이디찾기</div>
-						<div class="card-content">
-							<form id="postData" class="col s12" action="findingId.do" method="POST"> <!-- .do를 바꿔줘야함 -->
-								<div class="row">
-									<div class="input-field col s12">
-										<input id="user_name" name="user_name" type="text"
-											class="validate"> <label for="이름">이름</label>
-									</div>
+
+			<div class="gong"></div>
+
+
+			<div id="page-inner">
+				<div class="row">
+					<div class="col-md-8 col-sm-12 col-xs-12">
+						<div class="card">
+							<div class="card-action">
+								<b>이달의 상영작</b>
+							</div>
+							<div class="card-image">
+								<div class="video">
+									<iframe width="80%" height="90%"
+										src="https://www.youtube.com/embed/WaxgJggEm3Q"
+										frameborder="0"> </iframe>
 
 								</div>
+							</div>
 
-								<div class="row">
-									<div class="input-field col s12">
-										<input id="user_tel" name="user_tel" type="text"
-											class="validate"> <label for="전화번호">전화번호</label>
-									</div>
-								</div>
-								<div class="row center">
-									<div class="waves-effect waves-light btn">
-										<div class="input-field col s12 ">
-											<input type="submit" id="findId" value="ID찾기">
-										</div>
-									</div>
-								</div>
-						
 
-							</form>
-							
-							<div class="clearBoth"></div>
+						</div>
+
+					</div>
+					<div class="col-md-4 col-sm-12 col-xs-12">
+						<div class="card">
+							<div class="card-action">
+								<b>포스터</b> <img src="assets/img/movie1.jpg" width="100%"
+									height="90%">
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<span id="IdList"></span>
-			
-			<footer>
-				<div class="center">
-					<br> <br> <br> <br> <br> <br> <br>
-					<br> <br> <br> <br> <br> <br>
-					<%@include file="sdu_footer.jsp"%>
+
+
+			<div class="gong"></div>
+
+
+			<div id="page-inner">
+				<div class="row">
+					<div class="col-md-8 col-sm-12 col-xs-12">
+						<div class="card">
+							<div class="card-action">
+								<b>리뷰 게시판</b>
+							</div>
+							<div class="card-image">
+								<div class="table-responsive">
+									<table class="table table-striped table-bordered table-hover"
+										id="dataTables-example">
+										<thead>
+											<tr>
+												<th>Rendering engine</th>
+												<th>Browser</th>
+
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="odd gradeX">
+												<td>Trident</td>
+												<td>Internet Explorer 4.0</td>
+
+											</tr>
+											<tr class="even gradeC">
+												<td>Trident</td>
+												<td>Internet Explorer 5.0</td>
+
+											</tr>
+											<tr class="odd gradeA">
+												<td>Trident</td>
+												<td>Internet Explorer 5.5</td>
+
+											</tr>
+											<tr class="even gradeA">
+												<td>Trident</td>
+												<td>Internet Explorer 6</td>
+
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+
+						</div>
+
+					</div>
+					<div class="col-md-4 col-sm-12 col-xs-12">
+						<div class="card">
+							<div class="card-action">
+								<b>게시판 상영작</b> <img src="assets/img/movie1.jpg" width="100%"
+									height="90%">
+							</div>
+						</div>
+					</div>
 				</div>
-			</footer>
 
-			<!-- /. PAGE INNER  -->
+				<div class="gong"></div>
 
+
+				<div id="footer">
+					<footer>
+						<div class="center">
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<%@include file="sdu_footer.jsp"%>
+						</div>
+					</footer>
+				</div>
+
+
+			</div>
+			<!-- page-wrapper -end -->
 		</div>
 		<!-- /. PAGE WRAPPER  -->
 

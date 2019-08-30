@@ -176,6 +176,27 @@ public class UserController {
 		return findId;
 	}*/
 	
+/*	@ResponseBody
+	@RequestMapping(value = "findingId.do" , method = RequestMethod.POST, produces = "application/json; charset=utf-8") 
+	public ModelAndView findingId(UserVO vo, HttpServletResponse response, HttpSession session, Locale locale) throws Exception {
+		ModelAndView mv = new ModelAndView();
+
+		us.findId(vo);
+		List<UserVO> ulist = us.findId(vo);
+		System.out.println(ulist.size());
+		
+		if(ulist.size()==0) {
+		mv.setViewName("sdu_idsearch");
+		}else if(ulist.size()==1){
+			mv.setViewName("findId");
+		}
+		
+		mv.addObject("ulist",ulist);
+		return mv;
+	}*/
+	
+	
+
 	@ResponseBody
 	@RequestMapping(value = "findingId.do" , method = RequestMethod.POST, produces = "application/json; charset=utf-8") 
 	public ModelAndView findingId(UserVO vo, HttpServletResponse response, HttpSession session, Locale locale) throws Exception {
@@ -194,13 +215,6 @@ public class UserController {
 		mv.addObject("ulist",ulist);
 		return mv;
 	}
-	
-	
-	
-
-	
-	
-	
 	
 	
 

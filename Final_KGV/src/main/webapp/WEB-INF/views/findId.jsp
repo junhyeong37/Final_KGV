@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<c:forEach var="ul" items="${ulist}" begin=1 end=10 step=1 varStatus="status">
+<c:forEach var="ul" items="${ulist}" > <%-- begin=1 end=10 step=1 varStatus="status" --%>
     ¾ÆÀÌµğ : ${ul.user_id}
 </c:forEach>
 
