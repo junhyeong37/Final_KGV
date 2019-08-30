@@ -33,7 +33,7 @@ public class MovieController {
 	
 	@Autowired
 	MovieService ms;
-	
+	 
 	@Autowired
 	FileUploadService fileUploadService;
 	
