@@ -13,12 +13,16 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.myfinal.kgv.FileUpload.Service.FileUploadService;
 import com.myfinal.kgv.Movie.DAOVO.MovieVO;
 import com.myfinal.kgv.Movie.Service.MovieService;
 
@@ -29,6 +33,9 @@ public class MovieController {
 	
 	@Autowired
 	MovieService ms;
+	
+	@Autowired
+	FileUploadService fileUploadService;
 	
 	
 	@InitBinder
@@ -115,5 +122,23 @@ public class MovieController {
 
 		return mv;
 	}
+	
+	
+	/*@RequestMapping(value="MovieInsertData.do", method=RequestMethod.GET) 
+	public ModelAndView MovieInsertData(MovieVO vo,HttpServletRequest req, Locale locale, @RequestParam("movie_photo") MultipartFile file) throws ParseException {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("sdu_admin_movie_insert_check");
+		
+		//파일업로드 파트
+		String url = fileUploadService.restore(file);
+		mv.addObject("url", url);
+		
+		ms.MovieInsertData(vo);
+		List<MovieVO> movielist = ms.MovieAllData();
+		
+		mv.addObject("movielist", movielist);
+
+		return mv;
+	}*/
 	
 }

@@ -1,7 +1,27 @@
-﻿<!DOCTYPE html>
+<%@page import="org.codehaus.jackson.map.ObjectMapper"%>
+<%@page import="kr.or.kobis.kobisopenapi.consumer.rest.KobisOpenAPIRestService" %>
+
+<%@page import="java.util.Map" %>
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.Collection" %>
+<%@page import="net.sf.json.JSONObject" %>
+<%@page import="net.sf.json.util.JSONBuilder" %>
+<%@page import="net.sf.json.JSONArray" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
+
+
+
+
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Target Material Design Bootstrap Admin Template</title>
@@ -289,60 +309,304 @@
 									
 		</div>
             <div id="page-inner"> 
-             
-                <div class="row"> 
+              <% 
+    String targetDt=request.getParameter("targetDt")==null?"20190818":request.getParameter("targetDt");
+    String itemPerPage=request.getParameter("itemPerPage")==null?"10":request.getParameter("itemPerPage");
+    String multiMovieYn=request.getParameter("multiMovieYn")==null?"":request.getParameter("multiMovieYn");
+    String repNationCd=request.getParameter("reNationCd")==null?"":request.getParameter("repNationCd");
+    String wideAreaCd=request.getParameter("wideAreaCd")==null?"":request.getParameter("wideAreaCd");
+    
+    String key= "4e1acd6debf4047bbb3b289550466e22";
+    
+    KobisOpenAPIRestService service=new KobisOpenAPIRestService(key);
+    
+    String dailyResponse=service.getDailyBoxOffice(true,targetDt,itemPerPage,multiMovieYn,repNationCd,wideAreaCd);
+    
+    ObjectMapper mapper=new ObjectMapper();
+    HashMap<String,Object> dailyResult= mapper.readValue(dailyResponse,HashMap.class);
+    
+    request.setAttribute("dailyResult",dailyResult);
+    
+    String codeResponse= service.getComCodeList(true,"0105000000");
+    HashMap<String,Object> codeResult=mapper.readValue(codeResponse,HashMap.class);
+    
+    request.setAttribute("codeResult",codeResult);
+    
+    
+    
+    
+    %>
+    <script>
+var arMovie = new Array();
+var cnt= 0;
+var arAudi = new Array();
+var oldArAudi = new Array();
+var arSales=new Array();
+var oldArSales= new Array();
+    </script>
+
+<style type="text/css">
+ a:link { color: black; text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color: blue; text-decoration: underline;}
+
+</style>
+<style>
+
+table{
+width:1300px;
+}
+
+</style> 
+ 
+
+
+
+ 
+ 
+<table>
+<tr>
+<td style="width:400px">순위  </td>
+<td>영화명</td>
+
+<td>변동폭</td>
+							
+</tr>
+</table>
+
+
+
+
+<hr align="left" style="width:600px">
+<table>
+<c:if test="${not empty dailyResult.boxOfficeResult.dailyBoxOfficeList}">
+<c:forEach items="${dailyResult.boxOfficeResult.dailyBoxOfficeList }" var="boxoffice">
+   <script>
+    arMovie[cnt] ='<c:out value="${boxoffice.movieNm }"/>'	;
+    arMovie[cnt]= arMovie[cnt].replace(/&amp;/gi, '&');
+    arAudi[cnt]='<c:out value="${boxoffice.audiCnt }"/>';	
+    oldArAudi[cnt] = '<c:out value="${boxoffice.audiInten }"/>'
+    arSales[cnt]= '<c:out value="${boxoffice.salesAmt }"/>'	;
+    oldArSales[cnt]= '<c:out value="${boxoffice.salesInten }"/>'	;
+    cnt=parseInt(cnt)+	1;  
+
+    </script>
+<tr>
+
+
+<td style="width:50px; font-size:20px"><c:out value="${boxoffice.rank }"/></td>
+<%
+
+
+%>
+<c:choose>
+<c:when test="${boxoffice.movieNm eq '분노의 질주: 홉스&쇼'}">
+    <td style="font-size:16px"> <a href="NewFile.html">${boxoffice.movieNm}</a></td>
+    </c:when>
+    <c:when test="${boxoffice.movieNm eq '봉오동 전투'}">
+    <td  style=" font-size:16px"> <a href="NewFile.html">${boxoffice.movieNm}</a></td>
+    </c:when>
+    <c:otherwise>
+<td style="width:810px; font-size:16px"><c:out value="${boxoffice.movieNm }"/></td>
+
+    </c:otherwise>
+
+
+
+
+</c:choose>
+
+<c:choose>
+<c:when test="${boxoffice.rankInten <0 }">
+<td width="16"><img style="width:6px;height:6" src="img/2.png" ></td>
+<td ><c:out value="${boxoffice.rankInten * -1 }"/></td>
+</c:when>
+<c:when test="${boxoffice.rankInten ==0 }">
+<td width="16"><img style="width:6px;height:6" src="img/3.png"></td>
+<td ><c:out value="${boxoffice.rankInten * -1 }"/></td>
+</c:when>
+<c:otherwise>
+<td><img style="width:6px;height:6" src="img/1.png" ></td>
+<td><c:out value="${boxoffice.rankInten }"/></td>
+</c:otherwise>
+
+</c:choose>
+
+
+</tr>
+
+ 
+
+
+
+</c:forEach>
+</c:if>
+</table>
+<br><br>
+
+
+<script>
+jQuery(document).ready(function($) {
+    Morris.Bar({
+        element: 'bar-example2',
+        data: [
+
+            { y:  arMovie[5], b: arAudi[5],  a:arAudi[5]- oldArAudi[5]  },
+            { y:  arMovie[6], b: arAudi[6], a: arAudi[6]- oldArAudi[6]  },
+            { y:  arMovie[7], b: arAudi[7], a:arAudi[7]- oldArAudi[7] },
+            { y:  arMovie[8], b: arAudi[8], a: arAudi[8]- oldArAudi[8] },
+            { y:  arMovie[9], b: arAudi[9], a: arAudi[9]- oldArAudi[9] },
+            
+            
+        ],	
+        xkey: 'y',
+        ykeys: ['a', 'b'],
+        labels: ['yesterday', 'today'],
+        gridTextWeight : 'bold',
+        gridTextColor:'black',
+        gridTextSize:'11',
+    
+      
+
+		 barColors: [
+'#e96562','#414e63',
+'#A8E9DC' 
+],
+        hideHover: 'auto',
+
+    });
+});
+jQuery(document).ready(function($) {
+    Morris.Bar({
+        element: 'bar-example3',
+        data: [
+
+            { y:  arMovie[5], b: arSales[5], a: arSales[5]- oldArSales[5]  },
+            { y:  arMovie[6], b: arSales[6], a: arSales[6]- oldArSales[6]  },
+            { y:  arMovie[7], b: arSales[7], a: arSales[7]- oldArSales[7] },
+            { y:  arMovie[8], b: arSales[8], a: arSales[8]- oldArSales[8] },
+            { y:  arMovie[9], b: arSales[9], a: arSales[9]- oldArSales[9] },
+            
+            
+        ],	
+        xkey: 'y',
+        ykeys: ['a', 'b'],
+        labels: ['yesterday', 'today'],
+        gridTextWeight : 'bold',
+        gridTextColor:'black',
+        gridTextSize:'11',
+    
+      
+
+		 barColors: [
+'#e96562','#414e63',
+'#A8E9DC' 
+],
+        hideHover: 'auto',
+
+    });
+});
+jQuery(document).ready(function($) {
+    Morris.Bar({
+        element: 'bar-example4',
+        data: [
+
+            { y:  arMovie[0], b: arSales[0], a: arSales[0]- oldArSales[0]  },
+            { y:  arMovie[1], b: arSales[1], a: arSales[1]- oldArSales[1]  },
+            { y:  arMovie[2], b: arSales[2], a: arSales[2]- oldArSales[2] },
+            { y:  arMovie[3], b: arSales[3], a: arSales[3]- oldArSales[3] },
+            { y:  arMovie[4], b: arSales[4], a: arSales[4]- oldArSales[4] },
+            
+            
+        ],	
+        xkey: 'y',
+        ykeys: ['a', 'b'],
+        labels: ['yesterday', 'today'],
+        gridTextWeight : 'bold',
+        gridTextColor:'black',
+        gridTextSize:'11',
+    
+      
+
+		 barColors: [
+'#e96562','#414e63',
+'#A8E9DC' 
+],
+        hideHover: 'auto',
+
+    });
+});
+
+        jQuery(document).ready(function($) {
+            Morris.Bar({
+                element: 'bar-example',
+                data: [
+                    { y:   arMovie[0], b:arAudi[0] , a: arAudi[0]- oldArAudi[0] },
+                    { y:  arMovie[1], b: arAudi[1],  a: arAudi[1]- oldArAudi[1] },
+                    { y:  arMovie[2], b:arAudi[2],  a: arAudi[2]- oldArAudi[2]  },
+                    { y:  arMovie[3], b: arAudi[3],  a: arAudi[3]- oldArAudi[3] },
+                    { y: arMovie[4], b: arAudi[4],  a:arAudi[4]- oldArAudi[4] }
+               
                     
-                      
-                               <div class="col-md-6 col-sm-12 col-xs-12">                     
-                    <div class="card">
-                        <div class="card-action">
-                            Bar Chart
-                        </div>
-                        <div class="card-content">
-                            <div id="morris-bar-chart"></div>
-                        </div>
-                    </div>            
-                </div>
-                      <div class="col-md-6 col-sm-12 col-xs-12">                     
-                    <div class="card">
-                        <div class="card-action">
-                            Area Chart
-                        </div>
-                        <div class="card-content">
-                            <div id="morris-area-chart"></div>
-                        </div>
-                    </div>            
-                </div> 
+                    
+                ],
+                xkey: 'y',
+                ykeys: ['a', 'b'],
+                labels: ['yesterday', 'today'],
+                gridTextWeight : 'bold',
+                gridTextColor:'black',
+                gridTextSize:'11',
                 
-           </div>
-                 <!-- /. ROW  -->
-                <div class="row">                     
-                      
-                               <div class="col-md-6 col-sm-12 col-xs-12">                     
+                
+				 barColors: [
+					 
+    '#e96562','#414e63',
+    '#A8E9DC' 
+  ],
+                hideHover: 'auto',
+
+            });
+        });
+        $('#area-chart').resize(function () {
+        	  bar.redraw();
+        	});
+      
+    </script>
+   
+
+<div class="row">
+  
+                <div class="col-md-6 col-sm-6">
                     <div class="card">
                         <div class="card-action">
-                            Line Chart
+                            	
                         </div>
                         <div class="card-content">
-                            <div id="morris-line-chart"></div>
+                           <div class="col">
+							  <ul class="tabs">
+								<li class="tab col s3"><a href="#test1">매출 순위</a></li>
+				
+								<li class="tab col s3"><a href="#test4">관객 순위</a></li>
+							  </ul>
+							</div>
+							<div class="clearBoth"><br/></div>
+							<div id="test4" class="col s12"> <div style="width: 970px; height: 300px; background-color: white; border:2px solid black;"  id="bar-example"></div><br>
+ <div style="width: 970px; height: 300px; background-color: white; border:2px solid black;" id="bar-example2"></div>
+							</div>
+					
+							<div id="test1" class="col s12"><div style="width: 970px; height: 300px; background-color: white; border:2px solid black;"  id="bar-example4"></div><br>
+ <div style="width: 970px; height: 300px; background-color: white; border:2px solid black;" id="bar-example3"></div></div>
+                           <div class="clearBoth"><br/></div>
+                            </div>
                         </div>
-                    </div>            
-                </div>
-                      <div class="col-md-6 col-sm-12 col-xs-12">                     
-                    <div class="card">
-                        <div class="card-action">
-                            Donut Chart
-                        </div>
-                        <div class="card-content">                            
-							<div id="morris-donut-chart"></div>
-                        </div>
-                    </div>            
+                    </div>
                 </div> 
-                
-           </div>
+ 
+
+             
+             
                  <!-- /. ROW  -->
-				 <footer><p>Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-</p></footer>
+				
 				</div>
              <!-- /. PAGE INNER  -->
             </div>
@@ -373,6 +637,13 @@
     <!-- Custom Js -->
     <script src="assets/js/custom-scripts.js"></script> 
  
+ 
+ 
+ 
+ 
+ 
+ 
+   
 
 </body>
 
