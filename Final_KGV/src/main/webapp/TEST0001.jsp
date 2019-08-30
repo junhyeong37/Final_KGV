@@ -7,11 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	7시 30분
-	7시 45분
-	7시 55분
-	8시 05분
-	제발 좀
-	<a href="NewFile3.jsp">제발</a>
+	<img src="http://localhost:8080/Final_KGV/images/giraffe.jpg" alt="" />3
 </body>
 </html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org // DTD mapper 3.0 // en" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mapper.Movie-mapper">
+
+<select id="MovieAllData" resultType="movie">
+		
+		
+		SELECT movie_no, movie_name, movie_level, movie_photo, movie_preview, movie_likes, movie_openday, movie_genre, movie_runtime, movie_content, movie_actor, movie_director
+		FROM MOVIE
+		
+	</select> 
+
+	<select id="MovieInsertData">
+		<!-- insert into movie (movie_no, movie_name, movie_level, movie_photo, movie_preview, movie_likes, movie_openday, movie_genre, movie_runtime, movie_content, movie_actor, movie_director)
+values (movie_sq.nextval, #{movie_name}, #{movie_level}, #{movie_photo}, #{movie_preview}, #{movie_likes}, #{movie_openday}, #{movie_genre}, #{movie_runtime}, #{movie_content}, #{movie_actor}, #{movie_director})
+	 -->
+	 
+	<!--  insert into movie (movie_no, movie_name, movie_level, movie_genre, movie_content, movie_director, movie_actor, movie_runtime, movie_openday)
+values (movie_sq.nextval, #{movie_name}, #{movie_level}, #{movie_genre}, #{movie_content}, #{movie_director}, #{movie_actor}, #{movie_runtime} ,TO_DATE(#{movie_openday},'YYYY-MM-DD'))
+	  -->
+	 
+	 
+	  insert into movie (movie_no, movie_name, movie_level, movie_genre, movie_content, movie_director, movie_actor, movie_runtime, movie_openday)
+values (movie_sq.nextval, #{movie_name}, #{movie_level}, #{movie_genre}, #{movie_content}, #{movie_director}, #{movie_actor}, #{movie_runtime}, #{movie_openday} )
+	 
+	</select>
+
+
+</mapper>

@@ -2,18 +2,16 @@ package com.myfinal.kgv.User.Controller;
 
 
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -22,7 +20,6 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.myfinal.kgv.User.DAOVO.UserVO;
@@ -158,6 +155,26 @@ public class UserController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("sdu_index_navbar");
 		session.invalidate();	
+		return mv;
+	}
+	
+	
+	@ResponseBody
+	@RequestMapping(value = "findingId.do" , method = RequestMethod.POST, produces = "application/json; charset=utf-8") 
+	public ModelAndView findingId(UserVO vo, HttpServletResponse response, HttpSession session, Locale locale) throws Exception {
+		ModelAndView mv = new ModelAndView();
+
+		us.findId(vo);
+		List<UserVO> ulist = us.findId(vo);
+		System.out.println(ulist.size());
+		
+		if(ulist.size()==0) {
+		mv.setViewName("sdu_idsearch");
+		}else if(ulist.size()==1){
+			mv.setViewName("findId");
+		}
+		
+		mv.addObject("ulist",ulist);
 		return mv;
 	}
 	

@@ -12,4 +12,6 @@ public interface UserDAO {
 	public UserVO Loginaction(UserVO vo);
 
 	public List<UserVO> UserLogin(UserVO vo);
+	
+	public List<UserVO> findId(UserVO vo) throws Exception;
 }
