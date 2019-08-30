@@ -38,41 +38,52 @@
 $(document).on('click','#findId',function(){
 	var user_name = $('#user_name').val();
  	var user_tel = $('#user_tel').val();
+
  	var postData = {'user_name' : user_name , 'user_tel' : user_tel};
 
-
+ 	if(user_name=="" || user_tel=="") {
+ 		var postData = null;
+ 	}
+ 	
+ 	/* alert("01"); */
 	$.ajax({
         url:"findingId.do",
         type:"POST",
-        data: postData, 
-        contentType: "application/x-www-form-urlencoded; charset=UTF-8",        
-        dataType : 'json', 
-		async:false,
+        data: postData, /* postData */
+        contentType: "application/x-www-form-urlencoded; charset=UTF-8",        /* "application/x-www-form-urlencoded; charset=UTF-8" */
+        dataType : 'json', /* json */
+		/* async:false, */
         accepts: {mycustom: "application/xml"},
-     
+
         
-       success : function(data){
-      	         /* var IdLists = Data.user_id;
+        
+        
+        success : function(data){
+/*       	        var IdLists = Data.user_id;
        	        	var IdLength = IdLists.user_id;
        	        	var Idfind = IdLists.substring(1, IdLength-1);
-        		  $("#postData").append("<h1>"+"회원님의 정보로 등록된 아이디는 : "+Idfind+" 입니다.</h1>");    */		  
-			 if( postData == user_name ||  postData == user_name){
-	       		 alert('성공');
-				 }
-       }, 
+        		  $("#postData").append("<h1>"+"회원님의 정보로 등록된 아이디는 : "+Idfind+" 입니다.</h1>");  */
+        			alert('성공');
+       },
        
-        error: function(XMLHttpRequest, textStatus, errorThrown){ 
+        error : function(XMLHttpRequest, textStatus, errorThrown){ 
         	 
-         	if(user_name=="" || user_tel=="") {
-         		var postData = null;
+         	if(user_name==""){
+         		alert("이름을 입력하세요");
+         		location.replace("sdu_idsearch.jsp")
+
+         	}
+         	if(user_tel==""){
+         		alert("전화번호를 입력하세요");
+         		location.replace("sdu_idsearch.jsp")
          	}
             
-			 if( postData != user_name ||  postData != user_name){
+       		 if(user_name != user_name || user_tel != user_tel){
        		 alert('정보를 다시 입력해주시길 바랍니다.');
      	  	 location.replace("sdu_idsearch.jsp")
-			 }
-
-       }     
+     	  	}
+       }        
+        
 
     });
 });

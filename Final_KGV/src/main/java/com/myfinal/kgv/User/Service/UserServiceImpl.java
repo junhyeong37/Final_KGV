@@ -46,7 +46,7 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public ArrayList<String> findId(UserVO vo) throws Exception {
+	public List<UserVO> findId(UserVO vo) throws Exception {
 		// TODO Auto-generated method stub
 		Logger logger=Logger.getLogger(this.getClass());
 		logger.info("아이디 찾기 service 진입");
@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService{
 			findId.add(Id);
 
 		}
-		return findId;
+		return dao.findId(vo);
 	}
 
 }

@@ -16,7 +16,7 @@ public interface UserService {
 		public int Loginaction(UserVO uv);
 		public List<UserVO> UserLogin(UserVO vo);
 		
-		public ArrayList<String> findId(UserVO vo) throws Exception;
+		public List<UserVO> findId(UserVO vo) throws Exception;
 		
 		
 		
