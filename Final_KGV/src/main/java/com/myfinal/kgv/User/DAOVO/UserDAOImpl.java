@@ -52,5 +52,11 @@ public class UserDAOImpl implements UserDAO{
 
 	}
 
+	@Override
+	public int checkOverId(String user_id) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(namespace + ".checkOverId", user_id);
+	}
+
 	
 }

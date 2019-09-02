@@ -3,6 +3,9 @@ package com.myfinal.kgv.User.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +18,8 @@ public class UserServiceImpl implements UserService{
 	
 	@Autowired
 	private UserDAO dao;
+	@Inject
+	private SqlSession session;
 	
 	@Override
 	public List<UserVO> UserAllData() {
@@ -60,6 +65,19 @@ public class UserServiceImpl implements UserService{
 
 		}
 		return dao.findId(vo);
+	}
+
+	@Override
+	public int userIdCheck(String user_id) {
+		// TODO Auto-generated method stub
+		
+		return dao.checkOverId(user_id);
+	}
+
+	@Override
+	public int CheckDuplication(String inputId) {
+		int idCount = session.selectOne("checkDuplicationId", inputId.replace("=", ""));
+		return idCount;
 	}
 
 }
