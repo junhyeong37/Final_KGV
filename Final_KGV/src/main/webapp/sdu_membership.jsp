@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"> 
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,9 +21,43 @@
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
-    
-    
-    <script type="text/javascript">
+</head>
+<script>
+var isCheckId = 0;
+function duplicationId () {
+	var inputId = $("#user_id").val();
+	$.ajax({
+		async: false,
+		type: "post",
+		url: "duplicationCheck.do",
+		data: inputId,
+		success: function (data) {
+			if(data == "S") {
+				alert("사용가능한 아이디입니다.");
+				
+				$("#user_id").addClass("has-success")
+				$("#user_id").removeClass("has-error")
+				
+				$("#user_pw").focus();
+				isCheckId = 1;
+			} else {
+				alert("아이디가 존재합니다. 다른 아이디를 입력해주세요.");
+				
+				$("#user_id").addClass("has-error")
+				$("#user_id").removeClass("has-success")
+				$("#user_id").val("");
+				$("#user_id").focus();
+			}
+		},
+		error: function(req, status, errThrown) {
+			alert("network error occur");
+		}
+	});
+}
+</script>
+
+
+<script type="text/javascript">
    function checkValue() {
       if (!document.form.user_id.value) {
          alert("아이디를 입력하세요.");
@@ -62,14 +98,15 @@
       document.form.roadAddrPart1.value = roadAddrPart1;
       document.form.roadAddrPart2.value = roadAddrPart2;
       document.form.addrDetail.value = addrDetail;
-      document.form.zipNo.value = zipNo;
+      document.form.zipNo.value = zipNo; 
    }
 </script>
-    
-    
-    
-    
-</head>
+
+
+
+
+
+
 
 <body>
     <div id="wrapper">
@@ -170,7 +207,11 @@
 									<div class="row">
 										<div class="input-field col s12">
 											<input id="user_id" name="user_id" type="text"
-												class="validate"> <label for="user_id">I D</label>
+												class="validate" > <label for="user_id">I D</label>
+										</div>
+										<div class="input-field col s3"
+											style="margin-top: 0px; margin-left: 0px; margin-right: 0px; float: left;">
+											<input type="button" value="중복검사" onclick="duplicationId();" class="waves-effect waves-light btn">
 										</div>
 										<!-- <div class="input-field col s6">
           <input id="last_name" type="text" class="validate">
@@ -319,7 +360,7 @@
 										</div>
 										<div class="input-field col s3"
 											style="margin-top: 0px; margin-left: 0px; margin-right: 0px; float: left;">
-											<input type="button" value="주소검색" onclick="goPopup();">
+											<input type="button" value="주소검색" onclick="goPopup();" class="waves-effect waves-light btn">
 										</div>
 									</div>
 
@@ -347,8 +388,8 @@
 									</div>
 
 
-									<input type="submit" value="가입" /> <input type="button"
-										value="취소" onclick="goLoginForm()"> <br>
+									<input type="submit" value="가입" class="waves-effect waves-light btn"/> <input type="button"
+										value="취소" onclick="goLoginForm()" class="waves-effect waves-light btn"> <br>
 									<br>
 
 

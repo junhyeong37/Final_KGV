@@ -16,8 +16,8 @@
 			var jb = $('tr.active-menu').text().trim();
 			$('input#A').val(jb);
 		});
-		$('.test2').click(function() {
-			$('.test2').removeClass('active-menu');
+		$('#dataTables-example>tbody>tr.test2').click(function() {
+			$('#dataTables-example>tbody>tr.test2').removeClass('active-menu');
 			$(this).toggleClass('active-menu');
 			//var jb = $(this).html().trim();
 			var jb = $('tr.active-menu.test2>td:nth-child(2)').text().trim();
@@ -55,6 +55,9 @@
 
 .ab {
 	background-color: #AFAFAF;
+}
+.top-navbar{
+ 	top:0;
 }
 </style>
 
@@ -538,7 +541,7 @@
 										<h3 style="background-color: gray;" align="center">극장</h3>
 
 										<table class="table table-striped table-bordered table-hover"
-											id="dataTables-example">
+											id="dataTables-example">  
 
 											<thead>
 												<tr>
@@ -605,7 +608,8 @@
 															<input type="button" value="선택">
 														</div></th>
 												</tr>
-												<tr class="even gradeC test2">
+												<!-- <tr class="even gradeC test2"> -->
+												<tr class="odd gradeA test2">
 													<td>동대문구</td>
 													<td id="Theater">바우 롯데시네마</td>
 													<th><div align="center">

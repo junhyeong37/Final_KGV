@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"> 
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,58 +21,40 @@
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
-    
-    
-    <script type="text/javascript">
-   function checkValue() {
-      if (!document.form.user_id.value) {
-         alert("아이디를 입력하세요.");
-         return false;
-      }
-
-      if (!document.form.user_pw.value) {
-         alert("비밀번호를 입력하세요.");
-         return false;
-      }
-
-      // 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
-      if (document.form.user_pw.value != document.form.user_pwcheck.value) {
-         alert("비밀번호를 동일하게 입력하세요.");
-         return false;
-      }
-   }
-
-   // 취소 버튼 클릭시 로그인 화면으로 이동
-   function goLoginForm() {
-      location.href = "cjw_index.jsp";
-   }
-
-   function goPopup() {
-      // 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
-      var pop = window.open("jusoPopup.jsp", "pop",
-            "width=570,height=420, scrollbars=yes, resizable=yes");
-
-      // 모바일 웹인 경우, 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrMobileLinkUrl.do)를 호출하게 됩니다.
-      //var pop = window.open("/popup/jusoPopup.jsp","pop","scrollbars=yes, resizable=yes"); 
-   }
-   /** API 서비스 제공항목 확대 (2017.02) **/
-   function jusoCallBack(roadFullAddr, roadAddrPart1, addrDetail,
-         roadAddrPart2, engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn,
-         detBdNmList, bdNm, bdKdcd, siNm, sggNm, emdNm, liNm, rn, udrtYn,
-         buldMnnm, buldSlno, mtYn, lnbrMnnm, lnbrSlno, emdNo) {
-      // 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
-      document.form.roadAddrPart1.value = roadAddrPart1;
-      document.form.roadAddrPart2.value = roadAddrPart2;
-      document.form.addrDetail.value = addrDetail;
-      document.form.zipNo.value = zipNo;
-   }
-</script>
-    
-    
-    
-    
 </head>
-
+<script>
+var isCheckId = 0;
+function duplicationId () {
+	var inputId = $("#user_id").val();
+	$.ajax({
+		async: false,
+		type: "post",
+		url: "duplicationCheck.do",
+		data: inputId,
+		success: function (data) {
+			if(data == "S") {
+				alert("사용가능한 아이디입니다.");
+				
+				$("#user_id").addClass("has-success")
+				$("#user_id").removeClass("has-error")
+				
+				$("#user_pw").focus();
+				isCheckId = 1;
+			} else {
+				alert("아이디가 존재합니다. 다른 아이디를 입력해주세요.");
+				
+				$("#user_id").addClass("has-error")
+				$("#user_id").removeClass("has-success")
+				$("#user_id").val("");
+				$("#user_id").focus();
+			}
+		},
+		error: function(req, status, errThrown) {
+			alert("network error occur");
+		}
+	});
+}
+</script>
 <body>
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
@@ -170,7 +154,11 @@
 									<div class="row">
 										<div class="input-field col s12">
 											<input id="user_id" name="user_id" type="text"
-												class="validate"> <label for="user_id">I D</label>
+												class="validate" > <label for="user_id">I D</label>
+										</div>
+										<div class="input-field col s3"
+											style="margin-top: 0px; margin-left: 0px; margin-right: 0px; float: left;">
+											<input type="button" value="중복검사" onclick="duplicationId();" class="waves-effect waves-light btn">
 										</div>
 										<!-- <div class="input-field col s6">
           <input id="last_name" type="text" class="validate">
@@ -319,7 +307,7 @@
 										</div>
 										<div class="input-field col s3"
 											style="margin-top: 0px; margin-left: 0px; margin-right: 0px; float: left;">
-											<input type="button" value="주소검색" onclick="goPopup();">
+											<input type="button" value="주소검색" onclick="goPopup();" class="waves-effect waves-light btn">
 										</div>
 									</div>
 
@@ -347,8 +335,8 @@
 									</div>
 
 
-									<input type="submit" value="가입" /> <input type="button"
-										value="취소" onclick="goLoginForm()"> <br>
+									<input type="submit" value="가입" class="waves-effect waves-light btn"/> <input type="button"
+										value="취소" onclick="goLoginForm()" class="waves-effect waves-light btn"> <br>
 									<br>
 
 

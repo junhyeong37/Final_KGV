@@ -227,7 +227,7 @@ if(ulist==null){
 					</li>
 
 
-					<li><a href="sdu_reserv.jsp" class="waves-effect waves-dark"><i
+					<li><a href="sdu_reserv2.jsp" class="waves-effect waves-dark"><i
 							class="fa fa-bar-chart-o"></i> 예매</a></li>
 
 					<li><a href="#" class="waves-effect waves-dark"><i

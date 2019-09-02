@@ -14,6 +14,9 @@ public interface UserService {
 		public List<UserVO> UserAllData();
 		public int Loginaction(UserVO uv);
 		public List<UserVO> UserLogin(UserVO vo);
+		public List<UserVO> findId(UserVO vo) throws Exception;
+		public int userIdCheck(String user_id);
+		public int CheckDuplication(String inputId);
 		
 		
 		

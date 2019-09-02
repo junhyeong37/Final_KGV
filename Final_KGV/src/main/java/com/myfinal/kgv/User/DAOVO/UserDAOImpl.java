@@ -3,6 +3,7 @@ package com.myfinal.kgv.User.DAOVO;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -40,11 +41,21 @@ public class UserDAOImpl implements UserDAO{
 		
 		return sqlSession.selectList(namespace+".UserLogin", vo);
 	}
-
+	
 	@Override
 	public List<UserVO> findId(UserVO vo) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		Logger logger=Logger.getLogger(this.getClass());
+		logger.info("���̵�ã�� dao ����");
+		logger.info(vo.toString());
+		return sqlSession.selectList(namespace + ".findId" , vo);
+
+	}
+
+	@Override
+	public int checkOverId(String user_id) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne(namespace + ".checkOverId", user_id);
 	}
 
 	
