@@ -269,7 +269,7 @@
 										</div>
 										<div class="input-field col s3"
 											style="margin-top: 0px; margin-left: 0px; margin-right: 0px; float: left;">
-											<input type="button" value="주소검색" onclick="goPopup();">
+											<input type="button" value="주소검색" onclick="goPopup();" class="waves-effect waves-light btn">
 										</div>
 									</div>
 
@@ -297,8 +297,8 @@
 									</div>
 
 
-									<input type="submit" value="가입" /> <input type="button"
-										value="취소" onclick="goLoginForm()"> <br>
+									<input type="submit" value="가입" class="waves-effect waves-light btn"/> <input type="button"
+										value="취소" onclick="goLoginForm()" class="waves-effect waves-light btn"> <br>
 									<br>
 
 

@@ -22,4 +22,11 @@
 	<select id="UserLogin" resultType="com.myfinal.kgv.User.DAOVO.UserVO">
 		select * from users where user_id =#{user_id} and user_pw = #{user_pw}
 	</select>
+	
+	
+	<select id="findId" resultType="com.myfinal.kgv.User.DAOVO.UserVO">
+		select user_id from USERS where user_name=#{user_name} and user_tel=#{user_tel}
+	</select>
+	
+	
 </mapper>
