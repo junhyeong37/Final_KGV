@@ -2,29 +2,22 @@ package com.myfinal.kgv.Movie.Controller;
 
 
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.myfinal.kgv.FileUpload.Service.FileUploadService;
@@ -113,9 +106,25 @@ public class MovieController {
 	}
 	
 	
-	@RequestMapping(value="MovieInsertData.do", method=RequestMethod.POST)
+	@RequestMapping(value="MovieInsertData.do", method=RequestMethod.GET)
+	   public ModelAndView MovieInsertData(MovieVO vo, HttpServlet req, Locale locale)throws ParseException{
+	      ModelAndView mv=new ModelAndView();
+	      mv.setViewName("sdu_admin_movie_insert_check");
+	      
+	      ms.MovieInsertData(vo);
+	      List<MovieVO>movielist=ms.MovieAllData();
+	      
+	      mv.addObject("movielist", movielist);
+
+	      return mv;
+	   }
+
+
+	
+	
+	/*@RequestMapping(value="MovieInsertData.do", method=RequestMethod.POST)
 	@ResponseBody
-	public ModelAndView MovieInsertData(Model model,MovieVO vo,HttpServletRequest req, Locale locale/*@RequestParam("movie_photo") MultipartFile file*/) throws ParseException {
+	public ModelAndView MovieInsertData(Model model,MovieVO vo,HttpServletRequest req, Locale locale@RequestParam("movie_photo") MultipartFile file) throws ParseException {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("sdu_admin_movie_insert_check");
 		MultipartHttpServletRequest mpreq = (MultipartHttpServletRequest) req;
@@ -133,7 +142,7 @@ public class MovieController {
 		mv.addObject("movielist", movielist);
 
 		return mv;
-	}
+	}*/
 	
 	
 	/*@RequestMapping(value="MovieInsertData.do", method=RequestMethod.GET) 

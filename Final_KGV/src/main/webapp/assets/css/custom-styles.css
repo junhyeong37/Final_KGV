@@ -21,7 +21,8 @@ body {
     padding: 15px 15px;
     /* min-height: 600px; */
     height:100%;
-    background: #ececec;	    
+    /* background: #ececec; */
+    	    background: #ffffff;
 }
 #page-inner {
     width:100%;
@@ -472,7 +473,8 @@ ul.nav.nav-second-level.collapse.in {background: #121821;}
 	background: #1F2837;
 }
 .top-navbar {
-	background: #e2e2e2;
+	/* background: #e2e2e2; */
+	background: #ffffff;
 	border-bottom:none;
 }
 .top-navbar .nav > li > a > i {margin-right: 0;}
@@ -524,7 +526,9 @@ ul.dropdown-menu.dropdown-messages li a div {
 }
 #page-wrapper{
 	/* background: #e0e8f5; */
-	background: #e2e2e2;
+	/* background: #e2e2e2; */
+	 background: #ffffff; 
+	
 }
 .dashboard-cards .card-stacked{
 	color:#fff;

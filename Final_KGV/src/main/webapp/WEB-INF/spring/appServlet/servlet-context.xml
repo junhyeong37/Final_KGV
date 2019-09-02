@@ -33,6 +33,25 @@
    
    
    
+   
+   
+   <!-- =============인터셉터(심동욱)============ -->
+   
+  <!--  <interceptors>
+    <interceptor>
+        <mapping path="/**"/>
+        <exclude-mapping path="/UserLogin.do"/> 인터셉터 진입 안하게 할 주소
+        <beans:bean class="com.myfinal.kgv.comon.LoginInterceptor">
+        </beans:bean>
+    </interceptor>
+</interceptors> -->
+
+<!-- =============인터셉터(심동욱)============ -->
+   
+   
+   
+   
+   
 <!--    <context:component-scan base-package="com.test.pkg" use-default-filters="false">
    <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
    </context:component-scan> -->

@@ -168,7 +168,7 @@ if(ulist==null){
 	alert("해당메뉴는 로그인이 필요한 메뉴입니다. 로그인 후 이용해주세요");
 	location.href="sdu_login.jsp"
 }else{
-	location.href="sdu_reserv2.jsp"
+	location.href="sdu_seat.jsp"
 }
 
 

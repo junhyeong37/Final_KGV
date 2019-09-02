@@ -163,7 +163,7 @@
 					</li>
 
 
-					<li><a href="sdu_reserv.jsp" class="waves-effect waves-dark"><i
+					<li><a href="sdu_reserv2.jsp" class="waves-effect waves-dark"><i
 							class="fa fa-bar-chart-o"></i> 예매</a></li>
 
 					<li><a href="#" class="waves-effect waves-dark"><i
@@ -300,9 +300,13 @@
 							</div>
 							<div class="card-image">
 								<div class="video">
-									<iframe width="80%" height="90%"
+									
+									
+									
+									
+									 <iframe width="80%" height="90%"
 										src="https://www.youtube.com/embed/WaxgJggEm3Q"
-										frameborder="0"> </iframe>
+										frameborder="0"> </iframe> 
 
 								</div>
 							</div>
