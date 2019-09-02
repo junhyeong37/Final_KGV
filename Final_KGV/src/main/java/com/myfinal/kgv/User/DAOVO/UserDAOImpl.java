@@ -41,5 +41,11 @@ public class UserDAOImpl implements UserDAO{
 		return sqlSession.selectList(namespace+".UserLogin", vo);
 	}
 
+	@Override
+	public List<UserVO> findId(UserVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 }
