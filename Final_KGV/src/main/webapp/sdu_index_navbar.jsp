@@ -49,7 +49,10 @@
 			// 현재 로그인된 아이디가 없다면 (= session에 저장된 id가 없다면)
 			if (session.getAttribute("ulist") == null) {
 		%>
-
+<!-- <script>
+alert("로그인에 실패하였습니다.")
+history.go(-1);
+</script> -->
 		<nav class="navbar navbar-default top-navbar" role="navigation">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle waves-effect waves-dark"
@@ -125,7 +128,7 @@
 		<ul id="dropdown1" class="dropdown-content">
 			<li><a href="sdu_login.jsp"><i class="fa fa-user fa-fw"></i>
 					로그아웃</a></li>
-			<li><a href="sdu_membership.jsp"><i class="fa fa-gear fa-fw"></i>
+			<li><a href="sdu_mypage.jsp"><i class="fa fa-gear fa-fw"></i>
 					My Page</a></li>
 			
 			

@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.myfinal.kgv.User.DAOVO.UserVO;
 import com.myfinal.kgv.User.Service.UserService;
@@ -96,7 +96,7 @@ public class UserController {
 		return mv;
 	}
 
-	@RequestMapping(value = "UserLogin.do", method = RequestMethod.GET)
+	/*@RequestMapping(value = "UserLogin.do", method = RequestMethod.GET)
 	public ModelAndView UserLogin(UserVO vo, HttpServletRequest req, Locale locale, HttpSession session)
 			throws ParseException {
 		ModelAndView mv = new ModelAndView();
@@ -115,6 +115,41 @@ public class UserController {
 		session.setAttribute("ulist", ulist);
 		mv.addObject("ulist", ulist);
 		return mv;
+	}*/
+	
+	@RequestMapping(value = "UserLogin.do", method = RequestMethod.GET)
+	public ModelAndView UserLogin(UserVO vo, HttpServletRequest req, Locale locale, HttpSession session, RedirectAttributes rttr)
+			throws ParseException {
+		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("test");
+		//mv.setViewName("sdu_index_navbar");
+
+		us.UserLogin(vo);
+
+		List<UserVO> ulist = us.UserLogin(vo);
+
+		System.out.println("login_do : " + ulist);
+
+		for (UserVO userVO : ulist) {
+			System.out.println(userVO.getUser_address());
+		}
+		
+		if(ulist.isEmpty()) {
+			mv.setViewName("sdu_login");/*
+			rttr.addFlashAttribute("msg", false);*/
+			mv.addObject("msg","false");
+			
+			
+		}else {
+			mv.setViewName("sdu_index_navbar");
+			session.setAttribute("ulist", ulist);
+			mv.addObject("ulist",ulist);
+			
+		}
+		return mv;
+		/*session.setAttribute("ulist", ulist);
+		mv.addObject("ulist", ulist);
+		return mv;*/
 	}
 
 	/////////////////////////// �꽭�뀡媛� 濡쒓렇�씤 �뀒�뒪�듃

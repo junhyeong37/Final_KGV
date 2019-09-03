@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-	
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -65,7 +65,7 @@
 			<!-- <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 설정</a>
 </li> -->
 		</ul>
-		
+
 		<!--/. NAV TOP  -->
 		<nav class="navbar-default navbar-side" role="navigation">
 			<div class="sidebar-collapse">
@@ -179,24 +179,40 @@
 											class="validate"> <label for="비밀번호">비밀번호</label>
 									</div>
 								</div>
-								
+
+								<c:if test="${msg == 'false' }">
+									<p style="color: #f00;">로그인에 실패했습니다. 아이디 또는 비밀번호를 다시
+										입력해주십시오.</p>
+								</c:if>
+
+
+
 								<div class="row center">
-										<div class="waves-effect waves-light btn">
+									<div class="waves-effect waves-light btn">
 										<!--  <a class="waves-effect waves-light btn">button</a>  -->
-											
-												<input type="submit" value="로그인">
-											
-										</div>
+
+										<input type="submit" value="로그인">
+
 									</div>
-								
-								
-								
-								
-								
-								
+								</div>
+
+								<%-- <c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
+									<font color="red">
+										<p>
+											Your login attempt was not successful due to <br />
+											${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+										</p> <c:remove var="SPRING_SECURITY_LAST_EXCEPTION"
+											scope="session" />
+									</font>
+								</c:if> --%>
+
+
+
+
+
+
 								<div class="row center">
-									<U><a href="sdu_idsearch.jsp">아이디찾기</a></U>
-									&nbsp;&nbsp;&nbsp;
+									<U><a href="sdu_idsearch.jsp">아이디찾기</a></U> &nbsp;&nbsp;&nbsp;
 									<U><a href="sdu_pwsearch.jsp">비밀번호찾기</a></U>
 								</div>
 
@@ -213,20 +229,24 @@
 					<%@include file="sdu_footer.jsp"%>
 				</div>
 			</footer> --%>
-			
-			
-			 
-			
-			 
+
+
+
+
+
 			<!-- ===================== -->
-			<div id="footer"><footer><div class="center">
-					<br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<div id="footer">
+				<footer>
+					<div class="center">
+						<br> <br> <br> <br> <br> <br> <br>
+						<br> <br> <br> <br> <br> <br>
 						<%@include file="sdu_footer.jsp"%>
 					</div>
-				</footer></div>
-			
-			
-			
+				</footer>
+			</div>
+
+
+
 
 			<!-- /. PAGE INNER  -->
 
