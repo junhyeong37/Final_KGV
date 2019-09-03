@@ -55,6 +55,59 @@ function duplicationId () {
 	});
 }
 </script>
+
+
+<script type="text/javascript">
+   function checkValue() {
+      if (!document.form.user_id.value) {
+         alert("아이디를 입력하세요.");
+         return false;
+      }
+
+      if (!document.form.user_pw.value) {
+         alert("비밀번호를 입력하세요.");
+         return false;
+      }
+
+      // 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
+      if (document.form.user_pw.value != document.form.user_pwcheck.value) {
+         alert("비밀번호를 동일하게 입력하세요.");
+         return false;
+      }
+   }
+
+   // 취소 버튼 클릭시 로그인 화면으로 이동
+   function goLoginForm() {
+      location.href = "cjw_index.jsp";
+   }
+
+   function goPopup() {
+      // 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
+      var pop = window.open("jusoPopup.jsp", "pop",
+            "width=570,height=420, scrollbars=yes, resizable=yes");
+
+      // 모바일 웹인 경우, 호출된 페이지(jusopopup.jsp)에서 실제 주소검색URL(http://www.juso.go.kr/addrlink/addrMobileLinkUrl.do)를 호출하게 됩니다.
+      //var pop = window.open("/popup/jusoPopup.jsp","pop","scrollbars=yes, resizable=yes"); 
+   }
+   /** API 서비스 제공항목 확대 (2017.02) **/
+   function jusoCallBack(roadFullAddr, roadAddrPart1, addrDetail,
+         roadAddrPart2, engAddr, jibunAddr, zipNo, admCd, rnMgtSn, bdMgtSn,
+         detBdNmList, bdNm, bdKdcd, siNm, sggNm, emdNm, liNm, rn, udrtYn,
+         buldMnnm, buldSlno, mtYn, lnbrMnnm, lnbrSlno, emdNo) {
+      // 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
+      document.form.roadAddrPart1.value = roadAddrPart1;
+      document.form.roadAddrPart2.value = roadAddrPart2;
+      document.form.addrDetail.value = addrDetail;
+      document.form.zipNo.value = zipNo; 
+   }
+</script>
+
+
+
+
+
+
+
 <body>
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
