@@ -37,6 +37,7 @@ function duplicationId() {
 	$.ajax({
 		async: false,
 		type: "post",
+		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 		url: "loginCheck.do",
 		data: allData, 
 		

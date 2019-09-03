@@ -41,4 +41,10 @@
 		select count(*) as existIdNum From USERS 
 		where user_id=#{inputId} and user_pw=#{inputPw} 
 	</select>
+	
+	
+	<select id="IdCheck" parameterType="String" resultType="integer">
+		select count(*) as existIdNum From USERS 
+		where user_name=#{inputName} and user_tel=#{inputTel} 
+	</select>
 </mapper>

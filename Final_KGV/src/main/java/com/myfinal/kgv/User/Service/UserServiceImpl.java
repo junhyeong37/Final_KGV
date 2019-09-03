@@ -1,9 +1,7 @@
 package com.myfinal.kgv.User.Service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -12,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.myfinal.kgv.User.DAOVO.FindIdVO;
 import com.myfinal.kgv.User.DAOVO.LoginVO;
 import com.myfinal.kgv.User.DAOVO.UserDAO;
 import com.myfinal.kgv.User.DAOVO.UserVO;
@@ -99,4 +98,23 @@ public class UserServiceImpl implements UserService{
 		return idCount;
 	}
 
+	
+	@Override
+	public int IdCheck(String inputName, String inputTel) {
+		// TODO Auto-generated method stub
+		FindIdVO lv = new FindIdVO();
+		System.out.println(inputName.replace("=", ""));
+		
+		lv.setInputName(inputName.replace("=", ""));
+		lv.setInputTel(inputTel.replace("=", ""));
+		
+		System.out.println(lv.getInputName());
+		
+		int idCount = session.selectOne("IdCheck",lv);
+		return idCount;
+	}
+	
+	
+	
+	
 }
