@@ -19,7 +19,7 @@
 							<td>${nvo.movie_director}</td>
 							<td>${nvo.movie_actor}</td>
 							<td>${nvo.movie_runtime}</td>
-							<%-- <td>${nvo.movie_openday}</td> --%>
+							<td>${nvo.movie_openday}</td>
 						</tr>
 
 					</c:forEach>

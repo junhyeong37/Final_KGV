@@ -80,6 +80,21 @@
 
 
 
+
+
+<!--       Logging
+
+		<dependency>
+
+			<groupId>org.apache.logging.log4j</groupId>
+
+			<artifactId>log4j-core</artifactId>
+
+			<version>2.0</version>
+
+		</dependency>
+ -->
+
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -155,33 +170,6 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-
-
-	<!-- JSON -->
-
-<!-- https://mvnrepository.com/artifact/org.json/json -->
- <dependency>
-    <groupId>org.json</groupId>
-    <artifactId>json</artifactId>
-    <version>20160810</version>
-</dependency>
-
-
-
- <dependency>
-    <groupId>com.fasterxml.jackson.core</groupId>
-    <artifactId>jackson-core</artifactId>
-    <version>2.4.3</version>
-</dependency>
-<dependency>
-    <groupId>com.fasterxml.jackson.core</groupId>
-    <artifactId>jackson-databind</artifactId>
-    <version>2.4.3</version>
-</dependency>
-
-
-
-
 
 		<!-- Test -->
 		<dependency>

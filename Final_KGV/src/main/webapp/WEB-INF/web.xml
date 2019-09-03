@@ -23,7 +23,7 @@
   </servlet-mapping>
 
  
- <display-name>Spring Web MVC Application</display-name>
+ 
  
  
 <!--   <servlet-mapping>

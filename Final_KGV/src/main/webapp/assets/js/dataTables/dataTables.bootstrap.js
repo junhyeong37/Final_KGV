@@ -1,6 +1,7 @@
 /* Set the defaults for DataTables initialisation */
 $.extend(true, $.fn.dataTable.defaults, {
-    "sDom": "<'row'<'col-sm-6'l><'col-sm-6'f>r>" + "t" + "<'row'<'col-sm-6'i><'col-sm-6'p>>",
+    /*"sDom": "<'row'<'col-sm-6'l><'col-sm-6'f>r>" + "t" + "<'row'<'col-sm-6'i><'col-sm-6'p>>",*/
+	"sDom": "<'row'<'col-sm-12'f>r>" + "t" + "<'row'<'col-sm-12'p>>",
     "oLanguage": {
         "sLengthMenu": "_MENU_ records per page"
     }
@@ -153,7 +154,7 @@ if ($.fn.dataTable.Api) {
             },
 
             "fnUpdate": function(oSettings, fnDraw) {
-                var iListLength = 5;
+                var iListLength = 1;
                 var oPaging = oSettings.oInstance.fnPagingInfo();
                 var an = oSettings.aanFeatures.p;
                 var i, ien, j, sClass, iStart, iEnd, iHalf = Math.floor(iListLength / 2);

@@ -29,9 +29,9 @@
 
 
 
-<!-- <script  src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 
- <script src="https://code.jquery.com/jquery-1.11.3.js"></script> 
+<!-- <script src="https://code.jquery.com/jquery-1.11.3.js"></script> -->
 
 
 <script>
@@ -40,7 +40,7 @@ $(document).on('click','#findId',function(){
  	var user_tel = $('#user_tel').val();
  	var postData = {'user_name' : user_name , 'user_tel' : user_tel};
 
- 	
+
 	$.ajax({
         url:"findingId.do",
         type:"POST",
@@ -49,25 +49,30 @@ $(document).on('click','#findId',function(){
         dataType : 'json', 
 		async:false,
         accepts: {mycustom: "application/xml"},
-     	
+     
         
-/*        success : function(data){
-  
-    	   var result =data.json;
-   	    alert('성공'+result);
-
-       },  */
+       success : function(data){
+      	         /* var IdLists = Data.user_id;
+       	        	var IdLength = IdLists.user_id;
+       	        	var Idfind = IdLists.substring(1, IdLength-1);
+        		  $("#postData").append("<h1>"+"회원님의 정보로 등록된 아이디는 : "+Idfind+" 입니다.</h1>");    */		  
+			 if( postData == user_name ||  postData == user_name){
+	       		 alert('성공');
+				 }
+       }, 
        
         error: function(XMLHttpRequest, textStatus, errorThrown){ 
-     		
-         	if(user_name=="") {
+        	 
+         	if(user_name=="" || user_tel=="") {
          		var postData = null;
-         		alert('이름을 입력하시오!!');
-         	}else if(user_tel==""){
-         		var postData = null;
-         		alert("전화번호를 입력하시오!!")
          	}
-      	 }     
+            
+			 if( postData != user_name ||  postData != user_name){
+       		 alert('정보를 다시 입력해주시길 바랍니다.');
+     	  	 location.replace("sdu_idsearch.jsp")
+			 }
+
+       }     
 
     });
 });

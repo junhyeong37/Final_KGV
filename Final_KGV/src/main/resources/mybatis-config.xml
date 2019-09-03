@@ -25,7 +25,12 @@
          
 		<typeAliases>		
   			<typeAlias type="com.myfinal.kgv.User.DAOVO.UserVO" alias="User"/>    
-  			<typeAlias type="com.myfinal.kgv.Movie.DAOVO.MovieVO" alias="Movie"/>                                               
+  			<typeAlias type="com.myfinal.kgv.Movie.DAOVO.MovieVO" alias="Movie"/>  
+  			<typeAlias type="com.myfinal.kgv.Join.DAOVO.MovieVO" alias="Movie2"/>
+  			<typeAlias type="com.myfinal.kgv.Join.DAOVO.ScheduleroomVO" alias="Scheduleroom"/>
+  			<typeAlias type="com.myfinal.kgv.Join.DAOVO.ScheduleVO" alias="Schedule"/>
+  			<typeAlias type="com.myfinal.kgv.Join.DAOVO.SeatVO" alias="Seat"/>
+  			<typeAlias type="com.myfinal.kgv.Join.DAOVO.TicketVO" alias="Ticket"/>                                             
          </typeAliases>
          
         

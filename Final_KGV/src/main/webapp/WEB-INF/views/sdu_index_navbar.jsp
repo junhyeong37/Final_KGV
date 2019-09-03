@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -36,6 +40,12 @@
 
 <body>
 	<div id="wrapper">
+
+		<%
+			// 현재 로그인된 아이디가 없다면 (= session에 저장된 id가 없다면)
+			if (session.getAttribute("ulist") == null) {
+		%>
+
 		<nav class="navbar navbar-default top-navbar" role="navigation">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle waves-effect waves-dark"
@@ -69,166 +79,80 @@
 					로그인</a></li>
 			<li><a href="sdu_membership.jsp"><i class="fa fa-gear fa-fw"></i>
 					회원가입</a></li>
-			<!-- <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 설정</a>
-</li> -->
+
 		</ul>
-		<!-- <ul id="dropdown2" class="dropdown-content w250">
-  <li>
-                                <div>
-                                    <i class="fa fa-comment fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 min</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 min</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                    <span class="pull-right text-muted small">4 min</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                                <div>
-                                    <i class="fa fa-tasks fa-fw"></i> New Task
-                                    <span class="pull-right text-muted small">4 min</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small">4 min</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Alerts</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-</ul>
-<ul id="dropdown3" class="dropdown-content dropdown-tasks w250">
-<li>
-		<a href="#">
-			<div>
-				<p>
-					<strong>Task 1</strong>
-					<span class="pull-right text-muted">60% Complete</span>
-				</p>
-				<div class="progress progress-striped active">
-					<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-						<span class="sr-only">60% Complete (success)</span>
-					</div>
+
+		<%
+			}
+			// 현재 로그인된 아이디가 있다면 (= session에 저장된 id가 있다면)
+			else {
+		%>
+
+		<nav class="navbar navbar-default top-navbar" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle waves-effect waves-dark"
+					data-toggle="collapse" data-target=".sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand waves-effect waves-dark"
+					href="sdu_index_navbar.jsp"><i class="large material-icons">track_changes</i>
+					<strong>KGV</strong></a>
+
+				<div id="sideNav" href="">
+					<i class="material-icons dp48">toc</i>
 				</div>
 			</div>
-		</a>
-	</li>
-	<li class="divider"></li>
-	<li>
-		<a href="#">
-			<div>
-				<p>
-					<strong>Task 2</strong>
-					<span class="pull-right text-muted">28% Complete</span>
-				</p>
-				<div class="progress progress-striped active">
-					<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100" style="width: 28%">
-						<span class="sr-only">28% Complete</span>
-					</div>
-				</div>
-			</div>
-		</a>
-	</li>
-	<li class="divider"></li>
-	<li>
-		<a href="#">
-			<div>
-				<p>
-					<strong>Task 3</strong>
-					<span class="pull-right text-muted">60% Complete</span>
-				</p>
-				<div class="progress progress-striped active">
-					<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-						<span class="sr-only">60% Complete (warning)</span>
-					</div>
-				</div>
-			</div>
-		</a>
-	</li>
-	<li class="divider"></li>
-	<li>
-		<a href="#">
-			<div>
-				<p>
-					<strong>Task 4</strong>
-					<span class="pull-right text-muted">85% Complete</span>
-				</p>
-				<div class="progress progress-striped active">
-					<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-						<span class="sr-only">85% Complete (danger)</span>
-					</div>
-				</div>
-			</div>
-		</a>
-	</li>
-	<li class="divider"></li>
-	<li>
-</ul>   
-<ul id="dropdown4" class="dropdown-content dropdown-tasks w250 taskList">
-  <li>
-                                <div>
-                                    <strong>John Doe</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Today</em>
-                                    </span>
-                                </div>
-                                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <p>Lorem Ipsum has been the industry's standard dummy text ever since an kwilnw...</p>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <p>Lorem Ipsum has been the industry's standard dummy text ever since the...</p>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>Read All Messages</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-</ul> -->
+
+			<ul class="nav navbar-top-links navbar-right">
+				<!-- <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown4"><i class="fa fa-envelope fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>				
+				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown3"><i class="fa fa-tasks fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
+				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown2"><i class="fa fa-bell fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li> -->
+				<!--   <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b>John Doe</b> <i class="material-icons right">arrow_drop_down</i></a></li> -->
+				<li><c:forEach items="${ulist }" var="val" varStatus="status">
+						<a class="dropdown-button waves-effect waves-dark" href="#!"
+							data-activates="dropdown1"> <i class="fa fa-user fa-fw"></i>
+							<b> ${val.user_name }</b> <i class="material-icons right">arrow_drop_down</i></a>
+					</c:forEach></li>
+			</ul>
+		</nav>
+		<!-- Dropdown Structure -->
+		<ul id="dropdown1" class="dropdown-content">
+			<li><a href="sdu_login.jsp"><i class="fa fa-user fa-fw"></i>
+					로그아웃</a></li>
+			<li><a href="sdu_membership.jsp"><i class="fa fa-gear fa-fw"></i>
+					My Page</a></li>
+			
+			
+			<!-- 관리자로 로그인 했을때만 뜨는 메뉴 -->
+			<c:set var="id" value="admin" />
+
+			<c:forEach items="${ulist }" var="val">
+
+				 <c:if test="${val.user_id eq 'admin'}">
+					<li><a href="sdu_admin_movie_insert.jsp"><i
+						class="fa fa-gear fa-fw"></i> 관리자 영화입력</a></li>
+				</c:if>
+				 
+			</c:forEach>
+
+			
+
+
+
+		</ul>
+
+		<!-- ================================================== -->
+
+
+
+
+
+		<%
+			}
+		%>
+
 		<!--/. NAV TOP  -->
 		<nav class="navbar-default navbar-side" role="navigation">
 			<div class="sidebar-collapse">
@@ -267,48 +191,50 @@
 					<li><a href="sdu_content.jsp" class="waves-effect waves-dark"><i
 							class="fa fa-desktop"></i> 고객센터</a></li>
 
-					<!-- <li>
-                        <a href="head_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
-                    </li>
-                    
-                    <li>
-                        <a href="head_test2.jsp" class="waves-effect waves-dark"><i class="fa fa-table"></i> Responsive Tables</a>
-                    </li>
-                    <li>
-                        <a href="head_test2.jsp" class="waves-effect waves-dark"><i class="fa fa-edit"></i> Forms </a>
-                    </li>
 
 
-                    <li>
-                        <a href="#" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
+					<%-- <c:set var="id" value="admin" />
 
-                                </ul>
+					<c:if test="${id eq 'admin'}">
+						<li><a href="sdu_admin_movie_insert.jsp"
+							class="waves-effect waves-dark"><i class="fa fa-folder"></i>
+								관리자 영화삽입1</a></li>
+					</c:if> --%>
 
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="head_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> Empty Page</a>
-                    </li> -->
+
+					<%-- <c:forEach items="${ulist }" var="val" varStatus="status">
+					
+					 	<c:if test="${val.user_id eq 'admin }">
+					 		<li><a href="sdu_admin_movie_insert.jsp"
+							class="waves-effect waves-dark"><i class="fa fa-folder"></i>
+								관리자 영화삽입123</a></li>
+					 	</c:if>
+					 	
+					</c:forEach> --%>
+
+
+
+
+
+					<%-- <li><c:forEach items="${ulist }" var="val" varStatus="status">
+						<a class="dropdown-button waves-effect waves-dark" href="#!"
+							data-activates="dropdown1"> <i class="fa fa-user fa-fw"></i>
+							<b> ${val.user_name }</b> <i class="material-icons right">arrow_drop_down</i></a>
+					</c:forEach></li> --%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 				</ul>
 
 			</div>
@@ -319,6 +245,9 @@
 		<div id="page-wrapper">
 			<br> <br> <br> <br> <br> <br> <br>
 			<br> <br> <br> <br> <br> <br> <br>
+
+
+
 			<div id="carousel">
 				<div class="slideImg hideLeft">
 					<img
@@ -461,19 +390,8 @@
 				<div id="footer">
 					<footer>
 						<div class="center">
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
+							<br> <br> <br> <br> <br> <br> <br>
+							<br> <br> <br> <br> <br> <br>
 							<%@include file="sdu_footer.jsp"%>
 						</div>
 					</footer>
