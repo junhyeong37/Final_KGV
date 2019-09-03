@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 	
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,7 +27,35 @@
 	rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
 </head>
-
+<script>
+function duplicationId() {
+	var inputId = $("#user_id").val();
+	var inputPw = $("#user_pw").val();
+	var allData = { "inputId": inputId, "inputPw": inputPw };
+	
+	var test = false;
+	$.ajax({
+		async: false,
+		type: "post",
+		url: "loginCheck.do",
+		data: allData, 
+		
+		success: function (data) {
+			if(data == "S") {
+				alert("님 잘못입력했어용");
+				
+			} else {
+				test = true
+			}
+		},
+		error: function(req, status, errThrown) {
+			alert("network error occur");
+		}
+	});
+	
+	return test
+}
+</script>
 <body>
 	<div id="wrapper">
 		<nav class="navbar navbar-default top-navbar" role="navigation">
@@ -320,7 +349,7 @@
 					<div class="card">
 						<div class="card-action">로그인</div>
 						<div class="card-content">
-							<form class="col s12" action="UserLogin.do" method="get">
+							<form class="col s12" action="UserLogin.do" method="get" onsubmit="return duplicationId()">
 								<div class="row">
 									<div class="input-field col s12">
 										<input id="user_id" name="user_id" type="text"

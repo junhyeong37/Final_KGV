@@ -1,7 +1,9 @@
 package com.myfinal.kgv.User.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -10,6 +12,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.myfinal.kgv.User.DAOVO.LoginVO;
 import com.myfinal.kgv.User.DAOVO.UserDAO;
 import com.myfinal.kgv.User.DAOVO.UserVO;
 
@@ -76,7 +79,23 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public int CheckDuplication(String inputId) {
+		System.out.println(inputId);
 		int idCount = session.selectOne("checkDuplicationId", inputId.replace("=", ""));
+		return idCount;
+	}
+
+	@Override
+	public int loginCheck(String inputId, String inputPw) {
+		// TODO Auto-generated method stub
+		LoginVO lv = new LoginVO();
+		System.out.println(inputId.replace("=", ""));
+		
+		lv.setInputId(inputId.replace("=", ""));
+		lv.setInputPw(inputPw.replace("=", ""));
+		
+		System.out.println(lv.getInputId());
+		
+		int idCount = session.selectOne("loginCheck",lv);
 		return idCount;
 	}
 

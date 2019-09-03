@@ -156,7 +156,7 @@ public class UserController {
 		return mv;
 	}
 
-	// id 중복 체크 컨트롤러
+	// id 중복 체크 컨트롤러 회원가입부분에 쓰임
 	@RequestMapping("duplicationCheck.do")
 	@ResponseBody
 	public String CheckDuplication(@RequestBody String inputId) {
@@ -170,5 +170,20 @@ public class UserController {
 		
 		return checkRst;
 	}
-
+	
+	@RequestMapping("loginCheck.do")
+	@ResponseBody
+	public String loginCheck(String inputId, String inputPw) {
+		System.out.println("컨트롤러" + inputId);
+		System.out.println("컨트롤러" + inputPw);
+		
+		String checkRst;
+		int idCnt = us.loginCheck(inputId,inputPw);
+		if(idCnt > 0) 
+			checkRst = "F";
+		else 
+			checkRst = "S";
+		
+		return checkRst;
+	}
 }
