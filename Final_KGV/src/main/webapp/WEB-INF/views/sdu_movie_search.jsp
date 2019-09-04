@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 	
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -25,7 +27,25 @@
 	rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
 
+<style type="text/css">
+.sorting_asc th {
+   width: 40%;
+}
+.center{
+text-align: center;
+}
+.middle{ 
+vertical-align:middle;
+}
 
+.table-responsive div{
+overflow-x:hidden;
+}
+
+.table-bordered thead {
+   border: 0px solid #ddd;
+}
+</style>
 
 
 
@@ -167,69 +187,13 @@
 							class="fa fa-sitemap"></i> 영화<span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
 							<li><a href="sdu_box_office.jsp">박스오피스 랭킹</a></li>
-							<li><a href="sdu_movie_search.jsp">영화검색</a></li>
-							<!-- <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-
-                                </ul>
-
-                            </li> -->
+							<li><a href="MovieAllData.do">영화검색</a></li>
+							
 						</ul></li>
 					<li><a href="sdu_content.jsp" class="waves-effect waves-dark"><i
 							class="fa fa-desktop"></i> 고객센터</a></li>
 
-					<!-- <li>
-                        <a href="head_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
-                    </li>
-                    
-                    <li>
-                        <a href="head_test2.jsp" class="waves-effect waves-dark"><i class="fa fa-table"></i> Responsive Tables</a>
-                    </li>
-                    <li>
-                        <a href="head_test2.jsp" class="waves-effect waves-dark"><i class="fa fa-edit"></i> Forms </a>
-                    </li>
-
-
-                    <li>
-                        <a href="#" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-
-                                </ul>
-
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="head_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> Empty Page</a>
-                    </li> -->
+				
 				</ul>
 
 			</div>
@@ -237,265 +201,153 @@
 		</nav>
 		<!-- /. NAV SIDE  -->
 
-		<div id="page-wrapper">
+		
+		
+		
+		<!-- 삭제지점 -->
+		<div id="page-wrapper" style="height: 1850px;">
 
-			<div class="header">
-				<h1 class="page-header">영화검색 & 영화리스트</h1>
-				<ol class="breadcrumb">
-					<li class="active">최신순</li>
-					<li><a href="#">예매순</a></li>
-					<li><a href="#">개봉일순</a></li>
+			<div class="col-md-12">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<div id="page-inner"
+						style="padding-left: 0px; padding-right: 0px; padding-bottom: 0px;">
+						<div class="header">
+							<h1 class="page-header">영화검색 & 영화리스트</h1>
 
-				</ol>
-
-			</div>
-
-
-
-
-			<div id="page-inner">
-
-				<div id="dataTables-example-wrapper"
-					class="dataTables-wrapper form-inline" role="grid">
-
-					<strong>Search<input type="search"
-						class="form-control input-sm" aria-controls="dataTables-exemple"></strong>
-					<br> <br> <br>
-
-
-					<div class="card blue-grey darken-4">
-
-						<div class="row">
-							<div class="col-md-4 col-sm-4">
-								<div class="card blue-grey darken-4">
-									<div class="card-content white-text">
-										<span class="card-title">포스터</span> 
-										
-										<a href="sdu_movie_info.jsp"><img class="" width="100%"
-											height="280px" alt="poster" src="assets/img/salad.jpg"></a>
-										
-										
-									</div>
-
-								</div>
-							</div>
-							<div class="col-md-8 col-sm-4">
-								<div class="card blue-grey darken-4">
-									<div class="card-content white-text">
-										<span class="card-title">기생충</span>
-										<ul class="collapsible" data-collapsible="accordion">
-											<li>
-												<div class="collapsible-header blue-grey darken-4">
-													<i class="material-icons">theaters</i>장르
-												</div>
-												<div class="collapsible-body">
-													<p>액션, SF, 드라마</p>
-												</div>
-											</li>
-											<li>
-												<div class="collapsible-header blue-grey darken-4">
-													<i class="material-icons">perm_identity</i>감독
-												</div>
-												<div class="collapsible-body">
-													<p>봉준호</p>
-												</div>
-											</li>
-											<li>
-												<div class="collapsible-header blue-grey darken-4">
-													<i class="material-icons">assignment_ind</i>배우
-												</div>
-												<div class="collapsible-body">
-													<p>박소담</p>
-												</div>
-											</li>
-											<li>
-												<div class="collapsible-header blue-grey darken-4">
-													<i class="material-icons">voicemail</i>상영시간
-												</div>
-												<div class="collapsible-body">
-													<p>131분</p>
-												</div>
-											</li>
-											<li>
-												<div class="collapsible-header blue-grey darken-4">
-													<i class="material-icons">thumb_up</i>만족도
-												</div>
-												<div class="collapsible-body">
-													<p>98% 좋아요</p>
-												</div>
-											</li>
-										</ul>
+						</div>
+					</div>
+				</div>
 
 
 
-									</div>
-									<div class="card-action center">
-										<a href="sdu_reserv.jsp">예매하기</a>
-									</div>
-								</div>
+
+
+				<div class="col-md-2"></div>
+				<div class="col-md-8" style="padding-left: 0px; padding-right: 0px;">
+
+					<div class="card">
+
+						<div class="card-content" style="text-align: center;">
+							<div class="table-responsive">
+
+
+
+								<table class="table table-striped table-bordered table-hover"
+									id="dataTables-example">
+
+									<thead>
+										<tr>
+											<th width="30%;"><p style="cursor: pointer;">
+													<font color="red">개봉일순</font>
+												</p></th>
+											<th width="60%" style="border-right-color: white;"><p
+													style="cursor: pointer;">
+													<font color="red">가나다순</font>
+												</p></th>
+											<th width="10%"></th>
+										</tr>
+									</thead>
+									<tbody>
+										<!-- 만약 컨트롤 단에서 리스트를 제대로 호출해 온다는 가정하에... -->
+										<c:if test="${not empty movielist }">
+											<c:forEach var="movie" items="${movielist }"
+												varStatus="status">
+												<tr class="odd gradeX">
+													<td class="center"
+														style="border-right-color: white; border-left-color: white; vertical-align: middle;">
+														<a
+														href="MovieSearchData.do?movie_photo=${movie.movie_photo }"><img
+															alt="" class="img" src="${movie.movie_photo }"
+															width="150px;"></a>
+													</td>
+													<td
+														style="border-right-color: white; border-left-color: white;"><ul
+															class="collapsible" data-collapsible="accordion">
+															<li>
+																<div class="collapsible-header blue-grey white-text">
+																	<i class="material-icons">theaters</i>${movie.movie_name }
+																</div>
+
+															</li>
+															<li>
+																<div
+																	class="collapsible-header blue-grey darken-4 white-text">
+																	<i class="material-icons">theaters</i>장르
+																</div>
+																<div class="collapsible-body">
+																	<p>${movie.movie_genre }</p>
+
+																</div>
+															</li>
+															<li>
+																<div
+																	class="collapsible-header blue-grey darken-4 white-text">
+																	<i class="material-icons">perm_identity</i>감독
+																</div>
+																<div class="collapsible-body">
+																	<p>${movie.movie_director }</p>
+																</div>
+															</li>
+															<li>
+																<div
+																	class="collapsible-header blue-grey darken-4 white-text">
+																	<i class="material-icons">assignment_ind</i>배우
+																</div>
+																<div class="collapsible-body">
+																	<p>${movie.movie_actor }</p>
+																</div>
+															</li>
+															<li>
+																<div
+																	class="collapsible-header blue-grey darken-4 white-text">
+																	<i class="material-icons">voicemail</i>상영시간
+																</div>
+																<div class="collapsible-body">
+																	<p>${movie.movie_runtime }분</p>
+																</div>
+															</li>
+															<li>
+																<div
+																	class="collapsible-header blue-grey darken-4 white-text">
+																	<i class="material-icons">thumb_up</i>만족도
+																</div>
+																<div class="collapsible-body">
+																	<p>98% 좋아요</p>
+																</div>
+															</li>
+														</ul></td>
+													<th
+														style="border-right-color: white; border-left-color: white; vertical-align: middle;"><div
+															align="center">
+															<input type="button" value="선택"
+																onclick="location.href='sdu_reserv.jsp'">
+														</div></th>
+												</tr>
+											</c:forEach>
+										</c:if>
+
+
+
+										<!-- ----------------------------------------------------------- -->
+
+									</tbody>
+								</table>
 							</div>
 						</div>
 					</div>
-					<br> <br> <br>
-
-
-<!-- =====================이 밑에는 걍 복붙=========================== -->
-
-
-					<div class="card blue-grey darken-4">
-
-						<div class="row">
-							<div class="col-md-4 col-sm-4">
-								<div class="card blue-grey darken-4">
-									<div class="card-content white-text">
-										<span class="card-title">포스터</span> <img class="" width="100%"
-											height="280px" alt="poster" src="assets/img/apple.jpg">
-									</div>
-
-								</div>
-							</div>
-							<div class="col-md-8 col-sm-4">
-								<div class="card blue-grey darken-4">
-									<div class="card-content white-text">
-										<span class="card-title">기생충</span>
-										<ul class="collapsible" data-collapsible="accordion">
-											<li>
-												<div class="collapsible-header blue-grey darken-4">
-													<i class="material-icons">theaters</i>장르
-												</div>
-												<div class="collapsible-body">
-													<p>액션, SF, 드라마</p>
-												</div>
-											</li>
-											<li>
-												<div class="collapsible-header blue-grey darken-4">
-													<i class="material-icons">perm_identity</i>감독
-												</div>
-												<div class="collapsible-body">
-													<p>봉준호</p>
-												</div>
-											</li>
-											<li>
-												<div class="collapsible-header blue-grey darken-4">
-													<i class="material-icons">assignment_ind</i>배우
-												</div>
-												<div class="collapsible-body">
-													<p>박소담</p>
-												</div>
-											</li>
-											<li>
-												<div class="collapsible-header blue-grey darken-4">
-													<i class="material-icons">voicemail</i>상영시간
-												</div>
-												<div class="collapsible-body">
-													<p>131분</p>
-												</div>
-											</li>
-											<li>
-												<div class="collapsible-header blue-grey darken-4">
-													<i class="material-icons">thumb_up</i>만족도
-												</div>
-												<div class="collapsible-body">
-													<p>98% 좋아요</p>
-												</div>
-											</li>
-										</ul>
-
-
-
-									</div>
-									<div class="card-action center">
-										<a href="sdu_reserv.jsp">예매하기</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<br> <br> <br>
-
-					<div class="card blue-grey darken-4">
-
-						<div class="row">
-							<div class="col-md-4 col-sm-4">
-								<div class="card blue-grey darken-4">
-									<div class="card-content white-text">
-										<span class="card-title">포스터</span> <img class="" width="100%"
-											height="280px" alt="poster" src="assets/img/cat.jpg">
-									</div>
-
-								</div>
-							</div>
-							<div class="col-md-8 col-sm-4">
-								<div class="card blue-grey darken-4">
-									<div class="card-content white-text">
-										<span class="card-title">기생충</span>
-										<ul class="collapsible" data-collapsible="accordion">
-											<li>
-												<div class="collapsible-header blue-grey darken-4">
-													<i class="material-icons">theaters</i>장르
-												</div>
-												<div class="collapsible-body">
-													<p>액션, SF, 드라마</p>
-												</div>
-											</li>
-											<li>
-												<div class="collapsible-header blue-grey darken-4">
-													<i class="material-icons">perm_identity</i>감독
-												</div>
-												<div class="collapsible-body">
-													<p>봉준호</p>
-												</div>
-											</li>
-											<li>
-												<div class="collapsible-header blue-grey darken-4">
-													<i class="material-icons">assignment_ind</i>배우
-												</div>
-												<div class="collapsible-body">
-													<p>박소담</p>
-												</div>
-											</li>
-											<li>
-												<div class="collapsible-header blue-grey darken-4">
-													<i class="material-icons">voicemail</i>상영시간
-												</div>
-												<div class="collapsible-body">
-													<p>131분</p>
-												</div>
-											</li>
-											<li>
-												<div class="collapsible-header blue-grey darken-4">
-													<i class="material-icons">thumb_up</i>만족도
-												</div>
-												<div class="collapsible-body">
-													<p>98% 좋아요</p>
-												</div>
-											</li>
-										</ul>
-
-
-
-									</div>
-									<div class="card-action center">
-										<a href="sdu_reserv.jsp">예매하기</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
 
 					<footer>
 						<div class="center">
-							<br> <br> <br> <br> <br> <br> <br>
+
 							<br> <br> <br> <br> <br> <br>
 							<%@include file="sdu_footer.jsp"%>
 						</div>
 					</footer>
 				</div>
-			</div>
-			<!-- /. PAGE INNER  -->
 
+
+			</div>
 		</div>
 		<!-- /. PAGE WRAPPER  -->
 
@@ -522,7 +374,14 @@
 	<script src="assets/js/easypiechart-data.js"></script>
 
 	<script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
-
+<!-- DATA TABLE SCRIPTS -->
+	<script src="assets/js/dataTables/jquery.dataTables.js"></script>
+	<script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#dataTables-example').dataTable();
+		});
+	</script>
 	<!-- Custom Js -->
 	<script src="assets/js/custom-scripts.js"></script>
 </body>

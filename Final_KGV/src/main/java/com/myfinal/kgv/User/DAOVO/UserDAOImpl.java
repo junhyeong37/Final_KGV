@@ -56,6 +56,14 @@ public class UserDAOImpl implements UserDAO{
 		return null;
 	}
 
+	@Override
+	public List<UserVO> SelectId(UserVO vo) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList(namespace+".SelectId",vo);
+	}
+
+	
+
 
 	
 

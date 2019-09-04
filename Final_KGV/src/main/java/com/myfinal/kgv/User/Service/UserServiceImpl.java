@@ -81,7 +81,7 @@ public class UserServiceImpl implements UserService{
 		return idCount;
 	}
 	
-	@Override
+@Override
 	public int IdCheck(String inputName, String inputTel) {
 		// TODO Auto-generated method stub
 		FindIdVO lv = new FindIdVO();
@@ -97,6 +97,14 @@ public class UserServiceImpl implements UserService{
 	}
 
 
+
+@Override
+public List<UserVO> SelectId(UserVO vo) {
+	// TODO Auto-generated method stub
+	return dao.SelectId(vo);
+}
+
+	
 	
 
 }

@@ -221,7 +221,7 @@ a:hover {
                     </li> -->
                     
 					<li>
-                        <a href="sdu_reserv2.jsp" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 예매</a>
+                        <a href="sdu_reserv.jsp" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 예매</a>
                     </li>
                     
                     <li>
@@ -231,7 +231,7 @@ a:hover {
                                 <a href="sdu_box_office.jsp">박스오피스 랭킹</a>
                             </li>
                             <li>
-                                <a href="sdu_movie_search.jsp">영화검색</a>
+                                <a href="MovieAllData.do">영화검색</a>
                             </li>
                             <!-- <li>
                                 <a href="#">Second Level Link<span class="fa arrow"></span></a>

@@ -31,7 +31,7 @@ public class MovieController {
 	
 	@Autowired
 	MovieService ms;
-	FileUploadService fileUploadService;
+	//FileUploadService fileUploadService;
 	
 	
 	@InitBinder
@@ -91,7 +91,7 @@ public class MovieController {
 	
 	*/
 	
-	@RequestMapping(value="MovieAllData.do", method=RequestMethod.GET) 
+	/*@RequestMapping(value="MovieAllData.do", method=RequestMethod.GET) 
 	public ModelAndView UserAllData(HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView();
 		
@@ -119,47 +119,98 @@ public class MovieController {
 	      return mv;
 	   }
 
+*/
+	
+	@RequestMapping(value="MovieAllData.do", method=RequestMethod.GET) 
+	   public ModelAndView MovieAllData(HttpServletRequest req) {
+	      ModelAndView mv = new ModelAndView();
+	      
+	      List<MovieVO> movielist = ms.MovieAllData();
+	      
+	      /*if(movielist != null) {
+	         System.out.println("list : " + movielist);
+	      }else {
+	         System.out.println("정보가 없어요....");
+	      }
+	   */
+	      mv.addObject("movielist", movielist); //데이터
+	      mv.setViewName("sdu_movie_search2"); //jsp 페이지 이름
+	      
+	      return mv;
+	   }
+	   
+	   @RequestMapping(value="MovieAllData2.do", method=RequestMethod.GET) 
+	   public ModelAndView UserAllData1(HttpServletRequest req) {
+	      ModelAndView mv = new ModelAndView();
+	      
+	      List<MovieVO> movielist = ms.MovieAllData();
+	      
+	      /*if(movielist != null) {
+	         System.out.println("list : " + movielist);
+	      }else {
+	         System.out.println("정보가 없어요....");
+	      }
+	   */
+	      mv.addObject("movielist", movielist); //데이터
+	      mv.setViewName("sdu_index_navbar"); //jsp 페이지 이름
+	      
+	      return mv;
+	   }
+	   
+	   @RequestMapping(value="MovieInsertData.do", method=RequestMethod.GET) 
+	   public ModelAndView MovieInsertData(MovieVO vo,HttpServletRequest req, Locale locale) throws ParseException {
+	      ModelAndView mv = new ModelAndView();
+	      mv.setViewName("sdu_admin_movie_insert_check");
+	         
+	      
+	      ms.MovieInsertData(vo);
+	      List<MovieVO> movielist = ms.MovieAllData();
+	      
+	      mv.addObject("movielist", movielist);
+	      
+	      return mv;
+	   }
+	   
+	   @RequestMapping(value="MovieSearchData.do", method=RequestMethod.GET) 
+	   public ModelAndView MovieSearchData(MovieVO vo,HttpServletRequest req, Locale locale) throws ParseException {
+	      ModelAndView mv = new ModelAndView();
+	      mv.setViewName("sdu_admin_movie_search_check");
+	      String photo = req.getParameter("movie_photo"); //jsp에서 데이터 받을 때 이렇게 받으면 돼
+	      System.out.println("photo : " + photo);
+	      
+	      
+	      List<MovieVO> mlist = ms.MovieSearchData(vo);
+	      /*ms.MovieAllData(photo);*/
+	      
+	   /*   List<MovieVO> movielist = ms.MovieAllData(photo);
+	*/
+//	      moviephoto = ms.MovieSearchData();
+//	      mv.addObject("moviephoto", moviephoto);
+	      /*mv.addObject("movielist",movielist);*/
+	      mv.addObject("mlist", mlist); //데이터
+	      mv.setViewName("sdu_movie_info"); //jsp 페이지 이름
+	      return mv;
+	   }
+	   
+	   @RequestMapping(value="MovieSearchData2.do", method=RequestMethod.GET) 
+	   public ModelAndView MovieSearchData2(MovieVO vo,HttpServletRequest req, Locale locale) throws ParseException {
+	      ModelAndView mv = new ModelAndView();
+	      
+	      mv.setViewName("sdu_admin_movie_search2_check");
+	      
+	      String photo = req.getParameter("movie_no"); //jsp에서 데이터 받을 때 이렇게 받으면 돼
+	      System.out.println("no : " + photo);
+	      
+	      
+	      List<MovieVO> mlist = ms.MovieSearchData2(vo);
 
+	      mv.addObject("mlist", mlist); //데이터
+	      mv.setViewName("sdu_index_navbar"); //jsp 페이지 이름
+	      return mv;
+	   }
 	
 	
-	/*@RequestMapping(value="MovieInsertData.do", method=RequestMethod.POST)
-	@ResponseBody
-	public ModelAndView MovieInsertData(Model model,MovieVO vo,HttpServletRequest req, Locale locale@RequestParam("movie_photo") MultipartFile file) throws ParseException {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("sdu_admin_movie_insert_check");
-		MultipartHttpServletRequest mpreq = (MultipartHttpServletRequest) req;
-		MultipartFile file1 = mpreq.getFile("movie_photo");
-		
-		
-		System.out.println("mpreq : "+mpreq);
-		System.out.println("file mpreq : "+mpreq.getFile("movie_photo"));
-		
-		fileUploadService.restore(file);
-		
-		ms.MovieInsertData(vo);
-		List<MovieVO> movielist = ms.MovieAllData();
-		
-		mv.addObject("movielist", movielist);
-
-		return mv;
-	}*/
 	
 	
-	/*@RequestMapping(value="MovieInsertData.do", method=RequestMethod.GET) 
-	public ModelAndView MovieInsertData(MovieVO vo,HttpServletRequest req, Locale locale, @RequestParam("movie_photo") MultipartFile file) throws ParseException {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("sdu_admin_movie_insert_check");
-		
-		//파일업로드 파트
-		String url = fileUploadService.restore(file);
-		mv.addObject("url", url);
-		
-		ms.MovieInsertData(vo);
-		List<MovieVO> movielist = ms.MovieAllData();
-		
-		mv.addObject("movielist", movielist);
-
-		return mv;
-	}*/
 	
 }

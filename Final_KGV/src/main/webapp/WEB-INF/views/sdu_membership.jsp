@@ -162,7 +162,7 @@ function duplicationId () {
                                 <a href="sdu_box_office.jsp">박스오피스 랭킹</a>
                             </li>
                             <li>
-                                <a href="sdu_movie_search.jsp">영화검색</a>
+                                <a href="MovieAllData.do">영화검색</a>
                             </li>
                             <!-- <li>
                                 <a href="#">Second Level Link<span class="fa arrow"></span></a>

@@ -38,10 +38,19 @@
 	</select>
 	
 	
+	 <!-- <select id="IdCheck" parameterType="String" resultType="integer">
+		select count(*) as existIdNum From USERS 
+		where user_name=#{inputName} and user_tel=#{inputTel} 
+	</select> 
+	 -->
 	<select id="IdCheck" parameterType="String" resultType="integer">
 		select count(*) as existIdNum From USERS 
 		where user_name=#{inputName} and user_tel=#{inputTel} 
 	</select>
 	
+	<select id="SelectId" parameterType="User" resultType="string">
+	select user_id From USERS 
+		where user_name=#{user_name} and user_tel=#{user_tel}
+	</select>
 	
 </mapper>
