@@ -158,8 +158,9 @@ visibility: hidden;
 
 	<script>
 		//4개만 체크되게 하기
-		var cnt = <%= request.getParameter("Z")  %>
-		
+		var cnt1 = Number(${Z});
+		var cnt2 = Number(${Y});
+
 		function count_ck(obj) {
 
 			var chkbox = document.getElementsByName("chk");
@@ -176,9 +177,10 @@ visibility: hidden;
 
 			}
 
-			if (chkCnt > cnt) {
+			if (chkCnt > cnt1+cnt2) {
 
 				alert("좌석 선택 더 이상 안됩니다.");
+				
 
 				obj.checked = false;
 

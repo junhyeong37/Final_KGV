@@ -17,6 +17,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.myfinal.kgv.Movie.DAOVO.MovieVO;
@@ -58,7 +59,7 @@ public class MovieController {
 				
 		mv.setViewName("login11");
 		mv.addObject("user_id",user_id);
-		System.out.println("�׽�Ʈ");
+		System.out.println("�׽�Ʈ");
 		
 		return mv;
 	}
@@ -112,6 +113,31 @@ public class MovieController {
 		List<MovieVO> movielist = ms.MovieAllData();
 		
 		mv.addObject("movielist", movielist);
+
+		return mv;
+	}
+	
+	@RequestMapping(value="Goseat.do", method=RequestMethod.GET) 
+	@ResponseBody
+	public ModelAndView Goseat(String A, String B, String C, String D, String E) throws ParseException {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("seatTest2");
+		
+		String Z = E.replaceAll("[^\\d]", "").substring(0,1);
+		String Y = E.replaceAll("[^\\d]", "").substring(1);
+		
+		
+		System.out.println(Z);
+		
+				
+		mv.addObject("A",A);
+		mv.addObject("B",B);
+		mv.addObject("C",C);
+		mv.addObject("D",D);
+		mv.addObject("E",E);
+		mv.addObject("Z",Z);
+		mv.addObject("Y",Y);
+		
 
 		return mv;
 	}
