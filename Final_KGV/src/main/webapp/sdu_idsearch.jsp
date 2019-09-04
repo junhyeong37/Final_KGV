@@ -433,9 +433,9 @@ function duplicationId() {
 								</div>
 								<div class="row center">
 									<div class="waves-effect waves-light btn">
-										<div class="input-field col s12 ">
+										
 											<input type="submit" id="findId" value="ID찾기">
-										</div>
+										
 									</div>
 								</div>
 						

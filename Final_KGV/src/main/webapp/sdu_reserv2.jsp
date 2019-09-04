@@ -40,6 +40,9 @@
 			var jb = $('table#date1 input.date-picker').val();
 			$('input#C').val(jb);
 		});
+		$('input.testbn1').click(function() {
+			alert("띠바아아앙");
+		});
 	});
 </script>
 
@@ -490,9 +493,9 @@
 												</tr>
 												<tr class="even gradeA test2">
 													<td>강남구</td>
-													<td id="Theater">강남 CGV</td>
+													<td id="Theater">강남 CGV</td> 	
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1"value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
@@ -580,92 +583,92 @@
 													<td>동대문구</td>
 													<td id="Theater">바우 롯데시네마</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1"value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
 													<td>성동구</td>
 													<td id="Theater">성동 메가박스</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button"  class="testbn1" id="testbn1"value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>강남구</td>
 													<td id="Theater">강남 CGV</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button"  class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
 													<td>강남구</td>
 													<td id="Theater">압구정 CGV</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button"  class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>서대문구</td>
 													<td id="Theater">독립문 롯데시네마</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button"  class="testbn1" id="testbn1"value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>서대문구</td>
 													<td id="Theater">이대 CGV</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button"  class="testbn1" value="선택">
 														</div></th>
 												</tr>
 
 												<tr class="odd gradeX test2">
 													<td>강동구</td>
 													<td id="Theater">가나다 CGV</td>
-													<th><div align="center">
-															<input type="button" value="선택">
+													<th><div align="center"> 
+															<input type="button" class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeC test2">
 													<td>동대문구</td>
 													<td id="Theater">바우 롯데시네마</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" class="testbn1"  value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
 													<td>성동구</td>
 													<td id="Theater">성동 메가박스</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button"  class="testbn1" id="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>강남구</td>
 													<td id="Theater">강남 CGV</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button"id="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
 													<td>강남구</td>
 													<td id="Theater">압구정 CGV</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1"value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>서대문구</td>
 													<td id="Theater">독립문 롯데시네마</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button"id="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>서대문구</td>
 													<td id="Theater">이대 CGV</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button"id="testbn1" value="선택">
 														</div></th>
 												</tr> 
 											</tbody>
@@ -883,7 +886,7 @@
 												<th colspan="6"><div
 														style="text-align: center; background-color: black;">
 														<input type="button" value="예매하기"
-															onclick="location.href='sdu_seat.jsp'">
+															onclick="location.href='seatTest2.jsp'">
 													</div></th>
 
 											</tr>
