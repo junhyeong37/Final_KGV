@@ -12,13 +12,11 @@ public class JoinDAOImpl implements JoinDAO {
 
 	@Autowired
 	private static final String namespace="mapper.Join-mapper";
-	
 	@Autowired 
 	private SqlSession sqlSession;
 
 	@Override
-	public List<TicketVO> reserv(com.myfianl.kgv.Join.DAOVO.MovieVO mvv, ScheduleroomVO srv, ScheduleVO scrv,
-			TicketVO tv) {
+	public List<TicketVO> reserv() {
 		// TODO Auto-generated method stub
 		return sqlSession.selectList(namespace+".reserv");
 	}

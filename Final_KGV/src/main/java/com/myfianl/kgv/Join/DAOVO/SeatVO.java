@@ -6,9 +6,27 @@ public class SeatVO {
 	private int sr_no;
 	private int seat_yumu;
 	
-	
+	private ScheduleroomVO scheuleroomvo;
 	
 
+	public ScheduleroomVO getScheuleroomvo() {
+		return scheuleroomvo;
+	}
+	public void setScheuleroomvo(ScheduleroomVO scheuleroomvo) {
+		this.scheuleroomvo = scheuleroomvo;
+	}
+	
+	
+	
+	
+	public SeatVO(String seat_no, int sr_no, int seat_yumu, ScheduleroomVO scheuleroomvo) {
+		super();
+		this.seat_no = seat_no;
+		this.sr_no = sr_no;
+		this.seat_yumu = seat_yumu;
+		this.scheuleroomvo = scheuleroomvo;
+	}
+	
 	public SeatVO() {
 		super();
 	}

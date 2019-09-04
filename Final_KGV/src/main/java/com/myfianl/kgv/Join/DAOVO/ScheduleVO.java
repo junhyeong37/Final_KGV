@@ -9,9 +9,48 @@ public class ScheduleVO {
 	private String sch_naljja;
 
 	
+	private MovieVO movievo;
+	private ScheduleroomVO scheduleroomvo;
+	
+	
+	
+	public MovieVO getMovievo() {
+		return movievo;
+	}
+	public void setMovievo(MovieVO movievo) {
+		this.movievo = movievo;
+	}
+	public ScheduleroomVO getScheduleroomvo() {
+		return scheduleroomvo;
+	}
+	public void setScheduleroomvo(ScheduleroomVO scheduleroomvo) {
+		this.scheduleroomvo = scheduleroomvo;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public ScheduleVO() {
 		super();
 	}
+	public ScheduleVO(int sch_no, int movie_no, int sr_no, String sch_schedule, String sch_naljja, MovieVO movievo,
+			ScheduleroomVO scheduleroomvo) {
+		super();
+		this.sch_no = sch_no;
+		this.movie_no = movie_no;
+		this.sr_no = sr_no;
+		this.sch_schedule = sch_schedule;
+		this.sch_naljja = sch_naljja;
+		this.movievo = movievo;
+		this.scheduleroomvo = scheduleroomvo;
+	}
+	
+
 	public ScheduleVO(int sch_no, int movie_no, int sr_no, String sch_schedule, String sch_naljja) {
 		super();
 		this.sch_no = sch_no;

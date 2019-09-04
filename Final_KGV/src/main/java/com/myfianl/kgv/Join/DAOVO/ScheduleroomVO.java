@@ -9,6 +9,11 @@ public class ScheduleroomVO {
 	
 
 	
+	
+	
+	
+	
+	
 	public ScheduleroomVO() {
 		super();
 	}

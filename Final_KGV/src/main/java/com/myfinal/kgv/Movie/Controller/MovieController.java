@@ -38,13 +38,7 @@ public class MovieController {
 	}
 	
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET) 
-	public ModelAndView Main(HttpServletRequest req) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("sdu_index_navbar");
-		return mv;
-	}
-	
+
 	
 	
 	

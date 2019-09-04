@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.myfianl.kgv.Join.DAOVO.MovieVO;
-import com.myfianl.kgv.Join.DAOVO.ScheduleVO;
-import com.myfianl.kgv.Join.DAOVO.ScheduleroomVO;
 import com.myfianl.kgv.Join.DAOVO.TicketVO;
 import com.myfinal.kgv.Join.Service.JoinService;
 
@@ -23,12 +20,21 @@ public class JoinController {
 	@Autowired
 	JoinService js;
 	
+	/*@RequestMapping(value = "/", method = RequestMethod.GET) 
+	public ModelAndView Main(HttpServletRequest req) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("sdu_index_navbar");
+		return mv;
+	}*/
+	
+	
 	/*sdu_reserv2에서의 값들을 sdu_seat로 전송*/
 	@RequestMapping(value = "reserv.do", method = RequestMethod.POST)
-	public ModelAndView reserv(HttpServletRequest req, MovieVO mvv, ScheduleroomVO srv, ScheduleVO scrv, TicketVO tv ) {
+	public ModelAndView reserv(HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView();
+		mv.setViewName("sdu_seat");		
 
-		List<TicketVO> reservlist = js.reserv(mvv, srv, scrv, tv);
+		List<TicketVO> reservlist = js.reserv();
 		mv.addObject("reservlist",reservlist);
 		return mv;
 	}

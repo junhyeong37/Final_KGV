@@ -7,21 +7,55 @@ public class TicketVO {
 	private String seat_no;
 	private int t_pay;
 	
-	private MovieVO mvv;
 	private ScheduleroomVO srv;
 	private ScheduleVO scrv;
 	private SeatVO sv;
-	
+	private MovieVO mmv;
 
 	
-	public MovieVO getMvv() {
-		return mvv;
+
+
+
+
+
+	public TicketVO(int t_ticket, int sch_no, int sr_no, String seat_no, int t_pay, ScheduleroomVO srv, ScheduleVO scrv,
+			SeatVO sv) {
+		super();
+		this.t_ticket = t_ticket;
+		this.sch_no = sch_no;
+		this.sr_no = sr_no;
+		this.seat_no = seat_no;
+		this.t_pay = t_pay;
+		this.srv = srv;
+		this.scrv = scrv;
+		this.sv = sv;
+	}
+	
+	
+	
+	public TicketVO(int t_ticket, int sch_no, int sr_no, String seat_no, int t_pay, ScheduleroomVO srv, ScheduleVO scrv,
+			SeatVO sv, MovieVO mmv) {
+		super();
+		this.t_ticket = t_ticket;
+		this.sch_no = sch_no;
+		this.sr_no = sr_no;
+		this.seat_no = seat_no;
+		this.t_pay = t_pay;
+		this.srv = srv;
+		this.scrv = scrv;
+		this.sv = sv;
+		this.mmv = mmv;
 	}
 
-	public void setMvv(MovieVO mvv) {
-		this.mvv = mvv;
+
+
+	public MovieVO getMmv() {
+		return mmv;
 	}
 
+	public void setMmv(MovieVO mmv) {
+		this.mmv = mmv;
+	}
 	public ScheduleroomVO getSrv() {
 		return srv;
 	}

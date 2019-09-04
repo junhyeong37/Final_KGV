@@ -103,4 +103,18 @@
     <servlet-name>MovieController</servlet-name>
     <url-pattern>/MovieController</url-pattern>
   </servlet-mapping>
+  
+  
+    <servlet>
+    <description></description>
+    <display-name>JoinController</display-name>
+    <servlet-name>JoinController</servlet-name>
+    <servlet-class>com.myfinal.kgv.Join.Controller.JoinController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JoinController</servlet-name>
+    <url-pattern>/JoinController</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>

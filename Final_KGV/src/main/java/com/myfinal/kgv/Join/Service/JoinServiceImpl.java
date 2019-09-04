@@ -18,14 +18,11 @@ public class JoinServiceImpl implements JoinService {
 	
 	@Autowired
 	private JoinDAO dao; 
-	@Inject
-	private SqlSession session;
 	
 	@Override
-	public List<TicketVO> reserv(com.myfianl.kgv.Join.DAOVO.MovieVO mvv, ScheduleroomVO srv, ScheduleVO scrv,
-			TicketVO tv) {
+	public List<TicketVO> reserv() {
 		// TODO Auto-generated method stub
-		return dao.reserv(mvv, srv, scrv, tv);
+		return dao.reserv();
 	}
 
 
