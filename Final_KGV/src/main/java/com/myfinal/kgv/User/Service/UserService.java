@@ -18,6 +18,7 @@ public interface UserService {
 		public int userIdCheck(String user_id);
 		public int CheckDuplication(String inputId);
 		
-		
+		public int IdCheck(String inputName, String inputTel);
+
 		
 }

@@ -368,33 +368,18 @@ function duplicationId() {
 				<div class="col-md-6 col-sm-12 col-xs-12">
 					<!-- <div class="col-xs-12"> -->
 					<div class="card">
-						<div class="card-action">아이디찾기</div>
-						<div class="card-content">
-							<form id="postData" class="col s12" action="findId.do" method="POST" onsubmit="return duplicationId()"> <!-- .do를 바꿔줘야함 -->
-								<div class="row">
-									<div class="input-field col s12">
-										<input id="user_name" name="user_name" type="text"
-											class="validate"> <label for="이름">이름</label>
-									</div>
-
-								</div>
-
-								<div class="row">
-									<div class="input-field col s12">
-										<input id="user_tel" name="user_tel" type="text"
-											class="validate"> <label for="전화번호">전화번호</label>
-									</div>
-								</div>
-								<div class="row center">
-									<div class="waves-effect waves-light btn">
-										
-											<input type="submit" id="findId" value="ID찾기">
-										
-									</div>
-								</div>
+						<div class="card-action">당신의 아이디는</div>
 						
-
-							</form>
+						
+						<div class="card-content">
+							<c:forEach items="${ulist }" var="val" varStatus="status">
+						<a class="dropdown-button waves-effect waves-dark" href="#!"
+							data-activates="dropdown1"> <i class="fa fa-user fa-fw"></i>
+							<b> ${val.user_id }</b> <i class="material-icons right">arrow_drop_down</i></a>
+					</c:forEach>
+						
+						
+						<input type="button" value="로그인 하러가기">
 							
 							<div class="clearBoth"></div>
 						</div>

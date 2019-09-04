@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.myfinal.kgv.User.DAOVO.FindIdVO;
 import com.myfinal.kgv.User.DAOVO.UserDAO;
 import com.myfinal.kgv.User.DAOVO.UserVO;
 
@@ -79,5 +80,23 @@ public class UserServiceImpl implements UserService{
 		int idCount = session.selectOne("checkDuplicationId", inputId.replace("=", ""));
 		return idCount;
 	}
+	
+	@Override
+	public int IdCheck(String inputName, String inputTel) {
+		// TODO Auto-generated method stub
+		FindIdVO lv = new FindIdVO();
+		System.out.println(inputName.replace("=", ""));
+		
+		lv.setInputName(inputName.replace("=", ""));
+		lv.setInputTel(inputTel.replace("=", ""));
+		
+		System.out.println(lv.getInputName());
+		
+		int idCount = session.selectOne("IdCheck",lv);
+		return idCount;
+	}
+
+
+	
 
 }

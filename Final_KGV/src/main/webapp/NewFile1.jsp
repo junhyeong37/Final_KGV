@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-	
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -29,7 +29,7 @@
 
 
 
-<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <!-- <script src="https://code.jquery.com/jquery-1.11.3.js"></script> -->
 
@@ -113,35 +113,39 @@ function duplicationId() {
 </script> -->
 
 <script>
-function duplicationId() {
-	var inputName = $("#user_name").val();
-	var inputTel = $("#user_tel").val();
-	var allData = { "inputName": inputName, "inputTel": inputTel };
-	
-	var test = false;
-	$.ajax({
-		async: false,
-		type: "post",
-		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-		url: "findId.do",  //findId.do
-		data: allData, 
-		
-		success: function (data) {
-			if(data == "F") {
-				alert("성공");
-				location.href="sdu_idsearch_ok.jsp"
-			} else {
-				test = false
-				alert("정보를 잘못 입력했어요")
+	function duplicationId() {
+		var inputName = $("#user_name").val();
+		var inputTel = $("#user_tel").val();
+		var allData = {
+			"inputName" : inputName,
+			"inputTel" : inputTel
+		};
+
+		var test = false;
+		$.ajax({
+			async : false,
+			type : "post",
+			contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+			url : "findId.do", //findId.do
+			data : allData,
+
+			success : function(data) {
+				if (data == "F") {
+					test = 'F'
+					alert("성공");
+					location.href = "sdu_NewFile1.jsp"
+				} else {
+					test = false
+					alert("정보를 잘못 입력했어요")
+				}
+			},
+			error : function(req, status, errThrown) {
+				alert("network error occur");
 			}
-		},
-		error: function(req, status, errThrown) {
-			alert("network error occur");
-		}
-	});
-	
-	return test
-}
+		});
+
+		return test
+	}
 </script>
 
 
@@ -155,12 +159,12 @@ function duplicationId() {
 
 <body>
 	<div id="wrapper">
-	
-	<%
+
+		<%
 			// 현재 로그인된 아이디가 없다면 (= session에 저장된 id가 없다면)
 			if (session.getAttribute("ulist") == null) {
 		%>
-	
+
 		<nav class="navbar navbar-default top-navbar" role="navigation">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle waves-effect waves-dark"
@@ -197,7 +201,7 @@ function duplicationId() {
 			<!-- <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 설정</a>
 </li> -->
 		</ul>
-		
+
 		<%
 			}
 			// 현재 로그인된 아이디가 있다면 (= session에 저장된 id가 있다면)
@@ -239,21 +243,21 @@ function duplicationId() {
 					로그아웃</a></li>
 			<li><a href="sdu_mypage.jsp"><i class="fa fa-gear fa-fw"></i>
 					My Page</a></li>
-			
-			
+
+
 			<!-- 관리자로 로그인 했을때만 뜨는 메뉴 -->
 			<c:set var="id" value="admin" />
 
 			<c:forEach items="${ulist }" var="val">
 
-				 <c:if test="${val.user_id eq 'admin'}">
+				<c:if test="${val.user_id eq 'admin'}">
 					<li><a href="sdu_admin_movie_insert.jsp"><i
-						class="fa fa-gear fa-fw"></i> 관리자 영화입력</a></li>
+							class="fa fa-gear fa-fw"></i> 관리자 영화입력</a></li>
 				</c:if>
-				 
+
 			</c:forEach>
 
-			
+
 
 
 
@@ -268,10 +272,10 @@ function duplicationId() {
 		<%
 			}
 		%>
-		
-		
-		
-		
+
+
+
+
 		<!--/. NAV TOP  -->
 		<nav class="navbar-default navbar-side" role="navigation">
 			<div class="sidebar-collapse">
@@ -365,44 +369,118 @@ function duplicationId() {
 			<div class="row">
 				<div class="col-md-3 col-sm-12 col-xs-12"></div>
 
-				<div class="col-md-6 col-sm-12 col-xs-12">
-					<!-- <div class="col-xs-12"> -->
-					<div class="card">
-						<div class="card-action">아이디찾기</div>
-						<div class="card-content">
-							<form id="postData" class="col s12" action="findId.do" method="POST" onsubmit="return duplicationId()"> <!-- .do를 바꿔줘야함 -->
-								<div class="row">
-									<div class="input-field col s12">
-										<input id="user_name" name="user_name" type="text"
-											class="validate"> <label for="이름">이름</label>
+
+
+
+				<c:if test="${test == false }">
+
+					<div class="col-md-6 col-sm-12 col-xs-12">
+						<!-- <div class="col-xs-12"> -->
+						<div class="card">
+							<div class="card-action">아이디찾기</div>
+							<div class="card-content">
+								<form id="postData" class="col s12" action="findId.do"
+									method="POST" onsubmit="return duplicationId()">
+									<!-- .do를 바꿔줘야함 -->
+									<div class="row">
+										<div class="input-field col s12">
+											<input id="user_name" name="user_name" type="text"
+												class="validate"> <label for="이름">이름</label>
+										</div>
+
 									</div>
 
-								</div>
-
-								<div class="row">
-									<div class="input-field col s12">
-										<input id="user_tel" name="user_tel" type="text"
-											class="validate"> <label for="전화번호">전화번호</label>
+									<div class="row">
+										<div class="input-field col s12">
+											<input id="user_tel" name="user_tel" type="text"
+												class="validate"> <label for="전화번호">전화번호</label>
+										</div>
 									</div>
-								</div>
-								<div class="row center">
-									<div class="waves-effect waves-light btn">
-										
+									<div class="row center">
+										<div class="waves-effect waves-light btn">
+
 											<input type="submit" id="findId" value="ID찾기">
-										
-									</div>
-								</div>
-						
 
-							</form>
-							
-							<div class="clearBoth"></div>
+										</div>
+									</div>
+
+
+								</form>
+
+								<div class="clearBoth"></div>
+							</div>
 						</div>
 					</div>
-				</div>
+				</c:if>
+
+
+
+				<c:if test="${test == 'F' }">
+
+					<div class="col-md-6 col-sm-12 col-xs-12">
+						<!-- <div class="col-xs-12"> -->
+						<div class="card">
+							<div class="card-action">당신의 아이디는?</div>
+							<div class="card-content">
+								<form id="postData" class="col s12" action="findId.do"
+									method="POST" onsubmit="return duplicationId()">
+									<!-- .do를 바꿔줘야함 -->
+									<div class="row">
+										<div class="input-field col s12">
+											<input id="user_name" name="user_name" type="text"
+												class="validate"> <label for="이름">이름</label>
+										</div>
+
+									</div>
+
+									<div class="row">
+										<div class="input-field col s12">
+											<input id="user_tel" name="user_tel" type="text"
+												class="validate"> <label for="전화번호">전화번호</label>
+										</div>
+									</div>
+									<div class="row center">
+										<div class="waves-effect waves-light btn">
+
+											<input type="submit" id="findId" value="ID찾기">
+
+										</div>
+									</div>
+
+
+								</form>
+
+								<div class="clearBoth"></div>
+							</div>
+						</div>
+					</div>
+
+
+				</c:if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			</div>
 			<span id="IdList"></span>
-			
+
 			<footer>
 				<div class="center">
 					<br> <br> <br> <br> <br> <br> <br>

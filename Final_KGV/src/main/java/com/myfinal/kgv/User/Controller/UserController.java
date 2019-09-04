@@ -171,7 +171,7 @@ public class UserController {
 		return mv;
 	}
 
-	@ResponseBody
+	/*@ResponseBody
 	@RequestMapping(value = "findingId.do", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
 	public ModelAndView findingId(UserVO vo, HttpServletResponse response, HttpSession session, Locale locale)
 			throws Exception {
@@ -189,7 +189,7 @@ public class UserController {
 
 		mv.addObject("ulist", ulist);
 		return mv;
-	}
+	}*/
 
 	// id 중복 체크 컨트롤러
 	@RequestMapping("duplicationCheck.do")
@@ -205,5 +205,25 @@ public class UserController {
 		
 		return checkRst;
 	}
+	
+	//id 찾기 
+		@RequestMapping("findId.do")
+		@ResponseBody
+		public String findId(String inputName, String inputTel) {
+			System.out.println("컨트롤러" + inputName);
+			System.out.println("컨트롤러" + inputTel);
+			
+			String checkRst;
+			int idCnt = us.IdCheck(inputName,inputTel);
+			if(idCnt > 0) 
+				checkRst = "F";
+			else 
+				checkRst = "S";
+			
+			return checkRst;
+		}
+
+
+
 
 }
