@@ -123,11 +123,13 @@ public class MovieController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("seatTest2");
 		
-		String Z = E.replaceAll("[^\\d]", "").substring(0,1);
-		String Y = E.replaceAll("[^\\d]", "").substring(1);
+		int Z = Integer.parseInt(E.replaceAll("[^\\d]", "").substring(0,1));
+		int Y = Integer.parseInt(E.replaceAll("[^\\d]", "").substring(1));
 		
 		
 		System.out.println(Z);
+		
+		
 		
 				
 		mv.addObject("A",A);

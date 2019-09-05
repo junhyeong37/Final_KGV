@@ -18,7 +18,7 @@
 			var jb = $('tr.active-menu').text().trim();
 			$('input#A').val(jb);
 		});
-		$('.test2').click(function() {
+		$('tr.test2').click(function() {
 			$('.test2').removeClass('active-menu');
 			$(this).toggleClass('active-menu');
 			//var jb = $(this).html().trim();
@@ -810,11 +810,10 @@
 													</div></th>
 											</tr>
 											<tr>
-												<th colspan="6"><div
-														style="text-align: center; background-color: black;">
+												<th colspan="6" style="text-align: center;"><div style="text-align: center; background-color: black;" class="waves-effect waves-light btn">
 														<input type="submit" value="예매하기">
 													</div></th>
-
+													
 											</tr>
 										</tbody>
 									</table>

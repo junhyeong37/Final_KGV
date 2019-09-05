@@ -454,12 +454,12 @@ visibility: hidden;
 <tr><td>날짜 : ${C }</td></tr>
 <tr><td>인원 : ${E }</td></tr>
 <tr><td><div id="selected" >좌석 </div></td></tr>
-<tr><td>금액</td></tr>
+<tr><td>금액 : ${Z*10000 + Y*8000 }</td></tr>
 <tr><td><div><input type="submit" value="이전단계" style="float: left;"><input type="submit" value="다음단계" style="float: right;"></div></td></tr>
 </tbody></table></div>
-
+	<div class="waves-effect waves-light btn">
        <button id="clearAllButton" type="button">Clear All</button> 
-     
+     </div>
  </div>
  
  
