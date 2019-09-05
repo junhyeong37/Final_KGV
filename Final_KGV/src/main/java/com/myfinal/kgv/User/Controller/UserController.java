@@ -78,6 +78,8 @@ public class UserController {
 		mv.setViewName("login11");
 
 		List<UserVO> userlist = us.UserAllData();
+		
+		System.out.println(userlist);
 
 		mv.addObject("userlist", userlist);
 

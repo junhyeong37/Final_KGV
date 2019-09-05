@@ -68,8 +68,8 @@
    margin-top: 2px;
    transition: .2s
 } */
-@media(max-width:768px) {
- 
+
+
  div.container {
  padding-left:0px;
  padding-right: 0px;
@@ -80,15 +80,44 @@
  padding-right: 0px;
  }
  
+ @media(max-width:768px) {
  #seating-plan {
  --seats-per-row:13;
  }
- 
- div.seat > input > label {
-     width: 31px;
-    padding-left: 15px;
+  label.seatsize100 {
+     width:31px;
+ } 
+ #clearAllButton{
+ padding-left:0px;
+  padding-right:0px;
+  font-size: 5px;
  }
-}
+ .clearButtonKSM{
+ width: 40%;
+ }
+ 
+ }
+ 
+ @media(min-width:768px) {
+  #seating-plan {
+ --seats-per-row:20;
+ }
+  label.seatsize100 { 
+    width:47px;
+    
+    }
+    #clearAllButton{
+    font-size:12px;
+    padding-left:0px;
+    padding-right:0px;
+    }
+    .clearButtonKSM{
+    width: 30%;
+    }
+ }
+ 
+ 
+
 
 
 
@@ -110,6 +139,7 @@
   min-width: calc( var(--seat-size) * var( --seats-per-row ) );
   max-width: calc( var(--seat-size) * var( --seats-per-row ) );
   margin: 0 auto;
+ 
 }
 .seat label {
   position:static;
@@ -120,7 +150,7 @@
   background-color: #2196F3;
   color: white;
   font-size: 0.8rem;
-  width: 47px;
+  /* width: 47px; */
   min-width: var(--seat-size);
   min-height: var(--seat-size);
   border-radius: 0.5rem 0.5rem 0 0;
@@ -150,6 +180,9 @@ visibility: hidden;
    font-size: 20px;
    text-align: center;
 }
+
+
+
 </style>
 
 
@@ -318,12 +351,12 @@ visibility: hidden;
             <div id="row">
 <div class="card col-md-12">
                   <!-- Advanced Tables -->
-      <div class="card-content">
+      <div class="card-content" style="padding-left: 0px; padding-right: 0px;">
       <h3 style="background-color: gray;">좌석선택</h3>
 <!-- <div class="wrapper">  -->
  <div class="container col-md-6" style="padding-left: 0px;"> 
- <div class="card" style="height: 370px;">
-    <div id="seating-plan" style="--seats-per-row: 20;">
+ <div class="card" style="height: 370px; text-align: center;">
+    <div id="seating-plan">
       <!--.seat*n>input#seat-$[type=checkbox]+label[for=seat-$]{$}-->
       
       <div id="selected-seats" style="text-align: center;" >
@@ -334,47 +367,47 @@ visibility: hidden;
      <!--  <button id="clearAllButton" type="button">Clear All</button> -->
     </div>
     
-    
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);" id="seat-1"><label for="seat-1">1</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-2"><label for="seat-2">2</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-3"><label for="seat-3">3</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-4"><label for="seat-4">4</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-5"><label for="seat-5">5</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-6"><label for="seat-6">6</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-7"><label for="seat-7">1</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-8"><label for="seat-8">2</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-9"><label for="seat-9">3</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-10"><label for="seat-10">4</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-11"><label for="seat-11">5</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-12"><label for="seat-12">6</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-13"><label for="seat-13">1</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-14"><label for="seat-14">2</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-15"><label for="seat-15">3</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-16"><label for="seat-16">4</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-17"><label for="seat-17">5</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-18"><label for="seat-18">6</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-19"><label for="seat-19">1</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-20"><label for="seat-20">2</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-21"><label for="seat-21">3</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-22"><label for="seat-22">4</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-23"><label for="seat-23">5</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-24"><label for="seat-24">6</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-25"><label for="seat-25">1</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-26"><label for="seat-26">2</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-27"><label for="seat-27">3</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-28"><label for="seat-28">4</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-29"><label for="seat-29">5</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-30"><label for="seat-30">6</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-31"><label for="seat-31">1</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-32"><label for="seat-32">2</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-33"><label for="seat-33">3</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-34"><label for="seat-34">4</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-35"><label for="seat-35">5</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-36"><label for="seat-36">6</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-37"><label for="seat-37">1</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-38"><label for="seat-38">2</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-39"><label for="seat-39">3</label></div>
-      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-40"><label for="seat-40">4</label></div>
+ 
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);" id="seat-1"><label class="seatsize100" for="seat-1" style="padding-left:0px;">1</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-2"><label class="seatsize100" for="seat-2" style="padding-left:0px;">2</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-3"><label class="seatsize100" for="seat-3" style="padding-left:0px;">3</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-4"><label class="seatsize100" for="seat-4" style="padding-left:0px;">4</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-5"><label class="seatsize100" for="seat-5" style="padding-left:0px;">5</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-6"><label class="seatsize100" for="seat-6" style="padding-left:0px;">6</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-7"><label class="seatsize100" for="seat-7" style="padding-left:0px;">1</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-8"><label class="seatsize100" for="seat-8" style="padding-left:0px;">2</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-9"><label class="seatsize100" for="seat-9" style="padding-left:0px;">3</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-10"><label class="seatsize100" for="seat-10" style="padding-left:0px;">4</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-11"><label class="seatsize100" for="seat-11" style="padding-left:0px;">5</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-12"><label class="seatsize100" for="seat-12" style="padding-left:0px;">6</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-13"><label class="seatsize100" for="seat-13" style="padding-left:0px;">1</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-14"><label class="seatsize100" for="seat-14" style="padding-left:0px;">2</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-15"><label class="seatsize100" for="seat-15" style="padding-left:0px;">3</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-16"><label class="seatsize100" for="seat-16" style="padding-left:0px;">4</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-17"><label class="seatsize100" for="seat-17" style="padding-left:0px;">5</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-18"><label class="seatsize100" for="seat-18" style="padding-left:0px;">6</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-19"><label class="seatsize100" for="seat-19" style="padding-left:0px;">1</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-20"><label class="seatsize100" for="seat-20" style="padding-left:0px;">2</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-21"><label class="seatsize100" for="seat-21" style="padding-left:0px;">3</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-22"><label class="seatsize100" for="seat-22" style="padding-left:0px;">4</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-23"><label class="seatsize100" for="seat-23" style="padding-left:0px;">5</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-24"><label class="seatsize100" for="seat-24" style="padding-left:0px;">6</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-25"><label class="seatsize100" for="seat-25" style="padding-left:0px;">1</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-26"><label class="seatsize100" for="seat-26" style="padding-left:0px;">2</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-27"><label class="seatsize100" for="seat-27" style="padding-left:0px;">3</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-28"><label class="seatsize100" for="seat-28" style="padding-left:0px;">4</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-29"><label class="seatsize100" for="seat-29" style="padding-left:0px;">5</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-30"><label class="seatsize100" for="seat-30" style="padding-left:0px;">6</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-31"><label class="seatsize100" for="seat-31" style="padding-left:0px;">1</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-32"><label class="seatsize100" for="seat-32" style="padding-left:0px;">2</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-33"><label class="seatsize100" for="seat-33" style="padding-left:0px;">3</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-34"><label class="seatsize100" for="seat-34" style="padding-left:0px;">4</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-35"><label class="seatsize100" for="seat-35" style="padding-left:0px;">5</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-36"><label class="seatsize100" for="seat-36" style="padding-left:0px;">6</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-37"><label class="seatsize100" for="seat-37" style="padding-left:0px;">1</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-38"><label class="seatsize100" for="seat-38" style="padding-left:0px;">2</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-39"><label class="seatsize100" for="seat-39" style="padding-left:0px;">3</label></div>
+      <div class="seat"><input type="checkbox" name="chk" onClick="count_ck(this);"  id="seat-40"><label class="seatsize100" for="seat-40" style="padding-left:0px;">4</label></div>
      <!--  <div class="seat"><input type="checkbox" id="seat-41"><label for="seat-41">41</label></div>
       <div class="seat"><input type="checkbox" id="seat-42"><label for="seat-42">42</label></div>
       <div class="seat"><input type="checkbox" id="seat-43"><label for="seat-43">43</label></div>
@@ -423,8 +456,8 @@ visibility: hidden;
     </div>
   <!-- </div> -->
   <!-- <div class="container"> -->
-    	<div class="waves-effect waves-light btn" style="width: 30%">
-		<input type="button" value="Clear" id="clearAllButton">
+    	<div class="waves-effect waves-light btn clearButtonKSM">
+		<input type="button" value="좌석선택 다시하기" id="clearAllButton">
 	</div>
   </div> <!-- <div class="col-md-6"> end -->
   </div>

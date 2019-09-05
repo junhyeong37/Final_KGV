@@ -588,6 +588,27 @@ line-height: 1.428571429;
    
 }
  @media(max-width:768px) {
+ 
+ /* div.container {
+ padding-left:0px;
+ padding-right: 0px;
+ }
+ 
+ div.card-content{
+ padding-left: 0px;
+ padding-right: 0px;
+ }
+ 
+ #seating-plan {
+ --seats-per-row:13;
+ }
+ 
+ div.seat > input > label {
+     width: 31px;
+    padding-left: 15px;
+ } */
+ 
+ 
 	#sideNav{
 	display:none;
 } 
