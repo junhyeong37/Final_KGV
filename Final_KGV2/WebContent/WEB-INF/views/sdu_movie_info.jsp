@@ -25,16 +25,20 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans'
 	rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
-  <link rel="stylesheet" href="assets/css/slide.css?after" type="text/css" />
+
+
+ <link rel="stylesheet" href="assets/css/slide.css?after" type="text/css" />
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
 
 <style>
 .card {
 	border: 0;
 }
 </style>
+
 
 <SCRIPT type="text/javascript"> 
 
@@ -46,7 +50,8 @@ popup=window.open("","my",stringa);
 popup.document.open(); 
 popup.document.write("<HTML><HEAD>"); 
 popup.document.write("<TITLE>예고편</TITLE>"); 
-popup.document.write("<embed SRC='${movie_preview}' style=width:100%;height:450px;></embed>"); 
+popup.document.write("<c:if test='${not empty mlist }'><c:forEach var='movie' items='${mlist }' varStatus='status'><embed SRC='${movie.movie_preview}' style=width:100%;height:450px;></embed>"); 
+popup.document.write("</c:forEach></c:if>")
 /* popup.document.write("</HEAD><BODY  oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>"); 
 popup.document.write("<embed SRC=https://www.youtube.com/embed/6WQNr2wYDRA style=width:100%;height:450px;></embed>");  */
 /* popup.document.write("<HR><INPUT TYPE='button' VALUE='창닫기' " + 
@@ -121,8 +126,22 @@ popup.document.close();
 						<ul class="nav nav-second-level">
 							<li><a href="sdu_box_office.jsp">박스오피스 랭킹</a></li>
 							<li><a href="sdu_movie_search.jsp">영화검색</a></li>
-							
-							
+							<!-- <li>
+                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#">Third Level Link</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third Level Link</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third Level Link</a>
+                                    </li>
+
+                                </ul>
+
+                            </li> -->
 						</ul></li>
 					<li><a href="sdu_content.jsp" class="waves-effect waves-dark"><i
 							class="fa fa-desktop"></i> 고객센터</a></li>
@@ -149,9 +168,8 @@ popup.document.close();
 				<div class="card col-md-12" style="background-color: black;" >
 				
 				<div class="col-md-12">
-
-
-<!-- 슬라이드 -->
+				
+				
 <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 100%"> 
 	
 	<!--페이지-->
@@ -165,15 +183,15 @@ popup.document.close();
 		
 	
 		<li data-target="#myCarousel" data-slide-to="0" class="active" style="visibility: hidden; float: left;">
-		<img alt="" class="imghidden" src="assets/img/kim.jpg" style="width: 100px;visibility: visible; float: right; margin-top: 650px;"></li>
+		<img alt="" class="imghidden" src="${movie.movie_photo1 }" style="width: 100px;visibility: visible; float: right; margin-top: 650px;"></li>
 		<li data-target="#myCarousel" data-slide-to="1" style="visibility: hidden; float: left; padding-left: 100px;">
-		<img alt="" class="imghidden" src="assets/img/kim5.jpg" style="width: 100px;visibility: visible; float: right; margin-top: 650px;"></li>
+		<img alt="" class="imghidden" src="${movie.movie_photo2 }" style="width: 100px;visibility: visible; float: right; margin-top: 650px;"></li>
 		<li data-target="#myCarousel" data-slide-to="2" style="visibility: hidden; float: left; padding-left: 100px;">
-		<img alt="" class="imghidden" src="assets/img/kim2.jpg" style="width: 100px;visibility: visible; float: right; margin-top: 650px;" ></li>
+		<img alt="" class="imghidden" src="${movie.movie_photo3 }" style="width: 100px;visibility: visible; float: right; margin-top: 650px;" ></li>
 		<li data-target="#myCarousel" data-slide-to="3" style="visibility: hidden; float: left; padding-left: 100px;">
-		<img alt="" class="imghidden" src="assets/img/kim3.jpg" style="width: 100px;visibility: visible; float: right; margin-top: 650px;" ></li>
+		<img alt="" class="imghidden" src="${movie.movie_photo4 }" style="width: 100px;visibility: visible; float: right; margin-top: 650px;" ></li>
 		<li data-target="#myCarousel" data-slide-to="4" style="visibility: hidden; float: left; padding-left: 100px;">
-		<img alt="" class="imghidden" src="assets/img/kim4.jpg" style="width: 100px;visibility: visible; float: right; margin-top: 650px;" ></li>
+		<img alt="" class="imghidden" src="${movie.movie_photo5 }" style="width: 100px;visibility: visible; float: right; margin-top: 650px;" ></li>
 	</ol>
 	
 	<!--페이지-->
@@ -188,11 +206,16 @@ popup.document.close();
 		<!-- <td width="10"><h1>상  영  작</h1></td> -->
 		<td style="text-align: center;">
 		
-			<A HREF="javascript:mediaWin('a.asx')">
+			<!-- <A HREF="javascript:mediaWin('a.asx')"> -->
 			<!-- <a href="MovieSearchData.do?movie_photo=assets/img/movie0.jpg"> -->
-			<img src="assets/img/kim9.jpg" class="img-mobile" style="margin:auto;" data-src="" alt="Second slide">
+			<div class="video">
+									<iframe width="80%" height="90%"
+										src="${movie.movie_preview }"	frameborder="0"> </iframe>
+
+								</div>
+			<!-- <img src="assets/img/kim9.jpg" class="img-mobile" style="margin:auto;" data-src="" alt="Second slide"> -->
 			
-			</a></td>
+			</td>
 			
 			<td width="20%"></td></tr>
 			<tr><td height="100px;"></td></tr>
@@ -211,32 +234,10 @@ popup.document.close();
 		<!-- <td width="10"><h1>상  영  작</h1></td> -->
 		<td style="text-align: center;">
 		
-			<a href="MovieSearchData.do?movie_photo=assets/img/movie0.jpg">
-			<img src="assets/img/kim.jpg" class="img-mobile" style="margin:auto;" data-src="" alt="Second slide">
+			<!-- <a href="MovieSearchData.do?movie_photo=assets/img/movie0.jpg"> -->
+			<img src="${movie.movie_photo2 }" class="img-mobile" style="margin:auto;" data-src="" alt="Second slide">
 			
-			</a></td>
-			
-			<td width="20%"></td></tr>
-			<tr><td height="100px;"></td></tr>
-
-			</tbody>
-			</table>
-		
-		</div>
-		
-		
-		<div class="item kgvsm3"> 
-		
-			<table class="kgvsm2"><tbody>
-			<tr><td height="20px;"></tr><tr>
-		<td width="20%"></td>
-		<!-- <td width="10"><h1>상  영  작</h1></td> -->
-		<td style="text-align: center;">
-		
-			<a href="MovieSearchData.do?movie_photo=assets/img/movie0.jpg">
-			<img src="assets/img/kim2.jpg" class="img-mobile" style="margin:auto;" data-src="" alt="Second slide">
-			
-			</a></td>
+			</td>
 			
 			<td width="20%"></td></tr>
 			<tr><td height="100px;"></td></tr>
@@ -255,10 +256,10 @@ popup.document.close();
 		<!-- <td width="10"><h1>상  영  작</h1></td> -->
 		<td style="text-align: center;">
 		
-			<a href="MovieSearchData.do?movie_photo=assets/img/movie0.jpg">
-			<img src="assets/img/kim3.jpg" class="img-mobile" style="margin:auto;" data-src="" alt="Second slide">
 			
-			</a></td>
+			<img src="${movie.movie_photo3 }" class="img-mobile" style="margin:auto;" data-src="" alt="Second slide">
+			
+			</td>
 			
 			<td width="20%"></td></tr>
 			<tr><td height="100px;"></td></tr>
@@ -277,10 +278,32 @@ popup.document.close();
 		<!-- <td width="10"><h1>상  영  작</h1></td> -->
 		<td style="text-align: center;">
 		
-			<a href="MovieSearchData.do?movie_photo=assets/img/movie0.jpg">
-			<img src="assets/img/kim4.jpg" class="img-mobile" style="margin:auto;" data-src="" alt="Second slide">
+		
+			<img src="${movie.movie_photo4 }" class="img-mobile" style="margin:auto;" data-src="" alt="Second slide">
 			
-			</a></td>
+			</td>
+			
+			<td width="20%"></td></tr>
+			<tr><td height="100px;"></td></tr>
+
+			</tbody>
+			</table>
+		
+		</div>
+		
+		
+		<div class="item kgvsm3"> 
+		
+			<table class="kgvsm2"><tbody>
+			<tr><td height="20px;"></tr><tr>
+		<td width="20%"></td>
+		<!-- <td width="10"><h1>상  영  작</h1></td> -->
+		<td style="text-align: center;">
+		
+			
+			<img src="${movie.movie_photo5 }" class="img-mobile" style="margin:auto;" data-src="" alt="Second slide">
+			
+			</td>
 			
 			<td width="20%"></td></tr>
 			<tr><td height="100px;"></td></tr>
@@ -297,15 +320,9 @@ popup.document.close();
 	<a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> 
 	<a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> 
 </div>
-
-
-
-
-
-
-
-
-</div>
+				
+				
+				</div>
 				
 				
 					<%-- <div class="col-md-6">
@@ -447,8 +464,7 @@ popup.document.close();
 
 
 									<div class="alert alert-success col-md-12">
-										<strong>줄거리</strong> <br> ${movie.movie_content }
-
+										<strong>줄거리</strong> <br> ${movie.movie_content}
 									</div>
 
 
@@ -458,8 +474,6 @@ popup.document.close();
 
 								</div>
 							</div>
-
-
 						</div>
 
 

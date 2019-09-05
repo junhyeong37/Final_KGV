@@ -16,10 +16,15 @@ public class MovieVO {
 	private String movie_content;
 	private String movie_actor;
 	private String movie_director;
+	private String movie_photo1;
+	private String movie_photo2;
+	private String movie_photo3;
+	private String movie_photo4;
+	private String movie_photo5;
 	
 	public MovieVO(int movie_no, String movie_name, String movie_level, String movie_photo, String movie_preview,
 			int movie_likes, String movie_openday, String movie_genre, String movie_runtime, String movie_content,
-			String movie_actor, String movie_director) {
+			String movie_actor, String movie_director,String movie_photo1,String movie_photo2,String movie_photo3,String movie_photo4,String movie_photo5) {
 		super();
 		this.movie_no = movie_no;
 		this.movie_name = movie_name;
@@ -33,6 +38,51 @@ public class MovieVO {
 		this.movie_content = movie_content;
 		this.movie_actor = movie_actor;
 		this.movie_director = movie_director;
+		this.movie_photo1 = movie_photo1;
+		this.movie_photo2 = movie_photo2;
+		this.movie_photo3 = movie_photo3;
+		this.movie_photo4 = movie_photo4;
+		this.movie_photo5 = movie_photo5;
+	}
+
+	public String getMovie_photo1() {
+		return movie_photo1;
+	}
+
+	public void setMovie_photo1(String movie_photo1) {
+		this.movie_photo1 = movie_photo1;
+	}
+
+	public String getMovie_photo2() {
+		return movie_photo2;
+	}
+
+	public void setMovie_photo2(String movie_photo2) {
+		this.movie_photo2 = movie_photo2;
+	}
+
+	public String getMovie_photo3() {
+		return movie_photo3;
+	}
+
+	public void setMovie_photo3(String movie_photo3) {
+		this.movie_photo3 = movie_photo3;
+	}
+
+	public String getMovie_photo4() {
+		return movie_photo4;
+	}
+
+	public void setMovie_photo4(String movie_photo4) {
+		this.movie_photo4 = movie_photo4;
+	}
+
+	public String getMovie_photo5() {
+		return movie_photo5;
+	}
+
+	public void setMovie_photo5(String movie_photo5) {
+		this.movie_photo5 = movie_photo5;
 	}
 
 	public MovieVO() {

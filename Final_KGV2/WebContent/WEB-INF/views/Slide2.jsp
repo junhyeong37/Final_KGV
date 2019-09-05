@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+		<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!doctype html>
 <html>
 <head>
@@ -90,11 +93,16 @@ popup.document.close();
 		<!-- <td width="10"><h1>상  영  작</h1></td> -->
 		<td style="text-align: center;">
 		
-			<A HREF="javascript:mediaWin('a.asx')">
+			<!-- <A HREF="javascript:mediaWin('a.asx')"> -->
 			<!-- <a href="MovieSearchData.do?movie_photo=assets/img/movie0.jpg"> -->
-			<img src="assets/img/kim9.jpg" class="img-mobile" style="margin:auto;" data-src="" alt="Second slide">
+			<div class="video">
+									<iframe width="80%" height="90%"
+										src="${movie.movie_preview }"	frameborder="0"> </iframe>
+
+								</div>
+			<!-- <img src="assets/img/kim9.jpg" class="img-mobile" style="margin:auto;" data-src="" alt="Second slide"> -->
 			
-			</a></td>
+			</td>
 			
 			<td width="20%"></td></tr>
 			<tr><td height="100px;"></td></tr>
