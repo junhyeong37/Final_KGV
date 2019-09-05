@@ -371,13 +371,13 @@ function duplicationId() {
 				<div class="col-md-6 col-sm-12 col-xs-12">
 					<!-- <div class="col-xs-12"> -->
 					<div class="card">
-						<div class="card-action">당신의 아이디는</div>
+						<div class="card-action">회원가입 완료!</div>
 						<div>
 
 							<div class="card-content center">
 
-								<h2>${ulist.get(0) }</h2> 
-								<h4>입니다</h4>
+								<h2>${user_name}</h2> 
+								<h4>님 가입을 환영합니다</h4>
 <br><br>
 								<div class="row center">
 									<div class="waves-effect waves-light btn">

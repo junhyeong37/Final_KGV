@@ -114,29 +114,30 @@ function duplicationId() {
 
 <script>
 function duplicationId() {
-	var inputName = $("#user_name").val();
-	var inputTel = $("#user_tel").val();
-	var allData = { "inputName": inputName, "inputTel": inputTel };
+	var user_name = $("#user_name").val();
+	var user_tel = $("#user_tel").val();
+	var allData = { "user_name": user_name, "user_tel": user_tel };
 	
 	var test = false;
 	$.ajax({
 		async: false,
-		type: "post",
+		type: "get",
 		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-		url: "findId.do",  //findId.do
+		url: "SelectId.do",  //findId.do
 		data: allData, 
 		
 		success: function (data) {
-			if(data == "F") {
+			if(data !=null) {
 				alert("성공");
-				location.href="sdu_idsearch_ok.jsp"
+				//location.href="SelectId.do"
+				test=true;
 			} else {
 				test = false
 				alert("정보를 잘못 입력했어요")
 			}
 		},
 		error: function(req, status, errThrown) {
-			alert("network error occur");
+			alert("정보를 잘못 입력했어요");
 		}
 	});
 	
@@ -370,7 +371,7 @@ function duplicationId() {
 					<div class="card">
 						<div class="card-action">아이디찾기</div>
 						<div class="card-content">
-							<form id="postData" class="col s12" action="findId.do" method="POST" onsubmit="return duplicationId()"> <!-- .do를 바꿔줘야함 -->
+							<form id="postData" class="col s12" action="SelectId.do" method="GET" onsubmit="return duplicationId()"> <!-- .do를 바꿔줘야함 -->
 								<div class="row">
 									<div class="input-field col s12">
 										<input id="user_name" name="user_name" type="text"

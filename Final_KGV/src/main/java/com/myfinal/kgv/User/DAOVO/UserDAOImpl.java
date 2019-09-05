@@ -59,6 +59,7 @@ public class UserDAOImpl implements UserDAO{
 	@Override
 	public List<UserVO> SelectId(UserVO vo) {
 		// TODO Auto-generated method stub
+		System.out.println("유저다오에서 "+sqlSession.selectList(namespace+".SelectId",vo));
 		return sqlSession.selectList(namespace+".SelectId",vo);
 	}
 

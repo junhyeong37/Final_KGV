@@ -9,10 +9,11 @@
 </head>
 <body>
 
-	<c:forEach items="${ulist }" var="user" >
+	<%-- <c:forEach items="${ulist }" var="user" varStatus="status">
 
 		<b> ${user.user_id }</b>
 
-	</c:forEach>
+	</c:forEach> --%>
+	${ulist.get(0) }
 </body>
 </html>

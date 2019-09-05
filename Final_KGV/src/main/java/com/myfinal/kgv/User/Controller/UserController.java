@@ -87,11 +87,16 @@ public class UserController {
 	@RequestMapping(value = "UserInsertData.do", method = RequestMethod.GET)
 	public ModelAndView UserInsertData(UserVO vo, HttpServletRequest req, Locale locale) throws ParseException {
 		ModelAndView mv = new ModelAndView();
+		//mv.setViewName("sdu_membership_ok");
 		mv.setViewName("JoinPro");
 
+		
+		
 		us.UserInsertData(vo);
 		List<UserVO> userlist = us.UserAllData();
 		mv.addObject("userlist", userlist);
+		
+		
 
 		return mv;
 	}
@@ -229,10 +234,10 @@ public class UserController {
 		//id를 찾고 id를 뽑아주는 거
 	
 		@RequestMapping(value="SelectId.do", method=RequestMethod.GET)
-		public ModelAndView SelectId(UserVO vo, HttpServletRequest req, Locale locale) throws ParseException{
+		public ModelAndView SelectId(UserVO vo, HttpServletRequest req, Locale locale) throws ParseException, IndexOutOfBoundsException{
 			ModelAndView mv=new ModelAndView();
 			
-			mv.setViewName("sdu_testtest11");
+			//mv.setViewName("sdu_testtest11");
 			
 			String user_name=req.getParameter("user_name");
 			String user_tel=req.getParameter("user_tel");
@@ -240,8 +245,10 @@ public class UserController {
 			System.out.println(user_name+"그리고"+ user_tel);
 			
 			List<UserVO> ulist=us.SelectId(vo);
+//			UserVO id = ulist.get(0);
+			//System.out.println(id.getUser_id());
 			mv.addObject("ulist", ulist);
-			mv.setViewName("sdu_testtest11");
+			mv.setViewName("sdu_idsearch_ok");
 			
 			return mv;
 			
