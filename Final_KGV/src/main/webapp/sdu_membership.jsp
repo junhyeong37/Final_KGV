@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -26,12 +26,14 @@
 var isCheckId = 0;
 function duplicationId () {
 	var inputId = $("#user_id").val();
+	
 	$.ajax({
 		async: false,
 		type: "post",
 		url: "duplicationCheck.do",
 		data: inputId,
 		success: function (data) {
+			alert(data);
 			if(data == "S") {
 				alert("사용가능한 아이디입니다.");
 				

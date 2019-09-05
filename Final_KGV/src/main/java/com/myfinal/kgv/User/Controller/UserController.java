@@ -156,7 +156,7 @@ public class UserController {
 		return mv;
 	}
 
-	// id 중복 체크 컨트롤러
+	// id 중복 체크 컨트롤러 회원가입부분에 쓰임.
 	@RequestMapping("duplicationCheck.do")
 	@ResponseBody
 	public String CheckDuplication(@RequestBody String inputId) {
@@ -170,5 +170,42 @@ public class UserController {
 		
 		return checkRst;
 	}
-
+	
+	
+	//로그인 값 옳지 않을때 실패팝업 띄우기. (id찾기 pw 찾기에 응용할 수 있음)
+	@RequestMapping("loginCheck.do")
+	@ResponseBody
+	public String loginCheck(String inputId, String inputPw) {
+		System.out.println("컨트롤러" + inputId);
+		System.out.println("컨트롤러" + inputPw);
+		
+		String checkRst;
+		int idCnt = us.loginCheck(inputId,inputPw);
+		if(idCnt > 0) 
+			checkRst = "F";
+		else 
+			checkRst = "S";
+		
+		return checkRst;
+	}
+	
+	
+	
+	
+	//id 찾기 
+	@RequestMapping("findId.do")
+	@ResponseBody
+	public String findId(String inputName, String inputTel) {
+		System.out.println("컨트롤러" + inputName);
+		System.out.println("컨트롤러" + inputTel);
+		
+		String checkRst;
+		int idCnt = us.IdCheck(inputName,inputTel);
+		if(idCnt > 0) 
+			checkRst = "F";
+		else 
+			checkRst = "S";
+		
+		return checkRst;
+	}
 }

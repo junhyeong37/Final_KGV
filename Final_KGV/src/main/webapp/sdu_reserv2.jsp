@@ -8,6 +8,9 @@
 <title>KGV 예매 홈</title>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
+	var jb1 = "";
+	var jb2 = "";
+
 	$(document).ready(function() {
 		$('.test').click(function() {
 			$('.test').removeClass('active-menu');
@@ -15,7 +18,7 @@
 			var jb = $('tr.active-menu').text().trim();
 			$('input#A').val(jb);
 		});
-		$('.test2').click(function() {
+		$('tr.test2').click(function() {
 			$('.test2').removeClass('active-menu');
 			$(this).toggleClass('active-menu');
 			//var jb = $(this).html().trim();
@@ -33,14 +36,31 @@
 			$('.test4').removeClass('active-menu');
 			$(this).toggleClass('active-menu');
 			/* var jb = $('th.active-menu.test4>div>input:button').val(); */
-			var jb = $('th.active-menu.test4>div').text().trim();
-			$('input#E').val("성인 " + jb +"명");
+			jb1 = "성인 " + $('th.active-menu.test4>div').text().trim() + "명";
+			$('input#E').val(jb1 + jb2);
+		});
+		$('.test5').click(function() {
+			$('.test5').removeClass('active-menu');
+			$(this).toggleClass('active-menu');
+			/* var jb = $('th.active-menu.test4>div>input:button').val(); */
+			jb2 = ", 학생" +$('th.active-menu.test5>div').text().trim() +"명";
+			$('input#E').val(jb1 + jb2);
 		});
 		$('table.table-striped').click(function() {
 			var jb = $('table#date1 input.date-picker').val();
 			$('input#C').val(jb);
 		});
+		$('input.testbn1').click(function() {
+			alert("띠바아아앙");
+		});
+		
+		
 	});
+	
+		
+
+
+
 </script>
 
 <style>
@@ -57,97 +77,7 @@
 }
 </style>
 
-<script type="text/javascript">
-	/* function mclick1() {
-
-		var movie1 = document.getElementById('movie1');
-		movie1.innerText = "마우스이벤트1";
-
-	}
-
-	function mclick2() {
-
-		var movie2 = document.getElementById('movie2');
-		movie2.innerText = "마우스이벤트2";
-
-	}
-
-	function mclick3() {
-
-		var movie3 = document.getElementById('movie3');
-		movie3.innerText = "마우스이벤트3";
-
-	}
-
-	function mclick4() {
-
-		var movie4 = document.getElementById('movie4');
-		movie4.innerText = "마우스이벤트4";
-
-	}
-
-	function mclick5() {
-
-		var movie5 = document.getElementById('movie5');
-		movie5.innerText = "마우스이벤트5";
-
-	}
-
-	function mclick6() {
-
-		var movie6 = document.getElementById('movie6');
-		movie6.innerText = "마우스이벤트6";
-
-	}
-	function mclick7() {
-
-		var movie7 = document.getElementById('movie7');
-		movie7.innerText = "마우스이벤트7";
-
-	}
-	function mclick8() {
-
-		var movie8 = document.getElementById('movie8');
-		movie8.innerText = "마우스이벤트8";
-
-	}
-	function mclick9() {
-
-		var movie9 = document.getElementById('movie9');
-		movie9.innerText = "마우스이벤트9";
-
-	}
-	function mclick10() {
-
-		var movie10 = document.getElementById('movie10');
-		movie10.innerText = "마우스이벤트10";
-
-	}
-	function mclick11() {
-
-		var movie11 = document.getElementById('movie11');
-		movie11.innerText = "마우스이벤트11";
-
-	}
-	function mclick12() {
-
-		var movie12 = document.getElementById('movie12');
-		movie12.innerText = "마우스이벤트12";
-
-	}
-	function mclick13() {
-
-		var movie13 = document.getElementById('movie13');
-		movie13.innerText = "마우스이벤트13";
-
-	}
-	function mclick14() {
-
-		var movie14 = document.getElementById('movie14');
-		movie14.innerText = "마우스이벤트14";
-
-	} */
-</script>
+	
 
 
 
@@ -271,8 +201,7 @@
 
 		<div id="page-wrapper" style="background-image: url('back.jpg');">
 
-		<form action="reserv.do" method="post">
-		
+			<form action="Goseat.do">
 			<div id="page-inner">
 				<div class="row">
 					<div class="card col-md-12">
@@ -491,9 +420,9 @@
 												</tr>
 												<tr class="even gradeA test2">
 													<td>강남구</td>
-													<td id="Theater">강남 CGV</td>
+													<td id="Theater">강남 CGV</td> 	
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1"value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
@@ -581,92 +510,92 @@
 													<td>동대문구</td>
 													<td id="Theater">바우 롯데시네마</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1"value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
 													<td>성동구</td>
 													<td id="Theater">성동 메가박스</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button"  class="testbn1" id="testbn1"value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>강남구</td>
 													<td id="Theater">강남 CGV</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button"  class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
 													<td>강남구</td>
 													<td id="Theater">압구정 CGV</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button"  class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>서대문구</td>
 													<td id="Theater">독립문 롯데시네마</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button"  class="testbn1" id="testbn1"value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>서대문구</td>
 													<td id="Theater">이대 CGV</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button"  class="testbn1" value="선택">
 														</div></th>
 												</tr>
 
 												<tr class="odd gradeX test2">
 													<td>강동구</td>
 													<td id="Theater">가나다 CGV</td>
-													<th><div align="center">
-															<input type="button" value="선택">
+													<th><div align="center"> 
+															<input type="button" class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeC test2">
 													<td>동대문구</td>
 													<td id="Theater">바우 롯데시네마</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" class="testbn1"  value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
 													<td>성동구</td>
 													<td id="Theater">성동 메가박스</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button"  class="testbn1" id="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>강남구</td>
 													<td id="Theater">강남 CGV</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button"id="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
 													<td>강남구</td>
 													<td id="Theater">압구정 CGV</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1"value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>서대문구</td>
 													<td id="Theater">독립문 롯데시네마</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button"id="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>서대문구</td>
 													<td id="Theater">이대 CGV</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button"id="testbn1" value="선택">
 														</div></th>
 												</tr> 
 											</tbody>
@@ -859,33 +788,32 @@
 											</tr>
 											<tr>
 												<th>학생</th>
-												<th class="test4"><div style="text-align: center;">
+												<th class="test5"><div style="text-align: center;">
 														<!-- <input type="button" value="0"> -->
 														0
 													</div></th>
-												<th class="test4"><div style="text-align: center;">
+												<th class="test5"><div style="text-align: center;">
 														<!-- <input type="button" value="1"> -->
 														1
 													</div></th>
-												<th class="test4"><div style="text-align: center;">
+												<th class="test5"><div style="text-align: center;">
 														<!-- <input type="button" value="2"> -->
 														2
 													</div></th>
-												<th class="test4"><div style="text-align: center;">
+												<th class="test5"><div style="text-align: center;">
 														<!-- <input type="button" value="3"> -->
 														3
 													</div></th>
-												<th class="test4"><div style="text-align: center;">
+												<th class="test5"><div style="text-align: center;">
 														<!-- <input type="button" value="4"> -->
 														4
 													</div></th>
 											</tr>
 											<tr>
-												<th colspan="6"><div
-														style="text-align: center; background-color: black;">
+												<th colspan="6" style="text-align: center;"><div style="text-align: center; background-color: black;" class="waves-effect waves-light btn">
 														<input type="submit" value="예매하기">
 													</div></th>
-
+													
 											</tr>
 										</tbody>
 									</table>
@@ -895,13 +823,12 @@
 
 						<div class="col-md-4">
 							<div class="card">
-
 								<div class="card-content">
-									<input type="text" readonly="readonly" id="A" style="color: black;"/><br /> <input
-										type="text" readonly="readonly" id="B" style="color: black;"/> <br /> <input type="text"
-										readonly="readonly" id="C" style="color: black;"/> <br /> <input type="text"
-										readonly="readonly" id="D" style="color: black;"/> <br /> <input type="text"
-										readonly="readonly" id="E" style="color: black;"/> <br />
+									<input type="text" readonly="readonly" id="A" name="A" style="color: black;"/><br /> 
+									<input type="text" readonly="readonly" id="B" name="B" style="color: black;"/> <br /> 
+									<input type="text" readonly="readonly" id="C" name="C" style="color: black;"/> <br /> 
+									<input type="text" readonly="readonly" id="D" name="D" style="color: black;"/> <br /> 
+									<input type="text" readonly="readonly" id="E" name="E" style="color: black;"/> <br />
 								</div>
 							</div>
 						</div>
@@ -909,7 +836,7 @@
 					</div>
 				</div>
 			</div>
-
+			</form>
 
 
 
@@ -1008,8 +935,6 @@
 					<%@include file="sdu_footer.jsp"%>
 				</div>
 			</footer>
-			
-			</form>
 		</div>
 		<!-- /. PAGE WRAPPER  -->
 

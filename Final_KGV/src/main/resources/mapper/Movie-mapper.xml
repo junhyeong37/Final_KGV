@@ -3,12 +3,16 @@
 <mapper namespace="mapper.Movie-mapper">
 
 <select id="MovieAllData" resultType="movie">
-		
-		
-		SELECT movie_no, movie_name, movie_level, movie_photo, movie_preview, movie_likes, movie_openday, movie_genre, movie_runtime, movie_content, movie_actor, movie_director
-		FROM MOVIE
-		
+		SELECT movie_name
+		FROM MOVIE 
 	</select> 
+		
+		<!-- SELECT movie_no, movie_name, movie_level, movie_photo, movie_preview, movie_likes, movie_openday, movie_genre, movie_runtime, movie_content, movie_actor, movie_director
+		FROM MOVIE -->
+
+
+
+
 
 	<select id="MovieInsertData">
 		<!-- insert into movie (movie_no, movie_name, movie_level, movie_photo, movie_preview, movie_likes, movie_openday, movie_genre, movie_runtime, movie_content, movie_actor, movie_director)
