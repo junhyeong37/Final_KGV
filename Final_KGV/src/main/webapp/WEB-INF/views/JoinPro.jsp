@@ -9,7 +9,7 @@
 </head>
 <body>
 
- ${user_name} 가입을 환영합니다
+<%--  ${user_name} 가입을 환영합니다
  
  
  
@@ -18,7 +18,20 @@
 					</c:forEach>
 					
 					
-				그냥	${user_id } 그냥
+				그냥	${user_id } 그냥111111111111
+				
+				실험 ${userlist.get(user_id) } --%>
+				
+				
+		 <%-- <c:forEach items="${userlist }" var="val" varStatus="status">
+						이거 되는건가?<c:out value="${status.end}" />
+						
+						플리즈${status.end}<br/>
+						실험 123<b> ${val.user_id }</b>
+					</c:forEach>	 --%>	
+				
+		${id } 님	
+				
  
 </body>
 </html>

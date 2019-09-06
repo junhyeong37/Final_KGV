@@ -84,18 +84,19 @@ public class UserController {
 		return mv;
 	}
 
-	@RequestMapping(value = "UserInsertData.do", method = RequestMethod.GET)
+	@RequestMapping(value = "UserInsertData.do", method = RequestMethod.POST)
 	public ModelAndView UserInsertData(UserVO vo, HttpServletRequest req, Locale locale) throws ParseException {
 		ModelAndView mv = new ModelAndView();
 		//mv.setViewName("sdu_membership_ok");
-		mv.setViewName("JoinPro");
+		mv.setViewName("sdu_membership_ok");
 
-		
+		String id=req.getParameter("user_id");
+		System.out.println("컨트롤러"+id);
 		
 		us.UserInsertData(vo);
 		List<UserVO> userlist = us.UserAllData();
 		mv.addObject("userlist", userlist);
-		
+		mv.addObject("id", id);
 		
 
 		return mv;
@@ -122,7 +123,7 @@ public class UserController {
 		return mv;
 	}*/
 	
-	@RequestMapping(value = "UserLogin.do", method = RequestMethod.GET)
+	@RequestMapping(value = "UserLogin.do", method = RequestMethod.POST)
 	public ModelAndView UserLogin(UserVO vo, HttpServletRequest req, Locale locale, HttpSession session, RedirectAttributes rttr)
 			throws ParseException {
 		ModelAndView mv = new ModelAndView();
@@ -233,7 +234,7 @@ public class UserController {
 		
 		//id를 찾고 id를 뽑아주는 거
 	
-		@RequestMapping(value="SelectId.do", method=RequestMethod.GET)
+		@RequestMapping(value="SelectId.do", method=RequestMethod.POST)
 		public ModelAndView SelectId(UserVO vo, HttpServletRequest req, Locale locale) throws ParseException, IndexOutOfBoundsException{
 			ModelAndView mv=new ModelAndView();
 			

@@ -121,7 +121,7 @@ function duplicationId() {
 	var test = false;
 	$.ajax({
 		async: false,
-		type: "get",
+		type: "post",
 		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 		url: "SelectId.do",  //findId.do
 		data: allData, 
@@ -371,7 +371,7 @@ function duplicationId() {
 					<div class="card">
 						<div class="card-action">아이디찾기</div>
 						<div class="card-content">
-							<form id="postData" class="col s12" action="SelectId.do" method="GET" onsubmit="return duplicationId()"> <!-- .do를 바꿔줘야함 -->
+							<form id="postData" class="col s12" action="SelectId.do" method="post" onsubmit="return duplicationId()"> <!-- .do를 바꿔줘야함 -->
 								<div class="row">
 									<div class="input-field col s12">
 										<input id="user_name" name="user_name" type="text"

@@ -164,7 +164,7 @@
 					<div class="card">
 						<div class="card-action">로그인</div>
 						<div class="card-content">
-							<form class="col s12" action="UserLogin.do" method="get">
+							<form class="col s12" action="UserLogin.do" method="post">
 								<div class="row">
 									<div class="input-field col s12">
 										<input id="user_id" name="user_id" type="text"

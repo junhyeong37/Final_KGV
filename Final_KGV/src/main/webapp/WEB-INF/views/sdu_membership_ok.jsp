@@ -376,7 +376,7 @@ function duplicationId() {
 
 							<div class="card-content center">
 
-								<h2>${user_name}</h2> 
+								<h2>${id }</h2> 
 								<h4>님 가입을 환영합니다</h4>
 <br><br>
 								<div class="row center">
