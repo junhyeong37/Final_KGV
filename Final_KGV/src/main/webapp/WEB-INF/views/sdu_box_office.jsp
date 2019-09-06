@@ -172,7 +172,7 @@ a:hover {
 		</nav>
 		<!-- Dropdown Structure -->
 		<ul id="dropdown1" class="dropdown-content">
-			<li><a href="sdu_login.jsp"><i class="fa fa-user fa-fw"></i>
+			<li><a href="sdu_index_navbar.jsp"><i class="fa fa-user fa-fw"></i>
 					로그아웃</a></li>
 			<li><a href="sdu_membership.jsp"><i class="fa fa-gear fa-fw"></i>
 					My Page</a></li>
@@ -252,7 +252,7 @@ a:hover {
                         </ul>
                     </li>
                     <li>
-                        <a href="sdu_content.jsp" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> 고객센터</a>
+                        <a href="sdu_theater.jsp" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> 영화관</a>
                     </li>
                     
                     <!-- <li>
@@ -314,7 +314,7 @@ a:hover {
 		  <div id="page-inner">
 
 				<%
-					String targetDt = request.getParameter("targetDt") == null ? "20190818" : request.getParameter("targetDt");
+					String targetDt = request.getParameter("targetDt") == null ? "20190904" : request.getParameter("targetDt");
 					String itemPerPage = request.getParameter("itemPerPage") == null
 							? "10"
 							: request.getParameter("itemPerPage");
@@ -617,7 +617,7 @@ a:hover {
 							<div class="card-content">
 								<div class="col">
 									<ul class="tabs">
-										<li class="tab col s3"><a href="#test1">매출 순위</a></li>
+										<li class="tab col s3 col-md-1"><a href="#test1">매출 순위</a></li>
 
 										<li class="tab col s3"><a href="#test4">관객 순위</a></li>
 									</ul>

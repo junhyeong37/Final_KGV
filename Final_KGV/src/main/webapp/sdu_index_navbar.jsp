@@ -32,10 +32,19 @@
 	background-color: #333333;
 	border-color: #e7e7e7
 }
+
+.top-navbar{
+ 	top:0;
+}
 </style>
 
 
-
+<script type="text/javascript">
+$( '.top' ).click( function() {
+   $( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+   return false;
+} );
+</script>
 
 
 
@@ -126,7 +135,7 @@ history.go(-1);
 		</nav>
 		<!-- Dropdown Structure -->
 		<ul id="dropdown1" class="dropdown-content">
-			<li><a href="sdu_login.jsp"><i class="fa fa-user fa-fw"></i>
+			<li><a href="sdu_index_navbar.jsp"><i class="fa fa-user fa-fw"></i>
 					로그아웃</a></li>
 			<li><a href="sdu_mypage.jsp"><i class="fa fa-gear fa-fw"></i>
 					My Page</a></li>
@@ -195,8 +204,8 @@ history.go(-1);
 
                             </li> -->
 						</ul></li>
-					<li><a href="sdu_content.jsp" class="waves-effect waves-dark"><i
-							class="fa fa-desktop"></i> 고객센터</a></li>
+					<li><a href="sdu_theater.jsp" class="waves-effect waves-dark"><i
+							class="fa fa-desktop"></i> 영화관</a></li>
 
 
 
@@ -250,83 +259,54 @@ history.go(-1);
 		<!-- /. NAV SIDE  -->
 
 		<div id="page-wrapper">
-			<br> <br> <br> <br> <br> <br> <br>
-			<br> <br> <br> <br> <br> <br> <br>
-
-
-
-			<div id="carousel">
-				<div class="slideImg hideLeft">
-					<img
-						src="https://i1.sndcdn.com/artworks-000165384395-rhrjdn-t500x500.jpg">
-				</div>
-				<div class="slideImg prevLeftSecond">
-					<img
-						src="https://i1.sndcdn.com/artworks-000185743981-tuesoj-t500x500.jpg">
-				</div>
-				<div class="slideImg prev">
-					<img
-						src="https://i1.sndcdn.com/artworks-000158708482-k160g1-t500x500.jpg">
-				</div>
-				<div class="slideImg selected">
-					<img
-						src="https://i1.sndcdn.com/artworks-000062423439-lf7ll2-t500x500.jpg">
-				</div>
-				<div class="slideImg next">
-					<img
-						src="https://i1.sndcdn.com/artworks-000028787381-1vad7y-t500x500.jpg">
-				</div>
-				<div class="slideImg nextRightSecond">
-					<img
-						src="https://i1.sndcdn.com/artworks-000108468163-dp0b6y-t500x500.jpg">
-				</div>
-				<div class="slideImg hideRight">
-					<img
-						src="https://i1.sndcdn.com/artworks-000064920701-xrez5z-t500x500.jpg">
-				</div>
-			</div>
-
-			<!--   <div class="positionBtn">
+			<!-- <div class="col-md-1"></div> -->
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<br> <br>
+				<div class="card">
+					<jsp:include page="Slide.jsp"></jsp:include></div>
+				<!--   <div class="positionBtn">
                         <button id="prev"><span>PREV</span></button>
                         <button id="next"><span>NEXT</span></button>
                     </div> -->
 
-
+			</div>
 			<!-- <br> <br> <br> <br> <br>  -->
 
 
-			<div class="gong"></div>
 
 
-			<div id="page-inner">
+
+			<div id="page-inner" style="background-color: white;">
 				<div class="row">
-					<div class="col-md-8 col-sm-12 col-xs-12">
-						<div class="card">
-							<div class="card-action">
-								<b>이달의 상영작</b>
-							</div>
-							<div class="card-image">
-								<div class="video">
-									
-									
-									
-									
-									 <iframe width="80%" height="90%"
-										src="https://www.youtube.com/embed/WaxgJggEm3Q"
-										frameborder="0"> </iframe> 
-
+					<div class="card col-md-12">
+						<div class="col-md-8 col-sm-12 col-xs-12">
+							<div class="card">
+								<div class="card-action">
+									<b>이달의 상영작</b>
 								</div>
-							</div>
+								<div class="card-image">
+									<div class="video">
+										<iframe width="80%" height="90%"
+											src="https://www.youtube.com/embed/A__FOXFNemU"
+											frameborder="0"> </iframe>
 
+									</div>
+								</div>
+
+
+							</div>
 
 						</div>
 
-					</div>
-					<div class="col-md-4 col-sm-12 col-xs-12">
-						<div class="card">
-							<div class="card-action">
-								<b>포스터</b> <img src="assets/img/movie1.jpg" width="100%"
-									height="90%">
+						<div class="col-md-4 col-sm-12 col-xs-12">
+							<div class="card">
+								<div class="card-action">
+									<a href="MovieSearchData.do?movie_photo=assets/img/movie0.jpg"><img
+										src="assets/img/movie0.jpg" style="width: 100%; margin: auto;"
+										data-src="" alt="Third slide"> </a>
+									<!-- <img src="assets/img/movie0.jpg" width="100%"
+                           > -->
+								</div>
 							</div>
 						</div>
 					</div>
@@ -334,75 +314,85 @@ history.go(-1);
 			</div>
 
 
-			<div class="gong"></div>
 
-
-			<div id="page-inner">
+			<div id="page-inner" style="background-color: white;">
 				<div class="row">
-					<div class="col-md-8 col-sm-12 col-xs-12">
-						<div class="card">
-							<div class="card-action">
-								<b>리뷰 게시판</b>
+					<div class="card col-md-12" style="background-color: #0a0a0a;">
+						<div class="col-md-2"></div>
+						<div class="col-md-8 col-sm-12 col-xs-12">
+							<div class="card">
+								<jsp:include page="MoviePopup.jsp"></jsp:include>
+
+
 							</div>
-							<div class="card-image">
-								<div class="table-responsive">
-									<table class="table table-striped table-bordered table-hover"
-										id="dataTables-example">
-										<thead>
-											<tr>
-												<th>Rendering engine</th>
-												<th>Browser</th>
-
-											</tr>
-										</thead>
-										<tbody>
-											<tr class="odd gradeX">
-												<td>Trident</td>
-												<td>Internet Explorer 4.0</td>
-
-											</tr>
-											<tr class="even gradeC">
-												<td>Trident</td>
-												<td>Internet Explorer 5.0</td>
-
-											</tr>
-											<tr class="odd gradeA">
-												<td>Trident</td>
-												<td>Internet Explorer 5.5</td>
-
-											</tr>
-											<tr class="even gradeA">
-												<td>Trident</td>
-												<td>Internet Explorer 6</td>
-
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-
 
 						</div>
 
-					</div>
-					<div class="col-md-4 col-sm-12 col-xs-12">
-						<div class="card">
-							<div class="card-action">
-								<b>게시판 상영작</b> <img src="assets/img/movie1.jpg" width="100%"
-									height="90%">
-							</div>
-						</div>
 					</div>
 				</div>
+			</div>
 
-				<div class="gong"></div>
+
+			<div id="page-inner" style="background-color: white;">
+				<div class="row">
+					<div class="col-md-12" style="background-color: white;">
+						<div class="col-md-2"></div>
+						<div class="col-md-8 col-sm-12 col-xs-12">
+
+							<h3>
+								<strong>이벤트</strong>
+							</h3>
+							<br> <img alt="" src="assets/img/event2.jpg"
+								style="width: 100%; height: 100%">
+
+
+
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- 
+         <div class="gong"></div>
+ -->
+
+			<div id="page-inner"
+				style="background-color: white; padding-left: 15px; padding-right: 15px;">
+				<div class="row">
+					<div class="col-md-12"
+						style="padding-left: 0px; padding-right: 0px;">
+
+
+						<div class="card"
+							style="text-align: center; background-color: #005cb9;">
+							<a href="https://www.hyundaicard.com/cpb/ev/CPBEV0101_01.hc">
+								<img alt="" src="assets/img/event.jpg"
+								style="width: 50%; height: 100%">
+							</a>
+						</div>
+
+
+
+
+					</div>
+					<!-- <div class="col-md-4 col-sm-12 col-xs-12">
+                  <div class="card">
+                     <div class="card-action">
+                        <b>게시판 상영작</b> <img src="assets/img/movie0.jpg" width="100%"
+                           height="90%">
+                     </div>
+                  </div>
+               </div> -->
+				</div>
+
+
 
 
 				<div id="footer">
 					<footer>
 						<div class="center">
-							<br> <br> <br> <br> <br> <br> <br>
-							<br> <br> <br> <br> <br> <br>
+							<br> <br> <br>
 							<%@include file="sdu_footer.jsp"%>
 						</div>
 					</footer>
@@ -411,6 +401,12 @@ history.go(-1);
 
 			</div>
 			<!-- page-wrapper -end -->
+			<div class="fixed-action-btn horizontal click-to-toggle">
+				<a class="btn-floating btn-large red top" href="#"> <i
+					class="material-icons">publish</i>
+				</a>
+
+			</div>
 		</div>
 		<!-- /. PAGE WRAPPER  -->
 

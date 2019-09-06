@@ -133,7 +133,7 @@ overflow-x:hidden;
 		</nav>
 		<!-- Dropdown Structure -->
 		<ul id="dropdown1" class="dropdown-content">
-			<li><a href="sdu_login.jsp"><i class="fa fa-user fa-fw"></i>
+			<li><a href="sdu_index_navbar.jsp"><i class="fa fa-user fa-fw"></i>
 					로그아웃</a></li>
 			<li><a href="sdu_mypage.jsp"><i class="fa fa-gear fa-fw"></i>
 					My Page</a></li>
@@ -190,8 +190,8 @@ overflow-x:hidden;
 							<li><a href="MovieAllData.do">영화검색</a></li>
 							
 						</ul></li>
-					<li><a href="sdu_content.jsp" class="waves-effect waves-dark"><i
-							class="fa fa-desktop"></i> 고객센터</a></li>
+					<li><a href="sdu_theater.jsp" class="waves-effect waves-dark"><i
+							class="fa fa-desktop"></i> 영화관</a></li>
 
 				
 				</ul>
