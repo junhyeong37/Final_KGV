@@ -149,7 +149,21 @@ visibility: hidden;
 	} --%>
 </script>
 
+<script>
 
+
+var ulist=<%=session.getAttribute("ulist")%>
+
+if(ulist==null){
+   alert("해당메뉴는 로그인이 필요한 메뉴입니다. 로그인 후 이용해주세요");
+   location.href="sdu_login.jsp"
+}else{
+   location.href="seatTest2.jsp"
+}
+
+
+
+</script>
 
 
 </head>
@@ -189,12 +203,34 @@ visibility: hidden;
 			}
 
 		}
+		
+		
+		
+		
+		
+		
 	</script>
 
 
 
 
+<script type="text/javascript">
 
+function seat(){
+	var movie_name=${A };
+	var play_theater=${B};
+	var play_day=${C};
+	var play_inwon=${E };
+	var play_price=${Z*10000 + Y*8000};
+	var movie_no=${movie_no};
+	var play_seat = $('div#selected').text();
+	var play_seat2 = $('div#selected').val();
+	
+	alert(play_seat);
+	alert(play_seat2);
+	
+}
+</script>
 
 
 
@@ -285,7 +321,6 @@ visibility: hidden;
 
       <div id="page-wrapper">
          <div id="page-inner" style="padding-left: 0px; padding-right: 0px;">
-
 
 
 
@@ -445,30 +480,36 @@ visibility: hidden;
 
 <table class="table table-striped table-bordered table-hover">
 <tbody>
-<tr>
-<td>영화제목 : ${A }</td>
-</tr>
-<tr>
-<td>극장이름 : ${B }</td>
-</tr>
-<tr><td>날짜 : ${C }</td></tr>
-<tr><td>인원 : ${E }</td></tr>
-<tr><td><div id="selected" >좌석 </div></td></tr>
-<tr><td>금액 : ${Z*10000 + Y*8000 }</td></tr>
-<tr><td><div><input type="submit" value="이전단계" style="float: left;"><input type="submit" value="다음단계" style="float: right;"></div></td></tr>
+<tr><td id="movie_name">영화제목 : ${A }</td></tr>
+<tr><td id="play_theater">극장이름 : ${B }</td></tr>
+<tr><td id="play_day">날짜 : ${C }</td></tr> 
+<tr><td id="play_inwon">인원 : ${E }</td></tr>
+<tr><td id="play_seat"><div id="selected" >좌석 </div></td></tr>
+<tr><td id="play_price">금액 : ${Z*10000 + Y*8000}</td></tr>
+<tr><td hidden="" id="movie_no">${movie_no }</td></tr>
+
+<tr><td><div>
+<a href="sdu_reserv_test.jsp"><input type="submit" value="이전단계" style="float: left;"></a> 
+
+
+<%-- <a href="Goseat2.do?movie_name=${A }&play_theater=${B}&play_day=${C}&play_inwon=${E }&javascript:seat();&play_price=${Z*10000 + Y*8000}&movie_no=${movie_no}"> --%>
+
+<input type="submit" value="다음단계" style="float: right;"></div></td></tr>
+
+
 </tbody></table></div>
 	<div class="waves-effect waves-light btn">
        <button id="clearAllButton" type="button">Clear All</button> 
      </div>
  </div>
  
- 
- 
+
  </div>
 <!-- </div> -->
 </div>
 
-
+<a href="javascript:seat();">자바</a>
+ 
 
 
 </div>
@@ -481,7 +522,7 @@ visibility: hidden;
                   <%@include file="sdu_footer.jsp"%>
                </div>
             </footer>
-            
+          
             
          </div>
       </div>

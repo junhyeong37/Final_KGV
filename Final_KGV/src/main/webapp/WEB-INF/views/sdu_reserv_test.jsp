@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core" %>
+	
+<%@ taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core" %>	
+	
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -11,16 +13,16 @@
 <script>
 	var jb1 = "";
 	var jb2 = "";
-	
-	String moviename1= list.get(0).get("movie_name").toString();
-	
-	
+
 	$(document).ready(function() {
 		$('.test').click(function() {
 			$('.test').removeClass('active-menu');
 			$(this).toggleClass('active-menu');
-			var jb = $('tr.active-menu').text().trim();
+			var jb = $('tr.active-menu>td:nth-child(2)').text().trim();
+			var movie_no = $('tr.active-menu>td:nth-child(3)').text().trim();
 			$('input#A').val(jb);
+			$('input#movie_no').val(movie_no);
+			
 		});
 		$('tr.test2').click(function() {
 			$('.test2').removeClass('active-menu');
@@ -231,99 +233,13 @@
 												<td width="15%">등급</td>
 												<td width="85%">영화제목</td>
 
-											</tr>
-										
+											<c:forEach var="e" items="${movielist}"> 
 											<tr class="test">
 												<td><img alt="" src="assets/img/12.png"></td>
-												<td id="movie1" onclick="mclick1()" style="cursor: pointer"> <c:forEach var="e" items="${movielist}"> ${e.movie_name} </c:forEach></td>
-												<!-- <td>Internet Explorer 5.0</td> -->
-
+												<td id="movie2" onclick="mclick2()" style="cursor: pointer">${e.movie_name}</td>
+												<td hidden="" id="movieno" onclick="mclick2()" style="cursor: pointer">${e.movie_no}</td>
 											</tr>
-											<tr class="test">
-												<td><img alt="" src="assets/img/12.png"></td>
-												<td id="movie2" onclick="mclick2()" style="cursor: pointer">엑시트(가치봄)</td>
-												<!-- <td>Internet Explorer 5.0</td> -->
-
-											</tr>
-											<tr class="test">
-												<td><img alt="" src="assets/img/12.png"></td>
-												<td id="movie3" onclick="mclick3()" style="cursor: pointer">엑시트(엄마랑아가랑)</td>
-												<!-- <td>Internet Explorer 5.0</td> -->
-
-											</tr>
-											<tr class="test">
-												<td><img alt="" src="assets/img/12.png"></td>
-												<td id="movie4" onclick="mclick4()" style="cursor: pointer">분노의 질주: 홉스&쇼</td>
-												<!-- <td>Internet Explorer 5.0</td> -->
-
-											</tr>
-											<tr class="test">
-												<td><img alt="" src="assets/img/12.png"></td>
-												<td id="movie5" onclick="mclick5()" style="cursor: pointer">변신</td>
-												<!-- <td>Internet Explorer 5.0</td> -->
-
-											</tr>
-											<tr class="test">
-												<td><img alt="" src="assets/img/12.png"></td>
-												<td id="movie6" onclick="mclick6()" style="cursor: pointer">봉오동 전투</td>
-												<!-- <td>Internet Explorer 5.0</td> -->
-
-											</tr>
-											<tr class="test">
-												<td><img alt="" src="assets/img/12.png"></td>
-												<td id="movie7" onclick="mclick7()" style="cursor: pointer">광대들: 풍문조작단</td>
-												<!-- <td>Internet Explorer 5.0</td> -->
-
-											</tr>
-											<tr class="test">
-												<td><img alt="" src="assets/img/12.png"></td>
-												<td id="movie8" onclick="mclick8()" style="cursor: pointer">광대들:
-													풍문조작단 (엄마랑아가랑)</td>
-												<!-- <td>Internet Explorer 5.0</td> -->
-
-											</tr>
-											<tr class="test">
-												<td><img alt="" src="assets/img/12.png"></td>
-												<td id="movie9" onclick="mclick9()" style="cursor: pointer">커런트
-													워</td>
-												<!-- <td>Internet Explorer 5.0</td> -->
-
-											</tr>
-											<tr class="test">
-												<td><img alt="" src="assets/img/12.png"></td>
-												<td id="movie10" onclick="mclick10()"
-													style="cursor: pointer">안녕, 티라노</td>
-												<!-- <td>Internet Explorer 5.0</td> -->
-
-											</tr>
-											<tr class="test">
-												<td><img alt="" src="assets/img/12.png"></td>
-												<td id="movie11" onclick="mclick11()"
-													style="cursor: pointer">짱구는 못말려</td>
-												<!-- <td>Internet Explorer 5.0</td> -->
-
-											</tr>
-											<tr class="test">
-												<td><img alt="" src="assets/img/12.png"></td>
-												<td id="movie12" onclick="mclick12()"
-													style="cursor: pointer">마이펫의 이중생활2</td>
-												<!-- <td>Internet Explorer 5.0</td> -->
-
-											</tr>
-											<tr class="test">
-												<td><img alt="" src="assets/img/12.png"></td>
-												<td id="movie13" onclick="mclick13()"
-													style="cursor: pointer">마이펫의 이중생활2 (우리말녹음)</td>
-												<!-- <td>Internet Explorer 5.0</td> -->
-
-											</tr>
-											<tr class="test">
-												<td><img alt="" src="assets/img/12.png"></td>
-												<td id="movie14" onclick="mclick14()"
-													style="cursor: pointer">애프터</td>
-												<!-- <td>Internet Explorer 5.0</td> -->
-
-											</tr>
+											</c:forEach>	 
 
 
 										</tbody>
@@ -406,49 +322,49 @@
 													<td>강동구</td>
 													<td id="Theater">가나다 CGV</td>
 													 <th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1" class="testbn1" value="선택">
 														</div></th> 
 												</tr>
 												 <tr class="even gradeC test2">
 													<td>동대문구</td>
 													<td id="Theater">바우 롯데시네마222</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1" class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
 													<td>성동구</td>
 													<td id="Theater">성동 메가박스</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1" class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>강남구</td>
 													<td id="Theater">강남 CGV</td> 	
 													<th><div align="center">
-															<input type="button" id="testbn1"value="선택">
+															<input type="button" id="testbn1" class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
 													<td>강남구</td>
 													<td id="Theater">압구정 CGV</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1" class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>서대문구</td>
 													<td id="Theater">독립문 롯데시네마</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1" class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>서대문구</td>
 													<td id="Theater">이대 CGV</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1" class="testbn1" value="선택">
 														</div></th>
 												</tr>
 
@@ -456,49 +372,49 @@
 													<td>강동구</td>
 													<td id="Theater">가나다 CGV</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1" class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeC test2">
 													<td>동대문구</td>
 													<td id="Theater">바우 롯데시네마</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1" class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
 													<td>성동구</td>
 													<td id="Theater">성동 메가박스</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1" class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>강남구</td>
 													<td id="Theater">강남 CGV</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1" class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
 													<td>강남구</td>
 													<td id="Theater">압구정 CGV 올드</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1" class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>서대문구</td>
 													<td id="Theater">독립문 롯데시네마</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1" class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>서대문구</td>
 													<td id="Theater">이대 CGV</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1" class="testbn1" value="선택">
 														</div></th>
 												</tr>
 
@@ -508,35 +424,36 @@
 													<td>강동구</td>
 													<td id="Theater">가나다 CGV</td>
 													<th><div align="center">
-															<input type="button" value="선택">
+															<input type="button" id="testbn1" class="testbn1"value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeC test2">
 													<td>동대문구</td>
 													<td id="Theater">바우 롯데시네마</td>
 													<th><div align="center">
-															<input type="button" id="testbn1"value="선택">
+															<input type="button" id="testbn1" class="testbn1" value="선택">
 														</div></th>
 												</tr>
-												<tr class="odd gradeA test2">
-													<td>성동구</td>
-													<td id="Theater">성동 메가박스</td>
-													<th><div align="center">
-															<input type="button"  class="testbn1" id="testbn1"value="선택">
-														</div></th>
-												</tr>
-												<tr class="even gradeA test2">
+													<tr class="odd gradeA test2">
+														<td>성동구</td>
+														<td id="Theater">성동 메가박스</td>
+														<th><div align="center">
+																<input type="button" class="testbn1" id="testbn1"
+																	value="선택">
+															</div></th>
+													</tr>
+													<tr class="even gradeA test2">
 													<td>강남구</td>
 													<td id="Theater">강남 CGV</td>
 													<th><div align="center">
-															<input type="button"  class="testbn1" value="선택">
+															<input type="button"  class="testbn1" id="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
 													<td>강남구</td>
 													<td id="Theater">압구정 CGV</td>
 													<th><div align="center">
-															<input type="button"  class="testbn1" value="선택">
+															<input type="button"  class="testbn1" id="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
@@ -550,7 +467,7 @@
 													<td>서대문구</td>
 													<td id="Theater">이대 CGV</td>
 													<th><div align="center">
-															<input type="button"  class="testbn1" value="선택">
+															<input type="button"  class="testbn1" id="testbn1" value="선택">
 														</div></th>
 												</tr>
 
@@ -558,14 +475,14 @@
 													<td>강동구</td>
 													<td id="Theater">가나다 CGV</td>
 													<th><div align="center"> 
-															<input type="button" class="testbn1" value="선택">
+															<input type="button" class="testbn1" id="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeC test2">
 													<td>동대문구</td>
 													<td id="Theater">바우 롯데시네마</td>
 													<th><div align="center">
-															<input type="button" class="testbn1"  value="선택">
+															<input type="button" class="testbn1" id="testbn1"  value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
@@ -579,14 +496,14 @@
 													<td>강남구</td>
 													<td id="Theater">강남 CGV</td>
 													<th><div align="center">
-															<input type="button"id="testbn1" value="선택">
+															<input type="button"id="testbn1" class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
 													<td>강남구</td>
 													<td id="Theater">압구정 CGV</td>
 													<th><div align="center">
-															<input type="button" id="testbn1"value="선택">
+															<input type="button" id="testbn1" class="testbn1" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
@@ -834,10 +751,10 @@
 									<input type="text" readonly="readonly" id="C" name="C" style="color: black;"/> <br /> 
 									<input type="text" readonly="readonly" id="D" name="D" style="color: black;"/> <br /> 
 									<input type="text" readonly="readonly" id="E" name="E" style="color: black;"/> <br />
+									<input type="hidden" readonly="readonly" id="movie_no" name="movie_no" style="color: black;"/><br /> 
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>

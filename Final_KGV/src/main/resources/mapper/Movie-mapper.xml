@@ -3,7 +3,7 @@
 <mapper namespace="mapper.Movie-mapper">
 
 <select id="MovieAllData" resultType="movie">
-		SELECT movie_name
+		SELECT movie_no, movie_name
 		FROM MOVIE 
 	</select> 
 		
