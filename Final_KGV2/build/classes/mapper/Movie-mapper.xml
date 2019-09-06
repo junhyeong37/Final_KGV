@@ -23,7 +23,7 @@ values (movie_sq.nextval, #{movie_name}, #{movie_level}, #{movie_genre}, #{movie
 	</select>
 	
 	<select id="MovieSearchData" resultType="Movie" parameterType="string">
-	SELECT movie_no, movie_name, movie_level, movie_photo, movie_photo1,movie_photo2,movie_photo3,movie_photo4,movie_photo5,movie_preview, movie_likes, movie_openday, movie_genre, movie_runtime, movie_content, movie_actor, movie_director
+	SELECT movie_no, movie_name, movie_level, movie_photo,movie_photo2,movie_photo3,movie_photo4,movie_photo5,movie_photo6,movie_photo7,movie_photo8,movie_photo9,movie_photo10,movie_preview, movie_likes, movie_openday, movie_genre, movie_runtime, movie_content, movie_actor, movie_director
 		FROM MOVIE where movie_photo=#{movie_photo}
 	</select>
 	

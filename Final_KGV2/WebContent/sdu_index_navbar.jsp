@@ -154,7 +154,7 @@ $( '.top' ).click( function() {
 					<div class="col-md-4 col-sm-12 col-xs-12">
 						<div class="card">
 							<div class="card-action">
-							<a href="MovieSearchData.do?movie_photo=assets/img/movie0.jpg"><img src="assets/img/movie0.jpg" style="width:100%; margin:auto;" data-src="" alt="Third slide">
+							<a href="MovieSearchData.do?movie_photo=assets/img/우리집/1.jpg"><img src="assets/img/우리지/1.jpg" style="width:100%; margin:auto;" data-src="" alt="Third slide">
 			</a>
 								<!-- <img src="assets/img/movie0.jpg" width="100%"
 									> -->
@@ -181,91 +181,40 @@ $( '.top' ).click( function() {
 				
 				</div></div>
 			</div>
+			
+			
+			<div id="page-inner" style="background-color: white;">
+				<div class="row">
+				<div class="col-md-12" style="background-color: white;">
+				<div class="col-md-2"></div>
+					<div class="col-md-8 col-sm-12 col-xs-12">
+						
+						<h3><strong>이벤트</strong></h3><br>
+							<img alt="" src="assets/img/event2.jpg" style="width: 100%; height: 100%">
+
+
+					
+
+					</div>
+				
+				</div></div>
+			</div>
 <!-- 
 			<div class="gong"></div>
  -->
 
-			<div id="page-inner" style="background-color: white;">
+			<div id="page-inner" style="background-color: white; padding-left: 15px;padding-right: 15px;">
 				<div class="row">
-					<div class="col-md-8 col-sm-12 col-xs-12">
-						<div class="card">
-							<div class="card-action">
-								<b>리뷰 게시판</b>
-							</div>
-							<div class="card-image">
-								<div class="table-responsive">
-									<table class="table table-striped table-bordered table-hover"
-										id="dataTables-example">
-										<!-- <thead>
-											<tr>
-												<th>Rendering engine</th>
-												<th>Browser</th>
-
-											</tr>
-										</thead> -->
-										<tbody>
-										<tr>
-										<td style="border-right-color:white; border-left-color:white;"><ul class="collapsible" data-collapsible="accordion">
-										
-														
-														<li>
-															<div class="collapsible-header blue-grey darken-4 white-text">
-																<i class="material-icons">voicemail</i>moviename
-															</div>
-															<div class="collapsible-body">
-																<p><img alt="" src="assets/img/movie2.jpg" style="width: 100px; height: 100%"></p>
-															</div>
-														</li>
-														<li>
-															<div class="collapsible-header blue-grey darken-4 white-text">
-																<i class="material-icons">voicemail</i>moviename
-															</div>
-															<div class="collapsible-body">
-																<p><img alt="" src="assets/img/movie2.jpg" style="width: 100px; height: 100%"></p>
-															</div>
-														</li>
-														<li>
-															<div class="collapsible-header blue-grey darken-4 white-text">
-																<i class="material-icons">voicemail</i>moviename
-															</div>
-															<div class="collapsible-body">
-																<p><img alt="" src="assets/img/movie2.jpg" style="width: 100px; height: 100%"></p>
-															</div>
-														</li>
-														<li>
-															<div class="collapsible-header blue-grey darken-4 white-text">
-																<i class="material-icons">voicemail</i>moviename
-															</div>
-															<div class="collapsible-body">
-																<p><img alt="" src="assets/img/movie2.jpg" style="width: 100px; height: 100%"></p>
-															</div>
-														</li>
-														<li>
-															<div class="collapsible-header blue-grey darken-4 white-text">
-																<i class="material-icons">voicemail</i>moviename
-															</div>
-															<div class="collapsible-body">
-																<p><img alt="" src="assets/img/movie2.jpg" style="width: 100px; height: 100%"></p>
-															</div>
-														</li>
-														<li>
-															<div class="collapsible-header blue-grey darken-4 white-text">
-																<i class="material-icons">voicemail</i>moviename
-															</div>
-															<div class="collapsible-body">
-																<p><img alt="" src="assets/img/movie2.jpg" style="width: 100px; height: 100%"></p>
-															</div>
-														</li>
-														
-													</ul></td></tr>
-											
-										</tbody>
-									</table>
-								</div>
+					<div class="col-md-12" style="padding-left: 0px; padding-right: 0px;">
+						
+						
+							<div class="card" style="text-align: center; background-color: #005cb9;">
+							<a href="https://www.hyundaicard.com/cpb/ev/CPBEV0101_01.hc">
+							<img alt="" src="assets/img/event.jpg" style="width: 50%; height: 100%"></a>
 							</div>
 
 
-						</div>
+						
 
 					</div>
 					<!-- <div class="col-md-4 col-sm-12 col-xs-12">
@@ -284,16 +233,6 @@ $( '.top' ).click( function() {
 				<div id="footer">
 					<footer>
 						<div class="center">
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<br>
 							<br>
 							<br>
 							<br>

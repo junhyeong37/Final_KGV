@@ -37,6 +37,15 @@
 .card {
 	border: 0;
 }
+
+@media(max-width:768px){
+.col-md-2{
+width: 15%;
+}
+.imgswap{
+wi
+}
+}
 </style>
 
 
@@ -63,7 +72,28 @@ popup.document.close();
 //  --> 
 </script> 
 
+<script type="text/javascript">
 
+function paragraph_onmouseover(){
+	paragraph.innerText="${movie.movie_actor}";
+}
+
+</script>
+
+<!-- 이미지hover  <style> 
+.imgswap img:last-child{display:none} 
+.imgswap:hover img:first-child{display:none}
+.imgswap:hover img:last-child{display:inline-block}
+  </style> -->
+<style type="text/css">
+
+@media(max-width:768px){
+.actorsize{
+width:20%;
+}
+}
+
+</style>
 </head>
 
 <body>
@@ -183,13 +213,13 @@ popup.document.close();
 		
 	
 		<li data-target="#myCarousel" data-slide-to="0" class="active" style="visibility: hidden; float: left;">
-		<img alt="" class="imghidden" src="${movie.movie_photo1 }" style="width: 100px;visibility: visible; float: right; margin-top: 650px;"></li>
-		<li data-target="#myCarousel" data-slide-to="1" style="visibility: hidden; float: left; padding-left: 100px;">
 		<img alt="" class="imghidden" src="${movie.movie_photo2 }" style="width: 100px;visibility: visible; float: right; margin-top: 650px;"></li>
+		<li data-target="#myCarousel" data-slide-to="1" style="visibility: hidden; float: left; padding-left: 100px;">
+		<img alt="" class="imghidden" src="${movie.movie_photo3 }" style="width: 100px;visibility: visible; float: right; margin-top: 650px;"></li>
 		<li data-target="#myCarousel" data-slide-to="2" style="visibility: hidden; float: left; padding-left: 100px;">
-		<img alt="" class="imghidden" src="${movie.movie_photo3 }" style="width: 100px;visibility: visible; float: right; margin-top: 650px;" ></li>
-		<li data-target="#myCarousel" data-slide-to="3" style="visibility: hidden; float: left; padding-left: 100px;">
 		<img alt="" class="imghidden" src="${movie.movie_photo4 }" style="width: 100px;visibility: visible; float: right; margin-top: 650px;" ></li>
+		<li data-target="#myCarousel" data-slide-to="3" style="visibility: hidden; float: left; padding-left: 100px;">
+		<img alt="" class="imghidden" src="${movie.movie_photo5 }" style="width: 100px;visibility: visible; float: right; margin-top: 650px;" ></li>
 		<li data-target="#myCarousel" data-slide-to="4" style="visibility: hidden; float: left; padding-left: 100px;">
 		<img alt="" class="imghidden" src="${movie.movie_photo5 }" style="width: 100px;visibility: visible; float: right; margin-top: 650px;" ></li>
 	</ol>
@@ -343,185 +373,224 @@ popup.document.close();
 					
 				</div></div>
 			</div>
-			<div id="page-inner" style="padding-left: 0px; padding-right: 0px;">
-				<div class="row">
-                                           
-					<div class="card col-md-12" style="text-align: center; padding-left: 0px; padding-right: 0px;">
+			         <div id="page-inner" style="padding-left: 0px; padding-right: 0px;">
+            <div class="row">
+                            <div class="col-md-1"></div>               
+               <div class="card col-md-10" style="background-image: url('assets/img/backcolor.jpg'); text-align: center; padding-left: 0px; 
+               padding-right: 0px; margin-bottom:0px;">
 
-						
-						<div class="col-md-4" style="padding-left: 10px;padding-right: 10px;">
-							
-								<div class="card-action center" ></div>
-								<div class="card-content" style="padding-left: 0px;padding-right: 0px;">
-									<img class="mobileimg" height="495px" alt="poster" src="${movie.movie_photo }"></a>
+                  
+                  <div class="col-md-5" style="padding-left: 0px;padding-right: 0px;">
+                     
+                        <div class="card-action center" ></div>
+                        <div class="card-content" style="padding-left: 0px;padding-right: 0px;">
+                           <img class="mobileimg" height="495px" alt="poster" src="${movie.movie_photo }">
+                        <br><br> <div><a
+                  class="waves-effect waves-light btn blue-grey darken-4 white-tex"
+                  href="sdu_reserv.jsp"> 예매하기 </a></div>
 
+                           <div class="clearBoth">
+                              <br />
+                           </div>
 
-									<div class="clearBoth">
-										<br />
-									</div>
-
-								</div>
-							</div>
-							<div class="col-md-2"></div>
-							<div class="col-md-6">
-							<div class="card">
-								<div class="card-action center"></div>
-								<div class="card-content">
-
-
-									<div class="alert alert-success col-md-12">
-										<table>
-											<tr>
-												<td><strong>만족도</strong></td>
-												<td class="right">98%</td>
-											</tr>
-										</table>
-
-									</div>
-
-									<div class="alert alert-info col-md-12">
-										<table>
-											<tr>
-												<td><strong>영화등급</strong></td>
-												<td class="right"><i class="material-icons prefix">account_circle</i></td>
-											</tr>
-										</table>
-
-									</div>
-
-									<div class="alert alert-success col-md-12">
-										<table>
-											<tr>
-												<td><strong>장르</strong></td>
-												<td class="right">${movie.movie_genre }</td>
-											</tr>
-										</table>
-
-									</div>
-
-									<div class="alert alert-info col-md-12">
-										<table>
-											<tr>
-												<td><strong>감독</strong></td>
-												<td class="right">${movie.movie_director }</td>
-											</tr>
-										</table>
-
-									</div>
+                        </div>
+                     </div>
+                     <!-- <div class="col-md-1"></div> -->
+                     
+                     <div class="col-md-7">
+                     <!-- <div class="card"> -->
+                        <div class="card-action center"></div>
+                        <div class="card-content" style="padding-top: 0px;">
 
 
-									<div class="alert alert-success col-md-12">
-										<table>
-											<tr>
-												<td><strong>배우</strong></td>
-												<td class="right">${movie.movie_actor }</td>
-											</tr>
-										</table>
+                           <div class="alert alert-success col-md-12 colorksm" style="background-color: #ffffff00; color: black; border-color: #ffffff00;">
+                              <table>
+                                 <tr>
+                                    <!-- <td><h1><strong style="font-size:larger;">유열의 음악앨범</strong></h1></td> -->
+                                    <td><h1><strong style="font-size:larger;">${movie.movie_name }</strong></h1></td>
+                                 </tr>
+                              </table>
 
-									</div>
+                           </div>
 
-									<div class="alert alert-info col-md-12">
-										<table>
-											<tr>
-												<td><strong>상영시간</strong></td>
-												<td class="right">${movie.movie_runtime }분</td>
-											</tr>
-										</table>
+                           <div class="alert alert-info col-md-8" style="background-color: #ffffff00; color: black; border-color: #ffffff00;">
+                              <table>
+                                 <tr>
+                                    <td style="font-size: medium;"><strong>영화등급</strong>&nbsp;&nbsp;${movie.movie_level}&nbsp;관람가</td>
+                                 </tr>
+                              </table>
 
-									</div>
+                           </div>
+                           <div class="col-md-4"></div>
+                           <div class="alert alert-success col-md-8" style="background-color: #ffffff00; color: black; border-color: #ffffff00;">
+                              <table>
+                                 <tr>
+                                    <td style="font-size: medium;"><strong>장르</strong>&nbsp;&nbsp;${movie.movie_genre }</td>
+                                    
+                                 </tr>
+                              </table>
 
-									<div class="alert alert-success col-md-12">
-										<table>
-											<tr>
-												<td><strong>개봉일</strong></td>
-												<td class="right">${movie.movie_openday }</td>
-											</tr>
-										</table>
+                           </div>
+                           <div class="col-md-4"></div>
+                           <div class="alert alert-info col-md-8" style="background-color: #ffffff00; color: black; border-color: #ffffff00;">
+                              <table>
+                                 <tr>
+                                     <td style="font-size: medium;"><strong>감독</strong>&nbsp;&nbsp;${movie.movie_director }</td>
+                                 </tr>
+                              </table>
 
-									</div>
+                           </div>
+							<div class="col-md-4"></div>
 
-									<div class="clearBoth">
-										<br />
-									</div>
+                           <div class="alert alert-success col-md-8" style="background-color: #ffffff00; color: black; border-color: #ffffff00;">
+                              <table>
+                                 <tr>
+                                     <td style="font-size: medium;"><strong>배우</strong>&nbsp;&nbsp;${movie.movie_actor }</td>
+                                 </tr>
+                              </table>
 
-								</div>
-							</div>
+                           </div>
+                           <div class="col-md-4"></div>
+
+                           <div class="alert alert-info col-md-8" style="background-color: #ffffff00; color: black; border-color: #ffffff00;">
+                              <table>
+                                 <tr>
+                                     <td style="font-size: medium;"><strong>상영시간</strong>&nbsp;&nbsp;${movie.movie_runtime }</td>
+                                 </tr>
+                              </table>
+
+                           </div>
+                           <div class="col-md-4"></div>
+
+                           <div class="alert alert-success col-md-8" style="background-color: #ffffff00; color: black; border-color: #ffffff00;">
+                              <table>
+                                 <tr>
+                                     <td style="font-size: medium;"><strong>개봉일</strong>&nbsp;&nbsp;${movie.movie_openday }</td>
+                                 </tr>
+                              </table>
+
+                           </div>
+                           <div class="col-md-4"></div>
+
+                           <div class="clearBoth">
+                              <br />
+                           </div>
+
+                        </div>
+                     <!-- </div> -->
 
 
-						</div>
+                  </div>
  
 
 
-						</div>
-						
+                  </div>
+                  
+                        <div class="col-md-1"></div>
+                        
+                        
+                  <div class="row">
+                  <div class="col-md-12">
+                      <div class="col-md-1"></div>
+                  <div class="card col-md-10" style="margin-top: 0px; background-image: url('assets/img/backcolor.jpg');">
+                     
+                        <!-- <div class="card-action center"></div> -->
+                        <div class="card-content" style="background-color: #ffffff00; color: black; border-color: #ffffff00;">
 
 						
+                              <strong style="font-size: larger;">줄거리</strong> <br><br> ${movie.movie_content }
 
-						<div class="col-md-12">
-							<div class="card">
-								<div class="card-action center"></div>
-								<div class="card-content">
+                           <div class="clearBoth">
+                              <br />
+                           </div>
 
-
-									<div class="alert alert-success col-md-12">
-										<strong>줄거리</strong> <br> ${movie.movie_content}
-									</div>
-
-
-									<div class="clearBoth">
-										<br />
-									</div>
-
-								</div>
+                        </div>
+                     
+                  </div></div>
+                  
+                  <!-- row end -->
+                  </div>
+<!-- <div id="page-inner" style="background-color: white; padding-left: 15px;padding-right: 15px;"> -->
+				<div class="row">
+					<!-- <div class="card col-md-12" style="padding-left: 0px; padding-right: 0px;"> -->
+						
+						
+							<div class="card col-md-12" style="text-align: center; background-color: #ebe7dc; padding-top: 20px; padding-bottom: 20px;">
+							<strong style="font-size: larger;">출연배우</strong>
+							<br><br>
+							<%-- <div class="col-md-2"></div>
+							<div class="imgswap col-md-2" style="text-align: center;">
+							<img alt="" src="${movie.movie_actor1 }">
+							<img alt="" src="${movie.movie_actor1 }" style="opacity: 0.5">
 							</div>
-						</div>
+							<div class="imgswap col-md-2" style="text-align: center;">
+							<img alt="" src="${movie.movie_actor2 }">
+							<img alt="" src="${movie.movie_actor2 }" style="opacity: 0.5">
+							</div>
+							<div class="imgswap col-md-2" style="text-align: center;">
+							<img alt="" src="${movie.movie_actor3 }">
+							<img alt="" src="${movie.movie_actor3 }" style="opacity: 0.5">
+							</div>
+							<div class="imgswap col-md-2" style="text-align: center;" style="opacity: 0.5">
+							<img alt="" src="${movie.movie_actor4 }">
+							<img alt="" src="${movie.movie_actor4 }" style="opacity: 0.5">
+							</div> --%>
+							<img alt="" src="${movie.movie_photo7 }" class="actorsize">
+							<img alt="" src="${movie.movie_photo8 }" class="actorsize">
+							<img alt="" src="${movie.movie_photo9 }" class="actorsize">
+							<img alt="" src="${movie.movie_photo10 }" class="actorsize">
+							
+							<!-- </div> -->
+					
+							</div></div></div>
+							
+							<!-- page-inner end -->
+							<!-- </div> -->
+
+            
+
+               
+            </div></c:forEach></c:if></div>
+
+
+          <!--   <div class="center">
+               <a
+                  class="waves-effect waves-light btn blue-grey darken-4 white-tex"
+                  href="sdu_reserv.jsp"> 예매하기 </a>
+                  
+               <a class="waves-effect waves-light btn blue-grey darken-4 white-tex"
+               href="sdu_review_input.jsp"> 리뷰 작성 하기 </a>    
+
+            </div> -->
+
+         <%--    <br> <br> <br>
+            <br>
+
+            <div class="col-md-6">
+               <%@include file="sdu_review_output.jsp"%>
+            </div>
+            <div class="col-md-6">
+               <%@include file="sdu_review_output.jsp"%>
+            </div> --%>
 
 
 
-					</div>
-				</div></div>
-</c:forEach></c:if>
-
-				<div class="center">
-					<a
-						class="waves-effect waves-light btn blue-grey darken-4 white-tex"
-						href="sdu_reserv.jsp"> 예매하기 </a>
-						
-				<!-- 	<a class="waves-effect waves-light btn blue-grey darken-4 white-tex"
-					href="sdu_review_input.jsp"> 리뷰 작성 하기 </a> 	 -->
-
-				</div>
-
-			<%-- 	<br> <br> <br>
-				<br>
-
-				<div class="col-md-6">
-					<%@include file="sdu_review_output.jsp"%>
-				</div>
-				<div class="col-md-6">
-					<%@include file="sdu_review_output.jsp"%>
-				</div> --%>
 
 
+            <footer>
+               <div class="center">
+                
+                  <%@include file="sdu_footer.jsp"%>
+               </div>
+            </footer>
 
-
-
-				<footer>
-					<div class="center">
-						<br> <br> <br> <br> <br> <br> <br>
-						<br> <br> <br> <br> <br> <br>
-						<%@include file="sdu_footer.jsp"%>
-					</div>
-				</footer>
-
-			</div>
+         </div> </div>
 			<!-- /. PAGE INNER  -->
-
-		</div>
+		
 		<!-- /. PAGE WRAPPER  -->
 
 
-	</div>
+
 	<!-- /. WRAPPER  -->
 	<!-- JS Scripts-->
 	<!-- jQuery Js -->
