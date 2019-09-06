@@ -11,6 +11,8 @@ public interface MovieDAO {
 	public void MovieInsertData(MovieVO vo);
 
 	public List<MovieVO> MovieAllData();
-	
+
+
+	public void play(PlayVO vo);
 	
 }

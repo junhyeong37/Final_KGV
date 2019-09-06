@@ -26,7 +26,12 @@ public class MovieDAOImpl implements MovieDAO {
 		sqlSession.insert(namespace+".MovieInsertData",vo);
 	}
 
-	
+	@Override
+	public void play(PlayVO vo) {
+		// TODO Auto-generated method stub
+		sqlSession.selectList(namespace+".play",vo);
+	}
+
 
 	
 }

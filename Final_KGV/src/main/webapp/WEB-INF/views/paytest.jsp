@@ -35,20 +35,25 @@ ${e.E}
 ${Z*10000 + Y*8000 }
  </c:forEach>
  --%>
+ 
+ 
+ 
+<form action="play.do" method="get">
 <c:forEach items="${ulist }" var="val" varStatus="status">
                   
-                      ${val.user_no }
+                 <input type="text" id="user_no" name="user_no" value="${val.user_no }" readonly >
 </c:forEach>
-${movie_name}
-${movie_no}
-${play_theater}
-${play_day}
-${play_inwon}
-${play_seat }
-${play_price }
-
-
-
+<%-- ${movie_name} --%>
+<input type="text" id="movie_no" name="movie_no" value="${movie_no}" readonly> 
+<input type="text" id="play_theater" name="play_theater" value="${play_theater}" readonly> 
+<input type="text" id="play_day"name="play_day" value="${play_day}" readonly>
+<input type="text" id="play_time"name="play_time" value="${play_time}" readonly>
+<input type="text" id="play_inwon"name="play_inwon" value="${play_inwon}" readonly>
+<input type="text" id="play_seat"name="play_seat" value="${play_seat }" readonly>
+<input type="text" id="play_price" name="play_seat" value="${play_price }" readonly> 
+결제하시겠습니까?
+<input type="submit" id="play" name="play" value="결제하기">
+</form>
 
 
 

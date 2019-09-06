@@ -217,18 +217,33 @@ if(ulist==null){
 <script type="text/javascript">
 
 function seat(){
-	var movie_name=${A };
-	var play_theater=${B};
-	var play_day=${C};
-	var play_inwon=${E };
-	var play_price=${Z*10000 + Y*8000};
-	var movie_no=${movie_no};
-	var play_seat = $('div#selected').text();
-	var play_seat2 = $('div#selected').val();
+ 	var movie_name= $('td#movie_name').text().replace("영화제목 : ","");
+	var play_theater= $('td#play_theater').text().replace("극장이름 : ","");
+	var play_day= $('td#play_day').text().replace("날짜 : ","");
+	var play_time= $('td#play_time').text().replace("상영시간 : ","");
+	var play_inwon= $('td#play_inwon').text().replace("인원 : ","");
+	var play_price= $('td#play_price').text().replace("금액 : ","");
+	var movie_no= $('td#movie_no').text();
+	var play_seat = $('div#selected').text().replace("좌석 ","");
 	
-	alert(play_seat);
-	alert(play_seat2);
+	var allData = {"movie_name" : movie_name, "play_theater" : play_theater, "play_day" : play_day, "play_time" : play_time, "play_inwon" : play_inwon, "play_price" : play_price, "movie_no" :movie_no,"play_seat":play_seat};
 	
+	
+	/* $.ajax({
+		type : "get",
+		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+	    url: "Goseat2.do",
+	    data: allData, 
+	      
+	    success: function (data) { */
+
+				alert("됐당~");
+	    		location.replace("Goseat2.do?movie_name="+movie_name +"&play_theater="+play_theater+"&play_day="+play_day +"&play_time"+play_time +"&play_inwon="+play_inwon+"&play_price="+play_price+"&movie_no="+movie_no+"&play_seat="+play_seat);
+	/*       },
+	      error: function(req, status, errThrown) {
+	         alert("network error occur");
+	      }
+	}); */
 }
 </script>
 
@@ -482,7 +497,8 @@ function seat(){
 <tbody>
 <tr><td id="movie_name">영화제목 : ${A }</td></tr>
 <tr><td id="play_theater">극장이름 : ${B }</td></tr>
-<tr><td id="play_day">날짜 : ${C }</td></tr> 
+<tr><td id="play_day">날짜 : ${C }</td></tr>
+<tr><td id="play_time">상영시간 : ${D }</td></tr> 
 <tr><td id="play_inwon">인원 : ${E }</td></tr>
 <tr><td id="play_seat"><div id="selected" >좌석 </div></td></tr>
 <tr><td id="play_price">금액 : ${Z*10000 + Y*8000}</td></tr>
@@ -491,10 +507,7 @@ function seat(){
 <tr><td><div>
 <a href="sdu_reserv_test.jsp"><input type="submit" value="이전단계" style="float: left;"></a> 
 
-
-<%-- <a href="Goseat2.do?movie_name=${A }&play_theater=${B}&play_day=${C}&play_inwon=${E }&javascript:seat();&play_price=${Z*10000 + Y*8000}&movie_no=${movie_no}"> --%>
-
-<input type="submit" value="다음단계" style="float: right;"></div></td></tr>
+<a href="javascript:seat();"><input type="submit" value="다음단계" style="float: right;"> </a></div></td></tr>
 
 
 </tbody></table></div>

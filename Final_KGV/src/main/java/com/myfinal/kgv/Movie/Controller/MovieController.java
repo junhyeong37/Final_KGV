@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.myfinal.kgv.Movie.DAOVO.MovieVO;
+import com.myfinal.kgv.Movie.DAOVO.PlayVO;
 import com.myfinal.kgv.Movie.Service.MovieService;
 
 
@@ -151,21 +152,15 @@ public class MovieController {
 	
 	@RequestMapping(value="Goseat2.do", method=RequestMethod.GET) 
 	@ResponseBody
-	public ModelAndView Goseat2(String movie_name, int movie_no, String play_theater, String play_day, String play_inwon, String play_seat, int play_price) throws ParseException {
+	public ModelAndView Goseat2(String movie_name, int movie_no, String play_theater, String play_day,String play_time, String play_inwon, String play_seat, int play_price) throws ParseException {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("paytest");
-		
-//		movie_name = movie_name.replace("영화제목 : ", "");
-//		play_theater = play_theater.replace("극장이름 : ", "");
-//		play_day = play_day.replace("날짜 : ", "");
-//		play_inwon = play_inwon.replace("인원 : ", "");
-//		play_seat = play_seat.replace("좌석 ","");
-//		play_price = play_price.replace("금액 : ", "");
-		
+
 		mv.addObject("movie_name", movie_name);
 		mv.addObject("movie_no",movie_no);
 		mv.addObject("play_theater",play_theater);
 		mv.addObject("play_day",play_day);
+		mv.addObject("play_time",play_time);
 		mv.addObject("play_inwon",play_inwon);
 		mv.addObject("play_seat",play_seat);
 		mv.addObject("play_price",play_price);
@@ -176,12 +171,34 @@ public class MovieController {
 	}
 	
 	
+	@RequestMapping(value="play.do", method=RequestMethod.GET) 
+	@ResponseBody
+	public ModelAndView play(PlayVO vo,HttpServletRequest req) throws ParseException {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("playcomplete");
+		
+		ms.play(vo);
+	/*	List<PlayVO> paylist = ms.play();*/
+		
+		/*mv.addObject("paylist", paylist);*/
+		/*System.out.println(paylist);*/
+		return mv;
+	}
 	
 	
-	
-	
-	
-	
-	
+/*	@RequestMapping(value="MovieInsertData.do", method=RequestMethod.GET) 
+	public ModelAndView MovieInsertData(MovieVO vo,HttpServletRequest req, Locale locale) throws ParseException {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("sdu_admin_movie_insert_check");
+			
+		
+		ms.MovieInsertData(vo);
+		List<MovieVO> movielist = ms.MovieAllData();
+		
+		mv.addObject("movielist", movielist);
+
+		return mv;
+	}
+	*/
 	
 }
