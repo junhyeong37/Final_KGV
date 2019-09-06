@@ -17,6 +17,7 @@
 			$(this).toggleClass('active-menu');
 			var jb = $('tr.active-menu').text().trim();
 			$('input#A').val(jb);
+
 		});
 		$('tr.test2').click(function() {
 			$('.test2').removeClass('active-menu');
@@ -38,6 +39,8 @@
 			/* var jb = $('th.active-menu.test4>div>input:button').val(); */
 			jb1 = "성인 " + $('th.active-menu.test4>div').text().trim() + "명";
 			$('input#E').val(jb1 + jb2);
+			
+			
 		});
 		$('.test5').click(function() {
 			$('.test5').removeClass('active-menu');
@@ -50,15 +53,38 @@
 			var jb = $('table#date1 input.date-picker').val();
 			$('input#C').val(jb);
 		});
-		$('input.testbn1').click(function() {
-			alert("띠바아아앙");
-		});
 		
 		
 	});
 	
 		
-
+	function check() {
+		var A = $('input#A').val();
+		var B = $('input#B').val();
+		var C = $('input#C').val();
+		var D = $('input#D').val();
+		var E1 = $('th.active-menu.test4').attr('class');
+		var E2 = $('th.active-menu.test5').attr('class');
+		
+		if(A == null || A == ""){
+			alert("영화를 선택해주세요.")
+			return false;
+		} else if (B == null || B==""){
+			alert("극장을 선택해주세요.")
+			return false;
+		} else if (C == null || C==""){
+			alert("날짜을 선택해주세요.")
+			return false;
+		}else if (D == null || D==""){
+			alert("상영시간표를 선택해주세요.")
+			return false;
+		}else if (E1 == null || E1 == "" || E2 == null || E2 == "" ){
+			alert("인원을 모두 선택해주세요.")
+			return false;
+		}else {
+			return true;
+		}
+	}
 
 
 </script>
@@ -201,7 +227,7 @@
 
 		<div id="page-wrapper" style="background-image: url('back.jpg');">
 
-			<form action="Goseat.do">
+			<form action="Goseat.do" onsubmit="return check();">
 			<div id="page-inner">
 				<div class="row">
 					<div class="card col-md-12">
@@ -820,7 +846,6 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="col-md-4">
 							<div class="card">
 								<div class="card-content">
@@ -828,11 +853,10 @@
 									<input type="text" readonly="readonly" id="B" name="B" style="color: black;"/> <br /> 
 									<input type="text" readonly="readonly" id="C" name="C" style="color: black;"/> <br /> 
 									<input type="text" readonly="readonly" id="D" name="D" style="color: black;"/> <br /> 
-									<input type="text" readonly="readonly" id="E" name="E" style="color: black;"/> <br />
+									<input type="text" readonly="readonly" id="E" name="E" style="color: black;"/> <br /><input type="hidden" readonly="readonly" id="E" name="E" style="color: black;"/>
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>

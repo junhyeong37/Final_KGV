@@ -24,7 +24,7 @@
 	
    	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
          <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-         <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" /> <!-- DESKTOP-S5DUGA6 -->
+         <property name="url" value="jdbc:oracle:thin:@192.168.0.9:1521:xe" /> <!-- DESKTOP-S5DUGA6 -->
          <property name="username" value="kgv"/>
          <property name="password" value="kgv"/>
    	</bean> 

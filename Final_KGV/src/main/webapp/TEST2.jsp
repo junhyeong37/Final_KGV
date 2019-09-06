@@ -41,19 +41,24 @@
 			}
 
 		}
+		function go() {
+			alert("젠장");
+		}
 	</script>
 
 
 	<form name="checkTest">
 
-		<input type="checkbox" name="chk" onClick="count_ck(this);" value="1" checked><br> 
-		<input type="checkbox" name="chk" onClick="count_ck(this);" value="2"><br> 
-		<input type="checkbox" name="chk" onClick="count_ck(this);" value="3"><br>
-		<input type="checkbox" name="chk" onClick="count_ck(this);" value="4">
-
+		<input type="checkbox" id="test" name="chk" onClick="count_ck(this);" value="1" checked><br> 
+		<input type="checkbox" id="test"name="chk" onClick="count_ck(this);" value="2"><br> 
+		<input type="checkbox" id="test"name="chk" onClick="count_ck(this);" value="3"><br>
+		<input type="checkbox" id="test"name="chk" onClick="count_ck(this);" value="4">
+		
 	</form>
-
-
+	
+	<a href="javascript:go();">띠밤</a>
+	
+	<input type="button" v/>
 
 	
 </body>

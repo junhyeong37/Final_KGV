@@ -84,7 +84,7 @@ function duplicationId() {
 				<li><a class="dropdown-button waves-effect waves-dark"
 					href="#!" data-activates="dropdown1"><i
 						class="fa fa-user fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
-			</ul>
+			</ul> 
 		</nav>
 		<!-- Dropdown Structure -->
 		<ul id="dropdown1" class="dropdown-content">

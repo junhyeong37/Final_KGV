@@ -114,6 +114,9 @@
     .clearButtonKSM{
     width: 30%;
     }
+    .clearButtonKSM2{
+    
+    }
  }
  
  
@@ -204,6 +207,10 @@ visibility: hidden;
 	}else{
 		location.href="sdu_seat.jsp"
 	} --%>
+	function gogo() {
+		alert("고고");
+		location.replace("sdu_reserv2.jsp");
+	}
 </script>
 
 
@@ -514,7 +521,10 @@ visibility: hidden;
 <tr><td>인원 : ${E }</td></tr>
 <tr><td><div id="selected" >좌석 </div></td></tr>
 <tr><td>금액 : ${Z*10000 + Y*8000 }</td></tr>
-<tr><td><div  class="waves-effect waves-light btn"><input type="submit" value="이전단계" style="float: left;"></div><div  class="waves-effect waves-light btn"><input type="submit" value="다음단계" style="float: right;"></div></td></tr>
+<tr><td><div  class="waves-effect waves-light btn clearButtonKSM2">
+<input type="submit" value="이전단계" style="float: left;"></div>
+<div  class="waves-effect waves-light btn clearButtonKSM2">
+<a href="javascript:gogo();">가자</a></div></td></tr>
 </tbody></table></div>
      
  </div>
