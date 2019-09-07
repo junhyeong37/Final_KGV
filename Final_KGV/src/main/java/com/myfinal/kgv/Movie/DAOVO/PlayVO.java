@@ -11,7 +11,7 @@ public class PlayVO {
 	private String play_time;
 	private String play_inwon;
 	private String play_seat;
-	private String play_price;
+	private int play_price;
 	
 
 	
@@ -20,7 +20,7 @@ public class PlayVO {
 	}
 
 	public PlayVO(int user_no, int movie_no, String play_theater, String play_day, String play_time, String play_inwon,
-			String play_seat, String play_price) {
+			String play_seat, int play_price) {
 		super();
 		this.user_no = user_no;
 		this.movie_no = movie_no;
@@ -76,10 +76,10 @@ public class PlayVO {
 	public void setPlay_seat(String play_seat) {
 		this.play_seat = play_seat;
 	}
-	public String getPlay_price() {
+	public int getPlay_price() {
 		return play_price;
 	}
-	public void setPlay_price(String play_price) {
+	public void setPlay_price(int play_price) {
 		this.play_price = play_price;
 	}
 	
