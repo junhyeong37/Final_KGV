@@ -154,7 +154,7 @@ $( '.top' ).click( function() {
 					<div class="col-md-4 col-sm-12 col-xs-12">
 						<div class="card">
 							<div class="card-action">
-							<a href="MovieSearchData.do?movie_photo=assets/img/우리집/1.jpg"><img src="assets/img/우리지/1.jpg" style="width:100%; margin:auto;" data-src="" alt="Third slide">
+							<a href="MovieSearchData.do?movie_photo=assets/img/우리집/1.jpg"><img src="assets/img/우리집/1.jpg" style="width:100%; margin:auto;" data-src="" alt="Third slide">
 			</a>
 								<!-- <img src="assets/img/movie0.jpg" width="100%"
 									> -->
