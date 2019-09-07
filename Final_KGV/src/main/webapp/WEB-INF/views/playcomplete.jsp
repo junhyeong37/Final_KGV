@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-결제가 완료되엇습니다.
+결제가 완료되엇습니다.!!!
 </body>
 </html>
