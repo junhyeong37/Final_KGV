@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.myfinal.kgv.Movie.DAOVO.MovieVO;
+import com.myfinal.kgv.User.DAOVO.PageVO;
 import com.myfinal.kgv.User.DAOVO.UserDAO;
 import com.myfinal.kgv.User.DAOVO.UserVO;
 @Service
@@ -19,6 +21,8 @@ public interface UserService {
 		public int CheckDuplication(String inputId);
 		public int loginCheck(String inputId, String inputPw);
 		public int IdCheck(String inputName, String inputTel);
+		public List<PageVO> Mypage_test(String string);
+		public void Mypage_delete(String play_day, String play_seat);
 		
 		
 		

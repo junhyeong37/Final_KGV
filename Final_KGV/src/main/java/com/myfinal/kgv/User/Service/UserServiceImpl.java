@@ -10,8 +10,10 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.myfinal.kgv.Movie.DAOVO.MovieVO;
 import com.myfinal.kgv.User.DAOVO.FindIdVO;
 import com.myfinal.kgv.User.DAOVO.LoginVO;
+import com.myfinal.kgv.User.DAOVO.PageVO;
 import com.myfinal.kgv.User.DAOVO.UserDAO;
 import com.myfinal.kgv.User.DAOVO.UserVO;
 
@@ -112,6 +114,19 @@ public class UserServiceImpl implements UserService{
 		
 		int idCount = session.selectOne("IdCheck",lv);
 		return idCount;
+	}
+	
+
+	@Override
+	public void Mypage_delete(String play_day, String play_seat) {
+		// TODO Auto-generated method stub
+		dao.Mypage_delete(play_day,play_seat);
+	}
+
+	@Override
+	public List<PageVO> Mypage_test(String string) {
+		// TODO Auto-generated method stub
+		return dao.Mypage_test(string);
 	}
 	
 	

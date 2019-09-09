@@ -129,7 +129,8 @@ public class MovieController {
 		
 		System.out.println(Z);
 		
-		
+		System.out.println("영화제목   "+A);
+		System.out.println("영화관   "+B);
 		
 				
 		mv.addObject("A",A);

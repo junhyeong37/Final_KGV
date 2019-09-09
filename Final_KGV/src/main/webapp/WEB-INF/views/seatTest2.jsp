@@ -456,7 +456,7 @@ visibility: hidden;
 <table class="table table-striped table-bordered table-hover">
 <tbody>
 <tr>
-<td style="background-color: black; text-align: center;"><img alt="" src="assets/img/${A }/1.jpg" style="width: 50%;height: 100%;"></td>
+<td style="background-color: black; text-align: center;"><img alt="" src="assets/img/${A }/1.jpg" style="width: 50%;height: 320px;"></td>
 </tr>
 
 </tbody></table></div>

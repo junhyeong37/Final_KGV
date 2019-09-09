@@ -853,7 +853,7 @@
 									<input type="text" readonly="readonly" id="B" name="B" style="color: black;"/> <br /> 
 									<input type="text" readonly="readonly" id="C" name="C" style="color: black;"/> <br /> 
 									<input type="text" readonly="readonly" id="D" name="D" style="color: black;"/> <br /> 
-									<input type="text" readonly="readonly" id="E" name="E" style="color: black;"/> <br /><input type="hidden" readonly="readonly" id="E" name="E" style="color: black;"/>
+									<input type="text" readonly="readonly" id="E" name="E" style="color: black;"/> <br />
 								</div>
 							</div>
 						</div>

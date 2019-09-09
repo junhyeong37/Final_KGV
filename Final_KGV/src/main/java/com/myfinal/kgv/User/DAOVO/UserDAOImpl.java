@@ -3,9 +3,10 @@ package com.myfinal.kgv.User.DAOVO;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import com.myfinal.kgv.Movie.DAOVO.MovieVO;
 
 
 @Repository
@@ -63,6 +64,25 @@ public class UserDAOImpl implements UserDAO{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public List<PageVO> Mypage_test(String string) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList(namespace+".Mypage_test",string);
+		
+	}
+
+	@Override
+	public void Mypage_delete(String play_day, String play_seat) {
+		// TODO Auto-generated method stub
+		DeleteVO vo = new DeleteVO();
+		vo.setMovie_no(play_day);
+		vo.setPlay_seat(play_seat);
+		System.out.println(play_day + " :::::::::::::: " + play_seat);
+		
+		sqlSession.delete(namespace+".Mypage_delete",vo);
+	}
+
 
 	
 }
