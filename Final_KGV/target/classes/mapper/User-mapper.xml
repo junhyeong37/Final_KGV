@@ -54,7 +54,7 @@
 	</select>
 	
 	<select id="Mypage_test" parameterType="String" resultType="com.myfinal.kgv.User.DAOVO.PageVO">
-		select movie_name,movie_photo,PLAY_THEATER, PLAY_DAY, PLAY_TIME, PLAY_INWON,PLAY_SEAT,PLAY_PRICE from movie m , play p where m.movie_no= p.movie_no and user_no = (select user_no from users where user_id  = #{user_id})
+		select m.movie_name,movie_photo,PLAY_THEATER, PLAY_DAY, PLAY_TIME, PLAY_INWON,PLAY_SEAT,PLAY_PRICE from movie m , play p where m.movie_no= p.movie_no and user_no = (select user_no from users where user_id  = #{user_id})
 	</select>
 	
 	<delete id="Mypage_delete">
