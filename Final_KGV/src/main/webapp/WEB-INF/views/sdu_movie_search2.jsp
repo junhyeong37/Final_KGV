@@ -205,154 +205,129 @@ overflow-x:hidden;
 		
 		
 		<!-- 삭제지점 -->
-		<div id="page-wrapper" style="height: 2200px;">
-
-			<div class="col-md-12">
-				<div class="col-md-2"></div>
-				<div class="col-md-8">
-					<div id="page-inner"
-						style="padding-left: 0px; padding-right: 0px; padding-bottom: 0px;">
-						<div class="header">
-							<h1 class="page-header">영화검색 & 영화리스트</h1>
-
-						</div>
-					</div>
-				</div>
+		<div id="page-wrapper" style="height: 1850px;">
+<!--       
+<div class="col-md-12">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+<div id="page-inner" style="padding-left: 0px; padding-right: 0px; padding-bottom: 0px;">
+         
+         </div>
+</div> -->
 
 
 
+         <div class="page-inner">
+<div class="col-md-12">
+<div class="col-md-1"></div>
+            <div class="col-md-10" style="padding-left: 0px; padding-right: 0px;">
+            <div class="header">
+            <div class="page-header"><p style="font-size: xx-large; font-weight: bold;">영화검색 & 영화리스트</p></div>
+            
+            </div>
+               <div class="card">
 
-
-				<div class="col-md-2"></div>
-				<div class="col-md-8" style="padding-left: 0px; padding-right: 0px;">
-
-					<div class="card">
-
-						<div class="card-content" style="text-align: center;">
-							<div class="table-responsive">
-
-
-
-								<table class="table table-striped table-bordered table-hover"
-									id="dataTables-example">
-
-									<thead>
-										<tr>
-											<th width="30%;"><p style="cursor: pointer;">
-													<font color="red">개봉일순</font>
-												</p></th>
-											<th width="60%" style="border-right-color: white;"><p
-													style="cursor: pointer;">
-													<font color="red">가나다순</font>
-												</p></th>
-											<th width="10%"></th>
-										</tr>
-									</thead>
-									<tbody>
-										<!-- 만약 컨트롤 단에서 리스트를 제대로 호출해 온다는 가정하에... -->
-										<c:if test="${not empty movielist }">
-											<c:forEach var="movie" items="${movielist }"
-												varStatus="status">
-												<tr class="odd gradeX">
-													<td class="center"
-														style="border-right-color: white; border-left-color: white; vertical-align: middle;">
-														<a
-														href="MovieSearchData.do?movie_photo=${movie.movie_photo }"><img
-															alt="" class="img" src="${movie.movie_photo }"
-															width="150px;"></a>
-													</td>
-													<td
-														style="border-right-color: white; border-left-color: white;"><ul
-															class="collapsible" data-collapsible="accordion">
-															<li>
-																<div class="collapsible-header blue-grey white-text">
-																	<i class="material-icons">theaters</i>${movie.movie_name }
-																</div>
-
-															</li>
-															<li>
-																<div
-																	class="collapsible-header blue-grey darken-4 white-text">
-																	<i class="material-icons">theaters</i>장르
-																</div>
-																<div class="collapsible-body">
-																	<p>${movie.movie_genre }</p>
-
-																</div>
-															</li>
-															<li>
-																<div
-																	class="collapsible-header blue-grey darken-4 white-text">
-																	<i class="material-icons">perm_identity</i>감독
-																</div>
-																<div class="collapsible-body">
-																	<p>${movie.movie_director }</p>
-																</div>
-															</li>
-															<li>
-																<div
-																	class="collapsible-header blue-grey darken-4 white-text">
-																	<i class="material-icons">assignment_ind</i>배우
-																</div>
-																<div class="collapsible-body">
-																	<p>${movie.movie_actor }</p>
-																</div>
-															</li>
-															<li>
-																<div
-																	class="collapsible-header blue-grey darken-4 white-text">
-																	<i class="material-icons">voicemail</i>상영시간
-																</div>
-																<div class="collapsible-body">
-																	<p>${movie.movie_runtime }분</p>
-																</div>
-															</li>
-															<li>
-																<div
-																	class="collapsible-header blue-grey darken-4 white-text">
-																	<i class="material-icons">thumb_up</i>만족도
-																</div>
-																<div class="collapsible-body">
-																	<p>98% 좋아요</p>
-																</div>
-															</li>
-														</ul></td>
-													<th
-														style="border-right-color: white; border-left-color: white; vertical-align: middle;"><div
-															align="center">
-															<input type="button" value="선택"
-																onclick="location.href='sdu_reserv.jsp'">
-														</div></th>
-												</tr>
-											</c:forEach>
-										</c:if>
+                  <div class="card-content" style="text-align: center;">
+                     <div class="table-responsive">
 
 
 
-										<!-- ----------------------------------------------------------- -->
+                        <table class="table table-striped table-bordered table-hover"
+                           id="dataTables-example">
 
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
+                           <thead>
+                              <tr>
+                              
+                                 <th width="30%;" style="text-align: center; border-right-color:white; background-color: #ead4bf;">
+                                 <p style="cursor: pointer;" class="waves-effect waves-light btn blue-grey darken-4 white-tex">
+                                 <font color="white" style="font-weight: bold;">개봉일순</font></p></th>
+                                 <th width="60%" style="border-right-color:white; background-color: #ead4bf; text-align: center;">
+                                 <p style="cursor: pointer;" class="waves-effect waves-light btn blue-grey darken-4 white-tex">
+                                 <font color="white" style="font-weight: bold;">가나다순</font></p></th>
+                                 <th width="10%" style="background-color: #ead4bf;"></th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <!-- 만약 컨트롤 단에서 리스트를 제대로 호출해 온다는 가정하에... -->
+                              <c:if test="${not empty movielist }">
+                                 <c:forEach var="movie" items="${movielist }" varStatus="status">
+                                 <tr class="odd gradeX">
+                                    <td class="center" style="border-right-color:white; border-left-color:white; vertical-align: middle;">
+                                    <a href="MovieSearchData.do?movie_photo=${movie.movie_photo }"><img alt="" class="img" src="${movie.movie_photo }"
+                                       width="150px;"></a></td>
+                                    <td style="border-right-color:white; border-left-color:white;"><ul class="collapsible" data-collapsible="accordion">
+                                    <li>
+                                          <div class="collapsible-header blue-grey white-text">
+                                             <i class="material-icons">theaters</i>${movie.movie_name }
+                                          </div>
+                                             
+                                          </li>
+                                          <li>
+                                             <div
+                                                class="collapsible-header blue-grey darken-4 white-text">
+                                                <i class="material-icons">theaters</i>장르
+                                             </div>
+                                             <div class="collapsible-body">
+                                                <p>${movie.movie_genre }</p>
+                                             
+                                             </div>
+                                          </li>
+                                          <li>
+                                             <div class="collapsible-header blue-grey darken-4 white-text">
+                                                <i class="material-icons">perm_identity</i>감독
+                                             </div>
+                                             <div class="collapsible-body">
+                                                <p>${movie.movie_director }</p>
+                                             </div>
+                                          </li>
+                                          <li>
+                                             <div class="collapsible-header blue-grey darken-4 white-text" >
+                                                <i class="material-icons">assignment_ind</i>배우
+                                             </div>
+                                             <div class="collapsible-body">
+                                                <p>${movie.movie_actor }</p>
+                                             </div>
+                                          </li>
+                                          <li>
+                                             <div class="collapsible-header blue-grey darken-4 white-text">
+                                                <i class="material-icons">voicemail</i>상영시간
+                                             </div>
+                                             <div class="collapsible-body">
+                                                <p>${movie.movie_runtime }분</p>
+                                             </div>
+                                          </li>
+                                       
+                                       </ul></td>
+                                    <th style="border-right-color:white; border-left-color:white; vertical-align: middle;"><div align="center">
+                                          <input class="waves-effect waves-light btn blue-grey darken-4 white-tex" type="button" value="예매하기" onclick="location.href='sdu_reserv.jsp'">
+                                       </div></th>
+                                 </tr>
+                              </c:forEach>
+                              </c:if>
+                              
+                              
 
-					<footer>
-						<div class="center">
+                              <!-- ----------------------------------------------------------- -->
 
-							<br> <br> <br> <br> <br> <br>
-							<%@include file="sdu_footer.jsp"%>
-						</div>
-					</footer>
-				</div>
-
-
-			</div>
-		</div>
-		<!-- /. PAGE WRAPPER  -->
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div></div>
 
 
-	</div>
+
+      
+      </div>
+      <footer>
+         <div class="center">
+
+            <br> <br> <br> <br> <br> <br>
+            <%@include file="sdu_footer.jsp"%>
+         </div>
+      </footer>
+   </div></div>
 	<!-- /. WRAPPER  -->
 	<!-- JS Scripts-->
 	<!-- jQuery Js -->

@@ -57,24 +57,24 @@
       <!-- <td width="10"><h1>상  영  작</h1></td> -->
       <td style="text-align: center;">
       
-         <a href="MovieSearchData.do?movie_photo=assets/img/movie0.jpg"><img src="assets/img/movie0.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
+         <a href="MovieSearchData.do?movie_photo=assets/img/47미터2/1.jpg"><img src="assets/img/47미터2/1.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
          
          </a></td>
          <td style="text-align: center;">
-         <a href="MovieSearchData.do?movie_photo=assets/img/movie2.jpg"><img src="assets/img/movie2.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
+         <a href="MovieSearchData.do?movie_photo=assets/img/광대들/1.jpg"><img src="assets/img/광대들/1.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
          
          </a></td>
          <td style="text-align: center;">
-         <a href="MovieSearchData.do?movie_photo=assets/img/movie3.jpg"><img src="assets/img/movie3.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
+         <a href="MovieSearchData.do?movie_photo=assets/img/벌새/1.jpg"><img src="assets/img/벌새/1.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
          
          </a></td>
          <td style="text-align: center;">
-         <a href="MovieSearchData.do?movie_photo=assets/img/movie4.jpg"><img src="assets/img/movie4.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
+         <a href="MovieSearchData.do?movie_photo=assets/img/변신/1.jpg"><img src=assets/img/변신/1.jpg style="width:90%; margin:auto;" data-src="" alt="Second slide">
          
          </a></td>
       
          <td style="text-align: center;">
-         <a href="MovieSearchData.do?movie_photo=assets/img/movie5.jpg"><img src="assets/img/movie5.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
+         <a href="MovieSearchData.do?movie_photo=assets/img/봉오동전투/1.jpg"><img src="assets/img/봉오동전투/1.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
          
          </a></td>
          <td width="20%"></td></tr>
@@ -104,24 +104,24 @@
       <!-- <td width="10"><h1>상  영  작</h1></td> -->
       <td style="text-align: center;">
       
-         <a href="MovieSearchData.do?movie_photo=assets/img/movie6.jpg"><img src="assets/img/movie6.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
+         <a href="MovieSearchData.do?movie_photo=assets/img/어바웃 타임/1.jpg"><img src="assets/img/어바웃 타임/1.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
          
          </a></td>
          <td style="text-align: center;">
-         <a href="MovieSearchData.do?movie_photo=assets/img/movie7.jpg"><img src="assets/img/movie7.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
+         <a href="MovieSearchData.do?movie_photo=assets/img/안나/1.jpg"><img src="assets/img/안나/1.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
          
          </a></td>
          <td style="text-align: center;">
-         <a href="MovieSearchData.do?movie_photo=assets/img/movie8.jpg"><img src="assets/img/movie8.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
+         <a href="MovieSearchData.do?movie_photo=assets/img/커런트 워/1.jpg"><img src="assets/img/커런트 워/1.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
          
          </a></td>
          <td style="text-align: center;">
-         <a href="MovieSearchData.do?movie_photo=assets/img/movie9.jpg"><img src="assets/img/movie9.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
+         <a href="MovieSearchData.do?movie_photo=assets/img/엑시트/1.jpg"><img src="assets/img/엑시트/1.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
          
          </a></td>
       
          <td style="text-align: center;">
-         <a href="MovieSearchData.do?movie_photo=assets/img/movie10.jpg"><img src="assets/img/movie10.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
+         <a href="MovieSearchData.do?movie_photo=assets/img/유열의 음악앨범/1.jpg"><img src="assets/img/유열의 음악앨범/1.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
          
          </a></td>
          <td width="20%"></td></tr>
@@ -155,24 +155,24 @@
       <!-- <td width="10"><h1>상  영  작</h1></td> -->
       <td style="text-align: center;">
       
-         <a href="MovieSearchData.do?movie_photo=assets/img/movie11.jpg"><img src="assets/img/movie11.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
+         <a href="MovieSearchData.do?movie_photo=assets/img/유열의 음악앨범/1.jpg"><img src="assets/img/유열의 음악앨범/1.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
          
          </a></td>
          <td style="text-align: center;">
-         <a href="MovieSearchData.do?movie_photo=assets/img/movie12.jpg"><img src="assets/img/movie12.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
+         <a href="MovieSearchData.do?movie_photo=assets/img/분노의 질주 홉스&쇼/1.jpg"><img src="assets/img/분노의 질주 홉스&쇼/1.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
          
          </a></td>
          <td style="text-align: center;">
-         <a href="MovieSearchData.do?movie_photo=assets/img/movie13.jpg"><img src="assets/img/movie13.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
+         <a href="MovieSearchData.do?movie_photo=assets/img/그것 두번째이야기/1.jpg"><img src="assets/img/그것 두번째이야기/1.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
          
          </a></td>
          <td style="text-align: center;">
-         <a href="MovieSearchData.do?movie_photo=assets/img/movie14.jpg"><img src="assets/img/movie14.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
+         <a href="MovieSearchData.do?movie_photo=assets/img/우리집/1.jpg"><img src="assets/img/우리집/1.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
          
          </a></td>
       
          <td style="text-align: center;">
-         <a href="MovieSearchData.do?movie_photo=assets/img/movie1.jpg"><img src="assets/img/movie2.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
+         <a href="MovieSearchData.do?movie_photo=assets/img/힘을내요 미스터 리/1.jpg"><img src="assets/img/힘을내요 미스터 리/1.jpg" style="width:90%; margin:auto;" data-src="" alt="Second slide">
          
          </a></td>
          <td width="20%"></td></tr>
