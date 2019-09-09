@@ -41,6 +41,12 @@
     <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
 </head>
 <style type="text/css">
+.row .col.s3 {
+    width: 50% !important;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
 a:link {
 	color: black;
 	text-decoration: none;

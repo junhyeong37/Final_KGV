@@ -3,6 +3,7 @@ package com.myfinal.kgv.User.Controller;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
@@ -22,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.myfinal.kgv.User.DAOVO.FindIdVO;
+import com.myfinal.kgv.User.DAOVO.PageVO;
 import com.myfinal.kgv.User.DAOVO.UserVO;
 import com.myfinal.kgv.User.Service.UserService;
 
@@ -254,7 +256,71 @@ public class UserController {
 			return mv;
 			
 		}
+		@RequestMapping(value="Mypage_test.do", method=RequestMethod.GET) 
+		@ResponseBody
+		public ModelAndView Mypage_test(HttpServletRequest req,HttpSession session) {
+			ModelAndView mv = new ModelAndView();
+			UserVO userVO = new UserVO();
+			System.out.println("111 "+session.getAttribute("ulist"));
+			mv.setViewName("mypage");
+			
+			List<UserVO> ulist = (List<UserVO>) session.getAttribute("ulist");
+			
+			System.out.println("111222222 "+ulist.iterator());
+			
+			for (Iterator iterator = ulist.iterator(); iterator.hasNext();) {
+				userVO = (UserVO) iterator.next();
+				
+			}
+			
+			System.out.println(userVO.getUser_no());
+			
+			
+			List<PageVO> plist = us.Mypage_test(userVO.getUser_id());
+			
+			System.out.println("시발! "+plist);
+			
+			
+			
+			mv.addObject("plist", plist);
+			
+			return mv;
+		}
 		
+		
+		/////Mypage_delete
+		@RequestMapping(value = "Mypage_delete.do", method = RequestMethod.GET)
+		@ResponseBody
+		public ModelAndView Mypage_delete(UserVO vo, HttpServletRequest req, Locale locale,HttpSession session) throws ParseException {
+			ModelAndView mv = new ModelAndView();
+			String play_day = req.getParameter("play_day");
+			String play_seat = req.getParameter("play_seat");
+			
+			us.Mypage_delete(play_day,play_seat);
+			
+			UserVO userVO = new UserVO();
+			System.out.println("111 "+session.getAttribute("ulist"));
+			mv.setViewName("mypage");
+			
+			List<UserVO> ulist = (List<UserVO>) session.getAttribute("ulist");
+			
+			System.out.println("111222222 "+ulist.iterator());
+			
+			for (Iterator iterator = ulist.iterator(); iterator.hasNext();) {
+				userVO = (UserVO) iterator.next();
+				
+			}
+			
+			System.out.println(userVO.getUser_no());
+			
+			
+			List<PageVO> plist = us.Mypage_test(userVO.getUser_id());
+			
+			System.out.println("시발! "+plist);
+			mv.addObject("plist", plist);
+
+			return mv;
+		}
 		
 		
 

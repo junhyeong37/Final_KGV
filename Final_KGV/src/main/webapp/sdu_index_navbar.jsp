@@ -137,9 +137,8 @@ history.go(-1);
 		<ul id="dropdown1" class="dropdown-content">
 			<li><a href="sdu_index_navbar.jsp"><i class="fa fa-user fa-fw"></i>
 					로그아웃</a></li>
-			<li><a href="sdu_mypage.jsp"><i class="fa fa-gear fa-fw"></i>
+			<li><a href="sdu_index_navbar.jsp"><i class="fa fa-gear fa-fw"></i>
 					My Page</a></li>
-			
 			
 			<!-- 관리자로 로그인 했을때만 뜨는 메뉴 -->
 			<c:set var="id" value="admin" />

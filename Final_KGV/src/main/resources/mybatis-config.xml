@@ -27,7 +27,7 @@
   			<typeAlias type="com.myfinal.kgv.User.DAOVO.UserVO" alias="User"/>    
   			<typeAlias type="com.myfinal.kgv.Movie.DAOVO.MovieVO" alias="Movie"/> 
   			<!-- <typeAlias type="com.myfinal.kgv.Movie.DAOVO.MovieVO" alias="Movie2"/>  -->                                              
-  			<typeAlias type="com.myfinal.kgv.Movie.DAOVO.PlayVO" alias="play"/>                                               
+  			<typeAlias type="com.myfinal.kgv.Movie.DAOVO.PlayVO" alias="play"/>                                                
          </typeAliases>
          
         
