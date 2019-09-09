@@ -37,22 +37,20 @@
 		where user_id = #{inputId}
 	</select>
 	
-	<select id="loginCheck" parameterType="String" resultType="integer">
+	
+	 <!-- <select id="IdCheck" parameterType="String" resultType="integer">
 		select count(*) as existIdNum From USERS 
-		where user_id=#{inputId} and user_pw=#{inputPw} 
-	</select>
-	
-	
+		where user_name=#{inputName} and user_tel=#{inputTel} 
+	</select> 
+	 -->
 	<select id="IdCheck" parameterType="String" resultType="integer">
 		select count(*) as existIdNum From USERS 
 		where user_name=#{inputName} and user_tel=#{inputTel} 
 	</select>
 	
-	<select id="Mypage_test" parameterType="String" resultType="com.myfinal.kgv.User.DAOVO.PageVO">
-		select movie_name,movie_photo,PLAY_THEATER, PLAY_DAY, PLAY_TIME, PLAY_INWON,PLAY_SEAT,PLAY_PRICE from movie m , play p where m.movie_no= p.movie_no and user_no = (select user_no from users where user_id  = #{string})
+	<select id="SelectId" parameterType="User" resultType="string">
+	select user_id From USERS 
+		where user_name=#{user_name} and user_tel=#{user_tel}
 	</select>
 	
-	<delete id="Mypage_delete">
-		delete FROM play p where play_day = #{play_day} and play_seat = #{play_seat}
-	</delete>
 </mapper>

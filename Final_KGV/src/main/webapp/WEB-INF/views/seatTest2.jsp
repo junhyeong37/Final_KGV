@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>KGV</title>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -68,30 +68,6 @@
    margin-top: 2px;
    transition: .2s
 } */
-@media(max-width:768px) {
- 
- div.container {
- padding-left:0px;
- padding-right: 0px;
- }
- 
- div.card-content{
- padding-left: 0px;
- padding-right: 0px;
- }
- 
- #seating-plan {
- --seats-per-row:13;
- }
- 
- div.seat > input > label {
-     width: 31px;
-    padding-left: 15px;
- }
-}
-
-
-
    :root {
   --seat-size: 1.5rem;
   --seats-per-row: 10;
@@ -150,6 +126,9 @@ visibility: hidden;
    font-size: 20px;
    text-align: center;
 }
+.top-navbar{
+ 	top:0;
+}
 </style>
 
 
@@ -173,7 +152,21 @@ visibility: hidden;
 	} --%>
 </script>
 
+<script>
 
+
+var ulist=<%=session.getAttribute("ulist")%>
+
+if(ulist==null){
+   alert("해당메뉴는 로그인이 필요한 메뉴입니다. 로그인 후 이용해주세요");
+   location.href="sdu_login.jsp"
+}else{
+   location.href="seatTest2.jsp"
+}
+
+
+
+</script>
 
 
 </head>
@@ -213,17 +206,59 @@ visibility: hidden;
 			}
 
 		}
+		
+		
+		
+		
+		
+		
 	</script>
 
 
 
 
+<script type="text/javascript">
 
+function seat(){
+ 	var movie_name= $('td#movie_name').text().replace("영화제목 : ","");
+	var play_theater= $('td#play_theater').text().replace("극장이름 : ","");
+	var play_day= $('td#play_day').text().replace("날짜 : ","");
+	var play_time= $('td#play_time').text().replace("상영시간 : ","");
+	var play_inwon= $('td#play_inwon').text().replace("인원 : ","");
+	var play_price= $('td#play_price').text().replace("금액 : ","");
+	var movie_no= $('td#movie_no').text();
+	var play_seat = $('div#selected').text().replace("좌석 ","");
+	
+	var allData = {"movie_name" : movie_name, "play_theater" : play_theater, "play_day" : play_day, "play_time" : play_time, "play_inwon" : play_inwon, "play_price" : play_price, "movie_no" : movie_no,"play_seat" : play_seat};
+	
+	
+	/* $.ajax({
+		type : "get",
+		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+	    url: "Goseat2.do",
+	    data: allData, 
+	      
+	    success: function (data) { */
+
+				alert("됐당~");
+	    		location.replace("Goseat2.do?movie_name="+movie_name +"&play_theater="+play_theater+"&play_day="+play_day +"&play_time="+play_time +"&play_inwon="+play_inwon+"&play_price="+play_price+"&movie_no="+movie_no+"&play_seat="+play_seat);
+	/*       },
+	      error: function(req, status, errThrown) {
+	         alert("network error occur");
+	      }
+	}); */
+}
+</script>
 
 
 
 
    <div id="wrapper">
+   
+   <%
+			// 현재 로그인된 아이디가 없다면 (= session에 저장된 id가 없다면)
+			if (session.getAttribute("ulist") == null) {
+		%>
       <nav class="navbar navbar-default top-navbar" role="navigation">
          <div class="navbar-header">
             <button type="button" class="navbar-toggle waves-effect waves-dark"
@@ -232,9 +267,9 @@ visibility: hidden;
                   class="icon-bar"></span> <span class="icon-bar"></span> <span
                   class="icon-bar"></span>
             </button>
-            <a class="navbar-brand waves-effect waves-dark"
-               href="sdu_index_navbar.jsp"><i class="large material-icons">track_changes</i>
-               <strong>KGV</strong></a>
+             <a class="navbar-brand waves-effect waves-dark"
+               href="sdu_index_navbar.jsp" style="padding-top: 7px; padding-bottom: 0px;">
+               <img alt="" src="assets/img/KGVlogo.png" style="width: 50%;"></a>
 
             <div id="sideNav" href="">
                <i class="material-icons dp48">toc</i>
@@ -260,6 +295,83 @@ visibility: hidden;
          <!-- <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 설정</a>
 </li> -->
       </ul>
+      
+      
+
+<%
+			}
+			// 현재 로그인된 아이디가 있다면 (= session에 저장된 id가 있다면)
+			else {
+		%>
+
+		<nav class="navbar navbar-default top-navbar" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle waves-effect waves-dark"
+					data-toggle="collapse" data-target=".sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				 <a class="navbar-brand waves-effect waves-dark"
+               href="sdu_index_navbar.jsp" style="padding-top: 7px; padding-bottom: 0px;">
+               <img alt="" src="assets/img/KGVlogo.png" style="width: 50%;"></a>
+
+				<div id="sideNav" href="">
+					<i class="material-icons dp48">toc</i>
+				</div>
+			</div>
+
+			<ul class="nav navbar-top-links navbar-right">
+				<!-- <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown4"><i class="fa fa-envelope fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>				
+				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown3"><i class="fa fa-tasks fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
+				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown2"><i class="fa fa-bell fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li> -->
+				<!--   <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b>John Doe</b> <i class="material-icons right">arrow_drop_down</i></a></li> -->
+				<li><c:forEach items="${ulist }" var="val" varStatus="status">
+						<a class="dropdown-button waves-effect waves-dark" href="#!"
+							data-activates="dropdown1"> <i class="fa fa-user fa-fw"></i>
+							<b> ${val.user_name }</b> <i class="material-icons right">arrow_drop_down</i></a>
+					</c:forEach></li>
+			</ul>
+		</nav>
+		<!-- Dropdown Structure -->
+		<ul id="dropdown1" class="dropdown-content">
+			<li><a href="sdu_login.jsp"><i class="fa fa-user fa-fw"></i>
+					로그아웃</a></li>
+			<li><a href="sdu_mypage.jsp"><i class="fa fa-gear fa-fw"></i>
+					My Page</a></li>
+			
+			
+			<!-- 관리자로 로그인 했을때만 뜨는 메뉴 -->
+			<c:set var="id" value="admin" />
+
+			<c:forEach items="${ulist }" var="val">
+
+				 <c:if test="${val.user_id eq 'admin'}">
+					<li><a href="sdu_admin_movie_insert.jsp"><i
+						class="fa fa-gear fa-fw"></i> 관리자 영화입력</a></li>
+				</c:if>
+				 
+			</c:forEach>
+
+			
+
+
+
+		</ul>
+
+		<!-- ================================================== -->
+
+
+
+
+
+		<%
+			}
+		%>
+      
+      
+      
+      
 
       <!--/. NAV TOP  -->
       <nav class="navbar-default navbar-side" role="navigation">
@@ -271,14 +383,14 @@ visibility: hidden;
                </li>
 
 
-               <li><a href="sdu_reserv.jsp" class="waves-effect waves-dark"><i
+               <li><a href="MovieAllData2.do" class="waves-effect waves-dark"><i
                      class="fa fa-bar-chart-o"></i> 예매</a></li>
 
                <li><a href="#" class="waves-effect waves-dark"><i
                      class="fa fa-sitemap"></i> 영화<span class="fa arrow"></span></a>
                   <ul class="nav nav-second-level">
                      <li><a href="sdu_box_office.jsp">박스오피스 랭킹</a></li>
-                     <li><a href="sdu_movie_search.jsp">영화검색</a></li>
+                     <li><a href="MovieAllData.do">영화검색</a></li>
                      <!-- <li>
                                 <a href="#">Second Level Link<span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
@@ -296,8 +408,8 @@ visibility: hidden;
 
                             </li> -->
                   </ul></li>
-               <li><a href="sdu_content.jsp" class="waves-effect waves-dark"><i
-                     class="fa fa-desktop"></i> 고객센터</a></li>
+               <li><a href="sdu_theater.jsp" class="waves-effect waves-dark"><i
+                     class="fa fa-desktop"></i> 영화관</a></li>
 
 
             </ul>
@@ -309,7 +421,6 @@ visibility: hidden;
 
       <div id="page-wrapper">
          <div id="page-inner" style="padding-left: 0px; padding-right: 0px;">
-
 
 
 
@@ -423,7 +534,7 @@ visibility: hidden;
     </div>
   <!-- </div> -->
   <!-- <div class="container"> -->
-    	<div class="waves-effect waves-light btn" style="width: 30%">
+    	<div class="waves-effect waves-light btn" style="width: 14%">
 		<input type="button" value="Clear" id="clearAllButton">
 	</div>
   </div> <!-- <div class="col-md-6"> end -->
@@ -471,28 +582,44 @@ visibility: hidden;
 
 <table class="table table-striped table-bordered table-hover">
 <tbody>
-<tr>
-<td>영화제목 : ${A }</td>
-</tr>
-<tr>
-<td>극장이름 : ${B }</td>
-</tr>
-<tr><td>날짜 : ${C }</td></tr>
-<tr><td>인원 : ${E }</td></tr>
-<tr><td><div id="selected" >좌석 </div></td></tr>
-<tr><td>금액 : ${Z*10000 + Y*8000 }</td></tr>
-<tr><td><div  class="waves-effect waves-light btn"><input type="submit" value="이전단계" style="float: left;"></div><div  class="waves-effect waves-light btn"><input type="submit" value="다음단계" style="float: right;"></div></td></tr>
+<tr><td id="movie_name">영화제목 : ${A }</td></tr>
+<tr><td id="play_theater">극장이름 : ${B }</td></tr>
+<tr><td id="play_day">날짜 : ${C }</td></tr>
+<tr><td id="play_time">상영시간 : ${D }</td></tr> 
+<tr><td id="play_inwon">인원 : ${E }</td></tr>
+<tr><td id="play_seat"><div id="selected" >좌석 </div></td></tr>
+<tr><td id="play_price">금액 : ${Z*10000 + Y*8000}</td></tr>
+<tr><td hidden="" id="movie_no">${movie_no }</td></tr>
+<tr><td hidden="" id="movie_name">${movie_name }</td></tr>
+
+<!-- 취합전~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 다음 단계 전 단계 -->
+<!-- <tr><td><div>
+<a href="sdu_reserv_test.jsp"><input type="submit" value="이전단계" style="float: left;"></a> 
+
+<a href="javascript:seat();"><input type="submit" value="다음단계" style="float: right;"> </a></div></td></tr>
+ -->
+
+<tr><td><div  class="waves-effect waves-light btn"><a href="sdu_reserv_test.jsp">
+<input type="submit" value="이전단계" style="float: left;"></a> 
+</div><div  class="waves-effect waves-light btn"><a href="javascript:seat();">
+<input type="submit" value="다음단계" style="float: right;"> </a>
+</div></td></tr>
+
 </tbody></table></div>
-     
+<!-- 취합전~~~~~~~~~~~~~~~~~~~~~ 클리어 버튼 -->
+	<!-- <div class="waves-effect waves-light btn">
+       <button id="clearAllButton" type="button">Clear All</button> 
+     </div> -->
  </div>
  
 
- 
  </div>
 <!-- </div> -->
 </div>
 
-
+<!-- 이상한 것 -->
+<!-- <a href="javascript:seat();">자바</a> -->
+ 
 
 
 </div>
@@ -505,7 +632,7 @@ visibility: hidden;
                   <%@include file="sdu_footer.jsp"%>
                </div>
             </footer>
-            
+          
             
          </div>
       </div>

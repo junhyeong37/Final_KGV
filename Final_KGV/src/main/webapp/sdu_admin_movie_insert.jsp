@@ -326,16 +326,17 @@
 			<div class="header">
 				<h1 class="page-header">관리자 영화등록</h1>
 			</div>
-			<br>
-			<br>
+			<br> <br>
 
 			<div class="row">
 				<div class="col-md-3"></div>
 				<div class="col-lg-6">
 					<div class="card">
 						<div class="card-content">
-							<form method="get" action="MovieInsertData.do" name="form"
-								onsubmit="return checkValue()" class="col s12">
+							<!-- <form method="post" enctype="multipart/form-data" action="MovieInsertData.do" name="form"
+								onsubmit="return checkValue()" class="col s12"> -->
+							<form method="post" enctype="multipart/form-data" action="MovieInsertData.do" name="form"
+								class="col s12">
 								<div class="row">
 									<div class="input-field col s12">
 										<input id="movie_name" name="movie_name" type="text"
@@ -395,21 +396,53 @@
 
 								<div class="row">
 									<div class="input-field col s12">
-										<input placeholder="        예)1990-01-01" name="movie_openday"
+										<input placeholder="             예)1990-01-01" name="movie_openday"
 											id="movie_openday" type="text" class="validate"
 											maxlength="20"> <label for="movie_openday">개봉일</label>
 									</div>
 								</div>
 
+								<div class="row">
+									<div class="input-field col s12">
+										<input id="movie_preview" name="movie_preview" type="text"
+											class="validate"> <label for="movie_preview">영화프리뷰</label>
+									</div>
+								</div>
+								
+								<!-- <div class="row">
+									<div class="input-field col s12">
+										<input id="movie_photo" name="movie_photo" type="text"
+											class="validate"> <label for="movie_photo">영화프리뷰</label>
+									</div>
+								</div> -->
+								
+								<div class="row">
+									<div class="input-field col s12">
+										<input name="movie_photo" type="file">
+									</div>
+								</div>
 
 
-
-
-
-
-								<input type="submit" value="등록" /> <input type="button"
-									value="취소" onclick="goLoginForm()"> <br> <br>
-
+								<div class="waves-effect waves-light btn blue-grey darken-4 white-tex">
+								<input type="submit" value="등록" /> 
+								</div>
+								
+								
+								
+								<a class="waves-effect waves-light btn blue-grey darken-4 white-tex"
+					href="sdu_index_navbar.jsp"> 취소 </a> 
+								
+								<!-- <input type="button"
+									value="취소" onclick="goLoginForm()">
+								 -->	
+									
+									
+								<a class="right waves-effect waves-light btn blue-grey darken-4 white-tex"
+					href="sdu_admin_movie_file_upload.jsp"> 포스터등록하기 </a> 	
+									
+								<!-- <input type="button" value="포스터등록하기" onclick="sdu_admin_movie_file_upload.jsp">
+									 <br> <br>
+ -->
 
 
 

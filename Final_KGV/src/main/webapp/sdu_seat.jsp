@@ -155,12 +155,7 @@
 </script>
 
 <script>
-<%--  var user_id = <%=(String)session.getAttribute("user_id")%>
 
-if(user_id ==null){
-	alert("해당메뉴는 로그인이 필요한 메뉴입니다. 로그인 후 이용해주세요");
-	location.href="sdu_login.jsp"
-}else{}  --%>
 
 var ulist=<%=session.getAttribute("ulist")%>
 
@@ -315,7 +310,7 @@ if(ulist==null){
 							class="fa fa-sitemap"></i> 영화<span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
 							<li><a href="sdu_box_office.jsp">박스오피스 랭킹</a></li>
-							<li><a href="sdu_movie_search.jsp">영화검색</a></li>
+							<li><a href="MovieAllData.do">영화검색</a></li>
 							<!-- <li>
                                 <a href="#">Second Level Link<span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
