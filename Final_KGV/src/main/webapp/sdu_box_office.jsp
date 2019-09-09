@@ -111,8 +111,9 @@ a:hover {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand waves-effect waves-dark" href="sdu_index_navbar.jsp"><i class="large material-icons">track_changes</i> <strong>KGV</strong></a>
-				
+                <a class="navbar-brand waves-effect waves-dark"
+               href="sdu_index_navbar.jsp" style="padding-top: 7px; padding-bottom: 0px;">
+               <img alt="" src="assets/img/KGVlogo.png" style="width: 50%;"></a>
 		<div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
             </div>
 
@@ -394,11 +395,12 @@ a:hover {
 								%>
 								<c:choose>
 									<c:when test="${boxoffice.movieNm eq '분노의 질주: 홉스&쇼'}">
-										<td class="movietext"><a href="NewFile.html">${boxoffice.movieNm}</a></td>
+										<td class="movietext"><a href="MovieSearchData.do?movie_photo=assets/img/분노의 질주/1.jpg">${boxoffice.movieNm}</a></td>
 									</c:when>
-									<c:when test="${boxoffice.movieNm eq '봉오동 전투'}">
-										<td class="movietext"><a href="NewFile.html">${boxoffice.movieNm}</a></td>
+									<c:when test="${boxoffice.movieNm eq '	그것: 두 번째 이야기'}">
+										<td class="movietext"><a href="MovieSearchData.do?movie_photo=assets/img/그것 두번째이야기/1.jpg">${boxoffice.movieNm}</a></td>
 									</c:when>
+									
 									<c:otherwise>
 										<td class="movietext"><c:out
 												value="${boxoffice.movieNm }" /></td>

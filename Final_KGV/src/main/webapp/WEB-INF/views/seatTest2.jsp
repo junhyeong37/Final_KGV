@@ -267,9 +267,9 @@ function seat(){
                   class="icon-bar"></span> <span class="icon-bar"></span> <span
                   class="icon-bar"></span>
             </button>
-            <a class="navbar-brand waves-effect waves-dark"
-               href="sdu_index_navbar.jsp"><i class="large material-icons">track_changes</i>
-               <strong>KGV</strong></a>
+             <a class="navbar-brand waves-effect waves-dark"
+               href="sdu_index_navbar.jsp" style="padding-top: 7px; padding-bottom: 0px;">
+               <img alt="" src="assets/img/KGVlogo.png" style="width: 50%;"></a>
 
             <div id="sideNav" href="">
                <i class="material-icons dp48">toc</i>
@@ -312,9 +312,9 @@ function seat(){
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand waves-effect waves-dark"
-					href="sdu_index_navbar.jsp"><i class="large material-icons">track_changes</i>
-					<strong>KGV</strong></a>
+				 <a class="navbar-brand waves-effect waves-dark"
+               href="sdu_index_navbar.jsp" style="padding-top: 7px; padding-bottom: 0px;">
+               <img alt="" src="assets/img/KGVlogo.png" style="width: 50%;"></a>
 
 				<div id="sideNav" href="">
 					<i class="material-icons dp48">toc</i>
@@ -588,6 +588,7 @@ function seat(){
 <tr><td id="play_seat"><div id="selected" >좌석 </div></td></tr>
 <tr><td id="play_price">금액 : ${Z*10000 + Y*8000}</td></tr>
 <tr><td hidden="" id="movie_no">${movie_no }</td></tr>
+<tr><td hidden="" id="movie_name">${movie_name }</td></tr>
 
 <tr><td><div>
 <a href="sdu_reserv_test.jsp"><input type="submit" value="이전단계" style="float: left;"></a> 

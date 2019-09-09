@@ -67,9 +67,9 @@ overflow-x:hidden;
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand waves-effect waves-dark"
-					href="sdu_index_navbar.jsp"><i class="large material-icons">track_changes</i>
-					<strong>KGV</strong></a>
+				 <a class="navbar-brand waves-effect waves-dark"
+               href="sdu_index_navbar.jsp" style="padding-top: 7px; padding-bottom: 0px;">
+               <img alt="" src="assets/img/KGVlogo.png" style="width: 50%;"></a>
 
 				<div id="sideNav" href="">
 					<i class="material-icons dp48">toc</i>
@@ -110,9 +110,9 @@ overflow-x:hidden;
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand waves-effect waves-dark"
-					href="sdu_index_navbar.jsp"><i class="large material-icons">track_changes</i>
-					<strong>KGV</strong></a>
+				 <a class="navbar-brand waves-effect waves-dark"
+               href="sdu_index_navbar.jsp" style="padding-top: 7px; padding-bottom: 0px;">
+               <img alt="" src="assets/img/KGVlogo.png" style="width: 50%;"></a>
 
 				<div id="sideNav" href="">
 					<i class="material-icons dp48">toc</i>
