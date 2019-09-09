@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <title>Insert title here</title>
 
 
@@ -50,9 +50,9 @@ ${Z*10000 + Y*8000 }
 <input type="text" id="play_time"name="play_time" value="${play_time}" readonly>
 <input type="text" id="play_inwon"name="play_inwon" value="${play_inwon}" readonly>
 <input type="text" id="play_seat"name="play_seat" value="${play_seat }" readonly>
-<input type="text" id="play_price" name="play_seat" value="${play_price }" readonly> 
-°áÁ¦ÇÏ½Ã°Ú½À´Ï±î?
-<input type="submit" id="play" name="play" value="°áÁ¦ÇÏ±â">
+<input type="text" id="play_price" name="play_price" value="${play_price }" readonly> 
+ê²°ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?
+<input type="submit" id="play" name="play" value="ê²°ì œí•˜ê¸°">
 </form>
 
 

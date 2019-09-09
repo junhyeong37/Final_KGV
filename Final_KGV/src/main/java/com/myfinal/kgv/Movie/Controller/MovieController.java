@@ -150,7 +150,7 @@ public class MovieController {
 	
 	
 	
-	@RequestMapping(value="Goseat2.do", method=RequestMethod.GET) 
+	@RequestMapping(value="Goseat2.do", method=RequestMethod.GET, produces="text/plain;charset=UTF-8") 
 	@ResponseBody
 	public ModelAndView Goseat2(String movie_name, int movie_no, String play_theater, String play_day,String play_time, String play_inwon, String play_seat, int play_price) throws ParseException {
 		ModelAndView mv = new ModelAndView();
@@ -165,23 +165,22 @@ public class MovieController {
 		mv.addObject("play_seat",play_seat);
 		mv.addObject("play_price",play_price);
 		
-		System.out.println(movie_name);
+		System.out.println("인원: " + play_inwon);
+		System.out.println("가격: " + play_price);
+		System.out.println("영화관: " + play_theater);
 		
 		return mv;
 	}
 	
 	
-	@RequestMapping(value="play.do", method=RequestMethod.GET) 
+	@RequestMapping(value="play.do", method=RequestMethod.GET, produces="text/plain;charset=UTF-8") 
 	@ResponseBody
 	public ModelAndView play(PlayVO vo,HttpServletRequest req) throws ParseException {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("playcomplete");
 		
 		ms.play(vo);
-	/*	List<PlayVO> paylist = ms.play();*/
-		
-		/*mv.addObject("paylist", paylist);*/
-		/*System.out.println(paylist);*/
+
 		return mv;
 	}
 	

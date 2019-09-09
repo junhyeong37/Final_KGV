@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>KGV 예매 홈</title>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -341,7 +341,7 @@
 												</tr>
 												<tr class="even gradeA test2">
 													<td>강남구</td>
-													<td id="Theater">강남 CGV</td> 	
+													<td id="Theater">강남강남강남강남 CGV</td> 	
 													<th><div align="center">
 															<input type="button" id="testbn1" class="testbn1" value="선택">
 														</div></th>
