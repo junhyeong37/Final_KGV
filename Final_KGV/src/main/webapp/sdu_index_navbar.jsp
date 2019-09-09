@@ -142,7 +142,7 @@ history.go(-1);
 			
 			<!-- 관리자로 로그인 했을때만 뜨는 메뉴 -->
 			<c:set var="id" value="admin" />
-
+			
 			<c:forEach items="${ulist }" var="val">
 
 				 <c:if test="${val.user_id eq 'admin'}">
@@ -176,7 +176,7 @@ history.go(-1);
 					<li><a class="active-menu waves-effect waves-dark"
 						href="sdu_index_navbar.jsp"><i class="fa fa-dashboard"></i> 메인</a>
 					</li>
-
+	
 
 					<li><a href="MovieAllData2.do" class="waves-effect waves-dark"><i
 							class="fa fa-bar-chart-o"></i> 예매</a></li>
