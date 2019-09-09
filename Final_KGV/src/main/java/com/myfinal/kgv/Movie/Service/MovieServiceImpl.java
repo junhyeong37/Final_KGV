@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.myfinal.kgv.Movie.DAOVO.MovieDAO;
 import com.myfinal.kgv.Movie.DAOVO.MovieVO;
+import com.myfinal.kgv.Movie.DAOVO.PlayVO;
 
 @Service
 public class MovieServiceImpl implements MovieService {
@@ -50,4 +51,15 @@ public class MovieServiceImpl implements MovieService {
       return dao.MovieSearchData(vo);
    
    }
+   @Override
+	public void play(PlayVO vo) {
+		// TODO Auto-generated method stub
+		dao.play(vo);
+	}
+
+@Override
+public List<MovieVO> MovieAllData2() {
+	// TODO Auto-generated method stub
+	return dao.MovieAllData2();
+}
 }

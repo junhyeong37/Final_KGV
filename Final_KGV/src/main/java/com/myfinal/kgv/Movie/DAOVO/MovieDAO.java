@@ -12,6 +12,8 @@ public interface MovieDAO {
 
    public List<MovieVO> MovieAllData();
    
+   public List<MovieVO> MovieAllData2();
+   
    public List<MovieVO> MovieAllData(String photo);
    
 //   public void MovieSearchData(MovieVO vo);
@@ -19,5 +21,7 @@ public interface MovieDAO {
    public List<MovieVO> MovieSearchData(MovieVO vo);
 
    public List<MovieVO> MovieSearchData2(MovieVO vo);
+   
+   public void play(PlayVO vo);
    
 }

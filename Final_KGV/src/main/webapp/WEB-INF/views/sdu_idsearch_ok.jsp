@@ -285,7 +285,7 @@ function duplicationId() {
 					</li>
 
 
-					<li><a href="sdu_reserv.jsp" class="waves-effect waves-dark"><i
+					<li><a href="MovieAllData2.do" class="waves-effect waves-dark"><i
 							class="fa fa-bar-chart-o"></i> 예매</a></li>
 
 					<li><a href="#" class="waves-effect waves-dark"><i
@@ -311,7 +311,7 @@ function duplicationId() {
                             </li> -->
 						</ul></li>
 					<li><a href="sdu_theater.jsp" class="waves-effect waves-dark"><i
-							class="fa fa-desktop"></i> 고객센터</a></li>
+							class="fa fa-desktop"></i> 영화관</a></li>
 
 					<!-- <li>
                         <a href="head_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>

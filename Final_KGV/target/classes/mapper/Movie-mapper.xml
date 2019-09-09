@@ -6,6 +6,11 @@
    SELECT movie_no, movie_name, movie_level, movie_photo, movie_preview, movie_likes, movie_openday, movie_genre, movie_runtime, movie_content, movie_actor, movie_director
    FROM MOVIE      
 </select> 
+
+<select id="MovieAllData2" resultType="Movie">         
+   SELECT movie_no, movie_name, movie_level, movie_photo, movie_preview, movie_likes, movie_openday, movie_genre, movie_runtime, movie_content, movie_actor, movie_director
+   FROM MOVIE      
+</select> 
    
    <select id="MovieInsertData">
       <!-- insert into movie (movie_no, movie_name, movie_level, movie_photo, movie_preview, movie_likes, movie_openday, movie_genre, movie_runtime, movie_content, movie_actor, movie_director)
@@ -32,5 +37,9 @@ values (movie_sq.nextval, #{movie_name}, #{movie_level}, #{movie_genre}, #{movie
       FROM MOVIE where movie_no=#{movie_no}
    </select>
 
+<select id="play" resultType="play">
+		insert into play (user_no, movie_no, play_theater, play_day, play_time, play_inwon, play_seat, play_price) 
+		values (#{user_no}, #{movie_no}, #{play_theater}, #{play_day}, #{play_time}, #{play_inwon}, #{play_seat}, #{play_price})
+	</select>
 
 </mapper>

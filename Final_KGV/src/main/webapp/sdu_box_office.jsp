@@ -221,7 +221,7 @@ a:hover {
                     </li> -->
                     
 					<li>
-                        <a href="sdu_reserv.jsp" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 예매</a>
+                        <a href="MovieAllData2.do" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 예매</a>
                     </li>
                     
                     <li>
@@ -617,7 +617,7 @@ a:hover {
 							<div class="card-content">
 								<div class="col">
 									<ul class="tabs">
-										<li class="tab col s3"><a href="#test1">매출 순위</a></li>
+										<li class="tab col s3 col-md-1"><a href="#test1">매출 순위</a></li>
 
 										<li class="tab col s3"><a href="#test4">관객 순위</a></li>
 									</ul>
