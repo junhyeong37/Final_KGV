@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -23,6 +25,7 @@
 	rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
 </head>
+
 <style type="text/css">
 a:link {
 	color: #333;
@@ -42,6 +45,7 @@ a:hover {
 
 
 <style>
+
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover
 	{
 	background-color: #f1f2f3;
@@ -54,7 +58,8 @@ a:hover {
 	position: fixed;
 }
 
-
+.selectbox{
+display:none}
 
 .selec-ul li {
 	float: left;
@@ -81,7 +86,9 @@ a:hover {
 	width: 50%;
 	float: right;
 }
-
+.wioak{
+margin-top:100px;
+}
 .tabclass {
 	border-radius: 20px;
 }
@@ -161,23 +168,13 @@ a:hover {
 	color: #ffffff;
 }
 
-@media ( min-width : 1200px) {
-	.container {
-		width: 100%;
-	}
-}
-
-@media ( max-width :1024px) {
-	.main {
-		padding-left: 10%;
-		padding-right: 10%;
-		margin-bottom: 10%;
-	}
-}
 
 @media ( max-width :768px) {
-	#page-wrapper {
-		width: 1000px;
+.tabclass{
+display:none;
+}
+	#page-wrapper,  .real, .main {
+		width: 100%;
 	}
 	.main {
 	margin-top:30px;
@@ -190,11 +187,14 @@ a:hover {
 		width: 100%;
 		padding-left: 10%;
 		padding-right: 10%;
-		height: 300px;
+		height: 100px;
 	}
 	.select-inside {
 		
 	}
+	.wioak{
+	margin-top:200px;
+	text-align:center}
 	#exTab1 .tab-content {
 		color: white;
 		background-color: #428bca;
@@ -220,16 +220,23 @@ a:hover {
 		background-color: #428bca;
 		padding: 5px 15px;
 	}
+	.selectbox{
+	display:block;
+	margin-top:50px;
+
+	width:100%;
+	}
+
 }
 </style>
 
 <body>
 	<div id="wrapper">
-	
 	<%
 			// 현재 로그인된 아이디가 없다면 (= session에 저장된 id가 없다면)
 			if (session.getAttribute("ulist") == null) {
 		%>
+	
 		<nav class="navbar navbar-default top-navbar" role="navigation">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle waves-effect waves-dark"
@@ -238,7 +245,7 @@ a:hover {
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				 <a class="navbar-brand waves-effect waves-dark"
+				<a class="navbar-brand waves-effect waves-dark"
                href="sdu_index_navbar.jsp" style="padding-top: 7px; padding-bottom: 0px;">
                <img alt="" src="assets/img/KGVlogo.png" style="width: 50%;"></a>
 
@@ -266,6 +273,7 @@ a:hover {
 			<!-- <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 설정</a>
 </li> -->
 		</ul>
+
 <%
 			}
 			// 현재 로그인된 아이디가 있다면 (= session에 저장된 id가 있다면)
@@ -303,9 +311,9 @@ a:hover {
 		</nav>
 		<!-- Dropdown Structure -->
 		<ul id="dropdown1" class="dropdown-content">
-			<li><a href="sdu_index_navbar.jsp"><i class="fa fa-user fa-fw"></i>
+			<li><a href="Logout.do"><i class="fa fa-user fa-fw"></i>
 					로그아웃</a></li>
-			<li><a href="sdu_mypage.jsp"><i class="fa fa-gear fa-fw"></i>
+			<li><a href="Mypage_test.do"><i class="fa fa-gear fa-fw"></i>
 					My Page</a></li>
 			
 			
@@ -404,7 +412,71 @@ a:hover {
 
 
 
-							<div></div>
+							<div class="selectbox"><select name="selOne" id="selOne" onchange="doChange(this, 'selTwo')" style="    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: black;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+   
+    text-align: start;
+    -webkit-appearance: menulist;
+    display:inline-block;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    background-color: white;
+    cursor: default;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(169, 169, 169);
+    border-image: initial;">
+        <option value="default">지역선택</option>
+        <option value="Seoul">서울</option>
+        <option value="">경기</option>
+         <option value="">인천</option> 
+         
+          <option value="">강원</option>
+           <option value="">대전/충청</option>
+            <option value="">대구</option>
+             <option value="">부산/울산</option>
+              <option value="">경상</option>
+               <option value="">광주/전라/제주</option>
+     
+    </select>
+    <select name="selTwo"  id="selTwo"style="    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: black;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+
+    text-align: start;
+    -webkit-appearance: menulist;
+    display:inline-block;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    background-color: white;
+    cursor: default;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(169, 169, 169);
+    border-image: initial;"onchange="javascript:handleSelect(this)">
+        <option value="default">상영관선택</option>
+    </select></div>
 							<br> <br> <br>
 
 							<div id="exTab2" class="tabclass ">
@@ -601,7 +673,7 @@ a:hover {
 						</div>
 					</div>
 					<h2
-						style=" margin-top: 100px; ">오시는
+						class="wioak">오시는
 						길</h2>
 					<br>
 
@@ -657,6 +729,60 @@ a:hover {
 									// 마커 위에 인포윈도우를 표시합니다
 									infowindow.open(map, marker);
 								});
+						function doChange(srcE, targetId){
+						    var val = srcE.options[srcE.selectedIndex].value;
+						    var targetE = document.getElementById(targetId);
+						    removeAll(targetE);
+
+						    if(val == 'Seoul'){
+						        addOption('KGV강남', targetE);
+						       
+						        addOption('KGV강변', targetE);
+						        addOption('KGV구로', targetE);
+						        addOption('KGV건대입구', targetE);
+						        addOption('KGV대학로', targetE);
+						        addOption('KGV동대문', targetE);
+						        
+						    }
+						    else if(val == 'Gyeonggi'){
+						        addOption('KGV경기광주', targetE);
+						        addOption('KGV광교상현', targetE);
+						        addOption('KGV구로', targetE);
+						        addOption('KGV건대입구', targetE);
+						        addOption('KGV대학로', targetE);
+						        addOption('KGV동대문', targetE);
+						    }
+						}
+
+						function addOption(value, e){
+						    var o = new Option(value);
+						    try{
+						        e.add(o);
+						    }catch(ee){
+						        e.add(o, null);
+						    }
+						}
+
+						function removeAll(e){
+						    for(var i = 0, limit = e.options.length; i < limit - 1; ++i){
+						        e.remove(1);
+						    }
+						 
+						}
+						function handleSelect(elm)
+						{
+							if(elm.value=="KGV강남"){
+								window.location = "sdu_theater.jsp";
+							}
+							if(elm.value=="KGV강변"){
+								window.location = "sdu_theater2.jsp";
+							}
+							if(elm.value=="KGV구로"){
+								window.location = "sdu_theater3.jsp";
+							}
+
+
+						}
 					</script>
 
 				</div>

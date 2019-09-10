@@ -59,12 +59,26 @@ public class UserDAOImpl implements UserDAO{
 	@Override
 	public List<UserVO> SelectId(UserVO vo) {
 		// TODO Auto-generated method stub
-		System.out.println("À¯Àú´Ù¿À¿¡¼­ "+sqlSession.selectList(namespace+".SelectId",vo));
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ù¿ï¿½ï¿½ï¿½ï¿½ï¿½ "+sqlSession.selectList(namespace+".SelectId",vo));
 		return sqlSession.selectList(namespace+".SelectId",vo);
 	}
 
-	
+	@Override
+	public List<PageVO> Mypage_test(String user_id) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList(namespace+".Mypage_test",user_id);
+	}
 
+	@Override
+	public void Mypage_delete(String play_day, String play_seat) {
+		// TODO Auto-generated method stub
+		DeleteVO vo = new DeleteVO();
+		vo.setPlay_day(play_day);
+		vo.setPlay_seat(play_seat);
+		System.out.println(play_day + " :::::::::::::: " + play_seat);
+		
+		sqlSession.delete(namespace+".Mypage_delete",vo);
+	}
 
 	
 

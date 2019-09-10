@@ -5,7 +5,7 @@
 /*영화좌석*/
     document.addEventListener( "DOMContentLoaded", init );
 
-    var seatsPerRow = 10;
+    var seatsPerRow = 6;
     var alphabets = 'abcdefghijklmnopqrstuvxyz'.toUpperCase().split('');
 
     function init(){
@@ -36,14 +36,21 @@
 
     function updateSelected(){
       var selected = document.querySelector("#selected");
-      selected.innerHTML = mapToRows( getSelectedSeats() ).join(", ");
+      selected.innerHTML = "좌석 " + mapToRows( getSelectedSeats() ).join(", ");
     }
 
     function mapToRows( selectedSeats ){
       return selectedSeats.map( n =>{
         var rowNumber = n %seatsPerRow;
         var row = (n-rowNumber)/seatsPerRow;
-        return alphabets[row]+"-"+rowNumber;
+        console.log(rowNumber); 
+        if(rowNumber==0) {
+        	rowNumber = 6;
+        	return alphabets[row-1]+"-"+rowNumber;
+        }else{
+        	return alphabets[row]+"-"+rowNumber;
+        }
+        
       });
     }
 

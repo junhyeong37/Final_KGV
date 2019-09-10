@@ -64,7 +64,33 @@
 	});
 	
 		
-
+	function check() {
+		var A = $('input#A').val();
+		var B = $('input#B').val();
+		var C = $('input#C').val();
+		var D = $('input#D').val();
+		var E1 = $('th.active-menu.test4').attr('class');
+		var E2 = $('th.active-menu.test5').attr('class');
+		
+		if(A == null || A == ""){
+			alert("영화를 선택해주세요.")
+			return false;
+		} else if (B == null || B==""){
+			alert("극장을 선택해주세요.")
+			return false;
+		} else if (C == null || C==""){
+			alert("날짜을 선택해주세요.")
+			return false;
+		}else if (D == null || D==""){
+			alert("상영시간표를 선택해주세요.")
+			return false;
+		}else if (E1 == null || E1 == "" || E2 == null || E2 == "" ){
+			alert("인원을 모두 선택해주세요.")
+			return false;
+		}else {
+			return true;
+		}
+	}
 
 
 </script>
@@ -83,6 +109,41 @@
 }
 .top-navbar{
  	top:0;
+}
+
+/* 09.09 예매페이지 반응형 적용 */
+@media (max-width: 768px){
+div.card-content{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+table.table-striped{
+height: 0px !important;
+}
+#page-inner{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.col-md-12{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.col-md-4{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.col-md-3{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.col-md-5{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.scrolltbody{
+   padding-left: 30px;
+}
+
 }
 </style>
 
@@ -178,9 +239,9 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand waves-effect waves-dark"
-					href="sdu_index_navbar.jsp"><i class="large material-icons">track_changes</i>
-					<strong>KGV</strong></a>
+				 <a class="navbar-brand waves-effect waves-dark"
+               href="sdu_index_navbar.jsp" style="padding-top: 7px; padding-bottom: 0px;">
+               <img alt="" src="assets/img/KGVlogo.png" style="width: 50%;"></a>
 
 				<div id="sideNav" href="">
 					<i class="material-icons dp48">toc</i>
@@ -288,7 +349,7 @@
 
 		<div id="page-wrapper" style="background-image: url('back.jpg');">
 
-			<form action="Goseat.do">
+			<form action="Goseat.do" onsubmit="return check();">
 			<div id="page-inner">
 				<div class="row">
 					<div class="card col-md-12">
@@ -309,18 +370,18 @@
 											</tr>
 										</thead>
 										<tbody class="scrolltbody" style="height: 454px;">
-											<tr>
-												<!-- <td style="width: 37.979166px;"></td> -->
-												<td width="15%">등급</td>
-												<td width="85%">영화제목</td>
+                                 <tr>
+                                    <!-- <td style="width: 37.979166px;"></td> -->
+                                    <td width="30%" style="width: 10%;">등급</td>
+                                    <td width="70%" style="width:90%; vertical-align: middle;">영화제목</td>
 
-											<c:forEach var="e" items="${movielist}"> 
-											<tr class="test">
-												<td><img alt="" src="assets/img/12.png"></td>
-												<td id="movie2" onclick="mclick2()" style="cursor: pointer">${e.movie_name}</td>
-												<td hidden="" id="movieno" onclick="mclick2()" style="cursor: pointer">${e.movie_no}</td>
-											</tr>
-											</c:forEach>	 
+                                 <c:forEach var="e" items="${movielist}"> 
+                                 <tr class="test">
+                                    <td>${e.movie_level }</td>
+                                    <td id="movie2" onclick="mclick2()" style="cursor: pointer">${e.movie_name}</td>
+                                    <td hidden="" id="movieno" onclick="mclick2()" style="cursor: pointer">${e.movie_no}</td>
+                                 </tr>
+                                 </c:forEach>    
 
 
 										</tbody>

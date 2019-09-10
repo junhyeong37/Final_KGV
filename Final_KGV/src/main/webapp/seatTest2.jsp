@@ -129,6 +129,14 @@ visibility: hidden;
 .top-navbar{
  	top:0;
 }
+#footer {
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+}
 </style>
 
 
@@ -312,9 +320,9 @@ function seat(){
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand waves-effect waves-dark"
-					href="sdu_index_navbar.jsp"><i class="large material-icons">track_changes</i>
-					<strong>KGV</strong></a>
+				 <a class="navbar-brand waves-effect waves-dark"
+               href="sdu_index_navbar.jsp" style="padding-top: 7px; padding-bottom: 0px;">
+               <img alt="" src="assets/img/KGVlogo.png" style="width: 50%;"></a>
 
 				<div id="sideNav" href="">
 					<i class="material-icons dp48">toc</i>
@@ -534,7 +542,9 @@ function seat(){
     </div>
   <!-- </div> -->
   <!-- <div class="container"> -->
-    
+    	<div class="waves-effect waves-light btn" style="width: 14%">
+		<input type="button" value="Clear" id="clearAllButton">
+	</div>
   </div> <!-- <div class="col-md-6"> end -->
   </div>
   <!-- 
@@ -565,7 +575,7 @@ function seat(){
 <table class="table table-striped table-bordered table-hover">
 <tbody>
 <tr>
-<td style="background-color: black; text-align: center;"><img alt="" src="back.jpg" style="width: 50%;height: 100%;"></td>
+<td style="background-color: black; text-align: center;"><img alt="" src="assets/img/${A }/1.jpg" style="width: 50%;height: 320px;"></td>
 </tr>
 
 </tbody></table></div>
@@ -588,17 +598,26 @@ function seat(){
 <tr><td id="play_seat"><div id="selected" >좌석 </div></td></tr>
 <tr><td id="play_price">금액 : ${Z*10000 + Y*8000}</td></tr>
 <tr><td hidden="" id="movie_no">${movie_no }</td></tr>
+<tr><td hidden="" id="movie_name">${movie_name }</td></tr>
 
-<tr><td><div>
+<!-- 취합전~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 다음 단계 전 단계 -->
+<!-- <tr><td><div>
 <a href="sdu_reserv_test.jsp"><input type="submit" value="이전단계" style="float: left;"></a> 
 
 <a href="javascript:seat();"><input type="submit" value="다음단계" style="float: right;"> </a></div></td></tr>
+ -->
 
+<tr><td><div  class="waves-effect waves-light btn"><a href="sdu_reserv_test.jsp">
+<input type="submit" value="이전단계" style="float: left;"></a> 
+</div><div  class="waves-effect waves-light btn"><a href="javascript:seat();">
+<input type="submit" value="다음단계" style="float: right;"> </a>
+</div></td></tr>
 
 </tbody></table></div>
-	<div class="waves-effect waves-light btn">
+<!-- 취합전~~~~~~~~~~~~~~~~~~~~~ 클리어 버튼 -->
+	<!-- <div class="waves-effect waves-light btn">
        <button id="clearAllButton" type="button">Clear All</button> 
-     </div>
+     </div> -->
  </div>
  
 
@@ -606,21 +625,26 @@ function seat(){
 <!-- </div> -->
 </div>
 
-<a href="javascript:seat();">자바</a>
+<!-- 이상한 것 -->
+<!-- <a href="javascript:seat();">자바</a> -->
  
 
 
 </div>
 </div>
             
-            <footer>
+            <%-- <footer>
                <div class="center">
                   <br> <br> <br> <br> <br> <br> <br>
                   <br> <br> <br> <br> <br> <br>
                   <%@include file="sdu_footer.jsp"%>
                </div>
-            </footer>
-          
+            </footer> --%>
+          <div id="footer"><footer><div class="center">
+               <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                  <%@include file="sdu_footer.jsp"%>
+               </div>
+            </footer></div>
             
          </div>
       </div>

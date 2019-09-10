@@ -384,35 +384,7 @@ tbody.tdsizesm1>tr>td {
 															<!-- <td width="10"><h1>상  영  작</h1></td> -->
 															<td style="text-align: center;">
 																<!-- <a href="MovieSearchData.do?movie_photo=assets/img/movie0.jpg"> -->
-																<img src="${movie.movie_photo2 }" class="img-mobile"
-																style="margin: auto;" data-src="" alt="Second slide">
-
-															</td>
-
-															<td width="20%"></td>
-														</tr>
-														<tr>
-															<td height="100px;"></td>
-														</tr>
-
-													</tbody>
-												</table>
-
-											</div>
-
-
-											<div class="item kgvsm3">
-
-												<table class="kgvsm2">
-													<tbody>
-														<tr>
-															<td height="20px;">
-														</tr>
-														<tr>
-															<td width="20%"></td>
-															<!-- <td width="10"><h1>상  영  작</h1></td> -->
-															<td style="text-align: center;"><img
-																src="${movie.movie_photo3 }" class="img-mobile"
+																<img src="${movie.movie_photo3 }" class="img-mobile"
 																style="margin: auto;" data-src="" alt="Second slide">
 
 															</td>
@@ -469,6 +441,34 @@ tbody.tdsizesm1>tr>td {
 															<!-- <td width="10"><h1>상  영  작</h1></td> -->
 															<td style="text-align: center;"><img
 																src="${movie.movie_photo5 }" class="img-mobile"
+																style="margin: auto;" data-src="" alt="Second slide">
+
+															</td>
+
+															<td width="20%"></td>
+														</tr>
+														<tr>
+															<td height="100px;"></td>
+														</tr>
+
+													</tbody>
+												</table>
+
+											</div>
+
+
+											<div class="item kgvsm3">
+
+												<table class="kgvsm2">
+													<tbody>
+														<tr>
+															<td height="20px;">
+														</tr>
+														<tr>
+															<td width="20%"></td>
+															<!-- <td width="10"><h1>상  영  작</h1></td> -->
+															<td style="text-align: center;"><img
+																src="${movie.movie_photo6 }" class="img-mobile"
 																style="margin: auto;" data-src="" alt="Second slide">
 
 															</td>

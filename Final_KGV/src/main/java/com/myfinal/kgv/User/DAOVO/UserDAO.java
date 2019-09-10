@@ -19,4 +19,9 @@ public interface UserDAO {
 
 	
 	public List<UserVO> SelectId(UserVO vo);
+
+	public List<PageVO> Mypage_test(String user_id);
+
+	public void Mypage_delete(String play_day, String play_seat);
+	
 }

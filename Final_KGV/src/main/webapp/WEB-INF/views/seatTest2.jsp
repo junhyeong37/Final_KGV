@@ -129,8 +129,61 @@ visibility: hidden;
 .top-navbar{
  	top:0;
 }
-</style>
+#footer {
 
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+}
+</style>
+<style type="text/css">
+/* 09.09 예매페이지 반응형 적용 */
+@media (max-width: 768px){
+div.card-content{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+table.table-striped{
+height: 0px !important;
+}
+#page-inner{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.col-md-12{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.col-md-4{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.col-md-3{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.col-md-5{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.col-md-6{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.scrolltbody{
+   padding-left: 30px;
+}
+#page-wrapper{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.btn-sizesm{
+width: 30% !important;
+}
+}
+</style>
 
 
 <script>
@@ -534,7 +587,9 @@ function seat(){
     </div>
   <!-- </div> -->
   <!-- <div class="container"> -->
-    
+    	<div class="waves-effect waves-light btn btn-sizesm" style="width: 14%">
+		<input type="button" value="Clear" id="clearAllButton">
+	</div>
   </div> <!-- <div class="col-md-6"> end -->
   </div>
   <!-- 
@@ -565,7 +620,7 @@ function seat(){
 <table class="table table-striped table-bordered table-hover">
 <tbody>
 <tr>
-<td style="background-color: black; text-align: center;"><img alt="" src="back.jpg" style="width: 50%;height: 100%;"></td>
+<td style="background-color: black; text-align: center;"><img alt="" src="assets/img/${A }/1.jpg" style="width: 50%;height: 320px;"></td>
 </tr>
 
 </tbody></table></div>
@@ -590,16 +645,24 @@ function seat(){
 <tr><td hidden="" id="movie_no">${movie_no }</td></tr>
 <tr><td hidden="" id="movie_name">${movie_name }</td></tr>
 
-<tr><td><div>
+<!-- 취합전~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 다음 단계 전 단계 -->
+<!-- <tr><td><div>
 <a href="sdu_reserv_test.jsp"><input type="submit" value="이전단계" style="float: left;"></a> 
 
 <a href="javascript:seat();"><input type="submit" value="다음단계" style="float: right;"> </a></div></td></tr>
+ -->
 
+<!-- <tr><td><div  class="waves-effect waves-light btn"><a href="sdu_reserv_test.jsp">
+<input type="submit" value="이전단계" style="float: left;"></a> 
+</div><div  class="waves-effect waves-light btn"><a href="javascript:seat();">
+<input type="submit" value="다음단계" style="float: right;"> </a>
+</div></td></tr> -->
 
 </tbody></table></div>
-	<div class="waves-effect waves-light btn">
+<!-- 취합전~~~~~~~~~~~~~~~~~~~~~ 클리어 버튼 -->
+	<!-- <div class="waves-effect waves-light btn">
        <button id="clearAllButton" type="button">Clear All</button> 
-     </div>
+     </div> -->
  </div>
  
 
@@ -607,21 +670,52 @@ function seat(){
 <!-- </div> -->
 </div>
 
-<a href="javascript:seat();">자바</a>
+<!-- 이상한 것 -->
+<!-- <a href="javascript:seat();">자바</a> -->
  
 
 
 </div>
 </div>
+
+<div id="row">
+<div class="card col-md-12" style="padding-top: 10px; padding-bottom: 10px;">
+
+<table>
+<tr>
+<td style="float: right;">
+
+<div  class="waves-effect waves-light btn"><a href="MovieAllData2.do">
+<input type="submit" value="이전단계" style="float: right;"></a> 
+</div>
+<div  class="waves-effect waves-light btn"><a href="javascript:seat();">
+<input type="submit" value="다음단계" style="float: right;"> </a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+
+
+
+</div>
+
             
-            <footer>
+            <%-- <footer>
                <div class="center">
                   <br> <br> <br> <br> <br> <br> <br>
                   <br> <br> <br> <br> <br> <br>
                   <%@include file="sdu_footer.jsp"%>
                </div>
-            </footer>
-          
+            </footer> --%><br><br><br><br><br><br><br><br><br><br><br><br><br> 
+            
+          <!-- <div id="footer"> --><footer><div class="center">
+               <br><br><br><br><br><br><br><br><br><br><br><br><br>
+               <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                  <%@include file="sdu_footer.jsp"%>
+               </div>
+            </footer><!-- </div> -->
             
          </div>
       </div>

@@ -244,9 +244,9 @@ function duplicationId() {
 		</nav>
 		<!-- Dropdown Structure -->
 		<ul id="dropdown1" class="dropdown-content">
-			<li><a href="sdu_index_navbar.jsp"><i
-					class="fa fa-user fa-fw"></i> 로그아웃</a></li>
-			<li><a href="sdu_mypage.jsp"><i class="fa fa-gear fa-fw"></i>
+			<li><a href="Logout.do"><i class="fa fa-user fa-fw"></i>
+					로그아웃</a></li>
+			<li><a href="Mypage_test.do"><i class="fa fa-gear fa-fw"></i>
 					My Page</a></li>
 
 
@@ -385,7 +385,9 @@ function duplicationId() {
 							<div class="card-content"
 								style="padding-left: 0px; padding-right: 0px;">
 								<img class="mobileimg" height="495px" alt="poster"
-									src="assets/img/어바웃 타임/1.jpg">
+									src="assets/img/${movie_name}/1.jpg">
+									
+									<%-- <td><img src="assets/img/${e.movie_name}/1.jpg"></td> --%>
 								<!-- <br><br> <div><a
                   class="waves-effect waves-light btn blue-grey darken-4 white-tex"
                   href="sdu_reserv.jsp"> 예매하기 </a></div>
@@ -401,6 +403,21 @@ function duplicationId() {
 						<!-- <div class="col-md-7" style="background-color: #c3c5f9;"> -->
 
 						<form action="play.do" method="get">
+
+
+							<c:forEach items="${ulist }" var="val" varStatus="status">
+
+								<input type="text" id="user_no" name="user_no"
+									value="${val.user_no }" readonly hidden="">
+							</c:forEach>
+							<%-- ${movie_name} --%>
+							<input type="text" id="movie_no" name="movie_no"
+								value="${movie_no}" readonly hidden="">
+
+
+
+
+
 							<div class="col-md-7">
 								<!-- <div class="card"> -->
 								<div class="card-action center"></div>
@@ -414,11 +431,8 @@ function duplicationId() {
 												<!-- <td><h1><strong style="font-size:larger;">유열의 음악앨범</strong></h1></td> -->
 												<td><h1>
 														<strong style="font-size: larger;">제 목</strong>
-														<c:forEach items="${ulist }" var="val" varStatus="status">
-
-															<input type="text" id="movie_name" name="movie_name"
+														<input type="text" id="movie_name" name="movie_name"
 																value="${movie_name}" readonly>
-														</c:forEach>
 													</h1></td>
 											</tr>
 										</table>
@@ -443,9 +457,10 @@ function duplicationId() {
 										<table>
 											<tr>
 												<td style="font-size: medium;"><strong>날짜</strong>&nbsp;&nbsp;</td>
-												<td><input type="text" id="play_day"name="play_day" value="${play_day}" readonly>
-												<input type="text" id="play_time"name="play_time" value="${play_time}" readonly>
-												</td>
+												<td><input type="text" id="play_day" name="play_day"
+													value="${play_day}" readonly> <input type="text"
+													id="play_time" name="play_time" value="${play_time}"
+													readonly></td>
 											</tr>
 										</table>
 
@@ -456,7 +471,8 @@ function duplicationId() {
 										<table>
 											<tr>
 												<td style="font-size: medium;"><strong>인원</strong>&nbsp;&nbsp;</td>
-												<td><input type="text" id="play_inwon"name="play_inwon" value="${play_inwon}" readonly>
+												<td><input type="text" id="play_inwon"
+													name="play_inwon" value="${play_inwon}" readonly>
 											</tr>
 										</table>
 
@@ -468,7 +484,8 @@ function duplicationId() {
 										<table>
 											<tr>
 												<td style="font-size: medium;"><strong>좌석</strong>&nbsp;&nbsp;</td>
-												<td><input type="text" id="play_seat"name="play_seat" value="${play_seat}" readonly>
+												<td><input type="text" id="play_seat" name="play_seat"
+													value="${play_seat}" readonly>
 											</tr>
 										</table>
 
@@ -482,13 +499,15 @@ function duplicationId() {
 												<td style="font-size: medium;"><strong>금액</strong>&nbsp;&nbsp;
 													<font
 													style="font-size: x-large; color: yellow; font-weight: bold;"></font></td>
-													<td><input type="text" id="play_price"name="play_price" value="${play_price}" readonly>
+												<td><input type="text" id="play_price"
+													name="play_price" value="${play_price}" readonly>
 											</tr>
 											<tr>
 												<td style="font-size: medium;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;
 														&nbsp;&nbsp;&nbsp;&nbsp;결제하시겠습니까?</strong></td>
-														
-														<td><input type="submit" id="play" name="play" value="결제하기"></td>
+
+												<td><input type="submit" id="play" name="play"
+													value="결제하기"></td>
 											</tr>
 										</table>
 
