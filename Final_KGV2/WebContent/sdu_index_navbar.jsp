@@ -26,7 +26,7 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans'
 	rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
-
+  
 <style>
 .navbar-default {
 	background-color: #333333;
@@ -38,7 +38,7 @@
 $( '.top' ).click( function() {
 	$( 'html, body' ).animate( { scrollTop : 0 }, 400 );
 	return false;
-} );
+} );  
 </script>
 
 
