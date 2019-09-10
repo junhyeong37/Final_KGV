@@ -714,7 +714,7 @@ function seat(){
                <br><br><br><br><br><br><br><br><br><br><br><br><br>
                <br><br><br><br><br><br><br><br><br><br><br><br><br>
                   <%@include file="sdu_footer.jsp"%>
-               </div>
+               </div> 
             </footer><!-- </div> -->
             
          </div>
