@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.myfinal.kgv.User.DAOVO.FindIdVO;
-import com.myfinal.kgv.User.DAOVO.LoginVO;
 import com.myfinal.kgv.User.DAOVO.UserDAO;
 import com.myfinal.kgv.User.DAOVO.UserVO;
 
@@ -78,28 +77,11 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public int CheckDuplication(String inputId) {
-		System.out.println(inputId);
 		int idCount = session.selectOne("checkDuplicationId", inputId.replace("=", ""));
 		return idCount;
 	}
-
-	@Override
-	public int loginCheck(String inputId, String inputPw) {
-		// TODO Auto-generated method stub
-		LoginVO lv = new LoginVO();
-		System.out.println(inputId.replace("=", ""));
-		
-		lv.setInputId(inputId.replace("=", ""));
-		lv.setInputPw(inputPw.replace("=", ""));
-		
-		System.out.println(lv.getInputId());
-		
-		int idCount = session.selectOne("loginCheck",lv);
-		return idCount;
-	}
-
 	
-	@Override
+@Override
 	public int IdCheck(String inputName, String inputTel) {
 		// TODO Auto-generated method stub
 		FindIdVO lv = new FindIdVO();
@@ -113,8 +95,18 @@ public class UserServiceImpl implements UserService{
 		int idCount = session.selectOne("IdCheck",lv);
 		return idCount;
 	}
+
+
+
+@Override
+public List<UserVO> SelectId(UserVO vo) {
+	// TODO Auto-generated method stub
 	
 	
+	return dao.SelectId(vo);
+}
+
 	
 	
+
 }

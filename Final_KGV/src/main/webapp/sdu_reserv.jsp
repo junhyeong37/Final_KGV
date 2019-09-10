@@ -1,31 +1,47 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8" />
+<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>KGV 예매 홈</title>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
-      $( document ).ready( function() {
-        $( '.test' ).click( function() {
-          $('.test').removeClass('active-menu');
-          $(this).toggleClass( 'active-menu' );
-        } );
-        $( '.test2' ).click( function() {
-            $('.test2').removeClass('active-menu');
-            $(this).toggleClass( 'active-menu' );
-          } );
-        $( '.test3' ).click( function() {
-            $('.test3').removeClass('active-menu');
-            $(this).toggleClass( 'active-menu' );
-          } );
-        $( '.test4' ).click( function() {
-            $('.test4').removeClass('active-menu');
-            $(this).toggleClass( 'active-menu' );
-          } );
-      } );
+	$(document).ready(function() {
+		$('.test').click(function() {
+			$('.test').removeClass('active-menu');
+			$(this).toggleClass('active-menu');
+			var jb = $('tr.active-menu').text().trim();
+			$('input#A').val(jb);
+		});
+		$('#dataTables-example>tbody>tr.test2').click(function() {
+			$('#dataTables-example>tbody>tr.test2').removeClass('active-menu');
+			$(this).toggleClass('active-menu');
+			//var jb = $(this).html().trim();
+			var jb = $('tr.active-menu.test2>td:nth-child(2)').text().trim();
+			$('input#B').val(jb);
+		});
+		$('.test3').click(function() {
+			$('.test3').removeClass('active-menu');
+			$(this).toggleClass('active-menu');
+			var jb = $('th.active-menu>div').text().trim();
+			/* alert(jb); */
+			$('input#D').val(jb);
+		});
+		$('.test4').click(function() {
+			$('.test4').removeClass('active-menu');
+			$(this).toggleClass('active-menu');
+			/* var jb = $('th.active-menu.test4>div>input:button').val(); */
+			var jb = $('th.active-menu.test4>div').text().trim();
+			$('input#E').val("성인 " + jb +"명");
+		});
+		$('table.table-striped').click(function() {
+			var jb = $('table#date1 input.date-picker').val();
+			$('input#C').val(jb);
+		});
+	});
 </script>
 
 <style>
@@ -38,8 +54,11 @@
 }
 
 .ab {
-        background-color: #AFAFAF;
-      }
+	background-color: #AFAFAF;
+}
+.top-navbar{
+ 	top:0;
+}
 </style>
 
 <script type="text/javascript">
@@ -168,6 +187,12 @@
 
 <body>
 	<div id="wrapper">
+	<%
+			// 현재 로그인된 아이디가 없다면 (= session에 저장된 id가 없다면)
+			if (session.getAttribute("ulist") == null) {
+		%>
+	
+	
 		<nav class="navbar navbar-default top-navbar" role="navigation">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle waves-effect waves-dark"
@@ -204,6 +229,80 @@
 			<!-- <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 설정</a>
 </li> -->
 		</ul>
+		
+		<%
+			}
+			// 현재 로그인된 아이디가 있다면 (= session에 저장된 id가 있다면)
+			else {
+		%>
+<nav class="navbar navbar-default top-navbar" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle waves-effect waves-dark"
+					data-toggle="collapse" data-target=".sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand waves-effect waves-dark"
+					href="sdu_index_navbar.jsp"><i class="large material-icons">track_changes</i>
+					<strong>KGV</strong></a>
+
+				<div id="sideNav" href="">
+					<i class="material-icons dp48">toc</i>
+				</div>
+			</div>
+
+			<ul class="nav navbar-top-links navbar-right">
+				<!-- <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown4"><i class="fa fa-envelope fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>				
+				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown3"><i class="fa fa-tasks fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
+				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown2"><i class="fa fa-bell fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li> -->
+				<!--   <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b>John Doe</b> <i class="material-icons right">arrow_drop_down</i></a></li> -->
+				<li><c:forEach items="${ulist }" var="val" varStatus="status">
+						<a class="dropdown-button waves-effect waves-dark" href="#!"
+							data-activates="dropdown1"> <i class="fa fa-user fa-fw"></i>
+							<b> ${val.user_name }</b> <i class="material-icons right">arrow_drop_down</i></a>
+					</c:forEach></li>
+			</ul>
+		</nav>
+		<!-- Dropdown Structure -->
+		<ul id="dropdown1" class="dropdown-content">
+			<li><a href="sdu_login.jsp"><i class="fa fa-user fa-fw"></i>
+					로그아웃</a></li>
+			<li><a href="sdu_mypage.jsp"><i class="fa fa-gear fa-fw"></i>
+					My Page</a></li>
+			
+			
+			<!-- 관리자로 로그인 했을때만 뜨는 메뉴 -->
+			<c:set var="id" value="admin" />
+
+			<c:forEach items="${ulist }" var="val">
+
+				 <c:if test="${val.user_id eq 'admin'}">
+					<li><a href="sdu_admin_movie_insert.jsp"><i
+						class="fa fa-gear fa-fw"></i> 관리자 영화입력</a></li>
+				</c:if>
+				 
+			</c:forEach>
+
+			
+
+
+
+		</ul>
+
+		<!-- ================================================== -->
+
+
+
+
+
+		<%
+			}
+		%>
+
+
+
+
 
 		<!--/. NAV TOP  -->
 		<nav class="navbar-default navbar-side" role="navigation">
@@ -225,7 +324,7 @@
 							class="fa fa-sitemap"></i> 영화<span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
 							<li><a href="sdu_box_office.jsp">박스오피스 랭킹</a></li>
-							<li><a href="sdu_movie_search.jsp">영화검색</a></li>
+							<li><a href="MovieAllData.do">영화검색</a></li>
 							<!-- <li>
                                 <a href="#">Second Level Link<span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
@@ -243,8 +342,8 @@
 
                             </li> -->
 						</ul></li>
-					<li><a href="sdu_content.jsp" class="waves-effect waves-dark"><i
-							class="fa fa-desktop"></i> 고객센터</a></li>
+					<li><a href="sdu_theater.jsp" class="waves-effect waves-dark"><i
+							class="fa fa-desktop"></i> 영화관</a></li>
 
 
 				</ul>
@@ -263,7 +362,7 @@
 						<!-- Advanced Tables -->
 						<div class="col-md-3">
 							<div class="card">
-								
+
 								<div class="card-content" style="height: 540px;">
 									<!--   <div class="table-responsive"> -->
 									<table class="table table-striped table-bordered table-hover">
@@ -303,8 +402,7 @@
 											</tr>
 											<tr class="test">
 												<td><img alt="" src="assets/img/12.png"></td>
-												<td id="movie4" onclick="mclick4()" style="cursor: pointer">분노의
-													질주: 홉스&쇼</td>
+												<td id="movie4" onclick="mclick4()" style="cursor: pointer">분노의 질주: 홉스&쇼</td>
 												<!-- <td>Internet Explorer 5.0</td> -->
 
 											</tr>
@@ -316,15 +414,13 @@
 											</tr>
 											<tr class="test">
 												<td><img alt="" src="assets/img/12.png"></td>
-												<td id="movie6" onclick="mclick6()" style="cursor: pointer">봉오동
-													전투</td>
+												<td id="movie6" onclick="mclick6()" style="cursor: pointer">봉오동 전투</td>
 												<!-- <td>Internet Explorer 5.0</td> -->
 
 											</tr>
 											<tr class="test">
 												<td><img alt="" src="assets/img/12.png"></td>
-												<td id="movie7" onclick="mclick7()" style="cursor: pointer">광대들:
-													풍문조작단</td>
+												<td id="movie7" onclick="mclick7()" style="cursor: pointer">광대들: 풍문조작단</td>
 												<!-- <td>Internet Explorer 5.0</td> -->
 
 											</tr>
@@ -445,319 +541,218 @@
 										<h3 style="background-color: gray;" align="center">극장</h3>
 
 										<table class="table table-striped table-bordered table-hover"
-											id="dataTables-example">
+											id="dataTables-example">  
 
 											<thead>
-												<tr >
-													<th ></th>
-													<th ></th>
-													<th ></th>
+												<tr>
+													<th>지역</th>
+													<th>지점명</th>
+													<th></th> 
 												</tr>
 											</thead>
 											<tbody>
 												<tr class="odd gradeX test2">
 													<td>강동구</td>
-													<td>가나다 CGV</td>
+													<td id="Theater">가나다 CGV</td>
+													 <th><div align="center">
+															<input type="button" value="선택">
+														</div></th> 
+												</tr>
+												 <tr class="even gradeC test2">
+													<td>동대문구</td>
+													<td id="Theater">바우 롯데시네마222</td>
+													<th><div align="center">
+															<input type="button" value="선택">
+														</div></th>
+												</tr>
+												<tr class="odd gradeA test2">
+													<td>성동구</td>
+													<td id="Theater">성동 메가박스</td>
+													<th><div align="center">
+															<input type="button" value="선택">
+														</div></th>
+												</tr>
+												<tr class="even gradeA test2">
+													<td>강남구</td>
+													<td id="Theater">강남 CGV</td>
+													<th><div align="center">
+															<input type="button" value="선택">
+														</div></th>
+												</tr>
+												<tr class="odd gradeA test2">
+													<td>강남구</td>
+													<td id="Theater">압구정 CGV</td>
+													<th><div align="center">
+															<input type="button" value="선택">
+														</div></th>
+												</tr>
+												<tr class="even gradeA test2">
+													<td>서대문구</td>
+													<td id="Theater">독립문 롯데시네마</td>
+													<th><div align="center">
+															<input type="button" value="선택">
+														</div></th>
+												</tr>
+												<tr class="even gradeA test2">
+													<td>서대문구</td>
+													<td id="Theater">이대 CGV</td>
+													<th><div align="center">
+															<input type="button" value="선택">
+														</div></th>
+												</tr>
+
+												<tr class="odd gradeX test2">
+													<td>강동구</td>
+													<td id="Theater">가나다 CGV</td>
+													<th><div align="center">
+															<input type="button" value="선택">
+														</div></th>
+												</tr>
+												<!-- <tr class="even gradeC test2"> -->
+												<tr class="odd gradeA test2">
+													<td>동대문구</td>
+													<td id="Theater">바우 롯데시네마</td>
+													<th><div align="center">
+															<input type="button" value="선택">
+														</div></th>
+												</tr>
+												<tr class="odd gradeA test2">
+													<td>성동구</td>
+													<td id="Theater">성동 메가박스</td>
+													<th><div align="center">
+															<input type="button" value="선택">
+														</div></th>
+												</tr>
+												<tr class="even gradeA test2">
+													<td>강남구</td>
+													<td id="Theater">강남 CGV</td>
+													<th><div align="center">
+															<input type="button" value="선택">
+														</div></th>
+												</tr>
+												<tr class="odd gradeA test2">
+													<td>강남구</td>
+													<td id="Theater">압구정 CGV 올드</td>
+													<th><div align="center">
+															<input type="button" value="선택">
+														</div></th>
+												</tr>
+												<tr class="even gradeA test2">
+													<td>서대문구</td>
+													<td id="Theater">독립문 롯데시네마</td>
+													<th><div align="center">
+															<input type="button" value="선택">
+														</div></th>
+												</tr>
+												<tr class="even gradeA test2">
+													<td>서대문구</td>
+													<td id="Theater">이대 CGV</td>
+													<th><div align="center">
+															<input type="button" value="선택">
+														</div></th>
+												</tr>
+
+												<!-- ----------------------------------------------------------- -->
+
+												<tr class="odd gradeX test2">
+													<td>강동구</td>
+													<td id="Theater">가나다 CGV</td>
 													<th><div align="center">
 															<input type="button" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeC test2">
 													<td>동대문구</td>
-													<td>바우 롯데시네마222</td>
+													<td id="Theater">바우 롯데시네마</td>
 													<th><div align="center">
 															<input type="button" value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
 													<td>성동구</td>
-													<td>성동 메가박스</td>
+													<td id="Theater">성동 메가박스</td>
 													<th><div align="center">
 															<input type="button" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>강남구</td>
-													<td>강남 CGV</td>
+													<td id="Theater">강남 CGV</td>
 													<th><div align="center">
 															<input type="button" value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
 													<td>강남구</td>
-													<td>압구정 CGV</td>
+													<td id="Theater">압구정 CGV</td>
 													<th><div align="center">
 															<input type="button" value="선택">
 														</div></th>
 												</tr>
 												<tr class="even gradeA test2">
 													<td>서대문구</td>
-													<td>독립문 롯데시네마</td>
+													<td id="Theater">독립문 롯데시네마</td>
 													<th><div align="center">
 															<input type="button" value="선택">
 														</div></th>
 												</tr>
-												<tr class="even gradeA">
+												<tr class="even gradeA test2">
 													<td>서대문구</td>
-													<td>이대 CGV</td>
+													<td id="Theater">이대 CGV</td>
 													<th><div align="center">
 															<input type="button" value="선택">
 														</div></th>
 												</tr>
 
-												<tr class="odd gradeX">
+												<tr class="odd gradeX test2">
 													<td>강동구</td>
-													<td>가나다 CGV</td>
+													<td id="Theater">가나다 CGV</td>
 													<th><div align="center">
 															<input type="button" value="선택">
 														</div></th>
 												</tr>
-												<tr class="even gradeC">
+												<tr class="even gradeC test2">
 													<td>동대문구</td>
-													<td>바우 롯데시네마</td>
+													<td id="Theater">바우 롯데시네마</td>
 													<th><div align="center">
 															<input type="button" value="선택">
 														</div></th>
 												</tr>
-												<tr class="odd gradeA">
+												<tr class="odd gradeA test2">
 													<td>성동구</td>
-													<td>성동 메가박스</td>
+													<td id="Theater">성동 메가박스</td>
 													<th><div align="center">
 															<input type="button" value="선택">
 														</div></th>
 												</tr>
-												<tr class="even gradeA">
+												<tr class="even gradeA test2">
 													<td>강남구</td>
-													<td>강남 CGV</td>
+													<td id="Theater">강남 CGV</td>
 													<th><div align="center">
 															<input type="button" value="선택">
 														</div></th>
 												</tr>
 												<tr class="odd gradeA test2">
 													<td>강남구</td>
-													<td>압구정 CGV 올드</td>
+													<td id="Theater">압구정 CGV</td>
 													<th><div align="center">
 															<input type="button" value="선택">
 														</div></th>
 												</tr>
-												<tr class="even gradeA">
+												<tr class="even gradeA test2">
 													<td>서대문구</td>
-													<td>독립문 롯데시네마</td>
+													<td id="Theater">독립문 롯데시네마</td>
 													<th><div align="center">
 															<input type="button" value="선택">
 														</div></th>
 												</tr>
-												<tr class="even gradeA">
+												<tr class="even gradeA test2">
 													<td>서대문구</td>
-													<td>이대 CGV</td>
+													<td id="Theater">이대 CGV</td>
 													<th><div align="center">
 															<input type="button" value="선택">
 														</div></th>
-												</tr>
-
-												<!-- ----------------------------------------------------------- -->
-
-												<tr class="odd gradeX">
-													<td>강동구</td>
-													<td>가나다 CGV</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="even gradeC">
-													<td>동대문구</td>
-													<td>바우 롯데시네마</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="odd gradeA">
-													<td>성동구</td>
-													<td>성동 메가박스</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="even gradeA">
-													<td>강남구</td>
-													<td>강남 CGV</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="odd gradeA">
-													<td>강남구</td>
-													<td>압구정 CGV</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="even gradeA">
-													<td>서대문구</td>
-													<td>독립문 롯데시네마</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="even gradeA">
-													<td>서대문구</td>
-													<td>이대 CGV</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-
-												<tr class="odd gradeX">
-													<td>강동구</td>
-													<td>가나다 CGV</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="even gradeC">
-													<td>동대문구</td>
-													<td>바우 롯데시네마</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="odd gradeA">
-													<td>성동구</td>
-													<td>성동 메가박스</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="even gradeA">
-													<td>강남구</td>
-													<td>강남 CGV</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="odd gradeA">
-													<td>강남구</td>
-													<td>압구정 CGV</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="even gradeA">
-													<td>서대문구</td>
-													<td>독립문 롯데시네마</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="even gradeA">
-													<td>서대문구</td>
-													<td>이대 CGV</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-
-												<!-- ----------------------------------------------------------- -->
-
-												<tr class="odd gradeX">
-													<td>강동구</td>
-													<td>가나다 CGV</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="even gradeC">
-													<td>동대문구</td>
-													<td>바우 롯데시네마</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="odd gradeA">
-													<td>성동구</td>
-													<td>성동 메가박스</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="even gradeA">
-													<td>강남구</td>
-													<td>강남 CGV</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="odd gradeA">
-													<td>강남구</td>
-													<td>압구정 CGV</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="even gradeA">
-													<td>서대문구</td>
-													<td>독립문 롯데시네마</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="even gradeA">
-													<td>서대문구</td>
-													<td>이대 CGV</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-
-												<tr class="odd gradeX">
-													<td>강동구</td>
-													<td>가나다 CGV</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="even gradeC">
-													<td>동대문구</td>
-													<td>바우 롯데시네마</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="odd gradeA">
-													<td>성동구</td>
-													<td>성동 메가박스</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="even gradeA">
-													<td>강남구</td>
-													<td>강남 CGV</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="odd gradeA">
-													<td>강남구</td>
-													<td>압구정 CGV</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="even gradeA">
-													<td>서대문구</td>
-													<td>독립문 롯데시네마</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
-												<tr class="even gradeA">
-													<td>서대문구</td>
-													<td>이대 CGV</td>
-													<th><div align="center">
-															<input type="button" value="선택">
-														</div></th>
-												</tr>
+												</tr> 
 											</tbody>
 										</table>
 									</div>
@@ -787,7 +782,7 @@
 						<div class="col-md-4">
 							<div class="card">
 								<div class="card-content">
-									<table class="table table-striped table-bordered table-hover"
+									<table class="table table-striped table-bordered table-hover" id="date1"
 										style="margin-bottom: 0px; height: 500px;">
 										<thead>
 											<tr>
@@ -856,38 +851,48 @@
 											<tr>
 												<th>1관</th>
 												<th class="test3"><div style="text-align: center;">
-														<input type="button" value="12:00">
+														<!-- <input type="button" value="12:00"> -->
+														12:00
 													</div></th>
 												<th class="test3"><div style="text-align: center;">
-														<input type="button" value="14:00">
+														<!-- <input type="button" value="14:00"> -->
+														14:00
 													</div></th>
 												<th class="test3"><div style="text-align: center;">
-														<input type="button" value="15:30">
+														<!-- <input type="button" value="15:30"> -->
+														15:30
 													</div></th>
 												<th class="test3"><div style="text-align: center;">
-														<input type="button" value="16:50">
+														<!-- <input type="button" value="16:50"> -->
+														16:50
 													</div></th>
 												<th class="test3"><div style="text-align: center;">
-														<input type="button" value="19:00">
+														<!-- <input type="button" value="19:00"> -->
+														19:00
 													</div></th>
 
 											</tr>
 											<tr>
 												<th>2관</th>
 												<th class="test3"><div style="text-align: center;">
-														<input type="button" value="12:00">
+														<!-- <input type="button" value="12:00"> -->
+														12:00
 													</div></th>
 												<th class="test3"><div style="text-align: center;">
-														<input type="button" value="14:00">
+														<!-- <input type="button" value="14:00"> -->
+														14:00
 													</div></th>
 												<th class="test3"><div style="text-align: center;">
-														<input type="button" value="15:30">
+														<!-- <input type="button" value="15:30"> -->
+														15:30
 													</div></th>
 												<th class="test3"><div style="text-align: center;">
-														<input type="button" value="16:50">
+														<!-- <input type="button" value="16:50"> -->
+														16:50
 													</div></th>
 												<th class="test3"><div style="text-align: center;">
-														<input type="button" value="19:00">
+														<!-- <input type="button" value="19:00"> -->
+														19:00
 													</div></th>
 
 											</tr>
@@ -916,43 +921,54 @@
 											<tr>
 												<th>성인</th>
 												<th class="test4"><div style="text-align: center;">
-														<input type="button" value="0">
+														<!-- <input type="button" value="0"> -->
+														0
 													</div></th>
 												<th class="test4"><div style="text-align: center;">
-														<input type="button" value="1">
+														<!-- <input type="button" value="1"> -->
+														1
 													</div></th>
 												<th class="test4"><div style="text-align: center;">
-														<input type="button" value="2">
+														<!-- <input type="button" value="2"> -->
+														2
 													</div></th>
 												<th class="test4"><div style="text-align: center;">
-														<input type="button" value="3">
+														<!-- <input type="button" value="3"> -->
+														3
 													</div></th>
 												<th class="test4"><div style="text-align: center;">
-														<input type="button" value="4">
+														<!-- <input type="button" value="4"> -->
+														4
 													</div></th>
 											</tr>
 											<tr>
 												<th>학생</th>
 												<th class="test4"><div style="text-align: center;">
-														<input type="button" value="0">
+														<!-- <input type="button" value="0"> -->
+														0
 													</div></th>
 												<th class="test4"><div style="text-align: center;">
-														<input type="button" value="1">
+														<!-- <input type="button" value="1"> -->
+														1
 													</div></th>
 												<th class="test4"><div style="text-align: center;">
-														<input type="button" value="2">
+														<!-- <input type="button" value="2"> -->
+														2
 													</div></th>
 												<th class="test4"><div style="text-align: center;">
-														<input type="button" value="3">
+														<!-- <input type="button" value="3"> -->
+														3
 													</div></th>
 												<th class="test4"><div style="text-align: center;">
-														<input type="button" value="4">
+														<!-- <input type="button" value="4"> -->
+														4
 													</div></th>
 											</tr>
 											<tr>
 												<th colspan="6"><div
 														style="text-align: center; background-color: black;">
-														<input type="button"  value="예매하기" onclick="location.href='sdu_seat.jsp'">
+														<input type="button" value="예매하기"
+															onclick="location.href='sdu_seat.jsp'">
 													</div></th>
 
 											</tr>
@@ -966,11 +982,11 @@
 							<div class="card">
 
 								<div class="card-content">
-									<input type="text" readonly="readonly"/><br />
-									<input type="text" readonly="readonly"/> <br />
-									<input type="text" readonly="readonly"/> <br />
-									<input type="text" readonly="readonly"/> <br />
-									<input type="text" readonly="readonly"/> <br />
+									<input type="text" readonly="readonly" id="A" style="color: black;"/><br /> <input
+										type="text" readonly="readonly" id="B" style="color: black;"/> <br /> <input type="text"
+										readonly="readonly" id="C" style="color: black;"/> <br /> <input type="text"
+										readonly="readonly" id="D" style="color: black;"/> <br /> <input type="text"
+										readonly="readonly" id="E" style="color: black;"/> <br />
 								</div>
 							</div>
 						</div>

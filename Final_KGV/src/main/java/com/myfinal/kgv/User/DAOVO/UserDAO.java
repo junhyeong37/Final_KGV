@@ -16,4 +16,7 @@ public interface UserDAO {
 	public List<UserVO> findId(UserVO vo) throws Exception;
 
 	public int checkOverId(String user_id);
+
+	
+	public List<UserVO> SelectId(UserVO vo);
 }

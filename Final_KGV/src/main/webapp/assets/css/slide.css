@@ -1,0 +1,27 @@
+   @media(max-width:768px) {
+   .imghidden{
+   display: none;
+   }
+   table.kgvsm2{
+   height: 0px;
+   background-color: black;
+   }
+   .kgvsm3{
+   height:160px;
+   }
+   }
+   .img-mobile{
+   width: 100%;
+   }
+   
+   
+   @media(min-width:768px) {
+   
+   table.kgvsm2{
+   height: 750px;
+   background-color: black;
+   }
+   .img-mobile{
+   width:70%;
+   }
+   }

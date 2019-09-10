@@ -81,6 +81,9 @@
 .ab {
 	background-color: #AFAFAF;
 }
+.top-navbar{
+ 	top:0;
+}
 </style>
 
 	
@@ -119,6 +122,12 @@
 
 <body>
 	<div id="wrapper">
+	<%
+			// 현재 로그인된 아이디가 없다면 (= session에 저장된 id가 없다면)
+			if (session.getAttribute("ulist") == null) {
+		%>
+	
+	
 		<nav class="navbar navbar-default top-navbar" role="navigation">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle waves-effect waves-dark"
@@ -127,9 +136,9 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand waves-effect waves-dark"
-					href="sdu_index_navbar.jsp"><i class="large material-icons">track_changes</i>
-					<strong>KGV</strong></a>
+				 <a class="navbar-brand waves-effect waves-dark"
+               href="sdu_index_navbar.jsp" style="padding-top: 7px; padding-bottom: 0px;">
+               <img alt="" src="assets/img/KGVlogo.png" style="width: 50%;"></a>
 
 				<div id="sideNav" href="">
 					<i class="material-icons dp48">toc</i>
@@ -155,6 +164,78 @@
 			<!-- <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 설정</a>
 </li> -->
 		</ul>
+		
+		<%
+			}
+			// 현재 로그인된 아이디가 있다면 (= session에 저장된 id가 있다면)
+			else {
+		%>
+<nav class="navbar navbar-default top-navbar" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle waves-effect waves-dark"
+					data-toggle="collapse" data-target=".sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				 <a class="navbar-brand waves-effect waves-dark"
+               href="sdu_index_navbar.jsp" style="padding-top: 7px; padding-bottom: 0px;">
+               <img alt="" src="assets/img/KGVlogo.png" style="width: 50%;"></a>
+
+				<div id="sideNav" href="">
+					<i class="material-icons dp48">toc</i>
+				</div>
+			</div>
+
+			<ul class="nav navbar-top-links navbar-right">
+				<!-- <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown4"><i class="fa fa-envelope fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>				
+				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown3"><i class="fa fa-tasks fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
+				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown2"><i class="fa fa-bell fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li> -->
+				<!--   <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b>John Doe</b> <i class="material-icons right">arrow_drop_down</i></a></li> -->
+				<li><c:forEach items="${ulist }" var="val" varStatus="status">
+						<a class="dropdown-button waves-effect waves-dark" href="#!"
+							data-activates="dropdown1"> <i class="fa fa-user fa-fw"></i>
+							<b> ${val.user_name }</b> <i class="material-icons right">arrow_drop_down</i></a>
+					</c:forEach></li>
+			</ul>
+		</nav>
+		<!-- Dropdown Structure -->
+		<ul id="dropdown1" class="dropdown-content">
+			<li><a href="sdu_login.jsp"><i class="fa fa-user fa-fw"></i>
+					로그아웃</a></li>
+			<li><a href="sdu_mypage.jsp"><i class="fa fa-gear fa-fw"></i>
+					My Page</a></li>
+			
+			
+			<!-- 관리자로 로그인 했을때만 뜨는 메뉴 -->
+			<c:set var="id" value="admin" />
+
+			<c:forEach items="${ulist }" var="val">
+
+				 <c:if test="${val.user_id eq 'admin'}">
+					<li><a href="sdu_admin_movie_insert.jsp"><i
+						class="fa fa-gear fa-fw"></i> 관리자 영화입력</a></li>
+				</c:if>
+				 
+			</c:forEach>
+
+			
+
+
+
+		</ul>
+
+		<!-- ================================================== -->
+
+
+
+
+
+		<%
+			}
+		%>
+		
+		
 
 		<!--/. NAV TOP  -->
 		<nav class="navbar-default navbar-side" role="navigation">
@@ -168,7 +249,7 @@
                         <a href="sdu_movie.jsp" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> 영화</a>
                     </li> -->
 
-					<li><a href="sdu_reserv.jsp"
+					<li><a href="MovieAllData2.do"
 						class="active-menu waves-effect waves-dark"><i
 							class="fa fa-bar-chart-o"></i> 예매</a></li>
 
@@ -176,7 +257,7 @@
 							class="fa fa-sitemap"></i> 영화<span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
 							<li><a href="sdu_box_office.jsp">박스오피스 랭킹</a></li>
-							<li><a href="sdu_movie_search.jsp">영화검색</a></li>
+							<li><a href="MovieAllData.do">영화검색</a></li>
 							<!-- <li>
                                 <a href="#">Second Level Link<span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
@@ -194,8 +275,8 @@
 
                             </li> -->
 						</ul></li>
-					<li><a href="sdu_content.jsp" class="waves-effect waves-dark"><i
-							class="fa fa-desktop"></i> 고객센터</a></li>
+					<li><a href="sdu_theater.jsp" class="waves-effect waves-dark"><i
+							class="fa fa-desktop"></i> 영화관</a></li>
 
 
 				</ul>

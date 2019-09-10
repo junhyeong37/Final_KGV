@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +17,11 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.myfinal.kgv.User.DAOVO.FindIdVO;
 import com.myfinal.kgv.User.DAOVO.UserVO;
 import com.myfinal.kgv.User.Service.UserService;
 
@@ -84,19 +84,25 @@ public class UserController {
 		return mv;
 	}
 
-	@RequestMapping(value = "UserInsertData.do", method = RequestMethod.GET)
+	@RequestMapping(value = "UserInsertData.do", method = RequestMethod.POST)
 	public ModelAndView UserInsertData(UserVO vo, HttpServletRequest req, Locale locale) throws ParseException {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("JoinPro");
+		//mv.setViewName("sdu_membership_ok");
+		mv.setViewName("sdu_membership_ok");
 
+		String id=req.getParameter("user_id");
+		System.out.println("컨트롤러"+id);
+		
 		us.UserInsertData(vo);
 		List<UserVO> userlist = us.UserAllData();
 		mv.addObject("userlist", userlist);
+		mv.addObject("id", id);
+		
 
 		return mv;
 	}
 
-	@RequestMapping(value = "UserLogin.do", method = RequestMethod.GET)
+	/*@RequestMapping(value = "UserLogin.do", method = RequestMethod.GET)
 	public ModelAndView UserLogin(UserVO vo, HttpServletRequest req, Locale locale, HttpSession session)
 			throws ParseException {
 		ModelAndView mv = new ModelAndView();
@@ -115,6 +121,41 @@ public class UserController {
 		session.setAttribute("ulist", ulist);
 		mv.addObject("ulist", ulist);
 		return mv;
+	}*/
+	
+	@RequestMapping(value = "UserLogin.do", method = RequestMethod.POST)
+	public ModelAndView UserLogin(UserVO vo, HttpServletRequest req, Locale locale, HttpSession session, RedirectAttributes rttr)
+			throws ParseException {
+		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("test");
+		//mv.setViewName("sdu_index_navbar");
+
+		us.UserLogin(vo);
+
+		List<UserVO> ulist = us.UserLogin(vo);
+
+		System.out.println("login_do : " + ulist);
+
+		for (UserVO userVO : ulist) {
+			System.out.println(userVO.getUser_address());
+		}
+		
+		if(ulist.isEmpty()) {
+			mv.setViewName("sdu_login");/*
+			rttr.addFlashAttribute("msg", false);*/
+			mv.addObject("msg","false");
+			
+			
+		}else {
+			mv.setViewName("sdu_index_navbar");
+			session.setAttribute("ulist", ulist);
+			mv.addObject("ulist",ulist);
+			
+		}
+		return mv;
+		/*session.setAttribute("ulist", ulist);
+		mv.addObject("ulist", ulist);
+		return mv;*/
 	}
 
 	/////////////////////////// �꽭�뀡媛� 濡쒓렇�씤 �뀒�뒪�듃
@@ -136,7 +177,7 @@ public class UserController {
 		return mv;
 	}
 
-	@ResponseBody
+	/*@ResponseBody
 	@RequestMapping(value = "findingId.do", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
 	public ModelAndView findingId(UserVO vo, HttpServletResponse response, HttpSession session, Locale locale)
 			throws Exception {
@@ -154,9 +195,9 @@ public class UserController {
 
 		mv.addObject("ulist", ulist);
 		return mv;
-	}
+	}*/
 
-	// id 중복 체크 컨트롤러 회원가입부분에 쓰임.
+	// id 중복 체크 컨트롤러
 	@RequestMapping("duplicationCheck.do")
 	@ResponseBody
 	public String CheckDuplication(@RequestBody String inputId) {
@@ -171,41 +212,50 @@ public class UserController {
 		return checkRst;
 	}
 	
-	
-	//로그인 값 옳지 않을때 실패팝업 띄우기. (id찾기 pw 찾기에 응용할 수 있음)
-	@RequestMapping("loginCheck.do")
-	@ResponseBody
-	public String loginCheck(String inputId, String inputPw) {
-		System.out.println("컨트롤러" + inputId);
-		System.out.println("컨트롤러" + inputPw);
-		
-		String checkRst;
-		int idCnt = us.loginCheck(inputId,inputPw);
-		if(idCnt > 0) 
-			checkRst = "F";
-		else 
-			checkRst = "S";
-		
-		return checkRst;
-	}
-	
-	
-	
-	
 	//id 찾기 
-	@RequestMapping("findId.do")
-	@ResponseBody
-	public String findId(String inputName, String inputTel) {
-		System.out.println("컨트롤러" + inputName);
-		System.out.println("컨트롤러" + inputTel);
+		@RequestMapping("findId.do")
+		@ResponseBody
+		public String findId(String inputName, String inputTel,HttpSession session) {
+			System.out.println("컨트롤러" + inputName);
+			System.out.println("컨트롤러" + inputTel);
+			
+			int idCnt = us.IdCheck(inputName,inputTel);
+			String checkRst;
+			if(idCnt > 0) 
+				checkRst = "F";
+			else 
+				checkRst = "S";
+			
+			
+			return checkRst;
+		}
+	
 		
-		String checkRst;
-		int idCnt = us.IdCheck(inputName,inputTel);
-		if(idCnt > 0) 
-			checkRst = "F";
-		else 
-			checkRst = "S";
 		
-		return checkRst;
-	}
+		//id를 찾고 id를 뽑아주는 거
+	
+		@RequestMapping(value="SelectId.do", method=RequestMethod.POST)
+		public ModelAndView SelectId(UserVO vo, HttpServletRequest req, Locale locale) throws ParseException, IndexOutOfBoundsException{
+			ModelAndView mv=new ModelAndView();
+			
+			//mv.setViewName("sdu_testtest11");
+			
+			String user_name=req.getParameter("user_name");
+			String user_tel=req.getParameter("user_tel");
+			
+			System.out.println(user_name+"그리고"+ user_tel);
+			
+			List<UserVO> ulist=us.SelectId(vo);
+//			UserVO id = ulist.get(0);
+			//System.out.println(id.getUser_id());
+			mv.addObject("ulist", ulist);
+			mv.setViewName("sdu_idsearch_ok");
+			
+			return mv;
+			
+		}
+		
+		
+		
+
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.myfinal.kgv.User.DAOVO.FindIdVO;
 import com.myfinal.kgv.User.DAOVO.UserDAO;
 import com.myfinal.kgv.User.DAOVO.UserVO;
 @Service
@@ -17,9 +18,13 @@ public interface UserService {
 		public List<UserVO> findId(UserVO vo) throws Exception;
 		public int userIdCheck(String user_id);
 		public int CheckDuplication(String inputId);
-		public int loginCheck(String inputId, String inputPw);
+		
+		
 		public int IdCheck(String inputName, String inputTel);
+		public List<UserVO> SelectId(UserVO vo);
 		
 		
+		
+
 		
 }
