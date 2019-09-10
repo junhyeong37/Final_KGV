@@ -154,7 +154,7 @@ padding-right: 0px !important;
 }
 .col-md-12{
 padding-left: 0px !important;
-padding-right: 0px !important;
+padding-right: 0px !important ;
 }
 .col-md-4{
 padding-left: 0px !important;

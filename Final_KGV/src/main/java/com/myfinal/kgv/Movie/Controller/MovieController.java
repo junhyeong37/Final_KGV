@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.myfinal.kgv.Movie.DAOVO.MovieVO;
 import com.myfinal.kgv.Movie.DAOVO.PlayVO;
+import com.myfinal.kgv.Movie.DAOVO.reviewVO;
 import com.myfinal.kgv.Movie.Service.MovieService;
 
 
@@ -192,26 +193,20 @@ public class MovieController {
 	      return mv;
 	   }
 	   
-	   @RequestMapping(value="MovieSearchData.do", method=RequestMethod.GET) 
+	  /* @RequestMapping(value="MovieSearchData.do", method=RequestMethod.GET) 
 	   public ModelAndView MovieSearchData(MovieVO vo,HttpServletRequest req, Locale locale) throws ParseException {
 	      ModelAndView mv = new ModelAndView();
-	      mv.setViewName("sdu_admin_movie_search_check");
+	      
 	      String photo = req.getParameter("movie_photo"); //jsp에서 데이터 받을 때 이렇게 받으면 돼
 	      System.out.println("photo : " + photo);
 	      
 	      
 	      List<MovieVO> mlist = ms.MovieSearchData(vo);
-	      /*ms.MovieAllData(photo);*/
 	      
-	   /*   List<MovieVO> movielist = ms.MovieAllData(photo);
-	*/
-//	      moviephoto = ms.MovieSearchData();
-//	      mv.addObject("moviephoto", moviephoto);
-	      /*mv.addObject("movielist",movielist);*/
 	      mv.addObject("mlist", mlist); //데이터
 	      mv.setViewName("sdu_movie_info"); //jsp 페이지 이름
 	      return mv;
-	   }
+	   }*/
 	   
 	   @RequestMapping(value="MovieSearchData2.do", method=RequestMethod.GET) 
 	   public ModelAndView MovieSearchData2(MovieVO vo,HttpServletRequest req, Locale locale) throws ParseException {
@@ -290,4 +285,54 @@ public class MovieController {
 		}
 	
 	
+		
+		@RequestMapping(value="MovieSearchData.do", method=RequestMethod.GET) 
+		   public ModelAndView MovieSearchData(MovieVO vo,HttpServletRequest req, Locale locale) throws ParseException {
+		      ModelAndView mv = new ModelAndView();
+		      
+		      List<MovieVO> mlist = ms.MovieSearchData(vo);
+		      
+		      
+		      reviewVO vo2 = new reviewVO();
+		      List<reviewVO> reviewlist = ms.ReviewView(vo2);
+		      mv.addObject("reviewlist", reviewlist);
+		      
+		      //////////////
+		      
+		      String Referer = req.getHeader("referer");
+		      
+		      System.out.println(Referer);
+		      
+		      mv.addObject("mlist", mlist); 
+		      mv.setViewName("sdu_movie_info"); 
+		      return mv;
+		   }
+		
+		
+		
+		 @RequestMapping(value="ReviewInsert.do", method=RequestMethod.GET) 
+		   public String ReviewInsert(reviewVO vo, HttpServletRequest req, Locale locale) throws ParseException {
+		      /*mv.setViewName("sdu_movie_info");*/
+		      ms.ReviewInsert(vo);
+		      String refe = req.getHeader("referer");
+		      String refe2 = refe.split(".do?")[1];
+		      
+		      System.out.println(refe2);
+		      
+		      List<reviewVO> reviewlist = ms.ReviewView(vo);
+		      System.out.println("cont:"+reviewlist);		      
+		      return "redirect:MovieSearchData.do"+refe2;  
+		   }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 }

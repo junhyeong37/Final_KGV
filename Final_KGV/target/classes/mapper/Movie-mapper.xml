@@ -51,5 +51,22 @@ values (movie_sq.nextval, #{movie_name}, #{movie_level}, #{movie_genre}, #{movie
 		insert into play (user_no, movie_no, play_theater, play_day, play_time, play_inwon, play_seat, play_price, movie_name) 
 		values (#{user_no}, #{movie_no}, #{play_theater}, #{play_day}, #{play_time}, #{play_inwon}, #{play_seat}, #{play_price}, #{movie_name})
 	</select>
+	
+	
+	
+	
+	
+<select id="ReviewInsert" resultType="review" >
+	insert into review (re_no, re_content, movie_no, user_no)
+	values (review_sq.NEXTVAL, #{re_content}, #{movie_no}, #{user_no})
+</select>
+
+<select id="ReviewView" resultType="review" >
+	select *
+	from review
+</select>
+	
+	
+	
 
 </mapper>

@@ -59,4 +59,22 @@ public class MovieDAOImpl implements MovieDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectList(namespace + ".MovieAllData2");
 	}
+	
+	
+	
+	///
+	
+	@Override
+	public List<reviewVO> ReviewInsert(reviewVO vo) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList(namespace + ".ReviewInsert", vo);
+	}
+
+	@Override
+	public List<reviewVO> ReviewView(reviewVO vo) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList(namespace + ".ReviewView", vo);
+	}
+	
+	
 }

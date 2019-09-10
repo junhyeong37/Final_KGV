@@ -66,6 +66,11 @@ tbody.tdsizesm1>tr>td {
 }
 </style>
 
+
+
+
+
+
 <SCRIPT type="text/javascript">
 	function mediaWin(img) {
 		winW = 840;//새창의 너비 
@@ -194,9 +199,9 @@ tbody.tdsizesm1>tr>td {
 		</nav>
 		<!-- Dropdown Structure -->
 		<ul id="dropdown1" class="dropdown-content">
-			<li><a href="sdu_index_navbar.jsp"><i class="fa fa-user fa-fw"></i>
+			<li><a href="Logout.do"><i class="fa fa-user fa-fw"></i>
 					로그아웃</a></li>
-			<li><a href="sdu_mypage.jsp"><i class="fa fa-gear fa-fw"></i>
+			<li><a href="Mypage_test.do"><i class="fa fa-gear fa-fw"></i>
 					My Page</a></li>
 
 
@@ -384,7 +389,35 @@ tbody.tdsizesm1>tr>td {
 															<!-- <td width="10"><h1>상  영  작</h1></td> -->
 															<td style="text-align: center;">
 																<!-- <a href="MovieSearchData.do?movie_photo=assets/img/movie0.jpg"> -->
-																<img src="${movie.movie_photo3 }" class="img-mobile"
+																<img src="${movie.movie_photo2 }" class="img-mobile"
+																style="margin: auto;" data-src="" alt="Second slide">
+
+															</td>
+
+															<td width="20%"></td>
+														</tr>
+														<tr>
+															<td height="100px;"></td>
+														</tr>
+
+													</tbody>
+												</table>
+
+											</div>
+
+
+											<div class="item kgvsm3">
+
+												<table class="kgvsm2">
+													<tbody>
+														<tr>
+															<td height="20px;">
+														</tr>
+														<tr>
+															<td width="20%"></td>
+															<!-- <td width="10"><h1>상  영  작</h1></td> -->
+															<td style="text-align: center;"><img
+																src="${movie.movie_photo3 }" class="img-mobile"
 																style="margin: auto;" data-src="" alt="Second slide">
 
 															</td>
@@ -441,34 +474,6 @@ tbody.tdsizesm1>tr>td {
 															<!-- <td width="10"><h1>상  영  작</h1></td> -->
 															<td style="text-align: center;"><img
 																src="${movie.movie_photo5 }" class="img-mobile"
-																style="margin: auto;" data-src="" alt="Second slide">
-
-															</td>
-
-															<td width="20%"></td>
-														</tr>
-														<tr>
-															<td height="100px;"></td>
-														</tr>
-
-													</tbody>
-												</table>
-
-											</div>
-
-
-											<div class="item kgvsm3">
-
-												<table class="kgvsm2">
-													<tbody>
-														<tr>
-															<td height="20px;">
-														</tr>
-														<tr>
-															<td width="20%"></td>
-															<!-- <td width="10"><h1>상  영  작</h1></td> -->
-															<td style="text-align: center;"><img
-																src="${movie.movie_photo6 }" class="img-mobile"
 																style="margin: auto;" data-src="" alt="Second slide">
 
 															</td>
@@ -715,10 +720,22 @@ tbody.tdsizesm1>tr>td {
 									<div class="col-md-1"></div>
 									<div class="col-md-10" style="">
 										<p style="font-size: x-large; font-weight: bold;">영화 리뷰</p>
-										<form action="">
-											<textarea name="review_text"
+										<form action="ReviewInsert.do" method="get">
+										
+										<c:forEach items="${ulist }" var="val" varStatus="status">
+										<input hidden="" type="text"  id="user_no" name="user_no" value="${val.user_no }">
+										</c:forEach>
+																										
+										<c:forEach items="${mlist}" var="val" varStatus="status">
+										<input hidden="" type="text" id="movie_no" name="movie_no" value="${val.movie_no }">
+										</c:forEach>
+										<!-- hidden="" -->
+
+
+											<textarea name="re_content" id="re_content"
 												style="height: 100px; background-color: #f0f8ffc4;"></textarea>
-											<input
+		
+											<input id="id" 
 												class="waves-effect waves-light btn blue-grey darken-4 white-tex"
 												type="submit" value="작성">
 
@@ -737,82 +754,37 @@ tbody.tdsizesm1>tr>td {
 										<div class="card-content"
 											style="text-align: center; padding-left: 0px; padding-right: 0px;">
 											<div class="table-responsive" style="height: 420px;">
-
 												<table
 													class="table table-striped table-bordered table-hover"
 													id="dataTables-example">
-
-													<thead>
-														<tr>
-															<th style="visibility: hidden;"></th>
-															<th style="visibility: hidden;"></th>
-															<th style="visibility: hidden;"></th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr class="odd gradeX">
-															<td style="width: 15%;">ID</td>
-															<td>리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰리뷰</td>
-															<td style="width: 20%;">작성일</td>
-														</tr>
-														<tr class="odd gradeX">
-															<td>ID</td>
-															<td>리뷰</td>
-															<td>작성일</td>
-														</tr>
-														<tr class="odd gradeX">
-															<td>ID</td>
-															<td>리뷰</td>
-															<td>작성일</td>
-														</tr>
-														<tr class="odd gradeX">
-															<td>ID</td>
-															<td>리뷰</td>
-															<td>작성일</td>
-														</tr>
-														<tr class="odd gradeX">
-															<td>ID</td>
-															<td>리뷰</td>
-															<td>작성일</td>
-														</tr>
-														<tr class="odd gradeX">
-															<td>ID</td>
-															<td>리뷰</td>
-															<td>작성일</td>
-														</tr>
-														<tr class="odd gradeX">
-															<td>ID</td>
-															<td>리뷰</td>
-															<td>작성일</td>
-														</tr>
-														<tr class="odd gradeX">
-															<td>ID</td>
-															<td>리뷰</td>
-															<td>작성일</td>
-														</tr>
-														<tr class="odd gradeX">
-															<td>ID</td>
-															<td>리뷰</td>
-															<td>작성일</td>
-														</tr>
-														<tr class="odd gradeX">
-															<td>ID</td>
-															<td>리뷰</td>
-															<td>작성일</td>
-														</tr>
-														<tr class="odd gradeX">
-															<td>ID</td>
-															<td>리뷰</td>
-															<td>작성일</td>
-														</tr>
-														<tr class="odd gradeX">
-															<td>ID</td>
-															<td>리뷰</td>
-															<td>작성일</td>
-														</tr>
-
-
-													</tbody>
+ 
+													
+													
+												
+														<%-- <tr class="odd gradeX">
+															<th style="width: 15%;"> 회원 no</th>
+															<th style="width: 60%;" > 리뷰 코멘트</th>
+														</tr> 
+														
+														<c:forEach var="e" items="${reviewlist}">
+														<tr class="odd gradeX">										
+															<td style="width: 15%;" id="user_no"> ${e.user_no} </td>
+															<td style="width: 60%;" id="re_content"> ${e.re_content }</td>																			
+														</tr>	
+														</c:forEach> --%>
+											
+														<tr class="">
+															<th style="width: 15%;"> 회원 no</th>
+															<th style="width: 60%;" > 리뷰 코멘트</th>
+														</tr> 
+														
+														<c:forEach var="e" items="${reviewlist}">
+														<tr class="">										
+															<td style="width: 15%;" id="user_no"> ${e.user_no} </td>
+															<td style="width: 60%;" id="re_content"> ${e.re_content }</td>																			
+														</tr>	
+														</c:forEach>
+													
 												</table>
 											</div>
 										</div>

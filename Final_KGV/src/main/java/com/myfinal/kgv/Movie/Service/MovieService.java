@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.myfinal.kgv.Movie.DAOVO.MovieVO;
 import com.myfinal.kgv.Movie.DAOVO.PlayVO;
+import com.myfinal.kgv.Movie.DAOVO.reviewVO;
 
 @Service
 public interface MovieService {
@@ -19,4 +20,11 @@ public interface MovieService {
    public void play(PlayVO vo);
    
    public List<MovieVO> MovieAllData2();
+   
+   
+   
+   
+   ///////
+   public List<reviewVO> ReviewInsert(reviewVO vo);
+   public List<reviewVO> ReviewView(reviewVO vo);
 }

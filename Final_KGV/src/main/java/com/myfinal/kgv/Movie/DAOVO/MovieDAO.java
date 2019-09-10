@@ -24,4 +24,15 @@ public interface MovieDAO {
    
    public void play(PlayVO vo);
    
+   
+   
+   
+   ///////////////
+   
+   public List<reviewVO> ReviewInsert(reviewVO vo);
+
+   public List<reviewVO> ReviewView(reviewVO vo);
+
+      
+   
 }

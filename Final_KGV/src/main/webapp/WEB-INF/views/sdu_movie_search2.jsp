@@ -253,7 +253,7 @@ overflow-x:hidden;
                                  <c:forEach var="movie" items="${movielist }" varStatus="status">
                                  <tr class="odd gradeX">
                                     <td class="center" style="border-right-color:white; border-left-color:white; vertical-align: middle;">
-                                    <a href="MovieSearchData.do?movie_photo=${movie.movie_photo }"><img alt="" class="img" src="${movie.movie_photo }"
+                                    <a href="MovieSearchData.do?movie_photo=${movie.movie_photo }&movie_no=${movie.movie_no}"><img alt="" class="img" src="${movie.movie_photo }"
                                        width="150px;"></a></td>
                                     <td style="border-right-color:white; border-left-color:white;"><ul class="collapsible" data-collapsible="accordion">
                                     <li>
