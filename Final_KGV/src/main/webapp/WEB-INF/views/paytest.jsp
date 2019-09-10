@@ -319,48 +319,7 @@ function duplicationId() {
 					<li><a href="sdu_theater.jsp" class="waves-effect waves-dark"><i
 							class="fa fa-desktop"></i> 영화관</a></li>
 
-					<!-- <li>
-                        <a href="head_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
-                    </li>
-                    
-                    <li>
-                        <a href="head_test2.jsp" class="waves-effect waves-dark"><i class="fa fa-table"></i> Responsive Tables</a>
-                    </li>
-                    <li>
-                        <a href="head_test2.jsp" class="waves-effect waves-dark"><i class="fa fa-edit"></i> Forms </a>
-                    </li>
-
-
-                    <li>
-                        <a href="#" class="waves-effect waves-dark"><i class="fa fa-sitemap"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-
-                                </ul>
-
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="head_test3.jsp" class="waves-effect waves-dark"><i class="fa fa-fw fa-file"></i> Empty Page</a>
-                    </li> -->
+			
 				</ul>
 
 			</div>
@@ -429,11 +388,11 @@ function duplicationId() {
 										<table>
 											<tr>
 												<!-- <td><h1><strong style="font-size:larger;">유열의 음악앨범</strong></h1></td> -->
-												<td><h1>
-														<strong style="font-size: larger;">제 목</strong>
+												<td>
+														<strong style="font-size: xx-large;">제 목</strong>
 														<input type="text" id="movie_name" name="movie_name"
 																value="${movie_name}" readonly>
-													</h1></td>
+													</td>
 											</tr>
 										</table>
 

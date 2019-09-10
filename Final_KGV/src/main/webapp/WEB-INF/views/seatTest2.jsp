@@ -130,7 +130,52 @@ visibility: hidden;
  	top:0;
 }
 </style>
-
+<style type="text/css">
+/* 09.09 예매페이지 반응형 적용 */
+@media (max-width: 768px){
+div.card-content{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+table.table-striped{
+height: 0px !important;
+}
+#page-inner{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.col-md-12{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.col-md-4{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.col-md-3{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.col-md-5{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.col-md-6{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.scrolltbody{
+   padding-left: 30px;
+}
+#page-wrapper{
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.btn-sizesm{
+width: 30% !important;
+}
+}
+</style>
 
 
 <script>
@@ -534,7 +579,7 @@ function seat(){
     </div>
   <!-- </div> -->
   <!-- <div class="container"> -->
-    	<div class="waves-effect waves-light btn" style="width: 14%">
+    	<div class="waves-effect waves-light btn btn-sizesm" style="width: 20%">
 		<input type="button" value="Clear" id="clearAllButton">
 	</div>
   </div> <!-- <div class="col-md-6"> end -->
@@ -599,11 +644,11 @@ function seat(){
 <a href="javascript:seat();"><input type="submit" value="다음단계" style="float: right;"> </a></div></td></tr>
  -->
 
-<tr><td><div  class="waves-effect waves-light btn"><a href="sdu_reserv_test.jsp">
+<!-- <tr><td><div  class="waves-effect waves-light btn"><a href="MovieAllData2.do">
 <input type="submit" value="이전단계" style="float: left;"></a> 
 </div><div  class="waves-effect waves-light btn"><a href="javascript:seat();">
 <input type="submit" value="다음단계" style="float: right;"> </a>
-</div></td></tr>
+</div></td></tr> -->
 
 </tbody></table></div>
 <!-- 취합전~~~~~~~~~~~~~~~~~~~~~ 클리어 버튼 -->
@@ -624,6 +669,31 @@ function seat(){
 
 </div>
 </div>
+
+
+<div id="row">
+<div class="card col-md-12" style="padding-top: 10px; padding-bottom: 10px;">
+
+<table>
+<tr>
+<td style="float: right;">
+
+<div  class="waves-effect waves-light btn"><a href="MovieAllData2.do">
+<input type="submit" value="이전단계" style="float: right;"></a> 
+</div>
+<div  class="waves-effect waves-light btn"><a href="javascript:seat();">
+<input type="submit" value="다음단계" style="float: right;"> </a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+
+
+
+</div>
+
             
             <footer>
                <div class="center">

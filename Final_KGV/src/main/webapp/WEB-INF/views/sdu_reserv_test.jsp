@@ -372,12 +372,12 @@ padding-right: 0px !important;
 										<tbody class="scrolltbody" style="height: 454px;">
 											<tr>
 												<!-- <td style="width: 37.979166px;"></td> -->
-												<td width="15%">등급</td>
-												<td width="85%">영화제목</td>
+												<td width="30%" style="width: 10%;">등급</td>
+												<td width="70%" style="width:90%; vertical-align: middle;">영화제목</td>
 
 											<c:forEach var="e" items="${movielist}"> 
 											<tr class="test">
-												<td><img alt="" src="assets/img/12.png"></td>
+												<td>${e.movie_level }</td>
 												<td id="movie2" onclick="mclick2()" style="cursor: pointer">${e.movie_name}</td>
 												<td hidden="" id="movieno" onclick="mclick2()" style="cursor: pointer">${e.movie_no}</td>
 											</tr>
