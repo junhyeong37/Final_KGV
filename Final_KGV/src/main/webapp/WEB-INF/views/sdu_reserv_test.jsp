@@ -56,10 +56,6 @@
 			var jb = $('table#date1 input.date-picker').val();
 			$('input#C').val(jb);
 		});
-		$('input.testbn1').click(function() {
-			alert("띠바아아앙");
-		});
-		
 		
 	});
 	

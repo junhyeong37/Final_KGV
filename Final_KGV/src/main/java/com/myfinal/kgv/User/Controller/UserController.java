@@ -261,28 +261,24 @@ public class UserController {
 		public ModelAndView Mypage_test(HttpServletRequest req,HttpSession session) {
 			ModelAndView mv = new ModelAndView();
 			UserVO userVO = new UserVO();
-			System.out.println("111 "+session.getAttribute("ulist"));
 			mv.setViewName("mypage");
 			
-			List<UserVO> ulist = (List<UserVO>) session.getAttribute("ulist");
+			List<UserVO> ulist = (List<UserVO>) session.getAttribute("ulist");  //로그인 세션값 받기
 			
-			System.out.println("111222222 "+ulist.iterator());
-			
-			for (Iterator iterator = ulist.iterator(); iterator.hasNext();) {
-				userVO = (UserVO) iterator.next();
+			for (Iterator iterator = ulist.iterator(); iterator.hasNext();) {  //받은 세션 리스트를 포문 돌려
+				userVO = (UserVO) iterator.next();   // UserVO에 모든 정보 넣기 
 				
 			}
 			
-			System.out.println(userVO.getUser_no());
+//			System.out.println(userVO.getUser_no());
 			
 			
-			List<PageVO> plist = us.Mypage_test(userVO.getUser_id());
-			
-			System.out.println("시발! "+plist);
-			
+			List<PageVO> plist = us.Mypage_test(userVO.getUser_id()); // Mypage_test에 해당 유저 아이디를 넣어 조건문에 넣어 조회하여 
+			// 해당 유저가 예매한 영화정보를 movie, play를 조인하여 셀렉트문을 리스트에 넣어 보내는 것
 			
 			
-			mv.addObject("plist", plist);
+			
+			mv.addObject("plist", plist);   
 			
 			return mv;
 		}

@@ -56,8 +56,9 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand waves-effect waves-dark"
-               href="sdu_index_navbar.jsp" style="padding-top: 7px; padding-bottom: 0px;">
-               <img alt="" src="assets/img/KGVlogo.png" style="width: 50%;"></a>
+					href="sdu_index_navbar.jsp"
+					style="padding-top: 7px; padding-bottom: 0px;"> <img alt=""
+					src="assets/img/KGVlogo.png" style="width: 50%;"></a>
 
 				<div id="sideNav" href="">
 					<i class="material-icons dp48">toc</i>
@@ -99,8 +100,9 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand waves-effect waves-dark"
-               href="sdu_index_navbar.jsp" style="padding-top: 7px; padding-bottom: 0px;">
-               <img alt="" src="assets/img/KGVlogo.png" style="width: 50%;"></a>
+					href="sdu_index_navbar.jsp"
+					style="padding-top: 7px; padding-bottom: 0px;"> <img alt=""
+					src="assets/img/KGVlogo.png" style="width: 50%;"></a>
 
 				<div id="sideNav" href="">
 					<i class="material-icons dp48">toc</i>
@@ -215,43 +217,45 @@
 
 
 
-<c:forEach items="${plist }" var="val" varStatus="status">
-							<div class="card-content">
-								<div class="col-md-3"></div>
-								<div class="card col-md-6 blue-grey darken-4">
-									<div class="col-md-12">
-										<div class="card-content white-text col-md-12"
-											style="text-align: center;">
-											<img class="" alt="poster" src="${val.movie_photo }"
-												style="width: 80%">
-										</div>
+							<c:forEach items="${plist }" var="val" varStatus="status">
+								<div class="card-content">
+									<div class="col-md-3"></div>
+									<div class="card col-md-6 blue-grey darken-4">
+										<div class="col-md-12">
+											<div class="card-content white-text col-md-12"
+												style="text-align: center;">
+												<img class="" alt="poster" src="${val.movie_photo }"
+													style="width: 80%">
+											</div>
 
-										<div class="card-content white-text col-md-12"
-											style="height: 100%">
-											<p style="font-size: large;">제 목 ${val.movie_name }</p>
-											<br>
-											<p style="font-size: large;">극 장 ${val.play_theater }</p>
-											<br>
-											<p style="font-size: large;">날 짜 ${val.play_day } / ${val.play_time }</p>
-											<br>
-											<p style="font-size: large;">인 원 ${val.play_inwon }</p>
-											<br>
-											<p style="font-size: large;">좌 석 ${val.play_seat }</p>
-											<br>
-											<p style="font-size: large;">금 액 ${val.play_price }</p>
+											<div class="card-content white-text col-md-12"
+												style="height: 100%">
+												<p style="font-size: large;">제 목 ${val.movie_name }</p>
+												<br>
+												<p style="font-size: large;">극 장 ${val.play_theater }</p>
+												<br>
+												<p style="font-size: large;">날 짜 ${val.play_day } /
+													${val.play_time }</p>
+												<br>
+												<p style="font-size: large;">인 원 ${val.play_inwon }</p>
+												<br>
+												<p style="font-size: large;">좌 석 ${val.play_seat }</p>
+												<br>
+												<p style="font-size: large;">금 액 ${val.play_price }</p>
+											</div>
 										</div>
 									</div>
-								</div>
-								<div class="clearBoth">
-									<br />
-								</div>
+									<div class="clearBoth">
+										<br />
+									</div>
 
-								<div class="row center">
-									<a class="waves-effect waves-light btn" href="Mypage_delete.do?play_day=${val.play_day }&play_seat=${val.play_seat}">예매취소</a>
+									<div class="row center">
+										<a class="waves-effect waves-light btn"
+											href="Mypage_delete.do?play_day=${val.play_day }&play_seat=${val.play_seat}">예매취소</a>
+									</div>
 								</div>
-							</div>
-</c:forEach>
-							
+							</c:forEach>
+
 
 
 

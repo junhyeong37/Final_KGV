@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-	<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -26,18 +26,20 @@
 	rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
 
- <link rel="stylesheet" href="assets/css/slide.css?after" type="text/css" />
-   <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="assets/css/slide.css?after" type="text/css" />
+<link
+	href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
+	rel="stylesheet" />
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script
+	src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 
 <style>
-
-.top-navbar{
- 	top:0;
+.top-navbar {
+	top: 0;
 }
-
 
 .card {
 	border: 0;
@@ -119,12 +121,12 @@ tbody.tdsizesm1>tr>td {
 	<c:if test="${not empty mlist }">
 		<c:forEach var="movie" items="${mlist }" varStatus="status">
 			<div id="wrapper">
-			
-			<%
-			// 현재 로그인된 아이디가 없다면 (= session에 저장된 id가 없다면)
-			if (session.getAttribute("ulist") == null) {
-		%>
-			
+
+				<%
+					// 현재 로그인된 아이디가 없다면 (= session에 저장된 id가 없다면)
+							if (session.getAttribute("ulist") == null) {
+				%>
+
 				<nav class="navbar navbar-default top-navbar" role="navigation">
 					<div class="navbar-header">
 						<button type="button"
@@ -134,9 +136,10 @@ tbody.tdsizesm1>tr>td {
 								class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						 <a class="navbar-brand waves-effect waves-dark"
-               href="sdu_index_navbar.jsp" style="padding-top: 7px; padding-bottom: 0px;">
-               <img alt="" src="assets/img/KGVlogo.png" style="width: 50%;"></a>
+						<a class="navbar-brand waves-effect waves-dark"
+							href="sdu_index_navbar.jsp"
+							style="padding-top: 7px; padding-bottom: 0px;"> <img alt=""
+							src="assets/img/KGVlogo.png" style="width: 50%;"></a>
 
 						<div id="sideNav" href="">
 							<i class="material-icons dp48">toc</i>
@@ -162,76 +165,78 @@ tbody.tdsizesm1>tr>td {
 					<!-- <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 설정</a>
 </li> -->
 				</ul>
-<%
-			}
-			// 현재 로그인된 아이디가 있다면 (= session에 저장된 id가 있다면)
-			else {
-		%>
+				<%
+					}
+							// 현재 로그인된 아이디가 있다면 (= session에 저장된 id가 있다면)
+							else {
+				%>
 
-		<nav class="navbar navbar-default top-navbar" role="navigation">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle waves-effect waves-dark"
-					data-toggle="collapse" data-target=".sidebar-collapse">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand waves-effect waves-dark"
-               href="sdu_index_navbar.jsp" style="padding-top: 7px; padding-bottom: 0px;">
-               <img alt="" src="assets/img/KGVlogo.png" style="width: 50%;"></a>
+				<nav class="navbar navbar-default top-navbar" role="navigation">
+					<div class="navbar-header">
+						<button type="button"
+							class="navbar-toggle waves-effect waves-dark"
+							data-toggle="collapse" data-target=".sidebar-collapse">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand waves-effect waves-dark"
+							href="sdu_index_navbar.jsp"
+							style="padding-top: 7px; padding-bottom: 0px;"> <img alt=""
+							src="assets/img/KGVlogo.png" style="width: 50%;"></a>
 
-				<div id="sideNav" href="">
-					<i class="material-icons dp48">toc</i>
-				</div>
-			</div>
+						<div id="sideNav" href="">
+							<i class="material-icons dp48">toc</i>
+						</div>
+					</div>
 
-			<ul class="nav navbar-top-links navbar-right">
-				<!-- <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown4"><i class="fa fa-envelope fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>				
+					<ul class="nav navbar-top-links navbar-right">
+						<!-- <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown4"><i class="fa fa-envelope fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>				
 				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown3"><i class="fa fa-tasks fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
 				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown2"><i class="fa fa-bell fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li> -->
-				<!--   <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b>John Doe</b> <i class="material-icons right">arrow_drop_down</i></a></li> -->
-				<li><c:forEach items="${ulist }" var="val" varStatus="status">
-						<a class="dropdown-button waves-effect waves-dark" href="#!"
-							data-activates="dropdown1"> <i class="fa fa-user fa-fw"></i>
-							<b> ${val.user_name }</b> <i class="material-icons right">arrow_drop_down</i></a>
-					</c:forEach></li>
-			</ul>
-		</nav>
-		<!-- Dropdown Structure -->
-		<ul id="dropdown1" class="dropdown-content">
-			<li><a href="Logout.do"><i class="fa fa-user fa-fw"></i>
-					로그아웃</a></li>
-			<li><a href="Mypage_test.do"><i class="fa fa-gear fa-fw"></i>
-					My Page</a></li>
+						<!--   <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b>John Doe</b> <i class="material-icons right">arrow_drop_down</i></a></li> -->
+						<li><c:forEach items="${ulist }" var="val" varStatus="status">
+								<a class="dropdown-button waves-effect waves-dark" href="#!"
+									data-activates="dropdown1"> <i class="fa fa-user fa-fw"></i>
+									<b> ${val.user_name }</b> <i class="material-icons right">arrow_drop_down</i></a>
+							</c:forEach></li>
+					</ul>
+				</nav>
+				<!-- Dropdown Structure -->
+				<ul id="dropdown1" class="dropdown-content">
+					<li><a href="Logout.do"><i class="fa fa-user fa-fw"></i>
+							로그아웃</a></li>
+					<li><a href="Mypage_test.do"><i class="fa fa-gear fa-fw"></i>
+							My Page</a></li>
 
 
-			<!-- 관리자로 로그인 했을때만 뜨는 메뉴 -->
-			<c:set var="id" value="admin" />
+					<!-- 관리자로 로그인 했을때만 뜨는 메뉴 -->
+					<c:set var="id" value="admin" />
 
-			<c:forEach items="${ulist }" var="val">
+					<c:forEach items="${ulist }" var="val">
 
-				<c:if test="${val.user_id eq 'admin'}">
-					<li><a href="sdu_admin_movie_insert.jsp"><i
-							class="fa fa-gear fa-fw"></i> 관리자 영화입력</a></li>
-				</c:if>
+						<c:if test="${val.user_id eq 'admin'}">
+							<li><a href="sdu_admin_movie_insert.jsp"><i
+									class="fa fa-gear fa-fw"></i> 관리자 영화입력</a></li>
+						</c:if>
 
-			</c:forEach>
-
-
-
-
-
-		</ul>
-
-		<!-- ================================================== -->
+					</c:forEach>
 
 
 
 
 
-		<%
-			}
-		%>
+				</ul>
+
+				<!-- ================================================== -->
+
+
+
+
+
+				<%
+					}
+				%>
 
 
 				<!--/. NAV TOP  -->
@@ -246,8 +251,9 @@ tbody.tdsizesm1>tr>td {
                         <a href="sdu_movie.jsp" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> 영화</a>
                     </li> -->
 
-							<li><a href="MovieAllData2.do" class="waves-effect waves-dark"><i
-									class="fa fa-bar-chart-o"></i> 예매</a></li>
+							<li><a href="MovieAllData2.do"
+								class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i>
+									예매</a></li>
 
 							<li><a href="#" class="active-menu waves-effect waves-dark"><i
 									class="fa fa-sitemap"></i> 영화<span class="fa arrow"></span></a>
@@ -271,8 +277,9 @@ tbody.tdsizesm1>tr>td {
 
                             </li> -->
 								</ul></li>
-							<li><a href="sdu_theater.jsp" class="waves-effect waves-dark"><i
-							class="fa fa-desktop"></i> 영화관</a></li>
+							<li><a href="sdu_theater.jsp"
+								class="waves-effect waves-dark"><i class="fa fa-desktop"></i>
+									영화관</a></li>
 
 
 
@@ -345,7 +352,6 @@ tbody.tdsizesm1>tr>td {
 											style="height: 100%; background-color: #0a0a0a;">
 											<!--슬라이드1-->
 											<div class="item active kgvsm3">
-
 												<table class="kgvsm2">
 													<tbody>
 														<tr>
@@ -525,8 +531,7 @@ tbody.tdsizesm1>tr>td {
 									<div class="card-content"
 										style="padding-left: 0px; padding-right: 0px;">
 										<img class="mobileimg" height="495px" alt="poster"
-											src="${movie.movie_photo }"> <br>
-										<br>
+											src="${movie.movie_photo }"> <br> <br>
 										<div>
 											<a
 												class="waves-effect waves-light btn blue-grey darken-4 white-tex"
@@ -653,8 +658,8 @@ tbody.tdsizesm1>tr>td {
 										style="background-color: #ffffff00; color: black; border-color: #ffffff00;">
 
 
-										<strong style="font-size: larger;">줄거리</strong> <br>
-										<br> ${movie.movie_content }
+										<strong style="font-size: larger;">줄거리</strong> <br> <br>
+										${movie.movie_content }
 
 										<div class="clearBoth">
 											<br />
@@ -675,8 +680,7 @@ tbody.tdsizesm1>tr>td {
 
 								<div class="card col-md-12"
 									style="text-align: center; background-color: #ebe7dc; padding-top: 20px; padding-bottom: 20px;">
-									<strong style="font-size: larger;">출연배우</strong> <br>
-									<br>
+									<strong style="font-size: larger;">출연배우</strong> <br> <br>
 									<%-- <div class="col-md-2"></div>
                      <div class="imgswap col-md-2" style="text-align: center;">
                      <img alt="" src="${movie.movie_actor1 }">
@@ -721,21 +725,23 @@ tbody.tdsizesm1>tr>td {
 									<div class="col-md-10" style="">
 										<p style="font-size: x-large; font-weight: bold;">영화 리뷰</p>
 										<form action="ReviewInsert.do" method="get">
-										
-										<c:forEach items="${ulist }" var="val" varStatus="status">
-										<input hidden="" type="text"  id="user_no" name="user_no" value="${val.user_no }">
-										</c:forEach>
-																										
-										<c:forEach items="${mlist}" var="val" varStatus="status">
-										<input hidden="" type="text" id="movie_no" name="movie_no" value="${val.movie_no }">
-										</c:forEach>
-										<!-- hidden="" -->
+
+											<c:forEach items="${ulist }" var="val" varStatus="status">
+												<input hidden="" type="text" id="user_no" name="user_no"
+													value="${val.user_no }">
+											</c:forEach>
+
+											<c:forEach items="${mlist}" var="val" varStatus="status">
+												<input hidden="" type="text" id="movie_no" name="movie_no"
+													value="${val.movie_no }">
+											</c:forEach>
+											<!-- hidden="" -->
 
 
 											<textarea name="re_content" id="re_content"
 												style="height: 100px; background-color: #f0f8ffc4;"></textarea>
-		
-											<input id="id" 
+
+											<input id="id"
 												class="waves-effect waves-light btn blue-grey darken-4 white-tex"
 												type="submit" value="작성">
 
@@ -757,11 +763,11 @@ tbody.tdsizesm1>tr>td {
 												<table
 													class="table table-striped table-bordered table-hover"
 													id="dataTables-example">
- 
-													
-													
-												
-														<%-- <tr class="odd gradeX">
+
+
+
+
+													<%-- <tr class="odd gradeX">
 															<th style="width: 15%;"> 회원 no</th>
 															<th style="width: 60%;" > 리뷰 코멘트</th>
 														</tr> 
@@ -772,19 +778,20 @@ tbody.tdsizesm1>tr>td {
 															<td style="width: 60%;" id="re_content"> ${e.re_content }</td>																			
 														</tr>	
 														</c:forEach> --%>
-											
+
+													<tr class="">
+														<th style="width: 15%;">회원 no</th>
+														<th style="width: 60%;">리뷰 코멘트</th>
+													</tr>
+
+													<c:forEach var="e" items="${reviewlist}">
 														<tr class="">
-															<th style="width: 15%;"> 회원 no</th>
-															<th style="width: 60%;" > 리뷰 코멘트</th>
-														</tr> 
-														
-														<c:forEach var="e" items="${reviewlist}">
-														<tr class="">										
-															<td style="width: 15%;" id="user_no"> ${e.user_no} </td>
-															<td style="width: 60%;" id="re_content"> ${e.re_content }</td>																			
-														</tr>	
-														</c:forEach>
-													
+															<td style="width: 15%;" id="user_no">${e.user_no}</td>
+															<td style="width: 60%;" id="re_content">
+																${e.re_content }</td>
+														</tr>
+													</c:forEach>
+
 												</table>
 											</div>
 										</div>

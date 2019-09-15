@@ -53,7 +53,7 @@ $( '.top' ).click( function() {
 
 <body>
 	<div id="wrapper">
-
+ㅉ
 		<%
 			// 현재 로그인된 아이디가 없다면 (= session에 저장된 id가 없다면)
 			if (session.getAttribute("ulist") == null) {

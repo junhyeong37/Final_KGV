@@ -282,24 +282,13 @@ function seat(){
 	var movie_no= $('td#movie_no').text();
 	var play_seat = $('div#selected').text().replace("좌석 ","");
 	
-	var allData = {"movie_name" : movie_name, "play_theater" : play_theater, "play_day" : play_day, "play_time" : play_time, "play_inwon" : play_inwon, "play_price" : play_price, "movie_no" : movie_no,"play_seat" : play_seat};
-	
-	
-	/* $.ajax({
-		type : "get",
-		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-	    url: "Goseat2.do",
-	    data: allData, 
-	      
-	    success: function (data) { */
+	var allData = {"movie_name" : movie_name, "play_theater" : play_theater, "play_day" : play_day, "play_time" : play_time,
+			"play_inwon" : play_inwon, "play_price" : play_price, "movie_no" : movie_no,"play_seat" : play_seat};
 
 				alert("됐당~");
-	    		location.replace("Goseat2.do?movie_name="+movie_name +"&play_theater="+play_theater+"&play_day="+play_day +"&play_time="+play_time +"&play_inwon="+play_inwon+"&play_price="+play_price+"&movie_no="+movie_no+"&play_seat="+play_seat);
-	/*       },
-	      error: function(req, status, errThrown) {
-	         alert("network error occur");
-	      }
-	}); */
+	    		location.replace("Goseat2.do?movie_name="+movie_name +"&play_theater="+play_theater
+	    		+"&play_day="+play_day +"&play_time="+play_time +"&play_inwon="+play_inwon+"&play_price="
+	    		+play_price+"&movie_no="+movie_no+"&play_seat="+play_seat);
 }
 </script>
 

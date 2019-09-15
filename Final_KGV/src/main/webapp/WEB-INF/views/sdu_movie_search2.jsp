@@ -253,53 +253,32 @@ overflow-x:hidden;
                                  <c:forEach var="movie" items="${movielist }" varStatus="status">
                                  <tr class="odd gradeX">
                                     <td class="center" style="border-right-color:white; border-left-color:white; vertical-align: middle;">
-                                    <a href="MovieSearchData.do?movie_photo=${movie.movie_photo }&movie_no=${movie.movie_no}"><img alt="" class="img" src="${movie.movie_photo }"
+                                    <a href="MovieSearchData.do?movie_photo=${movie.movie_photo }&movie_no=${movie.movie_no}">
+                                    <img alt="" class="img" src="${movie.movie_photo }"
                                        width="150px;"></a></td>
                                     <td style="border-right-color:white; border-left-color:white;"><ul class="collapsible" data-collapsible="accordion">
                                     <li>
                                           <div class="collapsible-header blue-grey white-text">
-                                             <i class="material-icons">theaters</i>${movie.movie_name }
-                                          </div>
-                                             
-                                          </li>
-                                          <li>
-                                             <div
-                                                class="collapsible-header blue-grey darken-4 white-text">
-                                                <i class="material-icons">theaters</i>장르
-                                             </div>
-                                             <div class="collapsible-body">
-                                                <p>${movie.movie_genre }</p>
-                                             
-                                             </div>
-                                          </li>
+                                             <i class="material-icons">theaters</i>${movie.movie_name }      </div></li>
                                           <li>
                                              <div class="collapsible-header blue-grey darken-4 white-text">
-                                                <i class="material-icons">perm_identity</i>감독
-                                             </div>
-                                             <div class="collapsible-body">
-                                                <p>${movie.movie_director }</p>
-                                             </div>
-                                          </li>
+                                                <i class="material-icons">theaters</i>장르    </div>
+                                             <div class="collapsible-body"> <p>${movie.movie_genre }</p> </div> </li>
+                                          <li>
+                                             <div class="collapsible-header blue-grey darken-4 white-text">
+                                                <i class="material-icons">perm_identity</i>감독    </div>
+                                             <div class="collapsible-body"> <p>${movie.movie_director }</p> </div> </li>
                                           <li>
                                              <div class="collapsible-header blue-grey darken-4 white-text" >
-                                                <i class="material-icons">assignment_ind</i>배우
-                                             </div>
-                                             <div class="collapsible-body">
-                                                <p>${movie.movie_actor }</p>
-                                             </div>
-                                          </li>
+                                                <i class="material-icons">assignment_ind</i>배우  </div>
+                                             <div class="collapsible-body">  <p>${movie.movie_actor }</p> </div>  </li>
                                           <li>
                                              <div class="collapsible-header blue-grey darken-4 white-text">
-                                                <i class="material-icons">voicemail</i>상영시간
-                                             </div>
-                                             <div class="collapsible-body">
-                                                <p>${movie.movie_runtime }분</p>
-                                             </div>
-                                          </li>
-                                       
-                                       </ul></td>
+                                                <i class="material-icons">voicemail</i>상영시간  </div>
+                                             <div class="collapsible-body"> <p>${movie.movie_runtime }분</p> </div> </li> </ul></td>
                                     <th style="border-right-color:white; border-left-color:white; vertical-align: middle;"><div align="center">
-                                          <input class="waves-effect waves-light btn blue-grey darken-4 white-tex" type="button" value="예매하기" onclick="location.href='sdu_reserv.jsp'">
+                                          <input class="waves-effect waves-light btn blue-grey darken-4 white-tex" type="button" value="예매하기" 
+                                          onclick="location.href='sdu_reserv.jsp'">
                                        </div></th>
                                  </tr>
                               </c:forEach>
